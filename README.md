@@ -4,11 +4,13 @@
 
 ## Estado al 27 de octubre de 2026
 
-T01 tiene su propuesta arquitectónica documentada. **Preguntas 1 y 2 aprobadas por el auxiliar según Erwin. Pendientes: revisión de Adrián y preguntas 3 y 4 (USB local y lectura del sonido).** No hay implementación ni validación experimental. Los PDF y Excel originales se conservaron.
+T01 tiene su propuesta arquitectónica documentada. **Consultas docentes respondidas: preguntas 1–3 aprobadas según Erwin; pregunta 4 resuelta como pulso = 1 y ausencia = 0 por ciclo. Pendiente: revisión de Adrián.** No hay implementación ni validación experimental. Los PDF y Excel originales se conservaron.
 
 Cada nodo contiene una BeagleBone Black existente, ARM/Linux, PRU0 interno, una placa perforada soldable y un PC como terminal USB local. El servidor y las cuatro capas residen en la BBB. **No se necesita adquirir ESP32** para esta arquitectura.
 
 Por sentido: C0 óptico (LED y LDR/comparador), C1 acústico (buzzer y micrófono mediante manguera), C2 mecánico (SG90, nylon y final de carrera), y CLK mediante PC817. Se replican en sentido contrario: ocho canales unidireccionales. Los dos hilos de excitación de cada reloj constituyen un solo canal lógico propuesto, aceptado por el auxiliar según confirmación de Erwin.
+
+La detección acústica se ajustará a presencia/ausencia de pulso por símbolo; el conteo en dos ventanas de v3.0 no se considera aprobado. Falta caracterizar el sensor y definir filtrado/rearme.
 
 Tecnologías previstas: Linux, PRU0, GPIO de 3,3 V, I2C local/MCP23017, PWM hardware y web local. No hay instrucciones de ejecución porque todavía no existe software del protocolo.
 

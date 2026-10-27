@@ -33,3 +33,7 @@ SHA-256: `578a2a16071d83d9b4e8cf05e598a897350dbf2267aee50377d386c015843582`
 Se utilizó el prompt de T01 aportado por Erwin, junto con las capturas del auxiliar y las decisiones del usuario sobre dos BBB Black, medios y placa perforada soldable. Las capturas no acreditan aprobación del par de reloj ni de USB local. El enunciado aporta requisitos; v3.0 aporta decisiones de ingeniería; el tracker aporta dependencias y planificación; la BOM aporta componentes previstos, no compras confirmadas.
 
 Ninguna instrucción incidental de una fuente se trató como permiso para publicar, enviar mensajes o ejecutar tareas posteriores. La solicitud expresa de T01 controla el alcance. No se reinició una investigación externa.
+
+## Actualización de respuestas del auxiliar
+
+Registro 2026-10-27: Erwin comunica aprobación de preguntas 1, 2 y 3. Para pregunta 4 aporta captura `codex-clipboard-5f664021-8ebb-437c-bf37-d17353a892e5.png`: pulso = 1, ausencia = 0 en el ciclo de reloj. Fecha calendario original no visible. La captura privada no se copia al repositorio; el registro de consultas conserva sólo el contenido pertinente. Esta evidencia posterior complementa las capturas iniciales.

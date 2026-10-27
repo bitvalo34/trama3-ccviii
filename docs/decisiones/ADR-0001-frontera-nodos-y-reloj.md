@@ -10,11 +10,11 @@ Redacción y revisión documental: **2026-10-27**, Guatemala. Plan histórico: 2
 
 ## 3. Estado
 
-**Propuesta documentada, en revisión.** Faltan revisión de Adrián y respuestas del auxiliar (§15). No implica implementación ni validación experimental.
+**Propuesta documentada, en revisión.** Las cuatro consultas docentes están respondidas (§15); falta revisión de Adrián. No implica implementación ni validación experimental.
 
 ## 4. Contexto
 
-Se dispone de dos BBB Black. El usuario confirmó luz, sonido y tensión en nylon, y placa perforada soldable como montaje preferido por el auxiliar. El enunciado exige transmisores y receptores replicados en ambos equipos [R1, p. 8]. La aclaración del auxiliar permite cablear sólo el canal de frecuencia; Erwin confirma en esta conversación la aprobación docente del par de reloj por sentido y de las uniones manguera/nylon (registro: 2026-10-27). El PC USB local sigue pendiente.
+Se dispone de dos BBB Black. El usuario confirmó luz, sonido y tensión en nylon, y placa perforada soldable como montaje preferido por el auxiliar. El enunciado exige transmisores y receptores replicados en ambos equipos [R1, p. 8]. La aclaración del auxiliar permite cablear sólo el canal de frecuencia; Erwin confirma en esta conversación la aprobación docente del par de reloj por sentido y de las uniones manguera/nylon (registro: 2026-10-27). Erwin confirma también la aprobación del PC USB local; la captura aportada resuelve sonido como pulso = 1 y ausencia de pulso = 0 en el ciclo de reloj.
 
 ## 5. Problema
 
@@ -31,7 +31,7 @@ Delimitar equipos, rutas del texto y responsabilidades temporales. Evitar que US
 | Tres medios no convencionales | Luz, sonido y tensión en nylon seleccionados | D: selección y aprobación de unión física comunicada por Erwin; V |
 | Un reloj por sentido | Un par de excitación y PC817 por dirección | D: aprobación comunicada por Erwin; V |
 | Comunicación bidireccional | N transmisores y N receptores por equipo [R1 p. 8] | D: requisito; V |
-| USB exclusivamente local | PC terminal; BBB procesa todo el protocolo | P; A: frontera; V |
+| USB exclusivamente local | PC terminal; BBB procesa todo el protocolo | D: aprobación comunicada por Erwin; V |
 | Cuatro capas en BBB | ARM y controlador PHY interno en PRU0 | D: cuatro capas; P: reparto; V |
 | ACK/NACK por medios de retorno | Misma PHY del sentido opuesto [R2 caps. 11, 14] | P; V |
 | Sin ruta convencional A–B | Sin redes compartidas, puentes ni USB entre BBB | P: restricción operativa; V |
@@ -55,7 +55,7 @@ Son **ocho canales unidireccionales**: seis de datos y dos de reloj. Los seis me
 
 ## 8. Frontera de cada nodo
 
-**Equipo A:** PC A terminal, BBB A (ARM y PRU0), placa perforada A, drivers, emisores/receptores A, fuentes locales y fijaciones. **Equipo B:** los mismos elementos con identidad B. La BBB es la unidad que procesa el protocolo; el PC es un periférico de interacción, sujeto a aceptación de esta frontera por el auxiliar.
+**Equipo A:** PC A terminal, BBB A (ARM y PRU0), placa perforada A, drivers, emisores/receptores A, fuentes locales y fijaciones. **Equipo B:** los mismos elementos con identidad B. La BBB es la unidad que procesa el protocolo; el PC es un periférico de interacción, con esta frontera aceptada por el auxiliar según confirmación de Erwin.
 
 Son internos: USB PC–BBB, túnel SSH, memoria ARM–PRU, I2C BBB–MCP23017, PWM/driver/servo, conexiones de sensores, alimentación y GND local. Cada placa perforada soldable se conecta a su BBB por arnés y queda físicamente separada; no se adopta protoboard como montaje final.
 
@@ -87,7 +87,7 @@ Se conservan valores de v3.0: PC817 pines 1/2 LED, 4 colector, 3 emisor; pull-up
 
 Cada dirección necesita su propio calendario porque puede iniciar transmisiones independientemente: A temporiza RX B y B temporiza RX A. No hay reloj global ni sincronización de relojes de pared Linux. Una PRU atiende TX y RX locales con dos máquinas de estados cooperativas y acotadas, no dos hilos físicos independientes. La simultaneidad debe medirse.
 
-Perfil inicial [R2 caps. 5A/10]: **T=250 ms**. ARM ordena salidas al inicio y publica READY antes de 10 ms. CLK lógico alto entre 190 y 225 ms. Óptica/mecánica: cinco muestras a +5…+9 ms del flanco recibido. Acústica: dos ventanas consecutivas de 10 ms desde ese flanco. Datos estables hasta fin del ciclo. Son objetivos del diseño, no tiempos medidos.
+Perfil inicial [R2 caps. 5A/10]: **T=250 ms**. ARM ordena salidas al inicio y publica READY antes de 10 ms. CLK lógico alto entre 190 y 225 ms. Óptica/mecánica: cinco muestras a +5…+9 ms del flanco recibido. Acústica: registrar presencia/ausencia de un pulso válido asociado al símbolo (véase §11). Las dos ventanas de conteo de v3.0 dejan de ser el criterio arquitectónico de decisión; ventana y acondicionamiento definitivos se fijarán con mediciones en T09/T11/T12. Mantener los estados óptico/mecánico hasta fin del ciclo. Son objetivos del diseño, no tiempos medidos.
 
 Reposo/separación: actuadores en 0 y CLK inactivo al menos 2T. Inicio: SYN `111,000,111,000` y SFD `101,010`; luego exactamente 12 símbolos de cuerpo: 18 en total. No buscar SFD dentro del cuerpo. Fin de trama por longitud fija y vuelta a reposo; el fin de mensaje lo indica END existente, no un pulso especial.
 
@@ -103,7 +103,7 @@ Pulso perdido, período fuera de ±5 %, ventana incumplida o sensor ambiguo inva
 |---|---|---|
 | ARM/Linux | Web, cuatro capas, CRC, sesiones/ARQ, buffers y reparto/reconstrucción PHY | No fija flancos por temporizador Linux |
 | ARM/I2C | GPA0/GPA1 en una operación y orden PWM cuando cambia C2 | Publica READY después de ambas órdenes |
-| PRU0 | Calendario TX, CLK TX/RX, captura GPIO, ventanas y conteo acústico | No web, colas de aplicación ni segundo controlador I2C |
+| PRU0 | Calendario TX, CLK TX/RX, captura GPIO, ventanas y detección de evento acústico | No web, colas de aplicación ni segundo controlador I2C |
 | MCP23017 | Salidas hacia drivers de LED y buzzer, por I2C local | No aislamiento galvánico ni protección de todas las entradas BBB |
 | PWM hardware | Pulso del SG90 configurado por ARM, mediante driver previsto | Servo no alimentado por GPIO ni PWM por bit-banging Linux |
 
@@ -113,7 +113,13 @@ Contrato conceptual: PRU define ciclo/índice esperado; ARM prepara tripleta de 
 
 Pines conservados, aún sin configurar: P8_11 CLK TX (PRU0 R30.15), P8_15 CLK RX (R31.15), P8_16 acústico (R31.14), P9_27 óptico (R31.5), P9_24 final de carrera (R31.16), P9_14 PWM, P9_19/P9_20 I2C. T04/T06/T08 verificarán pinmux, UART/otros conflictos, recursos y niveles. Ninguna entrada BBB recibe 5 V.
 
-El KY-037 puede dar pulsos, no un “1” sostenido. Se conserva el conteo en dos ventanas para decidir presencia de sonido; desacuerdo equivale a borrado. Consultar aceptación académica de esa demodulación. Si se exige nivel estable, revisar posteriormente envolvente/comparador; no afirmar que componentes adicionales estén incluidos en la BOM ni comprarlos en T01.
+**Respuesta docente a la pregunta 4 (captura aportada por Erwin):** “1 pulso es 1 / no pulso 0 / en el ciclo de reloj”. Se adopta presencia de pulso acústico válido = bit 1; ausencia = bit 0, dentro del intervalo de recepción del símbolo. El pulso de datos acústico es distinto del pulso del canal CLK: sin reloj válido no se declara un 0, sino un fallo de sincronización.
+
+Esta respuesta no aprueba el umbral anterior de cantidad de pulsos ni exige expresamente un nivel eléctrico sostenido durante todo el símbolo. Sustituye la decisión de comparar conteos en dos ventanas por una decisión de presencia/ausencia. No se asigna un significado distinto a cada cantidad de oscilaciones del sensor.
+
+La salida real del KY-037 puede contener varios flancos para una sola emisión. Su conversión a un evento válido por símbolo (acondicionamiento o detección con retención hasta fin de ventana), rechazo de ruido, rearme y ventana exacta quedan para T09/T11/T12. Un pulso de ruido no se acepta automáticamente como dato. No inferir de la respuesta que el auxiliar aprobó un circuito concreto o cualquier algoritmo de filtrado. T01 fija la regla binaria; todavía no implementa esa solución.
+
+En particular, dos bits 1 consecutivos deben poder reconocerse en ciclos distintos: comprobar emisión/detección y rearme para `11`, `10`, `01` y `00`. La respuesta no demuestra que un buzzer mantenido encendido o el módulo sin acondicionar produzcan los eventos requeridos. No se cambian compras ni se añade hardware sin caracterizarlo.
 
 ## 12. Diagrama general
 
@@ -178,11 +184,11 @@ Cada flecha CLK resume resistor, ida y retorno al emisor; no es un solo hilo ni 
 
 ## 14. Decisiones adoptadas en esta propuesta
 
-Conservar BBB/PRU0, medios, cuatro canales por sentido, USB local, fuentes por nodo y placa soldable. Preservar trama/colas/perfil v3.0. Formalizar inversión CLK, dominio eléctrico del LED remoto, READY y prohibición de rutas alternativas. Reloj y uniones manguera/nylon tienen aprobación docente comunicada por Erwin. Las demás interpretaciones pendientes no se consideran aprobadas; falta revisión de Adrián.
+Conservar BBB/PRU0, medios, cuatro canales por sentido, USB local, fuentes por nodo y placa soldable. Preservar trama/colas y perfil temporal de partida v3.0, con la corrección de decisión acústica de §11. Formalizar inversión CLK, dominio eléctrico del LED remoto, READY y prohibición de rutas alternativas. Reloj y uniones manguera/nylon tienen aprobación docente comunicada por Erwin. También está aprobado USB local y está resuelta la regla acústica por pulso/ausencia; falta revisión de Adrián. La implementación no está validada.
 
 ## 15. Confirmaciones pendientes
 
-Adrián debe revisar el ADR. Pendientes del auxiliar: PC USB sólo terminal y conteo acústico frente a nivel sostenido. Las preguntas 1 y 2 (reloj y uniones físicas) están aprobadas según confirmación de Erwin. La bidireccionalidad general ya la exige R1 p. 8: no se vuelve a preguntar y tampoco se repiten las preguntas 1 y 2 ya aprobadas. [Consulta preparada](../consultas/aclaraciones-auxiliar.md).
+Adrián debe revisar el ADR actualizado. No quedan sin respuesta las cuatro consultas docentes: preguntas 1–3 aprobadas según confirmación de Erwin; pregunta 4 resuelta en captura como pulso = 1 / ausencia = 0 por ciclo. No confundir esa regla con aprobación del conteo propuesto anteriormente. La réplica bidireccional general ya la exige R1 p. 8. [Registro de respuestas](../consultas/aclaraciones-auxiliar.md).
 
 ## 16. Consecuencias técnicas
 
@@ -192,7 +198,7 @@ El medio lento limita los tres canales. PRU define temporización, pero no elimi
 
 | Riesgo | Tratamiento posterior |
 |---|---|
-| Rechazo de USB o conteo acústico | Obtener respuestas restantes antes de congelar T01; revisar ADR si cambia |
+| Sensor acústico no entrega un evento limpio por símbolo | Caracterizar y definir acondicionamiento/rearme en T09/T11/T12; no declarar el conteo anterior aprobado |
 | Unión accidental GND | Revisar fuentes, PC e instrumentos en alimentación/integración |
 | READY tardío, estado obsoleto, pérdida RX | Generación/índice, estados no bloqueantes y medición T06/T12/P09 |
 | Sonido ambiguo/diafonía | Mangueras independientes, umbrales y ensayos T09/T11 |
@@ -207,10 +213,10 @@ El medio lento limita los tres canales. PRU define temporización, pero no elimi
 - [x] ADR, README, estructura mínima y consulta preparados.
 - [ ] Adrián registra revisión y resolución de observaciones.
 - [x] Preguntas 1 y 2 aprobadas por el auxiliar según confirmación de Erwin.
-- [ ] Auxiliar responde preguntas 3 y 4; registrar respuesta y ajustar ADR si corresponde.
+- [x] Pregunta 3 aprobada según Erwin; pregunta 4 registrada desde captura y criterio acústico corregido.
 - [ ] Erwin registra aceptación y fecha real de cierre sin borrar fecha planificada.
 
-Las mediciones de T06/T11/T12 no son necesarias para cerrar esta decisión documental, pero su cierre no las acredita. Estado actual recomendado: **En revisión, 85 % orientativo**, por faltar revisión humana y aprobación externa. No es medición de horas ejecutadas.
+Las mediciones de T06/T11/T12 no son necesarias para cerrar esta decisión documental, pero su cierre no las acredita. Estado actual recomendado: **En revisión, 95 % orientativo**, por faltar revisión de Adrián y registro de cierre por Erwin; las consultas docentes ya están respondidas. No es medición de horas ejecutadas.
 
 ## 19. Relación con las tareas siguientes
 
@@ -243,3 +249,5 @@ Las fechas anteriores al 27/10 son planificación histórica, no evidencia de tr
 Ubicaciones y huellas: [referencias](../referencias/README.md). No se reinició investigación ni se modificaron los originales.
 
 Actualización de aprobación, 2026-10-27: fuente adicional R6, mensaje de Erwin en esta conversación confirmando que el auxiliar aprobó las preguntas 1 y 2. No se inventa cita literal ni fecha de la respuesta docente.
+
+Actualización R7, registrada el 2026-10-27: Erwin confirma aprobación de pregunta 3 y aporta captura `codex-clipboard-5f664021-8ebb-437c-bf37-d17353a892e5.png` con respuesta a pregunta 4. La captura no muestra fecha calendario de los mensajes; no se atribuye una. Se transcribe sólo el fragmento pertinente, sin publicar la conversación completa.

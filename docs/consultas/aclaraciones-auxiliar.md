@@ -1,28 +1,30 @@
-# T01 — Consultas y actualización manual
+# T01 — Respuestas del auxiliar y actualización manual
 
-Fecha: **2026-10-27**. Responsable Erwin; revisor Adrián. **Preguntas 1 y 2 aprobadas por el auxiliar, según confirmación de Erwin en esta conversación.** Fecha de registro: 2026-10-27; no se atribuye una fecha ni cita literal a la respuesta original. Preguntas 3 y 4 pendientes; nuevo borrador preparado, no enviado.
+Registro actualizado: **2026-10-27**. Responsable: Erwin. Revisor: Adrián.
 
-## Mensaje para copiar en WhatsApp
+## Confirmaciones recibidas
 
-Hola, auxiliar. Gracias por confirmar lo del reloj y el uso de la manguera y el nylon. Sólo nos quedan dos dudas:
-
-**3. Uso de la computadora:** ¿Podemos conectar una computadora por USB a cada BeagleBone sólo para escribir y leer los mensajes? Todo el protocolo funcionaría en las BeagleBone, y los mensajes entre los dos equipos viajarían únicamente por los medios del proyecto.
-
-**4. Lectura del sonido:** El sensor puede dar varios pulsos cuando escucha el sonido. ¿Podemos programar la BeagleBone para contar esos pulsos y decidir si recibió un 0 o un 1, o el circuito debe entregar directamente un 0 o un 1 estable?
-
-## Registro de confirmaciones
-
-La réplica general ya es obligatoria según el PDF p. 8. Erwin confirma que el auxiliar aprobó la pregunta 1 (par aislado y reloj por sentido) y la 2 (manguera y nylon). Esta aprobación del diseño no equivale a validación física. La pregunta acústica resuelve la ambigüedad reconocida en v3.0 cap. 8 y no cambia el medio.
-
-| Confirmación | Estado | Evidencia para cerrar |
+| Pregunta | Estado | Evidencia |
 |---|---|---|
-| Revisión de Adrián | Pendiente | Fecha, observaciones y resolución |
-| Par aislado y reloj por sentido | Aprobado por el auxiliar | Confirmación de Erwin en esta conversación, registrada el 27/10/2026 |
-| Manguera y nylon | Aprobado por el auxiliar | Confirmación de Erwin en esta conversación, registrada el 27/10/2026 |
-| PC USB terminal local | Pendiente | Respuesta y condiciones |
-| Conteo acústico | Pendiente | Conteo admitido o exigencia de nivel estable |
+| 1. Par aislado de reloj por sentido | Aprobada | Confirmación de Erwin en esta conversación |
+| 2. Manguera y nylon como uniones físicas | Aprobada | Confirmación de Erwin en esta conversación |
+| 3. PC USB sólo terminal; protocolo en BBB | Aprobada | Erwin comunica: “Para la 3 me confirmó que sí” |
+| 4. Interpretación de sonido | Respondida; aplicar pulso/ausencia por ciclo | Captura aportada por Erwin |
+| Revisión interna del ADR | Pendiente | Falta revisión de Adrián y resolución de observaciones |
 
-Registrar aquí las respuestas de las preguntas 3 y 4 cuando existan. No inferir aprobación del silencio. Si una condición cambia arquitectura, actualizar ADR y evaluar impacto antes de cerrar T01. Las pruebas físicas pertenecen a otras tareas.
+La fecha anterior es la del registro, no una fecha inventada de respuesta docente. La captura muestra horas pero no fecha calendario. No se adjunta la conversación privada al repositorio público.
+
+## Respuesta acústica y alcance
+
+El auxiliar indica: “lo más simple”, “1 pulso es 1”, “no pulso 0”, “en el ciclo de reloj”.
+
+Regla adoptada: un pulso acústico válido durante el intervalo correspondiente al símbolo representa 1; su ausencia representa 0. Es el pulso del canal de sonido, no el del reloj. Si falta el reloj, hay un error de sincronización y no se puede inferir un bit 0.
+
+La respuesta resuelve la consulta, pero **no aprueba el esquema anterior de contar cierta cantidad de pulsos en dos ventanas**, ni obliga explícitamente a mantener un nivel estable todo el símbolo. El ADR cambia a presencia/ausencia de evento.
+
+Todavía hay que medir el sensor y definir cómo sus posibles múltiples flancos producen un único evento válido, cómo se rechaza ruido y cómo se rearma para el siguiente ciclo. La ventana exacta y el circuito o programa que lo resuelve pertenecen a T09/T11/T12. Probar también bits 1 consecutivos. No se declaró ninguna prueba realizada ni se modificó la BOM.
+
+No hace falta repetir las cuatro preguntas. Si una implementación futura introduce una nueva ambigüedad, consultarla entonces con una propuesta concreta.
 
 ## Actualización manual del tracker
 
@@ -31,16 +33,16 @@ Registrar aquí las respuestas de las preguntas 3 y 4 cuando existan. No inferir
 | Campo | Valor recomendado |
 |---|---|
 | K6 — Estado | `En revisión` |
-| M6 — Avance | `85%` (valor 0,85; estimación documental, no medición de horas) |
-| G6/H6 — Inicio/Fin | Conservar `13/10/2026`, fechas planificadas históricas |
-| Fecha real de trabajo | `27/10/2026`; registrar en Q6 porque no hay columna de fecha real |
-| O6 — Entregable | `ADR-0001-frontera-nodos-y-reloj.md, README y repositorio local TRAMA3-CCVIII; diagrama y consulta al auxiliar preparados.` |
-| P6 — Criterio de aceptación | Conservar `Confirmar BBB con PRU interno, 4 canales y USB solo como terminal local` |
-| Criterio alcanzado | Frontera, reparto funcional, cuatro canales por sentido y USB local documentados; confirmación definitiva pendiente |
-| Bloqueos de cierre | Revisión de Adrián y respuestas del auxiliar sobre USB e interpretación acústica |
+| M6 — Avance | `95%` (valor 0,95; estimación documental) |
+| G6/H6 — Inicio/Fin | Conservar `13/10/2026`, planificación histórica |
+| Fecha real de trabajo | `27/10/2026`, registrar en Q6; aún no declarar fecha de cierre |
+| O6 — Entregable | `ADR-0001 actualizado con respuestas del auxiliar, diagrama, README y repositorio TRAMA3-CCVIII.` |
+| P6 — Criterio | Conservar `Confirmar BBB con PRU interno, 4 canales y USB solo como terminal local` |
+| Criterio alcanzado | Frontera y USB aprobados; regla acústica documentada; pendiente revisión interna |
+| Bloqueo de cierre | Revisión de Adrián y registro final por Erwin; no faltan respuestas a las cuatro consultas |
 
-Texto exacto recomendado para **Q6 — Observaciones**, conservando antecedente:
+Texto recomendado para **Q6 — Observaciones**:
 
-> 15/10: usuario confirma luz, sonido y tensión en nylon; placa perforada soldable preferida por auxiliar. 27/10/2026: ADR-0001 y estructura local preparados; dos BBB con PRU0 interno, C0/C1/C2 más CLK por sentido y USB sólo local documentados. Revisión documental realizada, sin pruebas físicas. Erwin confirma aprobación docente de las preguntas 1 y 2: par de reloj por sentido y uniones manguera/nylon. Pendientes revisión de Adrián y aprobación de frontera USB e interpretación acústica. Mensaje preparado, no enviado. Avance orientativo 85%; no cerrado. Repositorio local preparado; remoto creado por Erwin. Se encontró identidad Git y autenticación existentes en Ubuntu/WSL para publicar la documentación. Se conserva planificación del 13/10.
+> 15/10: usuario confirma luz, sonido y tensión en nylon; placa perforada soldable preferida por auxiliar. 27/10/2026: ADR-0001 y repositorio preparados. Erwin confirma aprobación docente de preguntas 1–3 (reloj por sentido, manguera/nylon y PC USB sólo terminal). Captura de pregunta 4 indica pulso = 1 y ausencia = 0 en el ciclo de reloj; se sustituye el conteo acústico anterior por presencia/ausencia de evento, con acondicionamiento y rearme por validar en tareas posteriores. Pendiente revisión de Adrián. En revisión, 95% orientativo. Sin pruebas físicas; se conserva planificación del 13/10.
 
-No registrar fin real hasta aceptación ni cambiar horas estimadas, dependencias u otras filas. El 85 % reconoce el entregable disponible sin atribuir acuerdo humano. Un 90 % sería razonable tras revisión interna si sólo resta respuesta externa. T02 es la siguiente tarea disponible; no se inició.
+Tras revisión de Adrián y resolución de observaciones, Erwin podrá registrar T01 completada al 100 % con fecha real de cierre. No exigir pruebas de otras tareas para cerrar esta decisión documental ni darlas por hechas. T02 sigue siendo la siguiente tarea disponible; no se inició aquí.
