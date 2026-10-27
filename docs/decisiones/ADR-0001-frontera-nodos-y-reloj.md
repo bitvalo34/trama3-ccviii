@@ -87,7 +87,7 @@ Se conservan valores de v3.0: PC817 pines 1/2 LED, 4 colector, 3 emisor; pull-up
 
 Cada dirección necesita su propio calendario porque puede iniciar transmisiones independientemente: A temporiza RX B y B temporiza RX A. No hay reloj global ni sincronización de relojes de pared Linux. Una PRU atiende TX y RX locales con dos máquinas de estados cooperativas y acotadas, no dos hilos físicos independientes. La simultaneidad debe medirse.
 
-Perfil inicial [R2 caps. 5A/10]: **T=250 ms**. ARM ordena salidas al inicio y publica READY antes de 10 ms. CLK lógico alto entre 190 y 225 ms. Óptica/mecánica: cinco muestras a +5…+9 ms del flanco recibido. Acústica: registrar presencia/ausencia de un pulso válido asociado al símbolo (véase §11). Las dos ventanas de conteo de v3.0 dejan de ser el criterio arquitectónico de decisión; ventana y acondicionamiento definitivos se fijarán con mediciones en T09/T11/T12. Mantener los estados óptico/mecánico hasta fin del ciclo. Son objetivos del diseño, no tiempos medidos.
+Perfil inicial [R2 caps. 5A/10]: **T=250 ms**. ARM ordena salidas al inicio y publica READY antes de 10 ms. CLK lógico alto entre 190 y 225 ms. Óptica/mecánica: cinco muestras a +5…+9 ms del flanco recibido. Acústica: registrar presencia/ausencia de un pulso válido asociado al símbolo (véase §11). Se admite interpretar múltiples pulsos por programación para obtener ese único bit. Las dos ventanas de conteo de v3.0 pueden evaluarse como implementación candidata; ventana, umbral y filtrado definitivos se fijarán con mediciones en T09/T11/T12. Mantener los estados óptico/mecánico hasta fin del ciclo. Son objetivos del diseño, no tiempos medidos.
 
 Reposo/separación: actuadores en 0 y CLK inactivo al menos 2T. Inicio: SYN `111,000,111,000` y SFD `101,010`; luego exactamente 12 símbolos de cuerpo: 18 en total. No buscar SFD dentro del cuerpo. Fin de trama por longitud fija y vuelta a reposo; el fin de mensaje lo indica END existente, no un pulso especial.
 
@@ -115,9 +115,9 @@ Pines conservados, aún sin configurar: P8_11 CLK TX (PRU0 R30.15), P8_15 CLK RX
 
 **Respuesta docente a la pregunta 4 (captura aportada por Erwin):** “1 pulso es 1 / no pulso 0 / en el ciclo de reloj”. Se adopta presencia de pulso acústico válido = bit 1; ausencia = bit 0, dentro del intervalo de recepción del símbolo. El pulso de datos acústico es distinto del pulso del canal CLK: sin reloj válido no se declara un 0, sino un fallo de sincronización.
 
-Esta respuesta no aprueba el umbral anterior de cantidad de pulsos ni exige expresamente un nivel eléctrico sostenido durante todo el símbolo. Sustituye la decisión de comparar conteos en dos ventanas por una decisión de presencia/ausencia. No se asigna un significado distinto a cada cantidad de oscilaciones del sensor.
+Aclaración posterior (R8): Erwin confirma que el auxiliar acepta que la BeagleBone interprete los múltiples pulsos de una emisión como un único bit por ciclo. Se permite procesamiento por programación, incluido conteo como medio para reconocer presencia de sonido; no se exige un circuito adicional que produzca exactamente un pulso físico. No se codifican varios bits según la cantidad de oscilaciones. Los umbrales y dos ventanas de v3.0 siguen siendo una propuesta que debe medirse y ajustarse, no una implementación validada.
 
-La salida real del KY-037 puede contener varios flancos para una sola emisión. Su conversión a un evento válido por símbolo (acondicionamiento o detección con retención hasta fin de ventana), rechazo de ruido, rearme y ventana exacta quedan para T09/T11/T12. Un pulso de ruido no se acepta automáticamente como dato. No inferir de la respuesta que el auxiliar aprobó un circuito concreto o cualquier algoritmo de filtrado. T01 fija la regla binaria; todavía no implementa esa solución.
+La salida real del KY-037 puede contener varios flancos para una sola emisión. Su conversión a un evento válido por símbolo (acondicionamiento o detección con retención hasta fin de ventana), rechazo de ruido, rearme y ventana exacta quedan para T09/T11/T12. Un pulso de ruido no se acepta automáticamente como dato. La aceptación del procesamiento en BBB no valida un circuito concreto ni los parámetros de cualquier algoritmo de filtrado. T01 fija la regla binaria; todavía no implementa esa solución.
 
 En particular, dos bits 1 consecutivos deben poder reconocerse en ciclos distintos: comprobar emisión/detección y rearme para `11`, `10`, `01` y `00`. La respuesta no demuestra que un buzzer mantenido encendido o el módulo sin acondicionar produzcan los eventos requeridos. No se cambian compras ni se añade hardware sin caracterizarlo.
 
@@ -188,7 +188,7 @@ Conservar BBB/PRU0, medios, cuatro canales por sentido, USB local, fuentes por n
 
 ## 15. Confirmaciones pendientes
 
-Adrián debe revisar el ADR actualizado. No quedan sin respuesta las cuatro consultas docentes: preguntas 1–3 aprobadas según confirmación de Erwin; pregunta 4 resuelta en captura como pulso = 1 / ausencia = 0 por ciclo. No confundir esa regla con aprobación del conteo propuesto anteriormente. La réplica bidireccional general ya la exige R1 p. 8. [Registro de respuestas](../consultas/aclaraciones-auxiliar.md).
+Adrián debe revisar el ADR actualizado. No quedan sin respuesta las cuatro consultas docentes: preguntas 1–3 aprobadas según confirmación de Erwin; pregunta 4 resuelta en captura como pulso = 1 / ausencia = 0 por ciclo. La aclaración posterior comunicada por Erwin admite interpretar los múltiples pulsos en BBB para obtener un bit por ciclo; no acredita parámetros concretos del conteo anterior. La réplica bidireccional general ya la exige R1 p. 8. [Registro de respuestas](../consultas/aclaraciones-auxiliar.md).
 
 ## 16. Consecuencias técnicas
 
@@ -198,7 +198,7 @@ El medio lento limita los tres canales. PRU define temporización, pero no elimi
 
 | Riesgo | Tratamiento posterior |
 |---|---|
-| Sensor acústico no entrega un evento limpio por símbolo | Caracterizar y definir acondicionamiento/rearme en T09/T11/T12; no declarar el conteo anterior aprobado |
+| Sensor acústico no entrega un evento limpio por símbolo | Caracterizar y definir acondicionamiento/rearme en T09/T11/T12; procesamiento en BBB admitido, parámetros y resultados aún no validados |
 | Unión accidental GND | Revisar fuentes, PC e instrumentos en alimentación/integración |
 | READY tardío, estado obsoleto, pérdida RX | Generación/índice, estados no bloqueantes y medición T06/T12/P09 |
 | Sonido ambiguo/diafonía | Mangueras independientes, umbrales y ensayos T09/T11 |
@@ -213,7 +213,7 @@ El medio lento limita los tres canales. PRU define temporización, pero no elimi
 - [x] ADR, README, estructura mínima y consulta preparados.
 - [ ] Adrián registra revisión y resolución de observaciones.
 - [x] Preguntas 1 y 2 aprobadas por el auxiliar según confirmación de Erwin.
-- [x] Pregunta 3 aprobada según Erwin; pregunta 4 registrada desde captura y criterio acústico corregido.
+- [x] Pregunta 3 aprobada según Erwin; pregunta 4 y aclaración posterior registradas: interpretación de múltiples pulsos en BBB aceptada.
 - [ ] Erwin registra aceptación y fecha real de cierre sin borrar fecha planificada.
 
 Las mediciones de T06/T11/T12 no son necesarias para cerrar esta decisión documental, pero su cierre no las acredita. Estado actual recomendado: **En revisión, 95 % orientativo**, por faltar revisión de Adrián y registro de cierre por Erwin; las consultas docentes ya están respondidas. No es medición de horas ejecutadas.
@@ -251,3 +251,5 @@ Ubicaciones y huellas: [referencias](../referencias/README.md). No se reinició 
 Actualización de aprobación, 2026-10-27: fuente adicional R6, mensaje de Erwin en esta conversación confirmando que el auxiliar aprobó las preguntas 1 y 2. No se inventa cita literal ni fecha de la respuesta docente.
 
 Actualización R7, registrada el 2026-10-27: Erwin confirma aprobación de pregunta 3 y aporta captura `codex-clipboard-5f664021-8ebb-437c-bf37-d17353a892e5.png` con respuesta a pregunta 4. La captura no muestra fecha calendario de los mensajes; no se atribuye una. Se transcribe sólo el fragmento pertinente, sin publicar la conversación completa.
+
+R8 — Registro 2026-10-27: Erwin comunica “listo, dijo que está bien” después de aclarar la interpretación de múltiples pulsos del KY-037 por programación. Aprobación del enfoque, sin atribuir al auxiliar validación de umbrales, ventanas o mediciones. No cambia la BOM.

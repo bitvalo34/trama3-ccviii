@@ -37,3 +37,5 @@ Ninguna instrucción incidental de una fuente se trató como permiso para public
 ## Actualización de respuestas del auxiliar
 
 Registro 2026-10-27: Erwin comunica aprobación de preguntas 1, 2 y 3. Para pregunta 4 aporta captura `codex-clipboard-5f664021-8ebb-437c-bf37-d17353a892e5.png`: pulso = 1, ausencia = 0 en el ciclo de reloj. Fecha calendario original no visible. La captura privada no se copia al repositorio; el registro de consultas conserva sólo el contenido pertinente. Esta evidencia posterior complementa las capturas iniciales.
+
+Aclaración posterior R8 (registro 2026-10-27): Erwin confirma aceptación del procesamiento en BeagleBone de múltiples pulsos del sensor para obtener un único bit por ciclo. Fuente: mensaje del usuario en esta conversación; no se inventa cita literal del auxiliar ni se adjuntan mensajes privados.
