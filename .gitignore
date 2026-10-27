@@ -1,0 +1,26 @@
+# Configuración privada
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+# Entornos y compilación
+.venv/
+venv/
+node_modules/
+__pycache__/
+*.py[cod]
+build/
+dist/
+*.o
+*.elf
+*.out
+# Temporales; las evidencias seleccionadas sí se versionan
+tmp/
+*.tmp
+*.log
+~$*
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
