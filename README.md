@@ -1,57 +1,59 @@
-# TRAMA 3 — CC VIII
+# TRAMA 3
 
-**Erwin y Adrián — Comunicación de Computadoras VIII.** Proyecto de intercambio de texto entre dos equipos mediante tres medios físicos experimentales y un protocolo propio de cuatro capas.
+Proyecto de Comunicación de Computadoras VIII, desarrollado por Erwin y Adrián.
 
-## Estado al 27 de octubre de 2026
+Queremos comunicar dos BeagleBone Black usando luz, sonido y tensión en un hilo de nylon. La idea es enviar mensajes de texto desde un chat y ver cómo llegan al otro equipo a través de los tres medios, incluyendo qué pasa cuando hay interferencias.
 
-T01 tiene su propuesta arquitectónica documentada. **Consultas docentes respondidas: preguntas 1–3 aprobadas según Erwin; pregunta 4 aclarada: se acepta interpretar mediante la BeagleBone los múltiples pulsos de una emisión como un único bit por ciclo. Pendiente: revisión de Adrián.** No hay implementación ni validación experimental. Los PDF y Excel originales se conservaron.
+## Cómo lo vamos a hacer
 
-Cada nodo contiene una BeagleBone Black existente, ARM/Linux, PRU0 interno, una placa perforada soldable y un PC como terminal USB local. El servidor y las cuatro capas residen en la BBB. **No se necesita adquirir ESP32** para esta arquitectura.
+Ya contamos con las dos BeagleBone Black. Cada una ejecutará el protocolo y su servidor web. Conectaremos una computadora por USB a cada placa para escribir y leer los mensajes; la comunicación entre las BeagleBone pasará por los medios del proyecto.
 
-Por sentido: C0 óptico (LED y LDR/comparador), C1 acústico (buzzer y micrófono mediante manguera), C2 mecánico (SG90, nylon y final de carrera), y CLK mediante PC817. Se replican en sentido contrario: ocho canales unidireccionales. Los dos hilos de excitación de cada reloj constituyen un solo canal lógico propuesto, aceptado por el auxiliar según confirmación de Erwin.
+En cada dirección tendremos estos canales:
 
-El auxiliar acepta, según confirmación de Erwin, que la BeagleBone interprete los múltiples pulsos del KY-037 para obtener un solo bit por ciclo. Se mantienen los materiales previstos; falta caracterizar el sensor y fijar ventanas, umbrales, filtrado y rearme. Esta aprobación no valida parámetros concretos ni resultados experimentales.
+| Canal | Componentes | Qué transmite |
+|---|---|---|
+| C0 — Luz | LED y receptor con LDR, dentro de un tubo opaco | Luz encendida o apagada |
+| C1 — Sonido | Buzzer y sensor KY-037, unidos por una manguera | Presencia o ausencia de sonido |
+| C2 — Mecánico | Servo SG90, nylon y final de carrera | Tensión o liberación del hilo |
+| Reloj | PRU0 y optoacoplador PC817 | Los tiempos de lectura de los bits |
 
-La transmisión propuesta es **serial-paralela sobre medios heterogéneos**: tres bits por ciclo y sucesivos grupos en el tiempo. El [ADR-0002](docs/decisiones/ADR-0002-frecuencia-y-adaptacion.md) define frecuencia configurable desde1 Hz hasta perfiles medidos, negociación y reducción coordinada ante errores; es especificación, no implementación. [Impacto exacto en el tracker](docs/planificacion/impacto-aclaraciones-frecuencia.md).
+Vamos a repetir los transmisores y receptores para tener comunicación en ambos sentidos. Son cuatro canales por dirección: tres para datos y uno para reloj. El reloj usará un par de conductores por sentido, sin unir las tierras de los dos equipos.
 
-Tecnologías previstas: Linux, PRU0, GPIO de 3,3 V, I2C local/MCP23017, PWM hardware y web local. No hay instrucciones de ejecución porque todavía no existe software del protocolo.
+Cada ciclo llevará tres bits, uno por medio. Los siguientes grupos se enviarán en los ciclos siguientes hasta completar la trama. Por eso describimos la transmisión como serial-paralela: combina varios bits al mismo tiempo con una secuencia de grupos.
 
-## Documentos y estructura
+La PRU0, que ya viene dentro de la BeagleBone, se encargará del reloj y de las lecturas que necesitan tiempos precisos. Linux manejará el chat y la lógica del protocolo. No tenemos previsto agregar un ESP32. Las interfaces se montarán en placas perforadas soldables.
+
+## Frecuencia e interferencias
+
+El reloj deberá poder bajar hasta 1 Hz para observar la transmisión paso a paso. Después aumentaremos la frecuencia hasta encontrar el máximo que soporten los tres medios de forma confiable. Ese máximo todavía lo tenemos que medir.
+
+También queremos detectar errores, retransmitir cuando haga falta y reducir la velocidad de forma coordinada si los errores se repiten. Si un medio queda bloqueado o desconectado, el sistema deberá indicar el fallo; bajar la frecuencia no resolverá cualquier interferencia.
+
+Para sonido, la BeagleBone interpretará los pulsos del KY-037 para obtener un solo bit por ciclo. El auxiliar ya nos confirmó que podemos hacerlo así. Nos falta probar el sensor y ajustar la detección.
+
+## En qué vamos
+
+Por ahora tenemos documentada la arquitectura y las aclaraciones del auxiliar sobre el reloj, los medios y el uso del USB como conexión local. También definimos los cambios para ajustar la frecuencia y responder a interferencias.
+
+Todavía no tenemos el protocolo implementado ni pruebas físicas realizadas. Falta la revisión de Adrián para cerrar T01. La siguiente tarea es T02: inspeccionar las dos BeagleBone y comprobar su estado antes de configurar y montar los circuitos.
+
+## Documentación
+
+- [Arquitectura y frontera de los equipos](docs/decisiones/ADR-0001-frontera-nodos-y-reloj.md).
+- [Frecuencia configurable y adaptación](docs/decisiones/ADR-0002-frecuencia-y-adaptacion.md).
+- [Aclaraciones del auxiliar](docs/consultas/aclaraciones-auxiliar.md).
+- [Cambios que corresponden a cada tarea del tracker](docs/planificacion/impacto-aclaraciones-frecuencia.md).
+- [Referencias del proyecto](docs/referencias/README.md).
+
+## Organización del repositorio
 
 ```text
-TRAMA3-CCVIII/
-├── README.md
-├── .gitignore
-├── docs/
-│   ├── decisiones/ADR-0001-frontera-nodos-y-reloj.md
-│   ├── decisiones/ADR-0002-frecuencia-y-adaptacion.md
-│   ├── planificacion/impacto-aclaraciones-frecuencia.md
-│   ├── consultas/aclaraciones-auxiliar.md
-│   └── referencias/README.md
-├── hardware/README.md
-├── software/README.md
-└── tests/README.md
+docs/       Decisiones, consultas y planificación
+hardware/   Circuitos, conexiones y montaje
+software/   Protocolo, firmware PRU y servidor web
+tests/      Pruebas y evidencias
 ```
 
-- [ADR-0001: arquitectura, diagrama y dependencias](docs/decisiones/ADR-0001-frontera-nodos-y-reloj.md).
-- [Consulta y actualización manual de T01](docs/consultas/aclaraciones-auxiliar.md).
-- [Fuentes y trazabilidad](docs/referencias/README.md).
+Por ahora estas carpetas contienen la documentación inicial. Iremos agregando el código, los esquemas y los resultados conforme avancemos.
 
-Siguiente tarea disponible: **T02, inspeccionar las dos BBB**, responsable Adrián y revisor Erwin, sin dependencias. T03 necesita T01 y T02; T04 depende de T02 y T06 de T04. No se iniciaron estas tareas. Medios, pines, sincronización y alimentación deben validarse en sus tareas correspondientes.
-
-## Git y colaboración
-
-Repositorio remoto creado por Erwin: [bitvalo34/trama3-ccviii](https://github.com/bitvalo34/trama3-ccviii). Visibilidad verificada: **pública**. No se modificó la visibilidad elegida por el usuario.
-
-Mantener `main` revisada. Usar una rama por tarea, por ejemplo `t02-inspeccion-bbb`, y revisión del otro integrante antes de integrar. No hacen falta ramas permanentes adicionales.
-
-Trabajar desde Ubuntu/WSL en `/home/erwin/Capa_Fisica/TRAMA3-CCVIII`. Allí ya existen identidad Git y autenticación de GitHub del usuario; la comprobación anterior desde Windows no las detectaba. Se utiliza la configuración existente, sin inventar identidad ni cambiar ajustes globales.
-
-El remoto `origin` corresponde a `https://github.com/bitvalo34/trama3-ccviii.git`. Para trabajo posterior, después de revisar y confirmar cambios:
-
-```sh
-git status
-git push
-```
-
-No versionar contraseñas, tokens ni archivos privados. La publicación del repositorio no implica aprobación completa de T01 ni ejecución de tareas posteriores.
+Para trabajar entre los dos usaremos una rama por tarea, por ejemplo `t02-inspeccion-bbb`, y revisaremos los cambios antes de pasarlos a `main`.
