@@ -1,5 +1,7 @@
 # ADR-0001 — Frontera de nodos y reloj
 
+> Actualización 2026-10-27: [ADR-0002](ADR-0002-frecuencia-y-adaptacion.md) prevalece en frecuencia, negociación, temporizadores y adaptación. El perfil250ms descrito aquí es antecedente/candidato; ya no limita el diseño a250/500ms.
+
 ## 1. Identificador
 
 **ADR-0001 / T01 / TRAMA 3 / CC VIII.** Responsable: Erwin. Revisor previsto: Adrián. Complementa v3.0, no la sustituye.
@@ -38,7 +40,7 @@ Delimitar equipos, rutas del texto y responsabilidades temporales. Evitar que US
 | Protección GPIO | Drivers, 3,3 V y reloj aislado; MCP no es aislamiento galvánico | P; V |
 | ARM/PRU/GPIO | Propietario único por función y READY indexado | P; V |
 
-No se cambian medios, presupuesto ni trama. **No se necesita adquirir ESP32:** PRU0 ya es parte de cada BBB y realiza la función temporal prevista.
+No se cambian medios ni presupuesto. ADR-0002 conserva la longitud de trama, pero versiona y amplía la gestión de frecuencia. **No se necesita adquirir ESP32:** PRU0 ya es parte de cada BBB y realiza la función temporal prevista.
 
 ## 7. Arquitectura propuesta
 
@@ -91,7 +93,7 @@ Perfil inicial [R2 caps. 5A/10]: **T=250 ms**. ARM ordena salidas al inicio y pu
 
 Reposo/separación: actuadores en 0 y CLK inactivo al menos 2T. Inicio: SYN `111,000,111,000` y SFD `101,010`; luego exactamente 12 símbolos de cuerpo: 18 en total. No buscar SFD dentro del cuerpo. Fin de trama por longitud fija y vuelta a reposo; el fin de mensaje lo indica END existente, no un pulso especial.
 
-El reloj lleva **sólo sincronización**: período y ancho fijos por perfil; no codificar texto, tipos, ACK ni bits en frecuencia, duty cycle, pausas o cantidad de pulsos dependiente del contenido. Reposo/actividad revelan cuándo hay tráfico, pero no se usan como otro código. SYN/SFD y campos viajan por C0/C1/C2. T=500 ms sólo se adopta mediante el procedimiento de perfil de v3.0, fuera de una trama y con recalibración; no se declara validado.
+El reloj lleva **sólo sincronización**: período y ancho fijos por perfil; no codificar texto, tipos, ACK ni bits en frecuencia, duty cycle, pausas o cantidad de pulsos dependiente del contenido. Reposo/actividad revelan cuándo hay tráfico, pero no se usan como otro código. SYN/SFD y campos viajan por C0/C1/C2. ADR-0002 reemplaza la selección exclusiva250/500ms por períodos negociados desde1 Hz hasta el máximo medido, sin cambiar T dentro de una trama. Sus nuevos controles de gestión prevalecen sobre la negociación de v3.0.
 
 Pulso perdido, período fuera de ±5 %, ventana incumplida o sensor ambiguo invalidan la trama: no inventar bits. Receptor espera silencio 2T y nuevo SYN/SFD. READY tardío impide el pulso TX y aborta la trama, sin bloquear RX local. Enlace conserva copia para timeout/reintento. Nunca confirmar positivamente una trama incompleta ni inventar identidad para ACK/NACK de una cabecera irrecuperable. Cable abierto o fallo no habilitan transporte convencional.
 
@@ -184,7 +186,7 @@ Cada flecha CLK resume resistor, ida y retorno al emisor; no es un solo hilo ni 
 
 ## 14. Decisiones adoptadas en esta propuesta
 
-Conservar BBB/PRU0, medios, cuatro canales por sentido, USB local, fuentes por nodo y placa soldable. Preservar trama/colas y perfil temporal de partida v3.0, con la corrección de decisión acústica de §11. Formalizar inversión CLK, dominio eléctrico del LED remoto, READY y prohibición de rutas alternativas. Reloj y uniones manguera/nylon tienen aprobación docente comunicada por Erwin. También está aprobado USB local y está resuelta la regla acústica por pulso/ausencia; falta revisión de Adrián. La implementación no está validada.
+Conservar BBB/PRU0, medios, cuatro canales por sentido, USB local, fuentes por nodo y placa soldable. Preservar trama/colas y perfil temporal de partida v3.0, con la corrección de decisión acústica de §11. Formalizar inversión CLK, dominio eléctrico del LED remoto, READY y prohibición de rutas alternativas. Reloj y uniones manguera/nylon tienen aprobación docente comunicada por Erwin. También está aprobado USB local y está resuelta la regla acústica por pulso/ausencia; falta revisión de Adrián. La implementación no está validada. Las aclaraciones posteriores de frecuencia y adaptación se especifican en ADR-0002, sujeto a revisión interna.
 
 ## 15. Confirmaciones pendientes
 
@@ -192,7 +194,7 @@ Adrián debe revisar el ADR actualizado. No quedan sin respuesta las cuatro cons
 
 ## 16. Consecuencias técnicas
 
-El medio lento limita los tres canales. PRU define temporización, pero no elimina plazos Linux ni asegura rendimiento sin pruebas. ACK/NACK necesitan retorno experimental operativo. No se contempla degradación automática a dos medios ni enlace convencional de respaldo.
+El medio lento limita los tres canales. PRU define temporización, pero no elimina plazos Linux ni asegura rendimiento sin pruebas. ACK/NACK necesitan retorno experimental operativo. Se incorpora reducción automática y coordinada de frecuencia según ADR-0002. No se contempla degradación automática a dos medios ni enlace convencional de respaldo.
 
 ## 17. Riesgos
 
@@ -236,7 +238,7 @@ Las mediciones de T06/T11/T12 no son necesarias para cerrar esta decisión docum
 
 Dependiente **directa** de T01: T03. **Indirectas:** T05, T07, T08, todas T09–T50 y T51–T54. T02/T04/T06 no dependen de T01 en el grafo actual, aunque usan su información. No se añaden dependencias al Excel.
 
-Las fechas anteriores al 27/10 son planificación histórica, no evidencia de trabajo. Retrasar T01 afecta T03 y su cadena; no impide T02. No se inicia ninguna tarea ni se reprograma el calendario en esta sesión.
+Las fechas anteriores al 27/10 son planificación histórica, no evidencia de trabajo. Retrasar T01 afecta T03 y su cadena; no impide T02. La actualización posterior autorizada amplía la especificación con ADR-0002 y su impacto por tarea; no implementa ni acredita tareas físicas ni reprograma el calendario.
 
 ## 20. Referencias
 

@@ -12,6 +12,8 @@ Por sentido: C0 óptico (LED y LDR/comparador), C1 acústico (buzzer y micrófon
 
 El auxiliar acepta, según confirmación de Erwin, que la BeagleBone interprete los múltiples pulsos del KY-037 para obtener un solo bit por ciclo. Se mantienen los materiales previstos; falta caracterizar el sensor y fijar ventanas, umbrales, filtrado y rearme. Esta aprobación no valida parámetros concretos ni resultados experimentales.
 
+La transmisión propuesta es **serial-paralela sobre medios heterogéneos**: tres bits por ciclo y sucesivos grupos en el tiempo. El [ADR-0002](docs/decisiones/ADR-0002-frecuencia-y-adaptacion.md) define frecuencia configurable desde1 Hz hasta perfiles medidos, negociación y reducción coordinada ante errores; es especificación, no implementación. [Impacto exacto en el tracker](docs/planificacion/impacto-aclaraciones-frecuencia.md).
+
 Tecnologías previstas: Linux, PRU0, GPIO de 3,3 V, I2C local/MCP23017, PWM hardware y web local. No hay instrucciones de ejecución porque todavía no existe software del protocolo.
 
 ## Documentos y estructura
@@ -22,6 +24,8 @@ TRAMA3-CCVIII/
 ├── .gitignore
 ├── docs/
 │   ├── decisiones/ADR-0001-frontera-nodos-y-reloj.md
+│   ├── decisiones/ADR-0002-frecuencia-y-adaptacion.md
+│   ├── planificacion/impacto-aclaraciones-frecuencia.md
 │   ├── consultas/aclaraciones-auxiliar.md
 │   └── referencias/README.md
 ├── hardware/README.md
