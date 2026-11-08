@@ -166,6 +166,27 @@ Si devuelve no montado, ejecutar `sudo mount -t debugfs debugfs /sys/kernel/debu
 
 No se instala persistencia de pinmux en T04. Un reinicio de comprobación, después de copiar registros, es opcional: `sudo reboot`, reconectar por el mismo método y repetir audit. Confirma arranque y modos iniciales, no permanencia de los modos de prueba. Si no vuelve el puerto/acceso, no insistir en cambios.
 
+
+### Apagar B después de guardar resultados por consola USB
+
+Puedes dejar B conectada y sin cargas hasta revisar los resultados. Si necesitas retirarla, en PowerShell utiliza este bloque inmediatamente después de una ejecución con sudo correcto. No solicita contraseña a través del bloque: si sudo ya expiró, vuelve a ejecutar audit para autenticarte y repite.
+
+```powershell
+$apagadoBBB = [System.IO.Ports.SerialPort]::new($puertoT04,115200,[System.IO.Ports.Parity]::None,8,[System.IO.Ports.StopBits]::One)
+$apagadoBBB.DtrEnable = $true
+try {
+    $apagadoBBB.Open()
+    $apagadoBBB.Write("sudo -n shutdown -h now" + [char]13)
+    Start-Sleep -Seconds 2
+    Write-Host $apagadoBBB.ReadExisting()
+} finally {
+    if ($apagadoBBB.IsOpen) { $apagadoBBB.Close() }
+    $apagadoBBB.Dispose()
+}
+```
+
+Si aparece error o contraseña requerida, no desconectar. Si no aparece texto, tampoco concluir que se apagó: confirmar cese de actividad y apagado de LEDs de usuario. Una pérdida de puerto puede ser desconexión o apagado; por sí sola no distingue ambos casos.
+
 ## 7. Qué entregar junto al inventario
 
 Copiar esta ficha y completarla en una sola respuesta:
