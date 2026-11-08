@@ -19,7 +19,7 @@ En cada dirección tendremos estos canales:
 
 Vamos a repetir los transmisores y receptores para tener comunicación en ambos sentidos. Son cuatro canales por dirección: tres para datos y uno para reloj. El reloj usará un par de conductores por sentido, sin unir las tierras de los dos equipos.
 
-Cada ciclo llevará tres bits, uno por medio. Los siguientes grupos se enviarán en los ciclos siguientes hasta completar la trama. Por eso describimos la transmisión como serial-paralela: combina varios bits al mismo tiempo con una secuencia de grupos.
+Con tres medios activos, cada ciclo llevará tres bits, uno por medio; con dos se envían pares y con uno, un bit por ciclo. Los siguientes grupos se enviarán en los ciclos siguientes hasta completar la trama. Por eso describimos la transmisión como serial-paralela: combina varios bits al mismo tiempo con una secuencia de grupos.
 
 La PRU0, que ya viene dentro de la BeagleBone, se encargará del reloj y de las lecturas que necesitan tiempos precisos. Linux manejará el chat y la lógica del protocolo. No tenemos previsto agregar un ESP32. Las interfaces se montarán en placas perforadas soldables.
 
@@ -39,7 +39,10 @@ El protocolo no está implementado ni validado físicamente en las placas; sí r
 
 ## Documentación
 
-- [Protocolo revisión 100](docs/protocolo/TRAMA3_Protocolo_y_Medios_Revision_100.docx): versión explicativa más reciente, con reparto dinámico y propuesta de reloj modulado; pendiente de aprobación del auxiliar y medición física. Propone sustituir la restricción anterior de CLK sólo para sincronización.
+- [Simulador y pruebas de la revisión 101](software/simulador/README.md).
+- [Decisión sobre reloj y frecuencias por sentido](docs/decisiones/ADR-0003-reloj-modulado-y-direcciones.md).
+
+- [Protocolo revisión 101](docs/protocolo/TRAMA3_Protocolo_y_Medios_Revision_101.docx): base de implementación con reparto dinámico, reloj modulado y frecuencias independientes por sentido. Incorpora la aclaración del auxiliar del 07/11/2026; la validación física sigue pendiente.
 - [Cierre de T02](hardware/inspecciones/T02-inspeccion-beaglebone.md).
 
 
