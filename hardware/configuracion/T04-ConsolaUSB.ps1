@@ -13,9 +13,18 @@ $carpetaBBB=Join-Path $env:USERPROFILE ('Documents\TRAMA3-resultados\'+$Placa+'-
 New-Item -ItemType Directory -Force $carpetaBBB | Out-Null
 $serialBBB=[System.IO.Ports.SerialPort]::new($Puerto,115200,[System.IO.Ports.Parity]::None,8,[System.IO.Ports.StopBits]::One)
 $serialBBB.DtrEnable=$true
-$serialBBB.WriteTimeout=3000
+$serialBBB.Handshake=[System.IO.Ports.Handshake]::None
+$serialBBB.RtsEnable=$false
+$serialBBB.WriteTimeout=5000
 $serialBBB.ReadTimeout=1000
 $serialBBB.Encoding=[Text.Encoding]::ASCII
+$etapaBBB='abrir puerto'
+$transporteSanoBBB=$true
+$terminalPreparadaBBB=$false
+function Enviar-BBB([string]$texto) {
+ try { $serialBBB.Write($texto) }
+ catch { $script:transporteSanoBBB=$false; throw }
+}
 function Leer-BBB([int]$ms=700) {
  $relojBBB=[Diagnostics.Stopwatch]::StartNew()
  $textoBBB=''
@@ -29,12 +38,12 @@ function Clave-BBB {
  $secretoBBB=Read-Host 'Contrasena de Debian (no se guardara)' -AsSecureString
  $ptrBBB=[Runtime.InteropServices.Marshal]::SecureStringToBSTR($secretoBBB)
  try {
-  $serialBBB.Write([Runtime.InteropServices.Marshal]::PtrToStringBSTR($ptrBBB)+"`r")
+  Enviar-BBB ([Runtime.InteropServices.Marshal]::PtrToStringBSTR($ptrBBB)+"`r")
  } finally { [Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ptrBBB);$secretoBBB.Dispose() }
 }
 function Comando-BBB([string]$comando,[int]$segundos=45) {
  $tokenBBB='T04_END_'+[guid]::NewGuid().ToString('N')
- $serialBBB.Write($comando+"; printf '\n"+$tokenBBB+" %s\n' `$?`r")
+ Enviar-BBB ($comando+"; printf '\n"+$tokenBBB+" %s\n' `$?`r")
  $textoBBB=''
  $relojBBB=[Diagnostics.Stopwatch]::StartNew()
  while($relojBBB.Elapsed.TotalSeconds -lt $segundos) {
@@ -43,17 +52,19 @@ function Comando-BBB([string]$comando,[int]$segundos=45) {
    return [pscustomobject]@{Text=$textoBBB;Code=[int]$Matches[1]}
   }
  }
- $serialBBB.Write([string][char]3)
+ Enviar-BBB ([string][char]3)
  throw "Tiempo agotado en comando. No continuar cambios. Salida parcial: $textoBBB"
 }
 try {
  $serialBBB.Open()
- $serialBBB.Write([string][char]3)
- $serialBBB.Write("`r")
+ Start-Sleep -Milliseconds 500
+ $etapaBBB='contacto inicial'
+ Enviar-BBB ([string][char]3)
+ Enviar-BBB ("`r")
  $pantallaBBB=Leer-BBB 1000
  for($intentoBBB=0;$intentoBBB -lt 3;$intentoBBB++) {
   if($pantallaBBB -match '(?im)login:\s*$') {
-   $serialBBB.Write("debian`r")
+   Enviar-BBB ("debian`r")
    $pantallaBBB=Leer-BBB 1000
   }
   if($pantallaBBB -match '(?im)password:\s*$') {
@@ -61,14 +72,16 @@ try {
    $pantallaBBB=Leer-BBB 1500
   }
   if($pantallaBBB -match '(?m)^[^\r\n]*[#$]\s*$'){break}
-  $serialBBB.Write("`r")
+  Enviar-BBB ("`r")
   $pantallaBBB=Leer-BBB 1000
  }
  if($pantallaBBB -notmatch '(?m)^[^\r\n]*[#$]\s*$'){throw "No aparece terminal Linux. Salida: $pantallaBBB"}
+ $etapaBBB='verificar terminal Linux'
  $checkBBB=Comando-BBB 'uname -s'
  if($checkBBB.Text -notmatch '(?m)^Linux\r?$'){throw 'No se verifico Linux.'}
+ $etapaBBB='autenticar sudo'
  # sudo puede pedir clave: no escribirla en logs, historial o linea de comandos.
- $serialBBB.Write("sudo -v`r")
+ Enviar-BBB ("sudo -v`r")
  $pantallaBBB=Leer-BBB 1000
  if($pantallaBBB -match '(?i)password'){Clave-BBB;$pantallaBBB=Leer-BBB 1000}
  $sudoBBB=Comando-BBB 'sudo -n true'
@@ -78,6 +91,8 @@ try {
  }
  $echoBBB=Comando-BBB 'stty -echo'
  if($echoBBB.Code -ne 0){throw 'No se pudo preparar la terminal.'}
+ $terminalPreparadaBBB=$true
+ $etapaBBB='transferir archivo'
  $bytesBBB=[Text.Encoding]::UTF8.GetBytes(([IO.File]::ReadAllText($archivoBBB)).Replace("`r`n","`n"))
  $baseBBB=[Convert]::ToBase64String($bytesBBB)
  $rutaBBB='/tmp/trama3-t04-'+[guid]::NewGuid().ToString('N')
@@ -92,20 +107,24 @@ try {
  if($decodeBBB.Code -ne 0){throw 'Archivo incompleto o sintaxis incorrecta.'}
  $prefijoBBB=if($SinCargas){'T04_SIN_CARGAS=SI '}else{''}
  Write-Host "Ejecutando $Accion en la placa declarada $Placa. Puede tardar varios minutos."
+ $etapaBBB='ejecutar revision'
  $resultadoBBB=Comando-BBB ($prefijoBBB+"bash '"+$rutaBBB+"/t04.sh' "+$Placa+' '+$Accion) 600
  [IO.File]::WriteAllText((Join-Path $carpetaBBB 'resultado.txt'),$resultadoBBB.Text,[Text.UTF8Encoding]::new($false))
  Write-Host $resultadoBBB.Text
  Write-Host "Codigo final: $($resultadoBBB.Code). Registro local: $carpetaBBB"
 } catch {
- $mensajeBBB=$_.Exception.Message
+ $mensajeBBB="Etapa: $etapaBBB. "+$_.Exception.Message
  [IO.File]::WriteAllText((Join-Path $carpetaBBB 'error.txt'),$mensajeBBB,[Text.UTF8Encoding]::new($false))
  Write-Error $mensajeBBB
 } finally {
- if($serialBBB.IsOpen){
-  $serialBBB.Write([string][char]3)
-  $serialBBB.Write("stty echo`r")
-  Start-Sleep -Milliseconds 300
-  $serialBBB.Close()
+ # No volver a escribir en un enlace averiado ni ocultar el error original.
+ if($serialBBB.IsOpen -and $transporteSanoBBB -and $terminalPreparadaBBB){
+  try {
+   $serialBBB.Write([string][char]3)
+   $serialBBB.Write("stty echo"+[char]13)
+   Start-Sleep -Milliseconds 300
+  } catch { Write-Warning 'No se pudo restaurar eco; recuperar conexion antes de continuar.' }
  }
- $serialBBB.Dispose()
+ try { if($serialBBB.IsOpen){$serialBBB.Close()} } catch { Write-Warning 'El controlador no confirmo cierre del puerto.' }
+ try { $serialBBB.Dispose() } catch { Write-Warning 'No se completo liberacion del puerto.' }
 }
