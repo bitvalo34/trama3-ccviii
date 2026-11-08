@@ -35,9 +35,13 @@ Para sonido, la BeagleBone interpretará los pulsos del KY-037 para obtener un s
 
 Por ahora tenemos documentada la arquitectura y las aclaraciones del auxiliar sobre el reloj, los medios y el uso del USB como conexión local. También definimos los cambios para ajustar la frecuencia y responder a interferencias.
 
-Todavía no tenemos el protocolo implementado ni pruebas físicas realizadas. Falta la revisión de Adrián para cerrar T01. La siguiente tarea es T02: inspeccionar las dos BeagleBone y comprobar su estado antes de configurar y montar los circuitos.
+El protocolo no está implementado ni validado físicamente en las placas; sí realizamos la inspección básica. Falta la revisión de Adrián para cerrar T01. T02 quedó cerrada el 07/11/2026 como inspección básica con observaciones. Los pendientes de configuración de B y prueba PRU pasan a T04.
 
 ## Documentación
+
+- [Protocolo revisión 100](docs/protocolo/TRAMA3_Protocolo_y_Medios_Revision_100.docx): versión explicativa más reciente, con reparto dinámico y propuesta de reloj modulado; pendiente de aprobación del auxiliar y medición física. Propone sustituir la restricción anterior de CLK sólo para sincronización.
+- [Cierre de T02](hardware/inspecciones/T02-inspeccion-beaglebone.md).
+
 
 - [Arquitectura y frontera de los equipos](docs/decisiones/ADR-0001-frontera-nodos-y-reloj.md).
 - [Frecuencia configurable y adaptación](docs/decisiones/ADR-0002-frecuencia-y-adaptacion.md).
