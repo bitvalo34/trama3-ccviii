@@ -1,0 +1,1 @@
+07/11/2026 Edge: PASS. PWM, cortes, recuperación, log, perfiles y selectores independientes A=1 Hz B=4 Hz; COMPLETE y períodos [1,0.25]. No es prueba física.

@@ -1,0 +1,13 @@
+{
+  "name": "trama3-simulador",
+  "version": "3.1.0",
+  "private": true,
+  "description": "Modelo discreto educativo del protocolo TRAMA 3; sin dependencias",
+  "scripts": {
+    "test": "node --test tests.cjs tests_ui.cjs lineas.test.cjs pwm.test.cjs direcciones.test.cjs",
+    "demo": "node cli.cjs --scenario crc"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,924 @@
+{
+  "date": "2026-11-07",
+  "hardwareMeasured": false,
+  "results": [
+    {
+      "config": {
+        "a": "Hola",
+        "b": "B",
+        "hzA": 1,
+        "hzB": 4
+      },
+      "lineChanges": [],
+      "status": "COMPLETE",
+      "virtualSeconds": 1348.5,
+      "stats": {
+        "frames": 43,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 5
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "B",
+          "bytes": 1,
+          "t": 1179.5
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1334
+        }
+      ]
+    },
+    {
+      "config": {
+        "a": "Hola",
+        "b": "B",
+        "hzA": 4,
+        "hzB": 1
+      },
+      "lineChanges": [],
+      "status": "COMPLETE",
+      "virtualSeconds": 1438.5,
+      "stats": {
+        "frames": 43,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 5
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "B",
+          "bytes": 1,
+          "t": 1193
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1380.5
+        }
+      ]
+    },
+    {
+      "config": {
+        "a": "Hola",
+        "b": "B",
+        "hzA": 4,
+        "hzB": 2,
+        "scenario": "fallback"
+      },
+      "lineChanges": [],
+      "status": "COMPLETE",
+      "virtualSeconds": 2564.000132,
+      "stats": {
+        "frames": 71,
+        "retries": 2,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 2,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 5
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "B",
+          "bytes": 1,
+          "t": 1607.5
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2535.0001319999997
+        }
+      ]
+    },
+    {
+      "config": {
+        "a": "A",
+        "scenario": "pwm-bit"
+      },
+      "lineChanges": [],
+      "status": "COMPLETE",
+      "virtualSeconds": 824,
+      "stats": {
+        "frames": 15,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 1
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "A",
+          "bytes": 1,
+          "t": 766
+        }
+      ]
+    },
+    {
+      "config": {
+        "a": "A",
+        "scenario": "pwm-width"
+      },
+      "lineChanges": [],
+      "status": "COMPLETE",
+      "virtualSeconds": 824,
+      "stats": {
+        "frames": 15,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 1
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "A",
+          "bytes": 1,
+          "t": 766
+        }
+      ]
+    },
+    {
+      "config": {
+        "a": "A",
+        "scenario": "pwm-start"
+      },
+      "lineChanges": [],
+      "status": "COMPLETE",
+      "virtualSeconds": 824,
+      "stats": {
+        "frames": 15,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 1
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "A",
+          "bytes": 1,
+          "t": 766
+        }
+      ]
+    },
+    {
+      "config": {
+        "a": "A",
+        "scenario": "pwm-tail"
+      },
+      "lineChanges": [],
+      "status": "COMPLETE",
+      "virtualSeconds": 824,
+      "stats": {
+        "frames": 16,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 1,
+        "undetected": 0,
+        "bytes": 1
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "A",
+          "bytes": 1,
+          "t": 766
+        }
+      ]
+    },
+    {
+      "config": {
+        "a": "A",
+        "scenario": "clock-skew"
+      },
+      "lineChanges": [],
+      "status": "COMPLETE",
+      "virtualSeconds": 824,
+      "stats": {
+        "frames": 15,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 1
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "A",
+          "bytes": 1,
+          "t": 766
+        }
+      ]
+    },
+    {
+      "config": {
+        "a": "A",
+        "scenario": "clock-period"
+      },
+      "lineChanges": [],
+      "status": "COMPLETE",
+      "virtualSeconds": 824,
+      "stats": {
+        "frames": 15,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 1
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "A",
+          "bytes": 1,
+          "t": 766
+        }
+      ]
+    },
+    {
+      "config": {
+        "a": "A",
+        "scenario": "truncated"
+      },
+      "lineChanges": [],
+      "status": "COMPLETE",
+      "virtualSeconds": 824,
+      "stats": {
+        "frames": 15,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 1
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "A",
+          "bytes": 1,
+          "t": 766
+        }
+      ]
+    },
+    {
+      "config": {
+        "a": "A",
+        "scenario": "extra-clock"
+      },
+      "lineChanges": [],
+      "status": "COMPLETE",
+      "virtualSeconds": 824,
+      "stats": {
+        "frames": 15,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 1
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "A",
+          "bytes": 1,
+          "t": 766
+        }
+      ]
+    },
+    {
+      "config": {
+        "a": "A",
+        "hz": 1,
+        "scenario": "clean"
+      },
+      "lineChanges": [],
+      "status": "COMPLETE",
+      "virtualSeconds": 604,
+      "stats": {
+        "frames": 14,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 1
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "A",
+          "bytes": 1,
+          "t": 546
+        }
+      ]
+    },
+    {
+      "config": {
+        "a": "A",
+        "hz": 1,
+        "scenario": "crc"
+      },
+      "lineChanges": [],
+      "status": "COMPLETE",
+      "virtualSeconds": 680,
+      "stats": {
+        "frames": 16,
+        "retries": 1,
+        "crcErrors": 1,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 1
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "A",
+          "bytes": 1,
+          "t": 622
+        }
+      ]
+    },
+    {
+      "config": {
+        "a": "A",
+        "hz": 1,
+        "scenario": "ack"
+      },
+      "lineChanges": [],
+      "status": "COMPLETE",
+      "virtualSeconds": 824,
+      "stats": {
+        "frames": 16,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 1,
+        "undetected": 0,
+        "bytes": 1
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "A",
+          "bytes": 1,
+          "t": 766
+        }
+      ]
+    },
+    {
+      "config": {
+        "a": "A",
+        "hz": 1,
+        "scenario": "clock"
+      },
+      "lineChanges": [],
+      "status": "COMPLETE",
+      "virtualSeconds": 824,
+      "stats": {
+        "frames": 15,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 1
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "A",
+          "bytes": 1,
+          "t": 766
+        }
+      ]
+    },
+    {
+      "config": {
+        "a": "A",
+        "hz": 1,
+        "scenario": "blocked"
+      },
+      "lineChanges": [
+        {
+          "t": 526,
+          "kind": "LINE_CHANGE",
+          "dir": 0,
+          "old": 7,
+          "map": 3,
+          "detail": "111 → 011. El par confirmó luz + sonido; se aplica desde la próxima trama."
+        }
+      ],
+      "status": "COMPLETE",
+      "virtualSeconds": 698,
+      "stats": {
+        "frames": 16,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 1,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 1
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "A",
+          "bytes": 1,
+          "t": 640
+        }
+      ]
+    },
+    {
+      "config": {
+        "a": "A",
+        "hz": 4,
+        "scenario": "clean"
+      },
+      "lineChanges": [],
+      "status": "COMPLETE",
+      "virtualSeconds": 1529,
+      "stats": {
+        "frames": 40,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 1
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "A",
+          "bytes": 1,
+          "t": 1514.5
+        }
+      ]
+    },
+    {
+      "config": {
+        "a": "A",
+        "hz": 4,
+        "scenario": "rate-part"
+      },
+      "lineChanges": [],
+      "status": "COMPLETE",
+      "virtualSeconds": 1951,
+      "stats": {
+        "frames": 44,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 1
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "A",
+          "bytes": 1,
+          "t": 1936.5
+        }
+      ]
+    },
+    {
+      "config": {
+        "a": "A",
+        "hz": 4,
+        "scenario": "rate-ready"
+      },
+      "lineChanges": [],
+      "status": "COMPLETE",
+      "virtualSeconds": 1783,
+      "stats": {
+        "frames": 42,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 1
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "A",
+          "bytes": 1,
+          "t": 1768.5
+        }
+      ]
+    },
+    {
+      "config": {
+        "a": "A",
+        "hz": 4,
+        "scenario": "rate-active"
+      },
+      "lineChanges": [],
+      "status": "COMPLETE",
+      "virtualSeconds": 1742.5,
+      "stats": {
+        "frames": 42,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 1
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "A",
+          "bytes": 1,
+          "t": 1728
+        }
+      ]
+    },
+    {
+      "config": {
+        "a": "A",
+        "hz": 4,
+        "mechanicalMs": 300
+      },
+      "lineChanges": [
+        {
+          "t": 797.5,
+          "kind": "LINE_CHANGE",
+          "dir": 0,
+          "old": 7,
+          "map": 3,
+          "detail": "111 → 011. El par confirmó luz + sonido; se aplica desde la próxima trama."
+        },
+        {
+          "t": 1037,
+          "kind": "LINE_CHANGE",
+          "dir": 0,
+          "old": 3,
+          "map": 7,
+          "detail": "011 → 111. El par confirmó luz + sonido + nylon; se aplica desde la próxima trama."
+        },
+        {
+          "t": 1402.5,
+          "kind": "LINE_CHANGE",
+          "dir": 1,
+          "old": 7,
+          "map": 3,
+          "detail": "111 → 011. El par confirmó luz + sonido; se aplica desde la próxima trama."
+        },
+        {
+          "t": 1418,
+          "kind": "LINE_CHANGE",
+          "dir": 0,
+          "old": 7,
+          "map": 3,
+          "detail": "111 → 011. El par confirmó luz + sonido; se aplica desde la próxima trama."
+        }
+      ],
+      "status": "COMPLETE",
+      "virtualSeconds": 1540.25,
+      "stats": {
+        "frames": 40,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 1
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "A",
+          "bytes": 1,
+          "t": 1525.75
+        }
+      ]
+    },
+    {
+      "config": {
+        "a": "A",
+        "hz": 2,
+        "mechanicalMs": 300
+      },
+      "lineChanges": [],
+      "status": "COMPLETE",
+      "virtualSeconds": 1706,
+      "stats": {
+        "frames": 40,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 1
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "A",
+          "bytes": 1,
+          "t": 1677
+        }
+      ]
+    },
+    {
+      "config": {
+        "a": "AÃ±â‚¬ðŸ™‚",
+        "b": "B",
+        "hz": 1,
+        "crc": "MAXIM-DOW"
+      },
+      "lineChanges": [],
+      "status": "COMPLETE",
+      "virtualSeconds": 2200,
+      "stats": {
+        "frames": 66,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 23
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "B",
+          "bytes": 1,
+          "t": 546
+        },
+        {
+          "dir": 0,
+          "text": "AÃ±â‚¬ðŸ™‚",
+          "bytes": 22,
+          "t": 2142
+        }
+      ]
+    },
+    {
+      "config": {
+        "a": "Hola",
+        "outages": [
+          {
+            "mask": 1,
+            "on": "start"
+          }
+        ]
+      },
+      "lineChanges": [
+        {
+          "t": 110,
+          "kind": "LINE_CHANGE",
+          "dir": 0,
+          "old": 7,
+          "map": 6,
+          "detail": "111 → 110. El par confirmó sonido + nylon; se aplica desde la próxima trama."
+        }
+      ],
+      "status": "COMPLETE",
+      "virtualSeconds": 904,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 846
+        }
+      ]
+    },
+    {
+      "config": {
+        "a": "Hola",
+        "outages": [
+          {
+            "mask": 3,
+            "on": "start"
+          }
+        ]
+      },
+      "lineChanges": [
+        {
+          "t": 110,
+          "kind": "LINE_CHANGE",
+          "dir": 0,
+          "old": 7,
+          "map": 4,
+          "detail": "111 → 100. El par confirmó nylon; se aplica desde la próxima trama."
+        }
+      ],
+      "status": "COMPLETE",
+      "virtualSeconds": 1120,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1062
+        }
+      ]
+    },
+    {
+      "config": {
+        "a": "Hola",
+        "outages": [
+          {
+            "mask": 3,
+            "on": "mid",
+            "duration": 120
+          }
+        ]
+      },
+      "lineChanges": [
+        {
+          "t": 602,
+          "kind": "LINE_CHANGE",
+          "dir": 0,
+          "old": 7,
+          "map": 4,
+          "detail": "111 → 100. El par confirmó nylon; se aplica desde la próxima trama."
+        },
+        {
+          "t": 714,
+          "kind": "LINE_CHANGE",
+          "dir": 0,
+          "old": 4,
+          "map": 7,
+          "detail": "100 → 111. El par confirmó luz + sonido + nylon; se aplica desde la próxima trama."
+        }
+      ],
+      "status": "COMPLETE",
+      "virtualSeconds": 1020,
+      "stats": {
+        "frames": 24,
+        "retries": 2,
+        "crcErrors": 1,
+        "syncErrors": 1,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 962
+        }
+      ]
+    },
+    {
+      "config": {
+        "a": "Hola",
+        "outages": [
+          {
+            "mask": 7,
+            "on": "data"
+          }
+        ]
+      },
+      "lineChanges": [],
+      "status": "LINK_FAULT",
+      "virtualSeconds": 756,
+      "stats": {
+        "frames": 18,
+        "retries": 3,
+        "crcErrors": 0,
+        "syncErrors": 4,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 0
+      },
+      "deliveries": []
+    },
+    {
+      "config": {
+        "a": "Hola"
+      },
+      "lineChanges": [],
+      "status": "COMPLETE",
+      "virtualSeconds": 832,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 774
+        }
+      ]
+    },
+    {
+      "config": {
+        "a": "Hola",
+        "hz": 4,
+        "scenario": "fallback"
+      },
+      "lineChanges": [],
+      "status": "COMPLETE",
+      "virtualSeconds": 2279.000132,
+      "stats": {
+        "frames": 61,
+        "retries": 2,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 2,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2264.5001319999997
+        }
+      ]
+    }
+  ]
+}
