@@ -1,39 +1,39 @@
 ﻿ID,Material,Planificado,En pedido consultado,Recibido,Verificado fisicamente,Reutilizable confirmado,Gasto pedido Q,Brecha antes de otras compras,Precio historico Q,Proveedor,Enlace publico,Observacion
 M01,BeagleBone Black AM335x,2,0,,,2,0,0,0,Inventario de Erwin y Adrián,,Disponibilidad declarada por Erwin en T02; no compra nueva
-M02,MCP23017 DIP28,2,2,,,,104,0,52,Electrónica DIY,https://www.electronicadiy.com/products/mcp23017?variant=40473663832246,Recepcion por confirmar; modelo no inspeccionado
-M03,LED 5 mm rojo,2,2,,,,1.5,0,0.75,Electrónica DIY,https://www.electronicadiy.com/products/led-transparente-5mm-diferentes-colores?variant=33522998345867,Recepcion por confirmar; modelo no inspeccionado
-M04,D6 LDR LM393,2,2,,,,32,0,16,Electrónica DIY,https://www.electronicadiy.com/products/sensor-de-luz?variant=33523038847115,Recepcion por confirmar; modelo no inspeccionado
-M05,Buzzer activo 2 terminales,2,2,,,,7.0,0,3.5,Electrónica DIY,https://www.electronicadiy.com/products/buzzer-sin-modulo?variant=33522945851531,Recepcion por confirmar; modelo no inspeccionado
-M06,KY037 SKU D14,2,2,,,,38,0,19,Electrónica DIY,https://www.electronicadiy.com/products/sensor-de-sonido-ky-038?variant=33523035799691,Recepcion por confirmar; modelo no inspeccionado
-M07,SG90 180 grados,2,2,,,,54,0,27,Electrónica DIY,https://www.electronicadiy.com/products/micro-servo-sg90-1-6kg-torque?variant=33523024494731,Recepcion por confirmar; modelo no inspeccionado
-M08,SPDT con rueda,2,2,,,,14,0,7,Electrónica DIY,https://www.electronicadiy.com/products/switch-final-de-carrera?variant=33522901024907,Recepcion por confirmar; modelo no inspeccionado
-M09,2N2222,4,4,,,,3.0,0,0.75,Electrónica DIY,https://www.electronicadiy.com/products/transistores?variant=33523007357067,Recepcion por confirmar; modelo no inspeccionado
-M10,2N3904,2,2,,,,1.5,0,0.75,Electrónica DIY,https://www.electronicadiy.com/products/transistores?variant=33523007422603,Recepcion por confirmar; modelo no inspeccionado
-M11,PC817 DIP4,2,2,,,,8,0,4,Electrónica DIY,https://www.electronicadiy.com/products/optoacoplador-pc817?variant=46738098618626,Recepcion por confirmar; modelo no inspeccionado
-M12,1N4148,2,2,,,,1.5,0,0.75,Electrónica DIY,https://www.electronicadiy.com/products/diodo-1n4148-recuperacion-rapida-100-v-200-ma?variant=42863743664386,Recepcion por confirmar; modelo no inspeccionado
-M13,330 ohm,2,2,,,,1.0,0,0.5,Electrónica DIY,https://www.electronicadiy.com/products/resistencias-por-unidad-1-4w?variant=33598010261643,Recepcion por confirmar; modelo no inspeccionado
-M14,390 ohm,2,2,,,,1.0,0,0.5,Electrónica DIY,https://www.electronicadiy.com/products/resistencias-por-unidad-1-4w?variant=33598010327179,Recepcion por confirmar; modelo no inspeccionado
-M15,100 ohm,2,2,,,,1.0,0,0.5,Electrónica DIY,https://www.electronicadiy.com/products/resistencias-por-unidad-1-4w?variant=33598009868427,Recepcion por confirmar; modelo no inspeccionado
-M16,1K ohm,12,9,,,,4.5,3,0.5,Electrónica DIY,https://www.electronicadiy.com/products/copia-de-resistencias-por-unidad-kilo-ohms-1-4w?variant=33598149427339,Recepcion por confirmar; modelo no inspeccionado
-M17,4.7K ohm,10,10,,,,5.0,0,0.5,Electrónica DIY,https://www.electronicadiy.com/products/copia-de-resistencias-por-unidad-kilo-ohms-1-4w?variant=33598149918859,Recepcion por confirmar; modelo no inspeccionado
-M18,10K ohm,10,8,,,,4.0,2,0.5,Electrónica DIY,https://www.electronicadiy.com/products/copia-de-resistencias-por-unidad-kilo-ohms-1-4w?variant=33598150181003,Recepcion por confirmar; modelo no inspeccionado
-M19,100 nF,8,8,,,,6.0,0,0.75,Electrónica DIY,https://www.electronicadiy.com/products/capacitores-ceramicos-monoliticos-nanofaradios?variant=44462606745858,Recepcion por confirmar; modelo no inspeccionado
-M20,1000uF 16V,2,2,,,,7.0,0,3.5,Electrónica DIY,https://www.electronicadiy.com/products/capacitores-electroliticos-16v?variant=33522920063115,Recepcion por confirmar; modelo no inspeccionado
-M21,5x20mm 1A,2,2,,,,1.5,0,0.75,Electrónica DIY,https://www.electronicadiy.com/products/fusible-de-vidrio-5x20mm?variant=35648890175639,Recepcion por confirmar; modelo no inspeccionado
-M22,5x20mm con cable,2,2,,,,8,0,4,Electrónica DIY,https://www.electronicadiy.com/products/porta-fusible-5x20mm-con-cable?variant=44265218146562,Recepcion por confirmar; modelo no inspeccionado
+M02,MCP23017 DIP28,2,2,2,,,104,0,52,Electrónica DIY,https://www.electronicadiy.com/products/mcp23017?variant=40473663832246,Recepcion completa declarada 08/11; conteo y variante por verificar
+M03,LED 5 mm rojo,2,2,2,,,1.5,0,0.75,Electrónica DIY,https://www.electronicadiy.com/products/led-transparente-5mm-diferentes-colores?variant=33522998345867,Recepcion completa declarada 08/11; conteo y variante por verificar
+M04,D6 LDR LM393,2,2,2,,,32,0,16,Electrónica DIY,https://www.electronicadiy.com/products/sensor-de-luz?variant=33523038847115,Recepcion completa declarada 08/11; conteo y variante por verificar
+M05,Buzzer activo 2 terminales,2,2,2,,,7.0,0,3.5,Electrónica DIY,https://www.electronicadiy.com/products/buzzer-sin-modulo?variant=33522945851531,Recepcion completa declarada 08/11; conteo y variante por verificar
+M06,KY037 SKU D14,2,2,2,,,38,0,19,Electrónica DIY,https://www.electronicadiy.com/products/sensor-de-sonido-ky-038?variant=33523035799691,Recepcion completa declarada 08/11; conteo y variante por verificar
+M07,SG90 180 grados,2,2,2,,,54,0,27,Electrónica DIY,https://www.electronicadiy.com/products/micro-servo-sg90-1-6kg-torque?variant=33523024494731,Recepcion completa declarada 08/11; conteo y variante por verificar
+M08,SPDT con rueda,2,2,2,,,14,0,7,Electrónica DIY,https://www.electronicadiy.com/products/switch-final-de-carrera?variant=33522901024907,Recepcion completa declarada 08/11; conteo y variante por verificar
+M09,2N2222,4,4,4,,,3.0,0,0.75,Electrónica DIY,https://www.electronicadiy.com/products/transistores?variant=33523007357067,Recepcion completa declarada 08/11; conteo y variante por verificar
+M10,2N3904,2,2,2,,,1.5,0,0.75,Electrónica DIY,https://www.electronicadiy.com/products/transistores?variant=33523007422603,Recepcion completa declarada 08/11; conteo y variante por verificar
+M11,PC817 DIP4,2,2,2,,,8,0,4,Electrónica DIY,https://www.electronicadiy.com/products/optoacoplador-pc817?variant=46738098618626,Recepcion completa declarada 08/11; conteo y variante por verificar
+M12,1N4148,2,2,2,,,1.5,0,0.75,Electrónica DIY,https://www.electronicadiy.com/products/diodo-1n4148-recuperacion-rapida-100-v-200-ma?variant=42863743664386,Recepcion completa declarada 08/11; conteo y variante por verificar
+M13,330 ohm,2,2,2,,,1.0,0,0.5,Electrónica DIY,https://www.electronicadiy.com/products/resistencias-por-unidad-1-4w?variant=33598010261643,Recepcion completa declarada 08/11; conteo y variante por verificar
+M14,390 ohm,2,2,2,,,1.0,0,0.5,Electrónica DIY,https://www.electronicadiy.com/products/resistencias-por-unidad-1-4w?variant=33598010327179,Recepcion completa declarada 08/11; conteo y variante por verificar
+M15,100 ohm,2,2,2,,,1.0,0,0.5,Electrónica DIY,https://www.electronicadiy.com/products/resistencias-por-unidad-1-4w?variant=33598009868427,Recepcion completa declarada 08/11; conteo y variante por verificar
+M16,1K ohm,12,9,9,,,4.5,3,0.5,Electrónica DIY,https://www.electronicadiy.com/products/copia-de-resistencias-por-unidad-kilo-ohms-1-4w?variant=33598149427339,Recepcion completa declarada 08/11; conteo y variante por verificar
+M17,4.7K ohm,10,10,10,,,5.0,0,0.5,Electrónica DIY,https://www.electronicadiy.com/products/copia-de-resistencias-por-unidad-kilo-ohms-1-4w?variant=33598149918859,Recepcion completa declarada 08/11; conteo y variante por verificar
+M18,10K ohm,10,8,8,,,4.0,2,0.5,Electrónica DIY,https://www.electronicadiy.com/products/copia-de-resistencias-por-unidad-kilo-ohms-1-4w?variant=33598150181003,Recepcion completa declarada 08/11; conteo y variante por verificar
+M19,100 nF,8,8,8,,,6.0,0,0.75,Electrónica DIY,https://www.electronicadiy.com/products/capacitores-ceramicos-monoliticos-nanofaradios?variant=44462606745858,Recepcion completa declarada 08/11; conteo y variante por verificar
+M20,1000uF 16V,2,2,2,,,7.0,0,3.5,Electrónica DIY,https://www.electronicadiy.com/products/capacitores-electroliticos-16v?variant=33522920063115,Recepcion completa declarada 08/11; conteo y variante por verificar
+M21,5x20mm 1A,2,2,2,,,1.5,0,0.75,Electrónica DIY,https://www.electronicadiy.com/products/fusible-de-vidrio-5x20mm?variant=35648890175639,Recepcion completa declarada 08/11; conteo y variante por verificar
+M22,5x20mm con cable,2,2,2,,,8,0,4,Electrónica DIY,https://www.electronicadiy.com/products/porta-fusible-5x20mm-con-cable?variant=44265218146562,Recepcion completa declarada 08/11; conteo y variante por verificar
 M23,5V 2.5A,2,0,,,,0,2,55,Electrónica DIY,https://www.electronicadiy.com/products/adaptador-110vac-raspberry-pi-5v?variant=33522949914763,No figura en este pedido; consultar compras externas
 M24,USB A a Mini USB B de datos,2,0,,,2,0,0,10,Electrónica DIY,https://www.electronicadiy.com/products/cables-usb-para-arduino?variant=33523010371723,Disponibilidad declarada por Erwin en T02; no compra nueva
 M25,Una cara 9x15 cm,2,0,,,,0,2,15,Electrónica DIY,https://www.electronicadiy.com/products/placa-perforada?variant=33522900238475,No figura en este pedido; consultar compras externas
 M26,Kit 65,1,0,,,,0,1,32,Electrónica DIY,https://www.electronicadiy.com/products/kit-65-jumpers?variant=33523009028235,No figura en este pedido; consultar compras externas
 M27,22 AWG unifilar,4,0,,,,0.0,4,2.25,Electrónica DIY,https://www.electronicadiy.com/products/cable-para-protoboard?variant=34500933058711,No figura en este pedido; consultar compras externas
-M28,Micro USB hembra a DIP2.54,2,2,,,,6,0,3,Electrónica DIY,https://www.electronicadiy.com/products/modulo-micro-usb-hembra-a-dip2-54?variant=36889173295255,Recepcion por confirmar; modelo no inspeccionado
-M29,"Tubo cartón/PVC 30 cm, interior negro; sin fibra comercial",2,0,,,,0,2,10,Ferretería local por confirmar,,No figura en este pedido; consultar compras externas
-M30,Manguera PVC 30 cm DI 10-12 mm; extremos sellados con espuma,2,0,,,,0,2,18,Ferretería local por confirmar,,No figura en este pedido; consultar compras externas
-M31,"Nylon monofilamento 0.4-0.6 mm, 0.5 m por canal, resorte ligero",2,0,,,,0,2,15,Ferretería local por confirmar,,No figura en este pedido; consultar compras externas
+M28,Micro USB hembra a DIP2.54,2,2,2,,,6,0,3,Electrónica DIY,https://www.electronicadiy.com/products/modulo-micro-usb-hembra-a-dip2-54?variant=36889173295255,Recepcion completa declarada 08/11; conteo y variante por verificar
+M29,"Tubo cartón/PVC 30 cm, interior negro; sin fibra comercial",2,0,,,,0,2,10,Ferretería local por confirmar,,Compra externa confirmada; cantidad/precio/variante pendientes. No recomprar
+M30,Manguera PVC 30 cm DI 10-12 mm; extremos sellados con espuma,2,0,,,,0,2,18,Ferretería local por confirmar,,Compra externa confirmada; cantidad/precio/variante pendientes. No recomprar
+M31,"Nylon monofilamento 0.4-0.6 mm, 0.5 m por canal, resorte ligero",2,0,,,,0,2,15,Ferretería local por confirmar,,Compra externa confirmada; cantidad/precio/variante pendientes. No recomprar
 M32,"Base MDF 30x20 cm, tornillos, silicón, espuma antivibración",2,0,,,,0,2,20,Ferretería local por confirmar,,No figura en este pedido; consultar compras externas
 M33,Provisión local; sustituir por cotización final,1,0,,,,0,1,40,Ferretería local por confirmar,,No figura en este pedido; consultar compras externas
 M34,"5 V regulados, 2 A, centro positivo",2,0,,,,0,2,60,Ferretería local por confirmar,,No figura en este pedido; consultar compras externas
-M35,DIP28 angosto 7.62 mm,2,0,,,,0.0,2,2.5,Electrónica DIY,https://www.electronicadiy.com/products/base-para-circuito-integrado-16-18-28-40-pines?variant=33522884575371,No figura en este pedido; consultar compras externas
+M35,DIP28 angosto 7.62 mm,2,0,,,,0.0,2,2.5,Electrónica DIY,https://www.electronicadiy.com/products/base-para-circuito-integrado-16-18-28-40-pines?variant=33522884575371,Compra externa confirmada; cantidad/precio/variante pendientes. No recomprar
 M36,Paso a verificar contra placa,12,0,,,,0,12,2,Electrónica DIY,https://www.electronicadiy.com/products/terminal-de-bornera-de-2-y-3-pines?variant=33522943918219,No figura en este pedido; consultar compras externas
 M37,Paso a verificar contra placa,6,0,,,,0,6,3,Electrónica DIY,https://www.electronicadiy.com/products/terminal-de-bornera-de-2-y-3-pines?variant=33522943950987,No figura en este pedido; consultar compras externas
 M38,Tubo 18 g 60/40 de 1 mm,1,0,,,,0,1,22,Electrónica DIY,https://www.electronicadiy.com/products/tubo-de-estano-18g-60-40-con-flux?variant=50549344141570,"Erwin declara estano disponible; falta peso/composicion, no descontar tubo de 18g todavia"

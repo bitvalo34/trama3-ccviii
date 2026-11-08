@@ -1,12 +1,12 @@
 # T03 — Conciliación de materiales
 
 Revisión documental: 08/11/2026. Responsable del tracker: Erwin. Revisor: Adrián.
-Estado: en curso. Compra documentada; recepción y compras externas pendientes.
+Estado: en curso. Compra documentada y recepción del pedido completo confirmada por Erwin. Conteo/variantes y detalle de compras externas pendientes.
 Base: BOM maestra, IDs M01–M41, y protocolo revisión 101. Se utilizaron los archivos adjuntos sin sufijo (2), que son los efectivamente disponibles.
 
 ## Pedido consultado
 
-Se accedió a la sesión autorizada de Electrónica DIY. La página mostró confirmación del 14 de octubre (no expuso el año), estado de preparación «Confirmado», 22 renglones y 73 unidades después de expandir todos los artículos. Total y subtotal: **Q309.50**, envío gratis. La sección de pago registra Q309.50, pero no se publica el medio de pago ni ningún identificador privado. No aparece prueba de entrega ni fecha de retiro. No inferimos recepción a partir de confirmación/pago.
+Se accedió a la sesión autorizada de Electrónica DIY. La página mostró confirmación del 14 de octubre (no expuso el año), estado de preparación «Confirmado», 22 renglones y 73 unidades después de expandir todos los artículos. Total y subtotal: **Q309.50**, envío gratis. La sección de pago registra Q309.50, pero no se publica el medio de pago ni ningún identificador privado. No aparece prueba de entrega ni fecha de retiro. No inferimos recepción a partir de confirmación/pago. Posteriormente, el 08/11/2026, Erwin confirmó haber recibido todos los artículos. Registramos recepción declarada de las cantidades pedidas; falta conteo físico detallado y verificación de variantes.
 
 Cantidades reconstruidas desde cada subtotal y precio unitario, coincidentes con las cantidades de la lista de recompra visible; no se accionó recompra. SKU no expuesto por renglón en la página del pedido. Los modelos de la tabla son las correspondencias propuestas con la BOM, no inspecciones del lote.
 
@@ -42,9 +42,9 @@ Sin microSD ni osciloscopio; analizador lógico no confirmado. No hace falta ESP
 
 ## Inventario completo y cantidades sin evidencia
 
-[T03-inventario.csv](T03-inventario.csv) contiene los 41 ID, cantidades previstas, compras de este pedido, reutilización conocida y campos de recepción/verificación en blanco. **Blanco significa desconocido, no cero.** «Brecha» descuenta este pedido y la reutilización acreditada; no es una orden de compra ni descuenta supuestas compras externas.
+[T03-inventario.csv](T03-inventario.csv) contiene los 41 ID, cantidades previstas, compras de este pedido, reutilización conocida y recepción declarada del pedido y campos de verificación física en blanco. **Blanco significa desconocido, no cero.** «Brecha» descuenta este pedido y la reutilización acreditada; no es una orden de compra ni descuenta supuestas compras externas.
 
-Los materiales M02–M22 y M28 figuran comprados, con recepción no acreditada. Los otros ID, salvo M01/M24, necesitan confirmación. No hay sensores declarados funcionales.
+Los materiales M02–M22 y M28 figuran comprados y recibidos por declaración de Erwin. También confirmó compra de zócalos M35, tubos M29, manguera M30 y nylon M31, sin cantidades/precios/medidas aún; los resortes incluidos en M31 siguen sin confirmar. Los otros ID, salvo M01/M24, necesitan confirmación. No hay sensores declarados funcionales.
 
 ## Conciliación física en una sola sesión
 
@@ -65,7 +65,7 @@ En el switch sin alimentación puede verificarse COM–NC cerrado y COM–NO abi
 
 No comprar esta lista hasta descontar compras externas y material recibido. No se hicieron reservas, pedidos ni pagos.
 Prioridad crítica para montaje: M16/M18 (si no hay resistencias adicionales), M23/M34 alimentación, M25 placa, M35 zócalos, M36/M37 borneras, M27/M39/M41 conexiones.
-Necesario después: M29–M32 medios y bases, M38/M40 consumibles.
+Necesario después: completar M29–M32 medios y bases, M38/M40 consumibles. M29/M30/M31/M35 ya fueron comprados aparte: NO recomprar por la brecha provisional; completar primero cantidades.
 M26 kit de jumpers es condicional: revisar tipo de extremos y arnés existente. M33 es una provisión, no un componente, no duplicar envíos ya pagados.
 MicroSD con lector: opcional para T04 mínima; necesaria antes de una migración con recuperación. Osciloscopio/analizador: acceso recomendado para T06 y caracterización, no requisito para inventariar.
 
@@ -97,10 +97,12 @@ La [ficha pública de resistencias](https://www.electronicadiy.com/products/copi
 
 ## Criterio de cierre y tracker
 
-Avance recomendado provisional: 50% (estimación de trabajo documental, no porcentaje recibido). Inicio real de esta ejecución: 08/11/2026. Sin fecha de cierre. Se consultó el pedido, se mapeó a los 41 ID y se reconciliaron importes. Falta recepción, variantes críticas, compras externas y cotización residual final. T03 no se cierra; la recepción posterior corresponde a T05/T07, pero aquí debemos saber qué está comprado y qué falta.
+Avance recomendado provisional: 65% (estimación de trabajo documental, no porcentaje recibido). Inicio real de esta ejecución: 08/11/2026. Sin fecha de cierre. Se consultó el pedido, se mapeó a los 41 ID y se reconciliaron importes. Falta conteo detallado, variantes críticas, cantidades/precios de compras externas y cotización residual final. T03 no se cierra; la recepción posterior corresponde a T05/T07, pero aquí debemos saber qué está comprado y qué falta.
 
 El tracker original no se modificó. Conserva responsables y fechas históricas. El tracker marca T01/T02 completas aunque el README aún menciona revisión de T01 pendiente: no se altera ese historial sin aclarar su evidencia.
 
 ## Actualización de materiales
+
+Erwin enviará el detalle físico junto a los resultados de A y B; no se requieren respuestas intermedias.
 
 La copia de materiales distingue pedido, recepción, verificación, reutilización y brecha provisional. El histórico se conserva. No escribir cantidades compradas en «Disponible propio» como si ya fueran material recibido. No cargar el gasto real en una fórmula que sólo resta dinero de una necesidad física: podría ocultar faltantes. Los importes y cantidades nuevos quedan en una hoja de conciliación separada.
