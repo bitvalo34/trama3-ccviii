@@ -1,0 +1,2410 @@
+{
+  "tests": {
+    "checked": 10252,
+    "lateCut": "recovered",
+    "outsideRadius": "miscorrection demonstrated"
+  },
+  "examples": [
+    {
+      "blocked": [],
+      "ok": true,
+      "reconstructed": "111000111000101010010001000001101100100000000000000001",
+      "log": [
+        {
+          "block": 0,
+          "tickEnd": 8,
+          "timeEnd": 9,
+          "received": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          "ok": true,
+          "data": [
+            1,
+            1
+          ],
+          "errors": 0,
+          "distance": 6,
+          "correctedPositions": [],
+          "syndrome": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "status": "VALID"
+        },
+        {
+          "block": 1,
+          "tickEnd": 11,
+          "timeEnd": 12,
+          "received": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          "ok": true,
+          "data": [
+            1,
+            0
+          ],
+          "errors": 0,
+          "distance": 6,
+          "correctedPositions": [],
+          "syndrome": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "status": "VALID"
+        },
+        {
+          "block": 2,
+          "tickEnd": 14,
+          "timeEnd": 15,
+          "received": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 6,
+          "correctedPositions": [],
+          "syndrome": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "status": "VALID"
+        },
+        {
+          "block": 3,
+          "tickEnd": 17,
+          "timeEnd": 18,
+          "received": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          "ok": true,
+          "data": [
+            1,
+            1
+          ],
+          "errors": 0,
+          "distance": 6,
+          "correctedPositions": [],
+          "syndrome": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "status": "VALID"
+        },
+        {
+          "block": 4,
+          "tickEnd": 20,
+          "timeEnd": 21,
+          "received": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          "ok": true,
+          "data": [
+            1,
+            0
+          ],
+          "errors": 0,
+          "distance": 6,
+          "correctedPositions": [],
+          "syndrome": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "status": "VALID"
+        },
+        {
+          "block": 5,
+          "tickEnd": 23,
+          "timeEnd": 24,
+          "received": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 6,
+          "correctedPositions": [],
+          "syndrome": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "status": "VALID"
+        },
+        {
+          "block": 6,
+          "tickEnd": 26,
+          "timeEnd": 27,
+          "received": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          "ok": true,
+          "data": [
+            1,
+            0
+          ],
+          "errors": 0,
+          "distance": 6,
+          "correctedPositions": [],
+          "syndrome": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "status": "VALID"
+        },
+        {
+          "block": 7,
+          "tickEnd": 29,
+          "timeEnd": 30,
+          "received": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          "ok": true,
+          "data": [
+            1,
+            0
+          ],
+          "errors": 0,
+          "distance": 6,
+          "correctedPositions": [],
+          "syndrome": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "status": "VALID"
+        },
+        {
+          "block": 8,
+          "tickEnd": 32,
+          "timeEnd": 33,
+          "received": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          "ok": true,
+          "data": [
+            1,
+            0
+          ],
+          "errors": 0,
+          "distance": 6,
+          "correctedPositions": [],
+          "syndrome": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "status": "VALID"
+        },
+        {
+          "block": 9,
+          "tickEnd": 35,
+          "timeEnd": 36,
+          "received": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "ok": true,
+          "data": [
+            0,
+            1
+          ],
+          "errors": 0,
+          "distance": 6,
+          "correctedPositions": [],
+          "syndrome": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "status": "VALID"
+        },
+        {
+          "block": 10,
+          "tickEnd": 38,
+          "timeEnd": 39,
+          "received": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 6,
+          "correctedPositions": [],
+          "syndrome": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "status": "VALID"
+        },
+        {
+          "block": 11,
+          "tickEnd": 41,
+          "timeEnd": 42,
+          "received": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "ok": true,
+          "data": [
+            0,
+            1
+          ],
+          "errors": 0,
+          "distance": 6,
+          "correctedPositions": [],
+          "syndrome": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "status": "VALID"
+        },
+        {
+          "block": 12,
+          "tickEnd": 44,
+          "timeEnd": 45,
+          "received": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 6,
+          "correctedPositions": [],
+          "syndrome": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "status": "VALID"
+        },
+        {
+          "block": 13,
+          "tickEnd": 47,
+          "timeEnd": 48,
+          "received": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 6,
+          "correctedPositions": [],
+          "syndrome": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "status": "VALID"
+        },
+        {
+          "block": 14,
+          "tickEnd": 50,
+          "timeEnd": 51,
+          "received": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "ok": true,
+          "data": [
+            0,
+            1
+          ],
+          "errors": 0,
+          "distance": 6,
+          "correctedPositions": [],
+          "syndrome": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "status": "VALID"
+        },
+        {
+          "block": 15,
+          "tickEnd": 53,
+          "timeEnd": 54,
+          "received": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          "ok": true,
+          "data": [
+            1,
+            0
+          ],
+          "errors": 0,
+          "distance": 6,
+          "correctedPositions": [],
+          "syndrome": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "status": "VALID"
+        },
+        {
+          "block": 16,
+          "tickEnd": 56,
+          "timeEnd": 57,
+          "received": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          "ok": true,
+          "data": [
+            1,
+            1
+          ],
+          "errors": 0,
+          "distance": 6,
+          "correctedPositions": [],
+          "syndrome": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "status": "VALID"
+        },
+        {
+          "block": 17,
+          "tickEnd": 59,
+          "timeEnd": 60,
+          "received": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 6,
+          "correctedPositions": [],
+          "syndrome": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "status": "VALID"
+        },
+        {
+          "block": 18,
+          "tickEnd": 62,
+          "timeEnd": 63,
+          "received": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          "ok": true,
+          "data": [
+            1,
+            0
+          ],
+          "errors": 0,
+          "distance": 6,
+          "correctedPositions": [],
+          "syndrome": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "status": "VALID"
+        },
+        {
+          "block": 19,
+          "tickEnd": 65,
+          "timeEnd": 66,
+          "received": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 6,
+          "correctedPositions": [],
+          "syndrome": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "status": "VALID"
+        },
+        {
+          "block": 20,
+          "tickEnd": 68,
+          "timeEnd": 69,
+          "received": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 6,
+          "correctedPositions": [],
+          "syndrome": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "status": "VALID"
+        },
+        {
+          "block": 21,
+          "tickEnd": 71,
+          "timeEnd": 72,
+          "received": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 6,
+          "correctedPositions": [],
+          "syndrome": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "status": "VALID"
+        },
+        {
+          "block": 22,
+          "tickEnd": 74,
+          "timeEnd": 75,
+          "received": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 6,
+          "correctedPositions": [],
+          "syndrome": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "status": "VALID"
+        },
+        {
+          "block": 23,
+          "tickEnd": 77,
+          "timeEnd": 78,
+          "received": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 6,
+          "correctedPositions": [],
+          "syndrome": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "status": "VALID"
+        },
+        {
+          "block": 24,
+          "tickEnd": 80,
+          "timeEnd": 81,
+          "received": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 6,
+          "correctedPositions": [],
+          "syndrome": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "status": "VALID"
+        },
+        {
+          "block": 25,
+          "tickEnd": 83,
+          "timeEnd": 84,
+          "received": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 6,
+          "correctedPositions": [],
+          "syndrome": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "status": "VALID"
+        },
+        {
+          "block": 26,
+          "tickEnd": 86,
+          "timeEnd": 87,
+          "received": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "ok": true,
+          "data": [
+            0,
+            1
+          ],
+          "errors": 0,
+          "distance": 6,
+          "correctedPositions": [],
+          "syndrome": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "status": "VALID"
+        }
+      ],
+      "good": [
+        true,
+        true,
+        true
+      ],
+      "ticks": 87
+    },
+    {
+      "blocked": [
+        0
+      ],
+      "ok": true,
+      "reconstructed": "111000111000101010010001000001101100100000000000000001",
+      "log": [
+        {
+          "block": 0,
+          "tickEnd": 8,
+          "timeEnd": 9,
+          "received": [
+            null,
+            1,
+            0,
+            null,
+            0,
+            1,
+            null,
+            1,
+            1
+          ],
+          "ok": true,
+          "data": [
+            1,
+            1
+          ],
+          "errors": 0,
+          "distance": 4,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 1,
+          "tickEnd": 11,
+          "timeEnd": 12,
+          "received": [
+            null,
+            0,
+            1,
+            null,
+            1,
+            1,
+            null,
+            1,
+            0
+          ],
+          "ok": true,
+          "data": [
+            1,
+            0
+          ],
+          "errors": 0,
+          "distance": 4,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 2,
+          "tickEnd": 14,
+          "timeEnd": 15,
+          "received": [
+            null,
+            0,
+            0,
+            null,
+            0,
+            0,
+            null,
+            0,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 4,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 3,
+          "tickEnd": 17,
+          "timeEnd": 18,
+          "received": [
+            null,
+            1,
+            0,
+            null,
+            0,
+            1,
+            null,
+            1,
+            1
+          ],
+          "ok": true,
+          "data": [
+            1,
+            1
+          ],
+          "errors": 0,
+          "distance": 4,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 4,
+          "tickEnd": 20,
+          "timeEnd": 21,
+          "received": [
+            null,
+            0,
+            1,
+            null,
+            1,
+            1,
+            null,
+            1,
+            0
+          ],
+          "ok": true,
+          "data": [
+            1,
+            0
+          ],
+          "errors": 0,
+          "distance": 4,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 5,
+          "tickEnd": 23,
+          "timeEnd": 24,
+          "received": [
+            null,
+            0,
+            0,
+            null,
+            0,
+            0,
+            null,
+            0,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 4,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 6,
+          "tickEnd": 26,
+          "timeEnd": 27,
+          "received": [
+            null,
+            0,
+            1,
+            null,
+            1,
+            1,
+            null,
+            1,
+            0
+          ],
+          "ok": true,
+          "data": [
+            1,
+            0
+          ],
+          "errors": 0,
+          "distance": 4,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 7,
+          "tickEnd": 29,
+          "timeEnd": 30,
+          "received": [
+            null,
+            0,
+            1,
+            null,
+            1,
+            1,
+            null,
+            1,
+            0
+          ],
+          "ok": true,
+          "data": [
+            1,
+            0
+          ],
+          "errors": 0,
+          "distance": 4,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 8,
+          "tickEnd": 32,
+          "timeEnd": 33,
+          "received": [
+            null,
+            0,
+            1,
+            null,
+            1,
+            1,
+            null,
+            1,
+            0
+          ],
+          "ok": true,
+          "data": [
+            1,
+            0
+          ],
+          "errors": 0,
+          "distance": 4,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 9,
+          "tickEnd": 35,
+          "timeEnd": 36,
+          "received": [
+            null,
+            1,
+            1,
+            null,
+            1,
+            0,
+            null,
+            0,
+            1
+          ],
+          "ok": true,
+          "data": [
+            0,
+            1
+          ],
+          "errors": 0,
+          "distance": 4,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 10,
+          "tickEnd": 38,
+          "timeEnd": 39,
+          "received": [
+            null,
+            0,
+            0,
+            null,
+            0,
+            0,
+            null,
+            0,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 4,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 11,
+          "tickEnd": 41,
+          "timeEnd": 42,
+          "received": [
+            null,
+            1,
+            1,
+            null,
+            1,
+            0,
+            null,
+            0,
+            1
+          ],
+          "ok": true,
+          "data": [
+            0,
+            1
+          ],
+          "errors": 0,
+          "distance": 4,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 12,
+          "tickEnd": 44,
+          "timeEnd": 45,
+          "received": [
+            null,
+            0,
+            0,
+            null,
+            0,
+            0,
+            null,
+            0,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 4,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 13,
+          "tickEnd": 47,
+          "timeEnd": 48,
+          "received": [
+            null,
+            0,
+            0,
+            null,
+            0,
+            0,
+            null,
+            0,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 4,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 14,
+          "tickEnd": 50,
+          "timeEnd": 51,
+          "received": [
+            null,
+            1,
+            1,
+            null,
+            1,
+            0,
+            null,
+            0,
+            1
+          ],
+          "ok": true,
+          "data": [
+            0,
+            1
+          ],
+          "errors": 0,
+          "distance": 4,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 15,
+          "tickEnd": 53,
+          "timeEnd": 54,
+          "received": [
+            null,
+            0,
+            1,
+            null,
+            1,
+            1,
+            null,
+            1,
+            0
+          ],
+          "ok": true,
+          "data": [
+            1,
+            0
+          ],
+          "errors": 0,
+          "distance": 4,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 16,
+          "tickEnd": 56,
+          "timeEnd": 57,
+          "received": [
+            null,
+            1,
+            0,
+            null,
+            0,
+            1,
+            null,
+            1,
+            1
+          ],
+          "ok": true,
+          "data": [
+            1,
+            1
+          ],
+          "errors": 0,
+          "distance": 4,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 17,
+          "tickEnd": 59,
+          "timeEnd": 60,
+          "received": [
+            null,
+            0,
+            0,
+            null,
+            0,
+            0,
+            null,
+            0,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 4,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 18,
+          "tickEnd": 62,
+          "timeEnd": 63,
+          "received": [
+            null,
+            0,
+            1,
+            null,
+            1,
+            1,
+            null,
+            1,
+            0
+          ],
+          "ok": true,
+          "data": [
+            1,
+            0
+          ],
+          "errors": 0,
+          "distance": 4,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 19,
+          "tickEnd": 65,
+          "timeEnd": 66,
+          "received": [
+            null,
+            0,
+            0,
+            null,
+            0,
+            0,
+            null,
+            0,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 4,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 20,
+          "tickEnd": 68,
+          "timeEnd": 69,
+          "received": [
+            null,
+            0,
+            0,
+            null,
+            0,
+            0,
+            null,
+            0,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 4,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 21,
+          "tickEnd": 71,
+          "timeEnd": 72,
+          "received": [
+            null,
+            0,
+            0,
+            null,
+            0,
+            0,
+            null,
+            0,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 4,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 22,
+          "tickEnd": 74,
+          "timeEnd": 75,
+          "received": [
+            null,
+            0,
+            0,
+            null,
+            0,
+            0,
+            null,
+            0,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 4,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 23,
+          "tickEnd": 77,
+          "timeEnd": 78,
+          "received": [
+            null,
+            0,
+            0,
+            null,
+            0,
+            0,
+            null,
+            0,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 4,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 24,
+          "tickEnd": 80,
+          "timeEnd": 81,
+          "received": [
+            null,
+            0,
+            0,
+            null,
+            0,
+            0,
+            null,
+            0,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 4,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 25,
+          "tickEnd": 83,
+          "timeEnd": 84,
+          "received": [
+            null,
+            0,
+            0,
+            null,
+            0,
+            0,
+            null,
+            0,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 4,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 26,
+          "tickEnd": 86,
+          "timeEnd": 87,
+          "received": [
+            null,
+            1,
+            1,
+            null,
+            1,
+            0,
+            null,
+            0,
+            1
+          ],
+          "ok": true,
+          "data": [
+            0,
+            1
+          ],
+          "errors": 0,
+          "distance": 4,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        }
+      ],
+      "good": [
+        false,
+        true,
+        true
+      ],
+      "ticks": 87
+    },
+    {
+      "blocked": [
+        0,
+        1
+      ],
+      "ok": true,
+      "reconstructed": "111000111000101010010001000001101100100000000000000001",
+      "log": [
+        {
+          "block": 0,
+          "tickEnd": 8,
+          "timeEnd": 9,
+          "received": [
+            null,
+            null,
+            0,
+            null,
+            null,
+            1,
+            null,
+            null,
+            1
+          ],
+          "ok": true,
+          "data": [
+            1,
+            1
+          ],
+          "errors": 0,
+          "distance": 2,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 1,
+          "tickEnd": 11,
+          "timeEnd": 12,
+          "received": [
+            null,
+            null,
+            1,
+            null,
+            null,
+            1,
+            null,
+            null,
+            0
+          ],
+          "ok": true,
+          "data": [
+            1,
+            0
+          ],
+          "errors": 0,
+          "distance": 2,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 2,
+          "tickEnd": 14,
+          "timeEnd": 15,
+          "received": [
+            null,
+            null,
+            0,
+            null,
+            null,
+            0,
+            null,
+            null,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 2,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 3,
+          "tickEnd": 17,
+          "timeEnd": 18,
+          "received": [
+            null,
+            null,
+            0,
+            null,
+            null,
+            1,
+            null,
+            null,
+            1
+          ],
+          "ok": true,
+          "data": [
+            1,
+            1
+          ],
+          "errors": 0,
+          "distance": 2,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 4,
+          "tickEnd": 20,
+          "timeEnd": 21,
+          "received": [
+            null,
+            null,
+            1,
+            null,
+            null,
+            1,
+            null,
+            null,
+            0
+          ],
+          "ok": true,
+          "data": [
+            1,
+            0
+          ],
+          "errors": 0,
+          "distance": 2,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 5,
+          "tickEnd": 23,
+          "timeEnd": 24,
+          "received": [
+            null,
+            null,
+            0,
+            null,
+            null,
+            0,
+            null,
+            null,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 2,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 6,
+          "tickEnd": 26,
+          "timeEnd": 27,
+          "received": [
+            null,
+            null,
+            1,
+            null,
+            null,
+            1,
+            null,
+            null,
+            0
+          ],
+          "ok": true,
+          "data": [
+            1,
+            0
+          ],
+          "errors": 0,
+          "distance": 2,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 7,
+          "tickEnd": 29,
+          "timeEnd": 30,
+          "received": [
+            null,
+            null,
+            1,
+            null,
+            null,
+            1,
+            null,
+            null,
+            0
+          ],
+          "ok": true,
+          "data": [
+            1,
+            0
+          ],
+          "errors": 0,
+          "distance": 2,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 8,
+          "tickEnd": 32,
+          "timeEnd": 33,
+          "received": [
+            null,
+            null,
+            1,
+            null,
+            null,
+            1,
+            null,
+            null,
+            0
+          ],
+          "ok": true,
+          "data": [
+            1,
+            0
+          ],
+          "errors": 0,
+          "distance": 2,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 9,
+          "tickEnd": 35,
+          "timeEnd": 36,
+          "received": [
+            null,
+            null,
+            1,
+            null,
+            null,
+            0,
+            null,
+            null,
+            1
+          ],
+          "ok": true,
+          "data": [
+            0,
+            1
+          ],
+          "errors": 0,
+          "distance": 2,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 10,
+          "tickEnd": 38,
+          "timeEnd": 39,
+          "received": [
+            null,
+            null,
+            0,
+            null,
+            null,
+            0,
+            null,
+            null,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 2,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 11,
+          "tickEnd": 41,
+          "timeEnd": 42,
+          "received": [
+            null,
+            null,
+            1,
+            null,
+            null,
+            0,
+            null,
+            null,
+            1
+          ],
+          "ok": true,
+          "data": [
+            0,
+            1
+          ],
+          "errors": 0,
+          "distance": 2,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 12,
+          "tickEnd": 44,
+          "timeEnd": 45,
+          "received": [
+            null,
+            null,
+            0,
+            null,
+            null,
+            0,
+            null,
+            null,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 2,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 13,
+          "tickEnd": 47,
+          "timeEnd": 48,
+          "received": [
+            null,
+            null,
+            0,
+            null,
+            null,
+            0,
+            null,
+            null,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 2,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 14,
+          "tickEnd": 50,
+          "timeEnd": 51,
+          "received": [
+            null,
+            null,
+            1,
+            null,
+            null,
+            0,
+            null,
+            null,
+            1
+          ],
+          "ok": true,
+          "data": [
+            0,
+            1
+          ],
+          "errors": 0,
+          "distance": 2,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 15,
+          "tickEnd": 53,
+          "timeEnd": 54,
+          "received": [
+            null,
+            null,
+            1,
+            null,
+            null,
+            1,
+            null,
+            null,
+            0
+          ],
+          "ok": true,
+          "data": [
+            1,
+            0
+          ],
+          "errors": 0,
+          "distance": 2,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 16,
+          "tickEnd": 56,
+          "timeEnd": 57,
+          "received": [
+            null,
+            null,
+            0,
+            null,
+            null,
+            1,
+            null,
+            null,
+            1
+          ],
+          "ok": true,
+          "data": [
+            1,
+            1
+          ],
+          "errors": 0,
+          "distance": 2,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 17,
+          "tickEnd": 59,
+          "timeEnd": 60,
+          "received": [
+            null,
+            null,
+            0,
+            null,
+            null,
+            0,
+            null,
+            null,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 2,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 18,
+          "tickEnd": 62,
+          "timeEnd": 63,
+          "received": [
+            null,
+            null,
+            1,
+            null,
+            null,
+            1,
+            null,
+            null,
+            0
+          ],
+          "ok": true,
+          "data": [
+            1,
+            0
+          ],
+          "errors": 0,
+          "distance": 2,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 19,
+          "tickEnd": 65,
+          "timeEnd": 66,
+          "received": [
+            null,
+            null,
+            0,
+            null,
+            null,
+            0,
+            null,
+            null,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 2,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 20,
+          "tickEnd": 68,
+          "timeEnd": 69,
+          "received": [
+            null,
+            null,
+            0,
+            null,
+            null,
+            0,
+            null,
+            null,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 2,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 21,
+          "tickEnd": 71,
+          "timeEnd": 72,
+          "received": [
+            null,
+            null,
+            0,
+            null,
+            null,
+            0,
+            null,
+            null,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 2,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 22,
+          "tickEnd": 74,
+          "timeEnd": 75,
+          "received": [
+            null,
+            null,
+            0,
+            null,
+            null,
+            0,
+            null,
+            null,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 2,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 23,
+          "tickEnd": 77,
+          "timeEnd": 78,
+          "received": [
+            null,
+            null,
+            0,
+            null,
+            null,
+            0,
+            null,
+            null,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 2,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 24,
+          "tickEnd": 80,
+          "timeEnd": 81,
+          "received": [
+            null,
+            null,
+            0,
+            null,
+            null,
+            0,
+            null,
+            null,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 2,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 25,
+          "tickEnd": 83,
+          "timeEnd": 84,
+          "received": [
+            null,
+            null,
+            0,
+            null,
+            null,
+            0,
+            null,
+            null,
+            0
+          ],
+          "ok": true,
+          "data": [
+            0,
+            0
+          ],
+          "errors": 0,
+          "distance": 2,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        },
+        {
+          "block": 26,
+          "tickEnd": 86,
+          "timeEnd": 87,
+          "received": [
+            null,
+            null,
+            1,
+            null,
+            null,
+            0,
+            null,
+            null,
+            1
+          ],
+          "ok": true,
+          "data": [
+            0,
+            1
+          ],
+          "errors": 0,
+          "distance": 2,
+          "correctedPositions": [],
+          "syndrome": null,
+          "status": "RECOVERED"
+        }
+      ],
+      "good": [
+        false,
+        false,
+        true
+      ],
+      "ticks": 87
+    },
+    {
+      "blocked": [
+        0,
+        1,
+        2
+      ],
+      "ok": false,
+      "reason": "RANK",
+      "log": [
+        {
+          "block": 0,
+          "tickEnd": 8,
+          "timeEnd": 9,
+          "received": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "ok": false,
+          "reason": "RANK",
+          "distance": 0
+        }
+      ],
+      "good": [
+        false,
+        false,
+        false
+      ]
+    }
+  ]
+}

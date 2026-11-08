@@ -4,7 +4,11 @@ Proyecto de Comunicación de Computadoras VIII, desarrollado por Erwin y Adrián
 
 Queremos comunicar dos BeagleBone Black usando luz, sonido y tensión en un hilo de nylon. La idea es enviar mensajes de texto desde un chat y ver cómo llegan al otro equipo a través de los tres medios, incluyendo qué pasa cuando hay interferencias.
 
-## Cómo lo vamos a hacer
+## Revisión vigente del diseño
+
+La propuesta actual es la [revisión matricial 102](docs/protocolo/TRAMA3_Protocolo_y_Medios_Revision_102.docx), con [especificación consultable](docs/protocolo/TRAMA3_Protocolo_Revision_102.md) y [referencia ejecutable](software/matrices102/README.md). Está pendiente de contraste con el caso base y validación física. La descripción de reparto y el HTML 101 que siguen son antecedentes y no acreditan la capa matricial nueva.
+
+## Arquitectura previa y componentes conservados
 
 Ya contamos con las dos BeagleBone Black. Cada una ejecutará el protocolo y su servidor web. Conectaremos una computadora por USB a cada placa para escribir y leer los mensajes; la comunicación entre las BeagleBone pasará por los medios del proyecto.
 
