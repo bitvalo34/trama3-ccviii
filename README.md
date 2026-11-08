@@ -39,6 +39,9 @@ El protocolo no está implementado ni validado físicamente en las placas; sí r
 
 ## Documentación
 
+- [Guía completa de T04, comandos y casos de error](hardware/configuracion/T04-preparacion-debian.md).
+- [Asignación y verificación de pines](hardware/configuracion/T04-pinmux-bbb.md).
+
 - [Inventario y conciliación T03](hardware/inventario/T03-conciliacion-materiales.md).
 - [Excel de materiales con conciliación](hardware/inventario/CCVIII_Materiales_y_Compras_T03.xlsx).
 
