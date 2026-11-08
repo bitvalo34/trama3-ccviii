@@ -35,7 +35,7 @@ Para sonido, la BeagleBone interpretará los pulsos del KY-037 para obtener un s
 
 Por ahora tenemos documentada la arquitectura y las aclaraciones del auxiliar sobre el reloj, los medios y el uso del USB como conexión local. También definimos los cambios para ajustar la frecuencia y responder a interferencias.
 
-El protocolo no está implementado ni validado físicamente en las placas; sí realizamos la inspección básica. Falta la revisión de Adrián para cerrar T01. T02 quedó cerrada el 07/11/2026 como inspección básica con observaciones. Los pendientes de configuración de B y prueba PRU pasan a T04.
+El protocolo no está implementado ni validado físicamente en las placas; sí realizamos la inspección básica. Falta la revisión de Adrián para cerrar T01. T02 quedó cerrada el 07/11/2026 como inspección básica con observaciones. T04 completó la selección y restauración de los cinco pines en ambas placas el 08/11/2026, con observaciones. Firmware PRU y pruebas eléctricas corresponden a T06.
 
 ## Documentación
 
@@ -70,3 +70,5 @@ tests/      Pruebas y evidencias
 Por ahora estas carpetas contienen la documentación inicial. Iremos agregando el código, los esquemas y los resultados conforme avancemos.
 
 Para trabajar entre los dos usaremos una rama por tarea, por ejemplo `t02-inspeccion-bbb`, y revisaremos los cambios antes de pasarlos a `main`.
+
+- [Resultados y cierre técnico de T04](hardware/configuracion/T04-resultados.md).

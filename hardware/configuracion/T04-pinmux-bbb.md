@@ -1,6 +1,6 @@
 # T04 — Pines de BeagleBone Black
 
-Preparación documental: 08/11/2026. Protocolo 101. **Ningún pin se ha verificado físicamente en esta ejecución.**
+Preparación documental: 08/11/2026. Protocolo 101. **Selección y restauración verificadas en ambas placas: [resultados](T04-resultados.md). No es prueba eléctrica ni de firmware.**
 
 ## Correspondencia que debe verificarse en A y B
 
@@ -61,4 +61,4 @@ Persistencia: se aplaza deliberadamente hasta T06 para no activar CLK TX al arra
 - [PRU Cookbook: configurar pines y compiladores](https://docs.beagleboard.org/books/pru-cookbook/03details/details.html). GCC para ARM no es clpru.
 - [TI AM335x, hoja técnica SPRS717L, tabla 4-2](https://www.ti.com/lit/ds/symlink/am3358.pdf), funciones y modos de pads. TRM disponible en la página oficial AM3358.
 
-La tabla se contrastó documentalmente; la selección efectiva en cada Debian se completa con los resultados de Erwin.
+La selección efectiva y los registros pinctrl en ambas placas se corroboraron el 08/11/2026; véase T04-resultados.md.

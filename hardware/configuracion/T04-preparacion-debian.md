@@ -8,7 +8,7 @@ Fecha de preparación: 08/11/2026. Base: revisión 101. Responsable del tracker:
 
 Se inspeccionó main (72188e8), sus ramas, commits y PR abiertos: no había cambios locales ni PR pendientes. Se conservaron T01, T02, ADR y protocolo 101. El pedido está conciliado en T03. El tracker de entrada no se modificó.
 
-Desde el PC no apareció un dispositivo BeagleBone/USB Serial en la consulta y la conexión SSH por USB agotó el tiempo. Esto sólo prueba ausencia de acceso en ese momento. **No se ejecutaron estos scripts en A o B ni se modificó Debian en esta sesión.** Las pruebas locales del código no acreditan hardware. Se comprobó sintaxis Bash/PowerShell y seis casos con sysfs simulado: selección/restauración, PRU ocupado, UART seleccionada, modo ausente, fallo a mitad del cambio y ausencia de confirmación de placa sin cargas. Los seis conservaron/restauraron los estados esperados. El transporte serial sólo se validó sintácticamente; requiere prueba real.
+Actualización 08/11/2026: pruebas reales de A y B revisadas. Los cinco pines se seleccionaron, corroboraron en pinctrl y restauraron. Véase [resultados y cierre](T04-resultados.md). headless de B dejó una incidencia opcional.
 
 ## 2. Decisión sobre el sistema operativo
 
@@ -221,31 +221,10 @@ Compras externas: precio por lote o desconocido; sin dirección/datos de pago.
 
 No subir logs crudos a GitHub. Revisar nombres, IP/MAC, números de serie, rutas privadas y mensajes de autenticación. El asistente genera registros locales; publicaremos sólo el resumen técnico necesario. No adjuntar la factura completa al PR.
 
-## 8. Tabla de situación actual
+## 8. Resultados y cierre
 
-Los datos numéricos son evidencia de T02, no mediciones del 08/11.
+T04: **Completada, 100%, con observaciones**, inicio y cierre real 08/11/2026. [Evidencia de A y B](T04-resultados.md).
 
-| Verificación | BBB-A | BBB-B |
-|---|---|---|
-| Debian / kernel T02 | 10 / 4.19.94-ti-r42 | 9 / 4.14.71-ti-r80 |
-| Arranque actual | Pendiente de reconfirmar | Pendiente de reconfirmar |
-| Acceso previo | SSH USB verificado en T02 | ttyGS0 USB verificado en T02 |
-| Espacio previo | ~1.3GB después de limpieza | ~190MB |
-| PRU0 | Nombre 4a334000, offline en T02; ejecución no probada | Identidad precisa pendiente; estados offline observados |
-| P8_11 | Pendiente de selección y dueño | Pendiente de selección y dueño |
-| P8_15 | Pendiente | Pendiente |
-| P8_16 | Pendiente | Pendiente |
-| P9_24 | Pendiente; revisar UART1 | Pendiente; revisar UART1 |
-| P9_27 | Pendiente | Pendiente |
-| P9_14 PWM | Interfaz visible T02, pin/onda no probados | Interfaz visible T02, pin/onda no probados |
-| P9_19/P9_20 I2C | Bus visible T02; transacción no probada | Bus visible T02; transacción no probada |
-| Persistencia | No instalada; aplazada | No instalada; aplazada |
-| Bloqueos conocidos | DNS previo; resultados nuevos faltantes | Espacio, red USB Windows, DNS/LightDM; resultados nuevos faltantes |
+No repetir audit/pin-test ni montar debugfs. clean-cache no es necesario con caché de B de 8K. Reinicio opcional; apagar sólo si se retirará la placa. headless de B terminó con error, documentado sin considerarlo exitoso; no bloquea los cinco pines ni la consola.
 
-## 9. Cierre y siguiente tarea
-
-T04 recomendada **En curso, 25%**: estimación documental y herramientas, no porcentaje de pines aprobados. Inicio real 08/11/2026, cierre vacío. No marcar 100% hasta recibir ambas ejecuciones, interpretar dueños/registros y resolver conflictos de los cinco pines. Si falta compiler PRU o red para instalarlo, especificar el bloqueo de T06 aunque T04 termine su alcance mínimo.
-
-T06 deberá fijar toolchain PRU compatible, probar firmware mínimo y medir P9_14, además de resolver inicialización/persistencia. No se escribió firmware, habilitó PWM, conectó expansor ni transmitió protocolo. El cuerpo de 54 bits, reloj PWM y frecuencias independientes permanecen en revisión 101.
-
-El tracker mantiene su planificación histórica de octubre. Registrar inicio/cierre real en sus campos/observaciones sin retrofechar y sin cambiar responsables automáticamente.
+T06 debe probar compilación/firmware, PWM e inicialización/persistencia. El tracker no se modificó; conservar responsables y planificación histórica. El PR requiere revisión y no se integra automáticamente.
