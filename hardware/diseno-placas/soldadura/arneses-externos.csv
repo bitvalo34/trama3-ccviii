@@ -1,0 +1,32 @@
+﻿id,aplica,origen,destino,red,longitud_reserva_mm,conductor,nota
+H01,A y B,J14.1 (H3),F1.1,+5V_RAW,200,22AWG flexible,NC/AO libres. Ver serigrafia real; no asumir ordinal del modulo.
+H02,A y B,J14.2 (H5),F1.2,+5V_FUSED,200,22AWG flexible,NC/AO libres. Ver serigrafia real; no asumir ordinal del modulo.
+H03,A y B,J12.1 (C10),Q6.1,GATE_POL,25,26AWG flexible,NC/AO libres. Ver serigrafia real; no asumir ordinal del modulo.
+H04,A y B,J12.2 (C11),Q6.2,+5V_ACT,25,22AWG flexible,NC/AO libres. Ver serigrafia real; no asumir ordinal del modulo.
+H05,A y B,J12.3 (C12),Q6.3,+5V_FUSED,25,22AWG flexible,NC/AO libres. Ver serigrafia real; no asumir ordinal del modulo.
+H06,A y B,J13.1 (C19),SW1.1,+5V_ACT,150,22AWG flexible,NC/AO libres. Ver serigrafia real; no asumir ordinal del modulo.
+H07,A y B,J13.2 (C20),SW1.2,+5V_SERVO,150,22AWG flexible,NC/AO libres. Ver serigrafia real; no asumir ordinal del modulo.
+H08,A y B,J13.4 (C22),SW1.4,PWM_5V,150,26AWG flexible,NC/AO libres. Ver serigrafia real; no asumir ordinal del modulo.
+H09,A y B,J13.5 (C23),SW1.5,SERVO_SIG,150,26AWG flexible,NC/AO libres. Ver serigrafia real; no asumir ordinal del modulo.
+H10,A y B,J13.6 (C24),SW1.6,GND_ACT,150,22AWG flexible,NC/AO libres. Ver serigrafia real; no asumir ordinal del modulo.
+H11,A y B,J11.1 (R3),MOD3.VBUS,+5V_RAW,100,22AWG flexible,NC/AO libres. Ver serigrafia real; no asumir ordinal del modulo.
+H12,A y B,J11.2 (R4),MOD3.GND,GND_ACT,100,22AWG flexible,NC/AO libres. Ver serigrafia real; no asumir ordinal del modulo.
+H13,A y B,J2.1 (X20),D3.A,LED_A,200,26AWG flexible,NC/AO libres. Ver serigrafia real; no asumir ordinal del modulo.
+H14,A y B,J2.2 (X22),D3.K,LED_K,200,26AWG flexible,NC/AO libres. Ver serigrafia real; no asumir ordinal del modulo.
+H15,A y B,J3.1 (AD20),BZ1.+,+5V_ACT,200,22AWG flexible,NC/AO libres. Ver serigrafia real; no asumir ordinal del modulo.
+H16,A y B,J3.2 (AD22),BZ1.-,BUZZ_NEG,200,26AWG flexible,NC/AO libres. Ver serigrafia real; no asumir ordinal del modulo.
+H17,A y B,J4.1 (C28),M1.GND,GND_ACT,200,22AWG flexible,NC/AO libres. Ver serigrafia real; no asumir ordinal del modulo.
+H18,A y B,J4.2 (C30),M1.VCC,+5V_SERVO,200,22AWG flexible,NC/AO libres. Ver serigrafia real; no asumir ordinal del modulo.
+H19,A y B,J4.3 (C32),M1.SIG,SERVO_SIG,200,26AWG flexible,NC/AO libres. Ver serigrafia real; no asumir ordinal del modulo.
+H20,A y B,J5.1 (V28),MOD1.VCC,+3V3_LOGIC,200,26AWG flexible,NC/AO libres. Ver serigrafia real; no asumir ordinal del modulo.
+H21,A y B,J5.2 (V30),MOD1.GND,GND_LOGIC,200,26AWG flexible,NC/AO libres. Ver serigrafia real; no asumir ordinal del modulo.
+H22,A y B,J5.3 (V32),MOD1.DO,OPT_RAW,200,26AWG flexible,NC/AO libres. Ver serigrafia real; no asumir ordinal del modulo.
+H23,A y B,J6.1 (AB28),MOD2.VCC,+3V3_LOGIC,200,26AWG flexible,NC/AO libres. Ver serigrafia real; no asumir ordinal del modulo.
+H24,A y B,J6.2 (AB30),MOD2.GND,GND_LOGIC,200,26AWG flexible,NC/AO libres. Ver serigrafia real; no asumir ordinal del modulo.
+H25,A y B,J6.3 (AB32),MOD2.DO,AUD_RAW,200,26AWG flexible,NC/AO libres. Ver serigrafia real; no asumir ordinal del modulo.
+H26,A y B,J7.1 (AH29),SW2.COM,GND_LOGIC,200,26AWG flexible,NC/AO libres. Ver serigrafia real; no asumir ordinal del modulo.
+H27,A y B,J7.2 (AH31),SW2.NO,MECH_RAW,200,26AWG flexible,NC/AO libres. Ver serigrafia real; no asumir ordinal del modulo.
+H28,A->B,J9.A.1,J8.B.1,par opto remoto 1,500,"26AWG aislado, par trenzado",Sin conductor GND entre nodos; identificar + y -. Ajustar longitud a mesa real.
+H29,A->B,J9.A.2,J8.B.2,par opto remoto 2,500,"26AWG aislado, par trenzado",Sin conductor GND entre nodos; identificar + y -. Ajustar longitud a mesa real.
+H30,B->A,J9.B.1,J8.A.1,par opto remoto 1,500,"26AWG aislado, par trenzado",Sin conductor GND entre nodos; identificar + y -. Ajustar longitud a mesa real.
+H31,B->A,J9.B.2,J8.A.2,par opto remoto 2,500,"26AWG aislado, par trenzado",Sin conductor GND entre nodos; identificar + y -. Ajustar longitud a mesa real.

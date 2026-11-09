@@ -1,0 +1,201 @@
+﻿ref,valor,pin,funcion,red,perforacion,columna,fila,x_mm,y_mm,altura_mm,zona,estado
+J1,ENTRADA 5V / 2.5A,1,+5V_RAW,+5V_RAW,C3,3,C,10.08,10.08,10,POWER,Disponible para diseño; dimensiones estimadas
+J1,ENTRADA 5V / 2.5A,2,GND_ACT,GND_ACT,C5,5,C,15.16,10.08,10,POWER,Disponible para diseño; dimensiones estimadas
+J14,PORTAFUSIBLE EXTERNO,1,+5V_RAW,+5V_RAW,H3,3,H,10.08,22.78,10,POWER,Disponible para diseño; dimensiones estimadas
+J14,PORTAFUSIBLE EXTERNO,2,+5V_FUSED,+5V_FUSED,H5,5,H,15.16,22.78,10,POWER,Disponible para diseño; dimensiones estimadas
+J12,PMOS G/S/D,1,GATE_POL,GATE_POL,C10,10,C,27.86,10.08,8,POWER,Disponible para diseño; dimensiones estimadas
+J12,PMOS G/S/D,2,+5V_ACT,+5V_ACT,C11,11,C,30.4,10.08,8,POWER,Disponible para diseño; dimensiones estimadas
+J12,PMOS G/S/D,3,+5V_FUSED,+5V_FUSED,C12,12,C,32.94,10.08,8,POWER,Disponible para diseño; dimensiones estimadas
+R30,100k,1,1,GATE_POL,G10,10,G,27.86,20.24,3,POWER,Disponible para diseño; dimensiones estimadas
+R30,100k,2,2,GND_ACT,G13,13,G,35.48,20.24,3,POWER,Disponible para diseño; dimensiones estimadas
+C1,1000uF/16V,1,+,+5V_ACT,M4,4,M,12.62,35.48,20,POWER,Disponible para diseño; dimensiones estimadas
+C1,1000uF/16V,2,-,GND_ACT,M6,6,M,17.7,35.48,20,POWER,Disponible para diseño; dimensiones estimadas
+C2,100nF,1,+,+5V_ACT,L11,11,L,30.4,32.94,5,POWER,Disponible para diseño; dimensiones estimadas
+C2,100nF,2,-,GND_ACT,L12,12,L,32.94,32.94,5,POWER,Disponible para diseño; dimensiones estimadas
+NT1,ESTRELLA 22AWG,1,GND_ACT,GND_ACT,P11,11,P,30.4,43.1,8,POWER,Disponible para diseño; dimensiones estimadas
+NT1,ESTRELLA 22AWG,2,GND_LOGIC,GND_LOGIC,P12,12,P,32.94,43.1,8,POWER,Disponible para diseño; dimensiones estimadas
+J11,USB AUX TEST,1,+5V_RAW,+5V_RAW,R3,3,R,10.08,48.18,8,POWER,Disponible para diseño; dimensiones estimadas
+J11,USB AUX TEST,2,GND_ACT,GND_ACT,R4,4,R,12.62,48.18,8,POWER,Disponible para diseño; dimensiones estimadas
+J13,CORTE SERVO DPDT,1,+5V_ACT,+5V_ACT,C19,19,C,50.72,10.08,8,SERVO,Disponible para diseño; dimensiones estimadas
+J13,CORTE SERVO DPDT,2,+5V_SERVO,+5V_SERVO,C20,20,C,53.26,10.08,8,SERVO,Disponible para diseño; dimensiones estimadas
+J13,CORTE SERVO DPDT,3,NC,NC,C21,21,C,55.8,10.08,8,SERVO,Disponible para diseño; dimensiones estimadas
+J13,CORTE SERVO DPDT,4,PWM_5V,PWM_5V,C22,22,C,58.34,10.08,8,SERVO,Disponible para diseño; dimensiones estimadas
+J13,CORTE SERVO DPDT,5,SERVO_SIG,SERVO_SIG,C23,23,C,60.88,10.08,8,SERVO,Disponible para diseño; dimensiones estimadas
+J13,CORTE SERVO DPDT,6,GND_ACT,GND_ACT,C24,24,C,63.42,10.08,8,SERVO,Disponible para diseño; dimensiones estimadas
+J4,SG90 GND/+5V/SIG,1,GND_ACT,GND_ACT,C28,28,C,73.58,10.08,10,SERVO,Disponible para diseño; dimensiones estimadas
+J4,SG90 GND/+5V/SIG,2,+5V_SERVO,+5V_SERVO,C30,30,C,78.66,10.08,10,SERVO,Disponible para diseño; dimensiones estimadas
+J4,SG90 GND/+5V/SIG,3,SERVO_SIG,SERVO_SIG,C32,32,C,83.74,10.08,10,SERVO,Disponible para diseño; dimensiones estimadas
+Q3,2N3904,1,E,GND_ACT,I20,20,I,53.26,25.32,5,SERVO,Pinout del lote pendiente; TO92 aproximado
+Q3,2N3904,2,B,PWM_B1,I21,21,I,55.8,25.32,5,SERVO,Pinout del lote pendiente; TO92 aproximado
+Q3,2N3904,3,C,PWM_INV,I22,22,I,58.34,25.32,5,SERVO,Pinout del lote pendiente; TO92 aproximado
+Q4,2N3904,1,E,GND_ACT,I28,28,I,73.58,25.32,5,SERVO,Pinout del lote pendiente; TO92 aproximado
+Q4,2N3904,2,B,PWM_B2,I29,29,I,76.12,25.32,5,SERVO,Pinout del lote pendiente; TO92 aproximado
+Q4,2N3904,3,C,PWM_5V,I30,30,I,78.66,25.32,5,SERVO,Pinout del lote pendiente; TO92 aproximado
+R10,4.7k,1,1,PWM_BBB,F17,17,F,45.64,17.7,3,SERVO,Disponible para diseño; dimensiones estimadas
+R10,4.7k,2,2,PWM_B1,F20,20,F,53.26,17.7,3,SERVO,Disponible para diseño; dimensiones estimadas
+R11,47k,1,1,PWM_B1,L17,17,L,45.64,32.94,3,SERVO,Disponible para diseño; dimensiones estimadas
+R11,47k,2,2,GND_ACT,L20,20,L,53.26,32.94,3,SERVO,Disponible para diseño; dimensiones estimadas
+R12,4.7k,1,1,+5V_SERVO,L22,22,L,58.34,32.94,3,SERVO,Disponible para diseño; dimensiones estimadas
+R12,4.7k,2,2,PWM_INV,L25,25,L,65.96,32.94,3,SERVO,Disponible para diseño; dimensiones estimadas
+R13,4.7k,1,1,PWM_INV,L27,27,L,71.04,32.94,3,SERVO,Disponible para diseño; dimensiones estimadas
+R13,4.7k,2,2,PWM_B2,L30,30,L,78.66,32.94,3,SERVO,Disponible para diseño; dimensiones estimadas
+R14,47k,1,1,PWM_B2,O17,17,O,45.64,40.56,3,SERVO,Disponible para diseño; dimensiones estimadas
+R14,47k,2,2,GND_ACT,O20,20,O,53.26,40.56,3,SERVO,Disponible para diseño; dimensiones estimadas
+R15,2.2k,1,1,+5V_SERVO,O22,22,O,58.34,40.56,3,SERVO,Disponible para diseño; dimensiones estimadas
+R15,2.2k,2,2,PWM_5V,O25,25,O,65.96,40.56,3,SERVO,Disponible para diseño; dimensiones estimadas
+R16,47k,1,1,SERVO_SIG,O27,27,O,71.04,40.56,3,SERVO,Disponible para diseño; dimensiones estimadas
+R16,47k,2,2,GND_ACT,O30,30,O,78.66,40.56,3,SERVO,Disponible para diseño; dimensiones estimadas
+C3,100nF,1,+,+5V_SERVO,R29,29,R,76.12,48.18,5,SERVO,Disponible para diseño; dimensiones estimadas
+C3,100nF,2,-,GND_ACT,R30,30,R,78.66,48.18,5,SERVO,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,1,GPB0,NC,V5,5,V,15.16,58.34,9,CORE,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,2,GPB1,NC,W5,5,W,15.16,60.88,9,CORE,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,3,GPB2,NC,X5,5,X,15.16,63.42,9,CORE,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,4,GPB3,NC,Y5,5,Y,15.16,65.96,9,CORE,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,5,GPB4,NC,Z5,5,Z,15.16,68.5,9,CORE,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,6,GPB5,NC,AA5,5,AA,15.16,71.04,9,CORE,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,7,GPB6,NC,AB5,5,AB,15.16,73.58,9,CORE,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,8,GPB7,NC,AC5,5,AC,15.16,76.12,9,CORE,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,9,VDD,+3V3_LOGIC,AD5,5,AD,15.16,78.66,9,CORE,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,10,VSS,GND_LOGIC,AE5,5,AE,15.16,81.2,9,CORE,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,11,NC,NC,AF5,5,AF,15.16,83.74,9,CORE,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,12,SCL,I2C_SCL,AG5,5,AG,15.16,86.28,9,CORE,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,13,SDA,I2C_SDA,AH5,5,AH,15.16,88.82,9,CORE,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,14,NC,NC,AI5,5,AI,15.16,91.36,9,CORE,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,15,A0,GND_LOGIC,AI8,8,AI,22.78,91.36,9,CORE,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,16,A1,GND_LOGIC,AH8,8,AH,22.78,88.82,9,CORE,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,17,A2,GND_LOGIC,AG8,8,AG,22.78,86.28,9,CORE,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,18,RESET,MCP_RESET,AF8,8,AF,22.78,83.74,9,CORE,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,19,INTB,NC,AE8,8,AE,22.78,81.2,9,CORE,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,20,INTA,NC,AD8,8,AD,22.78,78.66,9,CORE,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,21,GPA0,C0_TX,AC8,8,AC,22.78,76.12,9,CORE,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,22,GPA1,C1_TX,AB8,8,AB,22.78,73.58,9,CORE,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,23,GPA2,NC,AA8,8,AA,22.78,71.04,9,CORE,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,24,GPA3,NC,Z8,8,Z,22.78,68.5,9,CORE,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,25,GPA4,NC,Y8,8,Y,22.78,65.96,9,CORE,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,26,GPA5,NC,X8,8,X,22.78,63.42,9,CORE,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,27,GPA6,NC,W8,8,W,22.78,60.88,9,CORE,Disponible para diseño; dimensiones estimadas
+U1,MCP23017 + zocalo DIP28,28,GPA7,NC,V8,8,V,22.78,58.34,9,CORE,Disponible para diseño; dimensiones estimadas
+C4,100nF,1,+,+3V3_LOGIC,AD2,2,AD,7.54,78.66,5,CORE,Disponible para diseño; dimensiones estimadas
+C4,100nF,2,-,GND_LOGIC,AD3,3,AD,10.08,78.66,5,CORE,Disponible para diseño; dimensiones estimadas
+R1,10k,1,1,+3V3_LOGIC,AL2,2,AL,7.54,98.98,3,CORE,Disponible para diseño; dimensiones estimadas
+R1,10k,2,2,MCP_RESET,AL5,5,AL,15.16,98.98,3,CORE,Disponible para diseño; dimensiones estimadas
+JP1,RESET abierto,1,MCP_RESET,MCP_RESET,AL7,7,AL,20.24,98.98,8,CORE,Disponible para diseño; dimensiones estimadas
+JP1,RESET abierto,2,GND_LOGIC,GND_LOGIC,AL8,8,AL,22.78,98.98,8,CORE,Disponible para diseño; dimensiones estimadas
+R2,4.7k DNP,1,1,+3V3_LOGIC,AO2,2,AO,7.54,106.6,3,CORE,Disponible para diseño; dimensiones estimadas
+R2,4.7k DNP,2,2,SCL_PULL,AO5,5,AO,15.16,106.6,3,CORE,Disponible para diseño; dimensiones estimadas
+R3,4.7k DNP,1,1,+3V3_LOGIC,AO7,7,AO,20.24,106.6,3,CORE,Disponible para diseño; dimensiones estimadas
+R3,4.7k DNP,2,2,SDA_PULL,AO10,10,AO,27.86,106.6,3,CORE,Disponible para diseño; dimensiones estimadas
+JP2,PU SCL abierto,1,SCL_PULL,SCL_PULL,AR2,2,AR,7.54,114.22,8,CORE,Disponible para diseño; dimensiones estimadas
+JP2,PU SCL abierto,2,I2C_SCL,I2C_SCL,AR3,3,AR,10.08,114.22,8,CORE,Disponible para diseño; dimensiones estimadas
+JP3,PU SDA abierto,1,SDA_PULL,SDA_PULL,AR7,7,AR,20.24,114.22,8,CORE,Disponible para diseño; dimensiones estimadas
+JP3,PU SDA abierto,2,I2C_SDA,I2C_SDA,AR8,8,AR,22.78,114.22,8,CORE,Disponible para diseño; dimensiones estimadas
+J10,ARNES BBB,1,+3V3_LOGIC,+3V3_LOGIC,AK13,13,AK,35.48,96.44,8,CORE,Disponible para diseño; dimensiones estimadas
+J10,ARNES BBB,2,GND_LOGIC,GND_LOGIC,AK14,14,AK,38.02,96.44,8,CORE,Disponible para diseño; dimensiones estimadas
+J10,ARNES BBB,3,I2C_SCL,I2C_SCL,AK15,15,AK,40.56,96.44,8,CORE,Disponible para diseño; dimensiones estimadas
+J10,ARNES BBB,4,I2C_SDA,I2C_SDA,AK16,16,AK,43.1,96.44,8,CORE,Disponible para diseño; dimensiones estimadas
+J10,ARNES BBB,5,PWM_BBB,PWM_BBB,AK17,17,AK,45.64,96.44,8,CORE,Disponible para diseño; dimensiones estimadas
+J10,ARNES BBB,6,CLK_TX,CLK_TX,AK18,18,AK,48.18,96.44,8,CORE,Disponible para diseño; dimensiones estimadas
+J10,ARNES BBB,7,OPT_BBB,OPT_BBB,AK19,19,AK,50.72,96.44,8,CORE,Disponible para diseño; dimensiones estimadas
+J10,ARNES BBB,8,AUD_BBB,AUD_BBB,AK20,20,AK,53.26,96.44,8,CORE,Disponible para diseño; dimensiones estimadas
+J10,ARNES BBB,9,MECH_BBB,MECH_BBB,AK21,21,AK,55.8,96.44,8,CORE,Disponible para diseño; dimensiones estimadas
+J10,ARNES BBB,10,CLK_BBB,CLK_BBB,AK22,22,AK,58.34,96.44,8,CORE,Disponible para diseño; dimensiones estimadas
+Q1,2N2222 lote pendiente,1,E,GND_ACT,W14,14,W,38.02,60.88,5,TX,Pinout del lote pendiente; TO92 aproximado
+Q1,2N2222 lote pendiente,2,B,LED_BASE,W15,15,W,40.56,60.88,5,TX,Pinout del lote pendiente; TO92 aproximado
+Q1,2N2222 lote pendiente,3,C,LED_K,W16,16,W,43.1,60.88,5,TX,Pinout del lote pendiente; TO92 aproximado
+R4,1k,1,1,C0_TX,T12,12,T,32.94,53.26,3,TX,Disponible para diseño; dimensiones estimadas
+R4,1k,2,2,LED_BASE,T15,15,T,40.56,53.26,3,TX,Disponible para diseño; dimensiones estimadas
+R5,10k,1,1,LED_BASE,Z12,12,Z,32.94,68.5,3,TX,Disponible para diseño; dimensiones estimadas
+R5,10k,2,2,GND_ACT,Z15,15,Z,40.56,68.5,3,TX,Disponible para diseño; dimensiones estimadas
+R6,330,1,1,+5V_ACT,T18,18,T,48.18,53.26,3,TX,Disponible para diseño; dimensiones estimadas
+R6,330,2,2,LED_A,T21,21,T,55.8,53.26,3,TX,Disponible para diseño; dimensiones estimadas
+J2,LED A/K,1,LED_A,LED_A,X20,20,X,53.26,63.42,10,TX,Disponible para diseño; dimensiones estimadas
+J2,LED A/K,2,LED_K,LED_K,X22,22,X,58.34,63.42,10,TX,Disponible para diseño; dimensiones estimadas
+Q2,2N2222 lote pendiente,1,E,GND_ACT,AE14,14,AE,38.02,81.2,5,TX,Pinout del lote pendiente; TO92 aproximado
+Q2,2N2222 lote pendiente,2,B,BUZZ_BASE,AE15,15,AE,40.56,81.2,5,TX,Pinout del lote pendiente; TO92 aproximado
+Q2,2N2222 lote pendiente,3,C,BUZZ_NEG,AE16,16,AE,43.1,81.2,5,TX,Pinout del lote pendiente; TO92 aproximado
+R7,1k,1,1,C1_TX,AB12,12,AB,32.94,73.58,3,TX,Disponible para diseño; dimensiones estimadas
+R7,1k,2,2,BUZZ_BASE,AB15,15,AB,40.56,73.58,3,TX,Disponible para diseño; dimensiones estimadas
+R8,10k,1,1,BUZZ_BASE,AH12,12,AH,32.94,88.82,3,TX,Disponible para diseño; dimensiones estimadas
+R8,10k,2,2,GND_ACT,AH15,15,AH,40.56,88.82,3,TX,Disponible para diseño; dimensiones estimadas
+J3,BUZZER +/-,1,+5V_ACT,+5V_ACT,AD20,20,AD,53.26,78.66,10,TX,Disponible para diseño; dimensiones estimadas
+J3,BUZZER +/-,2,BUZZ_NEG,BUZZ_NEG,AD22,22,AD,58.34,78.66,10,TX,Disponible para diseño; dimensiones estimadas
+D1,1N5819,1,1,BUZZ_NEG,AH19,19,AH,50.72,88.82,3,TX,Disponible para diseño; dimensiones estimadas
+D1,1N5819,2,2,+5V_ACT,AH22,22,AH,58.34,88.82,3,TX,Disponible para diseño; dimensiones estimadas
+J5,LDR 3V3/GND/DO,1,+3V3_LOGIC,+3V3_LOGIC,V28,28,V,73.58,58.34,10,RX,Disponible para diseño; dimensiones estimadas
+J5,LDR 3V3/GND/DO,2,GND_LOGIC,GND_LOGIC,V30,30,V,78.66,58.34,10,RX,Disponible para diseño; dimensiones estimadas
+J5,LDR 3V3/GND/DO,3,OPT_RAW,OPT_RAW,V32,32,V,83.74,58.34,10,RX,Disponible para diseño; dimensiones estimadas
+J6,AUDIO 3V3/GND/DO,1,+3V3_LOGIC,+3V3_LOGIC,AB28,28,AB,73.58,73.58,10,RX,Disponible para diseño; dimensiones estimadas
+J6,AUDIO 3V3/GND/DO,2,GND_LOGIC,GND_LOGIC,AB30,30,AB,78.66,73.58,10,RX,Disponible para diseño; dimensiones estimadas
+J6,AUDIO 3V3/GND/DO,3,AUD_RAW,AUD_RAW,AB32,32,AB,83.74,73.58,10,RX,Disponible para diseño; dimensiones estimadas
+J7,FINAL COM/NO,1,GND_LOGIC,GND_LOGIC,AH29,29,AH,76.12,88.82,10,RX,Disponible para diseño; dimensiones estimadas
+J7,FINAL COM/NO,2,MECH_RAW,MECH_RAW,AH31,31,AH,81.2,88.82,10,RX,Disponible para diseño; dimensiones estimadas
+R17,10k,1,1,+3V3_LOGIC,Y26,26,Y,68.5,65.96,3,RX,Disponible para diseño; dimensiones estimadas
+R17,10k,2,2,OPT_RAW,Y29,29,Y,76.12,65.96,3,RX,Disponible para diseño; dimensiones estimadas
+R18,10k,1,1,+3V3_LOGIC,AE26,26,AE,68.5,81.2,3,RX,Disponible para diseño; dimensiones estimadas
+R18,10k,2,2,AUD_RAW,AE29,29,AE,76.12,81.2,3,RX,Disponible para diseño; dimensiones estimadas
+R19,4.7k,1,1,+3V3_LOGIC,AL27,27,AL,71.04,98.98,3,RX,Disponible para diseño; dimensiones estimadas
+R19,4.7k,2,2,MECH_RAW,AL30,30,AL,78.66,98.98,3,RX,Disponible para diseño; dimensiones estimadas
+C5,100nF,1,+,MECH_RAW,AO30,30,AO,78.66,106.6,5,RX,Disponible para diseño; dimensiones estimadas
+C5,100nF,2,-,GND_LOGIC,AO31,31,AO,81.2,106.6,5,RX,Disponible para diseño; dimensiones estimadas
+JP10,C0:1-2 ON/2-3 OFF,1,OPT_RAW,OPT_RAW,AU3,3,AU,10.08,121.84,8,ENABLE,Disponible para diseño; dimensiones estimadas
+JP10,C0:1-2 ON/2-3 OFF,2,C0_SEL,C0_SEL,AU4,4,AU,12.62,121.84,8,ENABLE,Disponible para diseño; dimensiones estimadas
+JP10,C0:1-2 ON/2-3 OFF,3,GND_LOGIC,GND_LOGIC,AU5,5,AU,15.16,121.84,8,ENABLE,Disponible para diseño; dimensiones estimadas
+R20,1k,1,1,C0_SEL,AX3,3,AX,10.08,129.46,3,ENABLE,Disponible para diseño; dimensiones estimadas
+R20,1k,2,2,C0_TEST,AX6,6,AX,17.7,129.46,3,ENABLE,Disponible para diseño; dimensiones estimadas
+R23,100k,1,1,C0_SEL,AU7,7,AU,20.24,121.84,3,ENABLE,Disponible para diseño; dimensiones estimadas
+R23,100k,2,2,GND_LOGIC,AU10,10,AU,27.86,121.84,3,ENABLE,Disponible para diseño; dimensiones estimadas
+JP4,C0 LINK GPIO,1,C0_TEST,C0_TEST,AX8,8,AX,22.78,129.46,8,ENABLE,Disponible para diseño; dimensiones estimadas
+JP4,C0 LINK GPIO,2,OPT_BBB,OPT_BBB,AX9,9,AX,25.32,129.46,8,ENABLE,Disponible para diseño; dimensiones estimadas
+JP11,C1:1-2 ON/2-3 OFF,1,AUD_RAW,AUD_RAW,AU13,13,AU,35.48,121.84,8,ENABLE,Disponible para diseño; dimensiones estimadas
+JP11,C1:1-2 ON/2-3 OFF,2,C1_SEL,C1_SEL,AU14,14,AU,38.02,121.84,8,ENABLE,Disponible para diseño; dimensiones estimadas
+JP11,C1:1-2 ON/2-3 OFF,3,GND_LOGIC,GND_LOGIC,AU15,15,AU,40.56,121.84,8,ENABLE,Disponible para diseño; dimensiones estimadas
+R21,1k,1,1,C1_SEL,AX13,13,AX,35.48,129.46,3,ENABLE,Disponible para diseño; dimensiones estimadas
+R21,1k,2,2,C1_TEST,AX16,16,AX,43.1,129.46,3,ENABLE,Disponible para diseño; dimensiones estimadas
+R24,100k,1,1,C1_SEL,AU17,17,AU,45.64,121.84,3,ENABLE,Disponible para diseño; dimensiones estimadas
+R24,100k,2,2,GND_LOGIC,AU20,20,AU,53.26,121.84,3,ENABLE,Disponible para diseño; dimensiones estimadas
+JP5,C1 LINK GPIO,1,C1_TEST,C1_TEST,AX18,18,AX,48.18,129.46,8,ENABLE,Disponible para diseño; dimensiones estimadas
+JP5,C1 LINK GPIO,2,AUD_BBB,AUD_BBB,AX19,19,AX,50.72,129.46,8,ENABLE,Disponible para diseño; dimensiones estimadas
+JP12,C2:1-2 ON/2-3 OFF,1,MECH_RAW,MECH_RAW,AU23,23,AU,60.88,121.84,8,ENABLE,Disponible para diseño; dimensiones estimadas
+JP12,C2:1-2 ON/2-3 OFF,2,C2_SEL,C2_SEL,AU24,24,AU,63.42,121.84,8,ENABLE,Disponible para diseño; dimensiones estimadas
+JP12,C2:1-2 ON/2-3 OFF,3,GND_LOGIC,GND_LOGIC,AU25,25,AU,65.96,121.84,8,ENABLE,Disponible para diseño; dimensiones estimadas
+R22,1k,1,1,C2_SEL,AX23,23,AX,60.88,129.46,3,ENABLE,Disponible para diseño; dimensiones estimadas
+R22,1k,2,2,C2_TEST,AX26,26,AX,68.5,129.46,3,ENABLE,Disponible para diseño; dimensiones estimadas
+R25,100k,1,1,C2_SEL,AU27,27,AU,71.04,121.84,3,ENABLE,Disponible para diseño; dimensiones estimadas
+R25,100k,2,2,GND_LOGIC,AU30,30,AU,78.66,121.84,3,ENABLE,Disponible para diseño; dimensiones estimadas
+JP6,C2 LINK GPIO,1,C2_TEST,C2_TEST,AX28,28,AX,73.58,129.46,8,ENABLE,Disponible para diseño; dimensiones estimadas
+JP6,C2 LINK GPIO,2,MECH_BBB,MECH_BBB,AX29,29,AX,76.12,129.46,8,ENABLE,Disponible para diseño; dimensiones estimadas
+J8,CLK RX REMOTO +/-,1,CLK_REMOTE_A,CLK_REMOTE_A,BC3,3,BC,10.08,142.16,10,CLOCK_RX,Disponible para diseño; dimensiones estimadas
+J8,CLK RX REMOTO +/-,2,CLK_REMOTE_K,CLK_REMOTE_K,BC5,5,BC,15.16,142.16,10,CLOCK_RX,Disponible para diseño; dimensiones estimadas
+U2,PC817 DIP4,1,A,CLK_REMOTE_A,BB9,9,BB,25.32,139.62,4.5,CLOCK_RX,Disponible para diseño; dimensiones estimadas
+U2,PC817 DIP4,2,K,CLK_REMOTE_K,BC9,9,BC,25.32,142.16,4.5,CLOCK_RX,Disponible para diseño; dimensiones estimadas
+U2,PC817 DIP4,3,E,GND_LOGIC,BC12,12,BC,32.94,142.16,4.5,CLOCK_RX,Disponible para diseño; dimensiones estimadas
+U2,PC817 DIP4,4,C,CLK_RX_RAW,BB12,12,BB,32.94,139.62,4.5,CLOCK_RX,Disponible para diseño; dimensiones estimadas
+R26,4.7k,1,1,+3V3_LOGIC,BA13,13,BA,35.48,137.08,3,CLOCK,Disponible para diseño; dimensiones estimadas
+R26,4.7k,2,2,CLK_RX_RAW,BA16,16,BA,43.1,137.08,3,CLOCK,Disponible para diseño; dimensiones estimadas
+R27,1k,1,1,CLK_RX_RAW,BD13,13,BD,35.48,144.7,3,CLOCK,Disponible para diseño; dimensiones estimadas
+R27,1k,2,2,CLK_TEST,BD16,16,BD,43.1,144.7,3,CLOCK,Disponible para diseño; dimensiones estimadas
+JP7,CLK LINK,1,CLK_TEST,CLK_TEST,BD18,18,BD,48.18,144.7,8,CLOCK,Disponible para diseño; dimensiones estimadas
+JP7,CLK LINK,2,CLK_BBB,CLK_BBB,BD19,19,BD,50.72,144.7,8,CLOCK,Disponible para diseño; dimensiones estimadas
+Q5,2N3904,1,E,GND_LOGIC,BA24,24,BA,63.42,137.08,5,CLOCK,Pinout del lote pendiente; TO92 aproximado
+Q5,2N3904,2,B,CLK_BASE,BA25,25,BA,65.96,137.08,5,CLOCK,Pinout del lote pendiente; TO92 aproximado
+Q5,2N3904,3,C,CLK_SINK,BA26,26,BA,68.5,137.08,5,CLOCK,Pinout del lote pendiente; TO92 aproximado
+R28,2.2k,1,1,CLK_TX,AQ21,21,AQ,55.8,111.68,3,CLOCK,Disponible para diseño; dimensiones estimadas
+R28,2.2k,2,2,CLK_BASE,AQ24,24,AQ,63.42,111.68,3,CLOCK,Disponible para diseño; dimensiones estimadas
+R29,47k,1,1,CLK_BASE,AR27,27,AR,71.04,114.22,3,CLOCK,Disponible para diseño; dimensiones estimadas
+R29,47k,2,2,GND_LOGIC,AR30,30,AR,78.66,114.22,3,CLOCK,Disponible para diseño; dimensiones estimadas
+R31,270,1,1,+3V3_LOGIC,BD22,22,BD,58.34,144.7,3,CLOCK,Disponible para diseño; dimensiones estimadas
+R31,270,2,2,CLK_SEND_A,BD25,25,BD,65.96,144.7,3,CLOCK,Disponible para diseño; dimensiones estimadas
+J9,CLK TX +/-,1,CLK_SEND_A,CLK_SEND_A,BC29,29,BC,76.12,142.16,10,CLOCK,Disponible para diseño; dimensiones estimadas
+J9,CLK TX +/-,2,CLK_SINK,CLK_SINK,BC31,31,BC,81.2,142.16,10,CLOCK,Disponible para diseño; dimensiones estimadas
+D2,1N4148,1,1,CLK_REMOTE_K,AZ3,3,AZ,10.08,134.54,3,CLOCK_RX,Disponible para diseño; dimensiones estimadas
+D2,1N4148,2,2,CLK_REMOTE_A,AZ6,6,AZ,17.7,134.54,3,CLOCK_RX,Disponible para diseño; dimensiones estimadas
+TP1,+5V_ACT,1,+5V_ACT,+5V_ACT,M14,14,M,38.02,35.48,8,POWER,Disponible para diseño; dimensiones estimadas
+TP2,GND_ACT,1,GND_ACT,GND_ACT,P14,14,P,38.02,43.1,8,POWER,Disponible para diseño; dimensiones estimadas
+TP3,+3V3_LOGIC,1,+3V3_LOGIC,+3V3_LOGIC,AD10,10,AD,27.86,78.66,8,CORE,Disponible para diseño; dimensiones estimadas
+TP4,GND_LOGIC,1,GND_LOGIC,GND_LOGIC,AG10,10,AG,27.86,86.28,8,CORE,Disponible para diseño; dimensiones estimadas
+TP5,OPT_RAW,1,OPT_RAW,OPT_RAW,V25,25,V,65.96,58.34,8,RX,Disponible para diseño; dimensiones estimadas
+TP6,AUD_RAW,1,AUD_RAW,AUD_RAW,AB25,25,AB,65.96,73.58,8,RX,Disponible para diseño; dimensiones estimadas
+TP7,MECH_RAW,1,MECH_RAW,MECH_RAW,AH25,25,AH,65.96,88.82,8,RX,Disponible para diseño; dimensiones estimadas
+TP8,CLK_RX_RAW,1,CLK_RX_RAW,CLK_RX_RAW,BA18,18,BA,48.18,137.08,8,CLOCK,Disponible para diseño; dimensiones estimadas
+TP9,SERVO_SIG,1,SERVO_SIG,SERVO_SIG,R25,25,R,65.96,48.18,8,SERVO,Disponible para diseño; dimensiones estimadas
+TP10,CLK_TX,1,CLK_TX,CLK_TX,AX21,21,AX,55.8,129.46,8,CLOCK,Disponible para diseño; dimensiones estimadas

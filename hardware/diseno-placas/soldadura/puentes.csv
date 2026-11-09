@@ -1,0 +1,12 @@
+﻿ref,funcion,perforaciones,inicial,uso,redes
+NT1,ESTRELLA 22AWG,P11 / P12,1-2 permanente 22AWG,ver guia-montaje.md,GND_ACT / GND_LOGIC
+JP1,RESET abierto,AL7 / AL8,ABIERTO,ver guia-montaje.md,MCP_RESET / GND_LOGIC
+JP2,PU SCL abierto,AR2 / AR3,ABIERTO,ver guia-montaje.md,SCL_PULL / I2C_SCL
+JP3,PU SDA abierto,AR7 / AR8,ABIERTO,ver guia-montaje.md,SDA_PULL / I2C_SDA
+JP10,C0:1-2 ON/2-3 OFF,AU3 / AU4 / AU5,2-3 OFF,1-2 habilitado; 2-3 deshabilitado,OPT_RAW / C0_SEL / GND_LOGIC
+JP4,C0 LINK GPIO,AX8 / AX9,ABIERTO,ver guia-montaje.md,C0_TEST / OPT_BBB
+JP11,C1:1-2 ON/2-3 OFF,AU13 / AU14 / AU15,2-3 OFF,1-2 habilitado; 2-3 deshabilitado,AUD_RAW / C1_SEL / GND_LOGIC
+JP5,C1 LINK GPIO,AX18 / AX19,ABIERTO,ver guia-montaje.md,C1_TEST / AUD_BBB
+JP12,C2:1-2 ON/2-3 OFF,AU23 / AU24 / AU25,2-3 OFF,1-2 habilitado; 2-3 deshabilitado,MECH_RAW / C2_SEL / GND_LOGIC
+JP6,C2 LINK GPIO,AX28 / AX29,ABIERTO,ver guia-montaje.md,C2_TEST / MECH_BBB
+JP7,CLK LINK,BD18 / BD19,ABIERTO,ver guia-montaje.md,CLK_TEST / CLK_BBB

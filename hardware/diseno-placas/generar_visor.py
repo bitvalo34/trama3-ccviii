@@ -1,0 +1,18 @@
+from pathlib import Path
+import json,html
+R=Path(__file__).resolve().parent;D=json.loads((R/'netlist/diseno.json').read_text(encoding='utf8'))
+def svg(name):
+ import xml.etree.ElementTree as E
+ root=E.fromstring((R/f'planos/{name}.svg').read_text(encoding='utf8'))
+ for element,w in zip(root.findall('{http://www.w3.org/2000/svg}polyline'),D['wires']):element.set('data-id',w['id']);element.set('data-net',w['net']);element.set('class','wire')
+ E.register_namespace('','http://www.w3.org/2000/svg');return E.tostring(root,encoding='unicode')
+template=r'''<!doctype html><html lang="es"><meta charset="utf-8"><title>TRAMA3 — revisión de cableado T51</title>
+<style>body{font:16px Arial;margin:20px;color:#202020}h1{font-size:23px}header{max-width:1100px}main{display:flex;gap:24px;align-items:start}svg{width:auto;height:82vh;min-height:700px}aside{max-width:460px;position:sticky;top:16px}select,button{font:inherit;padding:6px;max-width:100%;margin:6px 0}pre{white-space:pre-wrap;font-size:13px;line-height:1.5}.hidden{display:none}.wire{cursor:pointer}</style>
+<header><h1>TRAMA 3 — conexiones de A y B</h1><p>T51-P1 · Dimensiones aproximadas · Revisión T52 pendiente. Seleccionar una red o un cable para seguirlo. Cruces sin extremo común no son uniones.</p></header>
+<main><div><div id="top">TOPSVG</div><div id="bottom" class="hidden">BOTTOMSVG</div></div><aside>
+<button id="flip">Mostrar cara inferior</button><br><label>Red <select id="net"><option value="">Todas</option>NETOPTIONS</select></label><br><label>Cable <select id="wire"><option value="">Todos</option>WIREOPTIONS</select></label>
+<p>Las posiciones de los cables conservan coordenadas de la cara superior. z negativo = debajo de la placa. Los aislamientos cruzan a distintas alturas.</p><pre id="info">Selecciona un cable. También puedes pulsarlo en el plano.</pre>
+<p><a href="../soldadura/cableado.csv">Tabla completa</a> · <a href="T51_Dossier_Diseno_y_Montaje.pdf">Dossier</a></p></aside></main>
+<script>const wires=WIREDATA;const ne=document.querySelector('#net'),we=document.querySelector('#wire');function update(){document.querySelectorAll('.wire').forEach(p=>{let ok=(!ne.value||p.dataset.net===ne.value)&&(!we.value||p.dataset.id===we.value);p.style.opacity=ok?'1':'.07';p.style.strokeWidth=ok&&we.value?'.7':'.23'});let w=wires.find(w=>w.id===we.value);document.querySelector('#info').textContent=w?`${w.id} — ${w.net}\n${w.source} (${w.start}) → ${w.destination} (${w.end})\n${w.wire}; color ${w.color}\nCorte inicial: ${w.cut_mm} mm\nRecorrido XYZ mm:\n${w.path.map(p=>p.join(', ')).join('\n')}\n${w.notes}`:'Selecciona un cable; los valores de corte incluyen margen.';}ne.onchange=()=>{we.value='';update()};we.onchange=()=>{ne.value='';update()};document.querySelectorAll('.wire').forEach(p=>p.onclick=()=>{we.value=p.dataset.id;ne.value='';update()});let bottom=false;document.querySelector('#flip').onclick=()=>{bottom=!bottom;document.querySelector('#top').classList.toggle('hidden',bottom);document.querySelector('#bottom').classList.toggle('hidden',!bottom);document.querySelector('#flip').textContent=bottom?'Mostrar cara superior':'Mostrar cara inferior'};</script></html>'''
+template=template.replace('TOPSVG',svg('conexiones')).replace('BOTTOMSVG',svg('inferior')).replace('NETOPTIONS',''.join('<option>'+html.escape(n)+'</option>' for n in sorted({w['net'] for w in D['wires']}))).replace('WIREOPTIONS',''.join('<option>'+w['id']+'</option>' for w in D['wires'])).replace('WIREDATA',json.dumps(D['wires'],ensure_ascii=False))
+(R/'planos/visor-conexiones.html').write_text(template,encoding='utf8');print('Visor local generado')

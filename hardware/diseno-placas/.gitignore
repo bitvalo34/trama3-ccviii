@@ -1,0 +1,11 @@
+__pycache__/
+*.FCBak
+*.FCStd1
+*.kicad_prl
+*.lck
+~*
+verificaciones/qa-*
+verificaciones/contacto-*
+verificaciones/*-qa.png
+verificaciones/test.xml
+esquematicos/*-backups/

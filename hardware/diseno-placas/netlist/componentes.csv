@@ -1,0 +1,80 @@
+﻿ref,valor,tipo,zona,ancho_mm,largo_mm,alto_mm,pin1,estado,nota
+J1,ENTRADA 5V / 2.5A,terminal,POWER,10.08,8,10,C3,Disponible para diseño; dimensiones estimadas,Una fuente; nunca paralelo con USB.
+J14,PORTAFUSIBLE EXTERNO,terminal,POWER,10.08,8,10,H3,Disponible para diseño; dimensiones estimadas,
+J12,PMOS G/S/D,solderpads,POWER,7.58,2.5,8,C10,Disponible para diseño; dimensiones estimadas,"IRLML6402 G1/S2/D3 en adaptador elevado 10x10mm; cables soldados, sin Dupont en S/D."
+R30,100k,R,POWER,6.4,2.6,3,G10,Disponible para diseño; dimensiones estimadas,
+C1,1000uF/16V,electro,POWER,10,10,20,M4,Disponible para diseño; dimensiones estimadas,
+C2,100nF,cap,POWER,4,4,5,L11,Disponible para diseño; dimensiones estimadas,
+NT1,ESTRELLA 22AWG,link,POWER,5.04,2.5,8,P11,Disponible para diseño; dimensiones estimadas,Unir 1-2: unico enlace local de retornos.
+J11,USB AUX TEST,header,POWER,5.04,2.5,8,R3,Disponible para diseño; dimensiones estimadas,Alternativa externa; NO servo ni simultaneo J1. Limite provisional 0.5A.
+J13,CORTE SERVO DPDT,solderpads,SERVO,15.2,2.5,8,C19,Disponible para diseño; dimensiones estimadas,DPDT externo >=3A DC/12V: ON 1-2/4-5; OFF 2-3/5-6. Pin3 aislado. Cable directo soldado; no Dupont para potencia.
+J4,SG90 GND/+5V/SIG,terminal,SERVO,15.16,8,10,C28,Disponible para diseño; dimensiones estimadas,Arnes a macho 3p/2.54 compatible con hembra servo; no insertar conector servo en bornera.
+Q3,2N3904,npn,SERVO,6.3,4,5,I20,Pinout del lote pendiente; TO92 aproximado,"PAD 1=E,2=B,3=C. Adaptar patas aisladas segun lote; no asumir cara plana."
+Q4,2N3904,npn,SERVO,6.3,4,5,I28,Pinout del lote pendiente; TO92 aproximado,"PAD 1=E,2=B,3=C. Adaptar patas aisladas segun lote; no asumir cara plana."
+R10,4.7k,R,SERVO,6.4,2.6,3,F17,Disponible para diseño; dimensiones estimadas,
+R11,47k,R,SERVO,6.4,2.6,3,L17,Disponible para diseño; dimensiones estimadas,
+R12,4.7k,R,SERVO,6.4,2.6,3,L22,Disponible para diseño; dimensiones estimadas,
+R13,4.7k,R,SERVO,6.4,2.6,3,L27,Disponible para diseño; dimensiones estimadas,
+R14,47k,R,SERVO,6.4,2.6,3,O17,Disponible para diseño; dimensiones estimadas,
+R15,2.2k,R,SERVO,6.4,2.6,3,O22,Disponible para diseño; dimensiones estimadas,
+R16,47k,R,SERVO,6.4,2.6,3,O27,Disponible para diseño; dimensiones estimadas,
+C3,100nF,cap,SERVO,4,4,5,R29,Disponible para diseño; dimensiones estimadas,
+U1,MCP23017 + zocalo DIP28,dip28,CORE,10.02,35.82,9,V5,Disponible para diseño; dimensiones estimadas,Muesca hacia A. Zocalo e IC comparten pads. Direccion 0x20.
+C4,100nF,cap,CORE,4,4,5,AD2,Disponible para diseño; dimensiones estimadas,
+R1,10k,R,CORE,6.4,2.6,3,AL2,Disponible para diseño; dimensiones estimadas,
+JP1,RESET abierto,header,CORE,5.04,2.5,8,AL7,Disponible para diseño; dimensiones estimadas,
+R2,4.7k DNP,R,CORE,6.4,2.6,3,AO2,Disponible para diseño; dimensiones estimadas,
+R3,4.7k DNP,R,CORE,6.4,2.6,3,AO7,Disponible para diseño; dimensiones estimadas,
+JP2,PU SCL abierto,header,CORE,5.04,2.5,8,AR2,Disponible para diseño; dimensiones estimadas,
+JP3,PU SDA abierto,header,CORE,5.04,2.5,8,AR7,Disponible para diseño; dimensiones estimadas,
+J10,ARNES BBB,header,CORE,25.36,2.5,8,AK13,Disponible para diseño; dimensiones estimadas,Ver arnes-BBB.csv; sin 5V BBB.
+Q1,2N2222 lote pendiente,npn,TX,6.3,4,5,W14,Pinout del lote pendiente; TO92 aproximado,"PAD 1=E,2=B,3=C. Adaptar patas aisladas segun lote; no asumir cara plana."
+R4,1k,R,TX,6.4,2.6,3,T12,Disponible para diseño; dimensiones estimadas,
+R5,10k,R,TX,6.4,2.6,3,Z12,Disponible para diseño; dimensiones estimadas,
+R6,330,R,TX,6.4,2.6,3,T18,Disponible para diseño; dimensiones estimadas,
+J2,LED A/K,terminal,TX,10.08,8,10,X20,Disponible para diseño; dimensiones estimadas,
+Q2,2N2222 lote pendiente,npn,TX,6.3,4,5,AE14,Pinout del lote pendiente; TO92 aproximado,"PAD 1=E,2=B,3=C. Adaptar patas aisladas segun lote; no asumir cara plana."
+R7,1k,R,TX,6.4,2.6,3,AB12,Disponible para diseño; dimensiones estimadas,
+R8,10k,R,TX,6.4,2.6,3,AH12,Disponible para diseño; dimensiones estimadas,
+J3,BUZZER +/-,terminal,TX,10.08,8,10,AD20,Disponible para diseño; dimensiones estimadas,
+D1,1N5819,diode,TX,6.4,2.6,3,AH19,Disponible para diseño; dimensiones estimadas,"Pad1 A, pad2 K/banda +5V; no conectar sobre servo."
+J5,LDR 3V3/GND/DO,terminal,RX,15.16,8,10,V28,Disponible para diseño; dimensiones estimadas,Orden placa; adaptar al modulo. AO libre.
+J6,AUDIO 3V3/GND/DO,terminal,RX,15.16,8,10,AB28,Disponible para diseño; dimensiones estimadas,Arnes individual por serigrafia.
+J7,FINAL COM/NO,terminal,RX,10.08,8,10,AH29,Disponible para diseño; dimensiones estimadas,
+R17,10k,R,RX,6.4,2.6,3,Y26,Disponible para diseño; dimensiones estimadas,
+R18,10k,R,RX,6.4,2.6,3,AE26,Disponible para diseño; dimensiones estimadas,
+R19,4.7k,R,RX,6.4,2.6,3,AL27,Disponible para diseño; dimensiones estimadas,
+C5,100nF,cap,RX,4,4,5,AO30,Disponible para diseño; dimensiones estimadas,
+JP10,C0:1-2 ON/2-3 OFF,header,ENABLE,7.58,2.5,8,AU3,Disponible para diseño; dimensiones estimadas,
+R20,1k,R,ENABLE,6.4,2.6,3,AX3,Disponible para diseño; dimensiones estimadas,
+R23,100k,R,ENABLE,6.4,2.6,3,AU7,Disponible para diseño; dimensiones estimadas,
+JP4,C0 LINK GPIO,header,ENABLE,5.04,2.5,8,AX8,Disponible para diseño; dimensiones estimadas,Abierto antes de medir DO. EN deshabilita RX remoto->local.
+JP11,C1:1-2 ON/2-3 OFF,header,ENABLE,7.58,2.5,8,AU13,Disponible para diseño; dimensiones estimadas,
+R21,1k,R,ENABLE,6.4,2.6,3,AX13,Disponible para diseño; dimensiones estimadas,
+R24,100k,R,ENABLE,6.4,2.6,3,AU17,Disponible para diseño; dimensiones estimadas,
+JP5,C1 LINK GPIO,header,ENABLE,5.04,2.5,8,AX18,Disponible para diseño; dimensiones estimadas,Abierto antes de medir DO. EN deshabilita RX remoto->local.
+JP12,C2:1-2 ON/2-3 OFF,header,ENABLE,7.58,2.5,8,AU23,Disponible para diseño; dimensiones estimadas,
+R22,1k,R,ENABLE,6.4,2.6,3,AX23,Disponible para diseño; dimensiones estimadas,
+R25,100k,R,ENABLE,6.4,2.6,3,AU27,Disponible para diseño; dimensiones estimadas,
+JP6,C2 LINK GPIO,header,ENABLE,5.04,2.5,8,AX28,Disponible para diseño; dimensiones estimadas,Abierto antes de medir DO. EN deshabilita RX remoto->local.
+J8,CLK RX REMOTO +/-,terminal,CLOCK_RX,10.08,8,10,BC3,Disponible para diseño; dimensiones estimadas,
+U2,PC817 DIP4,dip4,CLOCK_RX,9.82,5,4.5,BB9,Disponible para diseño; dimensiones estimadas,Pin1 arriba izquierda; no unir remoto con GND local.
+R26,4.7k,R,CLOCK,6.4,2.6,3,BA13,Disponible para diseño; dimensiones estimadas,
+R27,1k,R,CLOCK,6.4,2.6,3,BD13,Disponible para diseño; dimensiones estimadas,
+JP7,CLK LINK,header,CLOCK,5.04,2.5,8,BD18,Disponible para diseño; dimensiones estimadas,
+Q5,2N3904,npn,CLOCK,6.3,4,5,BA24,Pinout del lote pendiente; TO92 aproximado,"PAD 1=E,2=B,3=C. Adaptar patas aisladas segun lote; no asumir cara plana."
+R28,2.2k,R,CLOCK,6.4,2.6,3,AQ21,Disponible para diseño; dimensiones estimadas,
+R29,47k,R,CLOCK,6.4,2.6,3,AR27,Disponible para diseño; dimensiones estimadas,
+R31,270,R,CLOCK,6.4,2.6,3,BD22,Disponible para diseño; dimensiones estimadas,
+J9,CLK TX +/-,terminal,CLOCK,10.08,8,10,BC29,Disponible para diseño; dimensiones estimadas,
+D2,1N4148,diode,CLOCK_RX,6.4,2.6,3,AZ3,Disponible para diseño; dimensiones estimadas,Antiparalelo LED: banda hacia U2.1.
+TP1,+5V_ACT,test,POWER,2.5,2.5,8,M14,Disponible para diseño; dimensiones estimadas,
+TP2,GND_ACT,test,POWER,2.5,2.5,8,P14,Disponible para diseño; dimensiones estimadas,
+TP3,+3V3_LOGIC,test,CORE,2.5,2.5,8,AD10,Disponible para diseño; dimensiones estimadas,
+TP4,GND_LOGIC,test,CORE,2.5,2.5,8,AG10,Disponible para diseño; dimensiones estimadas,
+TP5,OPT_RAW,test,RX,2.5,2.5,8,V25,Disponible para diseño; dimensiones estimadas,
+TP6,AUD_RAW,test,RX,2.5,2.5,8,AB25,Disponible para diseño; dimensiones estimadas,
+TP7,MECH_RAW,test,RX,2.5,2.5,8,AH25,Disponible para diseño; dimensiones estimadas,
+TP8,CLK_RX_RAW,test,CLOCK,2.5,2.5,8,BA18,Disponible para diseño; dimensiones estimadas,
+TP9,SERVO_SIG,test,SERVO,2.5,2.5,8,R25,Disponible para diseño; dimensiones estimadas,
+TP10,CLK_TX,test,CLOCK,2.5,2.5,8,AX21,Disponible para diseño; dimensiones estimadas,

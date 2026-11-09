@@ -1,0 +1,10 @@
+{
+  "components": 79,
+  "pads": 200,
+  "grid_holes": 1792,
+  "wires": 134,
+  "nets": 47,
+  "errors": [],
+  "scope": "Cuerpos estimados, pads y conectividad. No prueba fisica ni analogica.",
+  "wire_meters_per_node": 5.75
+}

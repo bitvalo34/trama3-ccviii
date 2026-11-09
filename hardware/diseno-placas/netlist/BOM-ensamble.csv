@@ -1,0 +1,93 @@
+﻿ref,cantidad_ambos_nodos,valor,montar,ubicacion,estado,adquisicion
+J1,2,ENTRADA 5V / 2.5A,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+J14,2,PORTAFUSIBLE EXTERNO,SI,placa,Disponible para diseño; dimensiones estimadas,ADICIONAL; no declarado adquirido
+J12,2,PMOS G/S/D,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+R30,2,100k,SI,placa,Disponible para diseño; dimensiones estimadas,ADICIONAL; no declarado adquirido
+C1,2,1000uF/16V,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+C2,2,100nF,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+NT1,2,ESTRELLA 22AWG,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+J11,2,USB AUX TEST,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+J13,2,CORTE SERVO DPDT,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+J4,2,SG90 GND/+5V/SIG,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+Q3,2,2N3904,SI,placa,Pinout del lote pendiente; TO92 aproximado,PARCIAL: 2 existentes / 6 totales; comprar 4
+Q4,2,2N3904,SI,placa,Pinout del lote pendiente; TO92 aproximado,PARCIAL: 2 existentes / 6 totales; comprar 4
+R10,2,4.7k,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+R11,2,47k,SI,placa,Disponible para diseño; dimensiones estimadas,ADICIONAL; no declarado adquirido
+R12,2,4.7k,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+R13,2,4.7k,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+R14,2,47k,SI,placa,Disponible para diseño; dimensiones estimadas,ADICIONAL; no declarado adquirido
+R15,2,2.2k,SI,placa,Disponible para diseño; dimensiones estimadas,ADICIONAL; no declarado adquirido
+R16,2,47k,SI,placa,Disponible para diseño; dimensiones estimadas,ADICIONAL; no declarado adquirido
+C3,2,100nF,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+U1,2,MCP23017 + zocalo DIP28,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+C4,2,100nF,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+R1,2,10k,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+JP1,2,RESET abierto,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+R2,2,4.7k DNP,NO (DNP),placa,Disponible para diseño; dimensiones estimadas,DNP; no comprar por defecto
+R3,2,4.7k DNP,NO (DNP),placa,Disponible para diseño; dimensiones estimadas,DNP; no comprar por defecto
+JP2,2,PU SCL abierto,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+JP3,2,PU SDA abierto,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+J10,2,ARNES BBB,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+Q1,2,2N2222 lote pendiente,SI,placa,Pinout del lote pendiente; TO92 aproximado,Existente o compra previa considerada disponible para diseño
+R4,2,1k,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+R5,2,10k,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+R6,2,330,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+J2,2,LED A/K,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+Q2,2,2N2222 lote pendiente,SI,placa,Pinout del lote pendiente; TO92 aproximado,Existente o compra previa considerada disponible para diseño
+R7,2,1k,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+R8,2,10k,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+J3,2,BUZZER +/-,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+D1,2,1N5819,SI,placa,Disponible para diseño; dimensiones estimadas,ADICIONAL; no declarado adquirido
+J5,2,LDR 3V3/GND/DO,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+J6,2,AUDIO 3V3/GND/DO,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+J7,2,FINAL COM/NO,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+R17,2,10k,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+R18,2,10k,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+R19,2,4.7k,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+C5,2,100nF,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+JP10,2,C0:1-2 ON/2-3 OFF,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+R20,2,1k,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+R23,2,100k,SI,placa,Disponible para diseño; dimensiones estimadas,ADICIONAL; no declarado adquirido
+JP4,2,C0 LINK GPIO,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+JP11,2,C1:1-2 ON/2-3 OFF,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+R21,2,1k,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+R24,2,100k,SI,placa,Disponible para diseño; dimensiones estimadas,ADICIONAL; no declarado adquirido
+JP5,2,C1 LINK GPIO,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+JP12,2,C2:1-2 ON/2-3 OFF,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+R22,2,1k,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+R25,2,100k,SI,placa,Disponible para diseño; dimensiones estimadas,ADICIONAL; no declarado adquirido
+JP6,2,C2 LINK GPIO,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+J8,2,CLK RX REMOTO +/-,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+U2,2,PC817 DIP4,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+R26,2,4.7k,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+R27,2,1k,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+JP7,2,CLK LINK,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+Q5,2,2N3904,SI,placa,Pinout del lote pendiente; TO92 aproximado,PARCIAL: 2 existentes / 6 totales; comprar 4
+R28,2,2.2k,SI,placa,Disponible para diseño; dimensiones estimadas,ADICIONAL; no declarado adquirido
+R29,2,47k,SI,placa,Disponible para diseño; dimensiones estimadas,ADICIONAL; no declarado adquirido
+R31,2,270,SI,placa,Disponible para diseño; dimensiones estimadas,ADICIONAL; no declarado adquirido
+J9,2,CLK TX +/-,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+D2,2,1N4148,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+TP1,2,+5V_ACT,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+TP2,2,GND_ACT,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+TP3,2,+3V3_LOGIC,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+TP4,2,GND_LOGIC,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+TP5,2,OPT_RAW,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+TP6,2,AUD_RAW,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+TP7,2,MECH_RAW,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+TP8,2,CLK_RX_RAW,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+TP9,2,SERVO_SIG,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+TP10,2,CLK_TX,SI,placa,Disponible para diseño; dimensiones estimadas,Existente o compra previa considerada disponible para diseño
+F1,2,5x20mm 1A; T08 pendiente,SI,J14,Recibido; rapido/lento desconocido,Existente o previsto; verificar especificacion
+Q6,2,IRLML6402 + adaptador SOT23,SI,J12,Adicional no comprado,ADICIONAL; seleccionar y comprar
+SW1,2,DPDT ON-ON >=3A DC/12V,SI,J13,Adicional no comprado,ADICIONAL; seleccionar y comprar
+MOD3,2,Micro USB breakout,ALTERNATIVA,J11,Recibido sin medida,Existente o previsto; verificar especificacion
+D3,2,LED rojo 5mm,SI,J2,Recibido,Existente o previsto; verificar especificacion
+BZ1,2,Buzzer activo 5V,SI,J3,Recibido; consumo pendiente,Existente o previsto; verificar especificacion
+M1,2,SG90 180,SI,J4,Recibido sin medida,Existente o previsto; verificar especificacion
+MOD1,2,LDR LM393,SI,J5,Recibido sin medida,Existente o previsto; verificar especificacion
+MOD2,2,KY037/HW484,SI,J6,Recibido sin medida,Existente o previsto; verificar especificacion
+SW2,2,SPDT rueda,SI,J7,Recibido sin medida,Existente o previsto; verificar especificacion
+ZOCALO_U1,2,Incluido en volumen U1; DIP28 7.62mm,SI,U1,Existente/previsto; no duplicar compra,
+CAPUCHONES_JP,14,2.54mm; seis EN y ocho enlaces GPIO,SEGUN CONFIGURACION,JP4-7 y JP10-12,Medidas por confirmar,ADICIONAL; 20 si se desean reservas
+ADAPTADOR_Q6,2,"SOT23, G/S/D; reserva 10x10mm",SI,Q6/J12,Corriente y dimensiones por confirmar,ADICIONAL; seleccionar y comprar

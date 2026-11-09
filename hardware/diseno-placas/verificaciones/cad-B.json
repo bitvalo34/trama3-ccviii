@@ -1,0 +1,7 @@
+{
+  "node": "B",
+  "solids": 306,
+  "invalid_shapes": [],
+  "board_holes": 1792,
+  "note": "Volumes simplificados; externos excluidos de prueba de cabida salvo Q6. Cable aislado puede tocar aislamiento de otro cable; rutas sujetas a revision manual."
+}
