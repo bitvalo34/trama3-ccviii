@@ -8,7 +8,9 @@ Queremos comunicar dos BeagleBone Black usando luz, sonido y tensión en un hilo
 
 La propuesta actual es la [revisión matricial 102](docs/protocolo/TRAMA3_Protocolo_y_Medios_Revision_102.docx), con [especificación consultable](docs/protocolo/TRAMA3_Protocolo_Revision_102.md) y [simulador y pruebas](software/matrices102/README.md). Está pendiente de contraste con el caso base y validación física. La descripción de reparto y el HTML 101 que siguen son antecedentes y no acreditan la capa matricial nueva.
 
-Abrir [TRAMA3 Matricial 102](software/matrices102/TRAMA3_Matricial_102.html) para simular mensajes y fallos. [Materiales pendientes y cotizaciones actualizadas](hardware/inventario/Pendientes_2026-11-08.md).\n\n## Arquitectura y componentes
+Abrir [TRAMA3 Matricial 102](software/matrices102/TRAMA3_Matricial_102.html) para simular mensajes y fallos. [Materiales pendientes y cotizaciones actualizadas](hardware/inventario/Pendientes_2026-11-08.md).
+
+## Arquitectura y componentes
 
 Ya contamos con las dos BeagleBone Black. Cada una ejecutará el protocolo y su servidor web. Conectaremos una computadora por USB a cada placa para escribir y leer los mensajes; la comunicación entre las BeagleBone pasará por los medios del proyecto.
 

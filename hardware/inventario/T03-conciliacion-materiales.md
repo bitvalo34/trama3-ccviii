@@ -1,5 +1,7 @@
 # T03 — Conciliación de materiales
 
+Actualización posterior: consultar [Pendientes del 08/11/2026](Pendientes_2026-11-08.md). Las brechas siguientes son históricas; ya se confirmaron materiales adicionales.
+
 Revisión documental: 08/11/2026. Responsable del tracker: Erwin. Revisor: Adrián.
 Estado: en curso. Compra documentada y recepción del pedido completo confirmada por Erwin. Conteo/variantes y detalle de compras externas pendientes.
 Base: BOM maestra, IDs M01–M41, y protocolo revisión 101. Se utilizaron los archivos adjuntos sin sufijo (2), que son los efectivamente disponibles.
