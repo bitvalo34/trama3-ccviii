@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TRAMA3 revisión 102</title>
+<style>
+body{font:16px system-ui,sans-serif;color:#17212b;background:#fafafa;margin:28px auto;max-width:1150px;padding:0 18px}h1{font-size:27px}h2{font-size:20px;margin-top:30px}p{line-height:1.5}fieldset{border:1px solid #bbb;margin:14px 0;padding:14px}label{display:inline-block;margin:8px 16px 8px 0}input,select,button{font:inherit;padding:7px;max-width:100%}input[type=number]{width:85px}button{cursor:pointer}table{border-collapse:collapse;width:100%;background:white}td,th{border:1px solid #ccc;padding:8px;text-align:left}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#eee;padding:16px}.scroll{overflow:auto;max-height:500px}#matrix{max-width:480px}small{display:block;margin:10px 0;color:#485560}.mono{font-family:monospace}#result{font-weight:bold}a{color:#174a76}
+</style>
+<h1>TRAMA3 revisión 102</h1>
+<p>Simulación de mensajes, reloj y recuperación matricial por bloques. Los tiempos avanzan virtualmente: no hay que esperar los minutos reales de transmisión.</p>
+<p><strong>Hipótesis, no mediciones:</strong> luz 20 ms, sonido 10 ms y mecánica 120 ms. No acredita la aceptación del auxiliar ni el funcionamiento físico.</p>
+<fieldset><legend>Mensaje y frecuencia</legend>
+<label>A → B <input id="a" value="Hola" maxlength="80"></label><label>B → A <input id="b" value=""></label>
+<label>Hz A → B <select id="ha"><option>1</option><option>2</option><option>3</option><option>4</option></select></label>
+<label>Hz B → A <select id="hb"><option>1</option><option>2</option><option>3</option><option>4</option></select></label>
+<label>CRC <select id="crc"><option>SMBUS</option><option>AUTOSAR</option><option>SAE-J1850</option><option>MAXIM-DOW</option></select></label>
+<label>Retardo mecánico ms <input id="mech" type="number" value="120" min="0" max="10000"></label>
+</fieldset>
+<fieldset><legend>Interrupción física simulada</legend>
+<label><input type="checkbox" id="c0"> C0 luz</label><label><input type="checkbox" id="c1"> C1 sonido</label><label><input type="checkbox" id="c2"> C2 nylon</label>
+<label><input type="checkbox" id="clk"> Reloj</label>
+<label>Dirección <select id="dir"><option value="0">A → B</option><option value="1">B → A</option><option value="2">Ambas</option></select></label>
+<label>Cuándo <select id="on"><option value="start">Desde inicio de sesión</option><option value="data">Desde primera DATA</option><option value="mid">Durante primera DATA</option></select></label>
+<label>Duración s (0 permanente) <input id="duration" type="number" value="0" min="0"></label>
+<label>Nivel bloqueado <select id="level"><option>0</option><option>1</option></select></label>
+</fieldset>
+<fieldset><legend>Errores adicionales</legend>
+<label>Escenario <select id="scenario">
+<option value="clean">Sin error adicional</option><option value="crc">Un bit invertido corregible</option><option value="two-errors">Dos bits invertidos en un bloque</option><option value="frame-crc">Bloque válido equivocado y CRC incorrecto</option>
+<option value="ack">ACK de DATA perdido</option><option value="ack-end">Último ACK perdido</option><option value="clock">Tick perdido</option><option value="extra-clock">Tick adicional</option><option value="pwm-width">Ancho de pulso inválido</option><option value="clock-period">Período fuera de tolerancia</option><option value="truncated">Trama truncada</option><option value="stale">ACK de sesión ajena</option><option value="wrong-seq">ACK de secuencia ajena</option><option value="reset">Reinicio del receptor</option><option value="version">Versión incompatible</option><option value="rate-part">Parte de negociación perdida</option><option value="rate-reject">Frecuencia rechazada</option><option value="fallback">Dos fallos y retorno a 1 Hz</option>
+</select></label><label>Probabilidad de inversión por muestra <input id="ber" type="number" value="0" min="0" max="1" step="0.001"></label>
+</fieldset>
+<button id="run">Simular</button> <button id="download" disabled>Guardar registro JSON</button>
+<p id="result" role="status"></p><div id="delivered"></div>
+<h2>Cómo se reciben dos bits</h2>
+<p>Se calcula p = a XOR b. Las tres columnas se leen juntas en cada tick. Tras tres ticks se resuelve el bloque; no se espera al CRC de la trama.</p>
+<table id="matrix"><tr><th>Tick</th><th>C0 luz</th><th>C1 sonido</th><th>C2 nylon</th></tr><tr><td>0</td><td>a</td><td>b</td><td>a XOR b</td></tr><tr><td>1</td><td>b</td><td>a XOR b</td><td>a</td></tr><tr><td>2</td><td>a XOR b</td><td>a</td><td>b</td></tr></table>
+<p>Los seis pilotos 010101 permiten excluir una columna para esa trama. Una pérdida posterior se trata como error desconocido; el próximo intento vuelve a comprobarla. No se mueve el significado de C0, C1 o C2.</p>
+<h2>Registro por bloque</h2>
+<label>Mostrar <select id="filter"><option value="matrix">Pilotos, matrices y decisiones</option><option value="events">Sesión, fallos y confirmaciones</option><option value="all">Todo, incluidos ticks</option></select></label>
+<small>La vista muestra hasta 1500 eventos. El archivo JSON conserva el registro completo. Selecciona un bloque para ver muestras, síndrome y corrección.</small>
+<div class="scroll"><table><thead><tr><th>Tiempo s</th><th>Evento</th><th>Dirección</th><th>Detalle</th></tr></thead><tbody id="log"></tbody></table></div><pre id="detail">Selecciona un evento.</pre>
+<p>Una trama lógica sigue teniendo 54 bits. La emisión codificada necesita 87 ticks y una guarda de 2T; ACK y gestión también usan matrices. Con un solo medio se recupera el bloque, pero se trata de un modo degradado y no demuestra paralelismo físico por sí solo.</p>
+<script>/* CORE */</script><script>/* ENGINE */</script>
+<script>
+const $=id=>document.getElementById(id);let last=null;
+function render(){
+ const mode=$('filter').value;
+ const chosen=last.events.filter(e=>mode==='all'||(mode==='matrix'?['MATRIX_BLOCK','CHANNEL_TEST','RX','DELIVERED','LINK_FAULT','RECOVERY_1HZ'].includes(e.kind):!['SYMBOL','CLOCK_PWM','MATRIX_BLOCK'].includes(e.kind)));
+ $('log').replaceChildren();
+ for(const e of chosen.slice(0,1500)){
+  const row=document.createElement('tr');
+  const description=e.kind==='MATRIX_BLOCK'?'Bloque '+e.block+' · '+(e.status||e.reason)+' · bits '+(e.data||[]).join('')+' · distancia '+e.distance:e.kind==='CHANNEL_TEST'?'Canales válidos: '+[0,1,2].filter(j=>e.seen&(1<<j)).map(j=>'C'+j).join(', '):e.detail||e.reason||e.type||e.status||'';
+  for(const v of [e.t,e.kind,e.dir===0?'A → B':e.dir===1?'B → A':'',description]){
+   const cell=document.createElement('td');cell.textContent=v;row.append(cell);
+  }
+  row.tabIndex=0;row.onclick=()=>{$('detail').textContent=JSON.stringify(e,null,2);};
+  row.onkeydown=ev=>{if(ev.key==='Enter')row.click();};$('log').append(row);
+ }
+}
+$('run').onclick=()=>{
+ try{
+  const mask=[0,1,2].reduce((m,j)=>m|($('c'+j).checked?1<<j:0),0);
+  last=Trama3.simulate({a:$('a').value,b:$('b').value,hzA:+$('ha').value,hzB:+$('hb').value,crc:$('crc').value,mechanicalMs:+$('mech').value,scenario:$('scenario').value,ber:+$('ber').value,outages:mask||$('clk').checked?[{mask,clock:$('clk').checked,dir:+$('dir').value,on:$('on').value,duration:+$('duration').value,level:+$('level').value}]:[]});
+  $('result').textContent=last.status+' · '+last.duration+' s virtuales · '+last.stats.retries+' reintentos · '+last.stats.duplicates+' duplicados descartados';
+  $('delivered').textContent=last.deliveries.length?last.deliveries.map(d=>(d.dir?'A':'B')+' recibió: '+d.text).join(' | '):'No se entregó un mensaje completo.';
+  $('download').disabled=false;render();
+ }catch(e){$('result').textContent='Error: '+e.message;}
+};
+$('filter').onchange=()=>{if(last)render();};
+$('download').onclick=()=>{const u=URL.createObjectURL(new Blob([JSON.stringify(last,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=u;a.download='trama3-102-registro.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);};
+$('run').click();
+</script></html>

@@ -5,7 +5,7 @@ Esta revisión sustituye el reparto físico de la revisión 101. Conserva los tr
 El diseño se propone para implementación y revisión académica. La foto de clase muestra GPIO, canales, frecuencia y campos de trama, pero no permite transcribir una matriz de recuperación completa. Las matrices que siguen son una propuesta propia: no se atribuyen al auxiliar ni se afirma equivalencia demostrada con su caso base.
 Se conserva el contexto visible de clase: bits y bytes, transmisión por varios canales, reloj, SYN/SFD, DATA, CRC y confirmaciones. Se implementa explícitamente una relación algebraica entre canales. Falta contrastar esta relación con el desarrollo completo de clase antes de anunciar cumplimiento académico definitivo.
 Alcance
-La referencia ejecutable adjunta verifica la codificación, recuperación, límites y recepción de un cuerpo de trama. No sustituye firmware PRU ni un simulador de sesiones completas. El simulador HTML 101 queda histórico y no demuestra la revisión 102.
+La referencia verifica codificación y recuperación. El nuevo simulador 102 integra sesiones completas, ACK, reloj y negociación de frecuencias con la matriz. Sigue siendo un modelo discreto, no firmware PRU ni prueba de sensores. El HTML 101 queda histórico.
 Diagrama funcional
 Texto → bytes → trama lógica → parejas de bits → matriz codificadora
                            ↓
@@ -51,7 +51,7 @@ La recuperación con un solo medio es un modo degradado temporal. No se presenta
 # Formato físico y calendario
 
 La trama lógica conserva SYN12 + SFD6 + CONTROL4 + DATA8 + CRC8 + SEQ8 + SID8 = 54 bits. No se cambia por conveniencia un formato que forma parte del enunciado. Se mantienen los tipos y semántica de sesión de 101, con versión negociada 110 (decimal 6); un extremo 101 es incompatible.
-Cada trama completa, incluyendo ACK, NACK y gestión, usa 27 bloques de dos bits: 81 ticks de cuerpo y 243 muestras binarias físicas. Se añaden seis ticks de pilotos: 010101 simultáneamente en las tres líneas. Total de emisión: 87 ticks, de los cuales 81 codifican el cuerpo. Una guarda previa de 2T deja 89T de ocupación por emisión. No hay relleno oculto ni control auxiliar de 17 bits.
+Cada trama completa, incluyendo ACK, NACK y gestión, usa 27 bloques de dos bits: 81 ticks de cuerpo y 243 muestras binarias físicas. Se añaden seis ticks de pilotos: 010101 simultáneamente en las tres líneas. Total de emisión: 87 ticks, de los cuales 81 codifican el cuerpo. Una guarda de 2T tras cada emisión deja 89T de ocupación; equivale a la guarda previa del siguiente inicio. No hay relleno oculto ni control auxiliar de 17 bits.
 Los pilotos son adicionales a SYN/SFD. Cada entrada se compara con el patrón conocido; una discrepancia la excluye para esa emisión y deja evidencia de canal. Es una prueba conservadora, no una identificación infalible de avería. Un ruido que imite el patrón puede pasar. Cada trama vuelve a probar las tres entradas, incluso las antes excluidas.
 El reloj marca inicio mediante pulso 0.6T y los otros ticks mediante 0.2T. Se conservan bandas 0.55–0.65T y 0.15–0.25T y período T±5 %. Los pulsos 0.4T de control 101 dejan de tener significado en 102. Un marcador tras al menos 2T de reposo inicia piloto 0. Un marcador inesperado o período inválido aborta la recepción; sólo se acepta un nuevo inicio tras guarda. CLK no transporta texto, mapa ni CRC adicional.
 La lectura de datos ocurre a 0.8T en cada tick. Se prepara la fila al inicio y se captura cuando hayan concluido las transiciones. El período se elige para que L_preparación + L_asentamiento + J + margen ≤0.8T y el tiempo de captura/cálculo termine antes del siguiente tick. READY acredita que se ordenó la salida, no que el servo se asentó. Un incumplimiento aborta el intento.
@@ -68,8 +68,8 @@ CRC o SYN/SFD inválidos: descarte final aunque los bloques hayan pasado. ACK aj
 Se mantienen cuatro intentos totales. No reiniciar este contador al variar frecuencia o recuperar medios. Al agotarlo, detener mensaje y mostrar fallo o entrega incierta; no bucle infinito de retransmisiones.
 ACK/NACK y gestión usan la misma codificación matricial 102, nunca copias seriales independientes por medio. El receptor reserva prioridad a respuestas al terminar una emisión local ya iniciada. Se admite como máximo una trama de aplicación pendiente por dirección.
 Timeout desde fin TX: 2×89T_retorno + margen de procesamiento medido, considerando una emisión de retorno ya iniciada y la respuesta. Margen inicial de ensayo: 2 s; confirmar en firmware. No usar el período de ida para esperar un retorno lento.
-Frecuencias por sentido independientes. La negociación QUIESCE/PERIOD_PART/PREPARED/COMMIT_RATE/READY_RATE/PROBE/ACTIVE_ACK/PING de 101 mantiene sus estados y usa ahora emisiones matriciales. Todas sus cotas deben recalcularse con 89T por trama, cuatro intentos por etapa y colas acotadas. No reutilizar sin análisis el vigilante de 8000 s.
-Para el primer montaje sólo se habilita 1 Hz. Los perfiles superiores y la negociación no quedan implementados por la referencia matricial. Ante un perfil no medido se rechaza su activación. El protocolo especifica esa extensión; no se anuncia como validada.
+Frecuencias por sentido independientes. La negociación QUIESCE/PERIOD_PART/PREPARED/COMMIT_RATE/READY_RATE/PROBE/ACTIVE_ACK/PING usa matrices. Gestión sin tráfico de aplicación: timeout de 200 s desde fin del grupo, suficiente para 87 s de respuesta más guardas a 1 Hz. Cuatro intentos por etapa. Vigilante global conservador de 30000 s, no duración esperada.
+Para el primer montaje sólo se habilita 1 Hz. El motor integrado simula perfiles de 1, 2, 3 y 4 Hz y negociación por sentido, bajo retardos hipotéticos. En firmware se rechazará todo perfil no caracterizado físicamente. La simulación de un perfil no lo autoriza para hardware.
 La prueba de un canal falla si no reproduce los pilotos; eso identifica C0/C1/C2, no la causa física. Los errores desconocidos posteriores se reflejan en síndrome/rechazo; no permiten afirmar automáticamente qué medio murió. La siguiente trama vuelve a sondear y puede reincorporarlo.
 
 # Medios y progreso físico
@@ -89,7 +89,7 @@ La codificación matricial no requiere nuevos componentes electrónicos por sí 
 Ejecutar desde software/matrices102: node reference.cjs. No requiere paquetes externos. resultados.json conserva la ejecución del banco. La referencia codifica cualquier cuerpo de 54 bits, aplica pilotos, bloquea medios a cero, inyecta inversiones y procesa cada bloque antes del CRC final.
 Pruebas: las cuatro parejas de entrada; los 512 subconjuntos de observaciones; corrección dentro del radio permitido por la distancia de cada subconjunto; los 256 bytes en las ocho combinaciones de canales bloqueados; detección de un error cuando sólo queda un medio; corte posterior al piloto; contraejemplo de corrección equivocada fuera del radio.
 La batería comprueba que perder los tres medios impide entregar. Con uno o dos medios perdidos desde pilotos, reconstruye exactamente la trama en las hipótesis del modelo. No usa el texto original para decidir en el receptor: éste sólo recibe muestras y la máscara obtenida de pilotos. El banco sí conoce el original para comparar resultados.
-No implementado por esta referencia: sesiones completas, ACK y pérdida de ACK, negociación de frecuencia, captura continua del reloj, adaptación analógica, cargas Linux y firmware. El HTML 101 cubre su versión anterior de gestión, pero no valida automáticamente esta nueva capa física. La integración de ambos es trabajo pendiente explícito antes de una demostración integral.
+La integración 102 ya cubre sesiones, ACK perdido, reloj discreto y negociación. Ejecutar node test.cjs; abrir TRAMA3_Matricial_102.html. Sigue pendiente captura continua real, acondicionamiento analógico, cargas Linux y firmware. No se asegura cubrir todo error concebible; se prueban los escenarios y límites publicados.
 Criterios de aceptación física: comprobar 100 bloques de cada pareja a 1 Hz en cada sentido sin pérdida; repetir con uno y dos medios interrumpidos desde pilotos y durante el cuerpo; registrar rechazos y recuperación, nunca descartar resultados desfavorables. El ensayo no demuestra probabilidad nula de error. No declarar frecuencia máxima con una sola trama limpia.
 Correspondencia con lo exigido
 Paralelo y serial: captura vectorial, codificación conjunta y orden temporal, sección 2.
@@ -106,3 +106,30 @@ Avisos del auxiliar y fotografía de pizarra aportados por el equipo el 08/11/20
 V. Guruswami, notas de teoría de códigos, sección 3.1: recuperación por sistemas lineales y borrados. https://www.cs.cmu.edu/~venkatg/teaching/codingtheory/notes/notes7.pdf
 La matriz binaria específica de esta revisión es diseño propio; sus distancias se verifican exhaustivamente con reference.cjs. No es Reed–Solomon ni se presenta como tal.
 La revisión 101 conserva como antecedentes el esquema eléctrico y las fuentes de los componentes; los cambios físicos y temporales de esta revisión prevalecen sobre su reparto y control de reloj.
+
+## Resultados de la simulación integrada
+
+08/11/2026. Pruebas reproducibles en software/matrices102/test.cjs y resultados-integracion.json. Se ejecutaron 10252 comprobaciones matemáticas y 2264 comprobaciones de integración; estas últimas incluyen 209 escenarios completos de sesión. No son ensayos sobre las BeagleBone.
+
+Se probaron las 64 combinaciones de máscaras de canales por sentido: con al menos uno disponible en cada dirección se entregaron los mensajes; sin ninguno en un sentido, se agotó la gestión y se volvió al estado de recuperación. No se confunde esto con completar una transferencia.
+
+También se probaron las cuatro variantes CRC y las 16 parejas de frecuencia entre 1 y 4 Hz; cortes de 1 o 2 medios antes y durante DATA, permanentes y temporales; niveles atascados 0 y 1; pérdida de reloj, ACK y último ACK; trama truncada, versión incompatible, reinicio, UTF-8, CP1252 y vuelta de SEQ.
+
+Dos inversiones dentro de un bloque completo se corrigen. Una alteración que convierte el bloque en otra palabra válida puede pasar la matriz; el caso ensayado se detectó por CRC y se retransmitió. El contraejemplo fuera del radio se conserva: ni matriz ni CRC ofrecen detección universal.
+
+
+## Tiempos completos a 1 Hz
+
+Con retardos nominales hipotéticos, sin fallos y una dirección enviando: A tarda 1246 s (20 min 46 s), Hola tarda 1780 s (29 min 40 s). Incluyen 356 s de apertura y la última guarda, a diferencia de 890 s y 1424 s con sesión ya abierta. El simulador ejecuta ese tiempo virtual en segundos de computadora.
+
+Ejemplo guardado: Hola con luz y sonido interrumpidos durante 120 s a partir del tick 8 de la primera DATA. Resultado: 1958 s virtuales, un reintento, entrega exacta y ningún duplicado entregado. Es un caso concreto, no una cota para cualquier interferencia.
+
+
+## Cómo interpretar un barrido
+
+Con retardo mecánico hipotético de 500 ms, 1 Hz pasa con tres canales; a 2–4 Hz la mecánica falla los pilotos, pero el mensaje puede llegar por los otros dos. Por eso el barrido publica tanto entrega como máscara observada. La máxima frecuencia nominal exige todos los medios, no sólo COMPLETE.
+
+
+## Estado del cumplimiento
+
+Quedan implementadas en el modelo la codificación conjunta, validación por bloque durante la trama, prueba de canales, recuperación matricial y registros a 1 Hz. Para declarar cumplimiento completo faltan dos evidencias: aceptación del auxiliar de la correspondencia con su caso base y pruebas físicas de simultaneidad, niveles y tiempos. Un solo medio es recuperación degradada, no prueba de paralelismo.

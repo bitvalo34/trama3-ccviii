@@ -1,0 +1,577 @@
+/* TRAMA 3 · revisión 102 matricial experimental. Motor discreto común a HTML y Node. */
+(function(root, factory) {
+  const api = factory();
+  if (typeof module === 'object' && module.exports) module.exports = api;
+  else root.Trama3 = api;
+})(typeof globalThis !== 'undefined' ? globalThis : this, function() {
+  'use strict';
+  const M=typeof module==='object'&&module.exports?require('./core.js'):globalThis.Matrix102;
+  const TYPES = Object.freeze({START:1, LEN_LO:2, LEN_HI:3, DATA:4, END:5, ACK:6, NACK:7,
+    HELLO:8, HELLO_ACK:9, COMMIT:10, READY:11, PING:12, ERROR:13,
+    PERIOD_PART:14, RATE_CTRL:15});
+  const NAMES = Object.fromEntries(Object.entries(TYPES).map(([k,v])=>[v,k]));
+  const RATE = {QUIESCE:1, QUIESCED:2, PREPARED:3, COMMIT_RATE:4, READY_RATE:5,
+    PROBE:6, ACTIVE_ACK:7, REJECT:8};
+  const CRCS = Object.freeze({
+    SMBUS: {poly:0x07, init:0, xor:0, reflected:false, check:0xf4},
+    AUTOSAR: {poly:0x2f, init:0xff, xor:0xff, reflected:false, check:0xdf},
+    'SAE-J1850': {poly:0x1d, init:0xff, xor:0xff, reflected:false, check:0x4b},
+    'MAXIM-DOW': {poly:0x8c, init:0, xor:0, reflected:true, check:0xa1}
+  });
+  const FIELDS = [ ['SYN',0,12], ['SFD',12,18], ['Control',18,22],
+    ['DATA',22,30], ['CRC',30,38], ['SEQ',38,46], ['SID',46,54] ];
+  const hex = n => '0x'+n.toString(16).toUpperCase().padStart(2,'0');
+  function crc8(bytes, algorithm='SMBUS') {
+    const p = CRCS[algorithm]; if (!p) throw Error('CRC desconocido');
+    let c=p.init;
+    for(const b of bytes) {
+      c ^= b;
+      for(let i=0;i<8;i++) c=p.reflected ? ((c&1)?(c>>>1)^p.poly:c>>>1) :
+        ((c&0x80)?((c<<1)^p.poly)&255:(c<<1)&255);
+    }
+    return (c^p.xor)&255;
+  }
+  const bits=(n,w)=>n.toString(2).padStart(w,'0');
+  function frame(type, data=0, seq=0, sid=1, algorithm='SMBUS') {
+    const ctrl=typeof type==='string'?TYPES[type]:type;
+    for(const [n,v,max] of [['Control',ctrl,15],['DATA',data,255],['SEQ',seq,255],['SID',sid,255]])
+      if(!Number.isInteger(v)||v<0||v>max) throw Error(n+' fuera de rango');
+    const crc=crc8([ctrl,data,seq,sid],algorithm);
+    const raw='111000111000101010'+bits(ctrl,4)+bits(data,8)+bits(crc,8)+bits(seq,8)+bits(sid,8);
+    return {ctrl,type:NAMES[ctrl]||'RESERVED',data,seq,sid,crc,algorithm,bits:raw,
+      symbols:layout(raw,7)};
+  }
+  function parse(raw, algorithm='SMBUS') {
+    if(typeof raw!=='string'||raw.length!==54||!/^[01]+$/.test(raw)) return {ok:false,reason:'CLOCK_OR_LENGTH'};
+    if(raw.slice(0,18)!=='111000111000101010') return {ok:false,reason:'SYNC'};
+    const val=(a,b)=>parseInt(raw.slice(a,b),2);
+    const f={ctrl:val(18,22),data:val(22,30),crc:val(30,38),seq:val(38,46),sid:val(46,54)};
+    f.type=NAMES[f.ctrl]||'RESERVED'; f.algorithm=algorithm;
+    f.calculated=crc8([f.ctrl,f.data,f.seq,f.sid],algorithm);
+    return {...f,ok:f.calculated===f.crc,reason:f.calculated===f.crc?'OK':'CRC'};
+  }
+  // CP1252 concreta "Extended ASCII". Los cinco bytes sin asignación se rechazan.
+  const SPECIAL={128:'€',130:'‚',131:'ƒ',132:'„',133:'…',134:'†',135:'‡',136:'ˆ',137:'‰',
+    138:'Š',139:'‹',140:'Œ',142:'Ž',145:'‘',146:'’',147:'“',148:'”',149:'•',150:'–',151:'—',
+    152:'˜',153:'™',154:'š',155:'›',156:'œ',158:'ž',159:'Ÿ'};
+  const UNASSIGNED=new Set([129,141,143,144,157]);
+  function cpChar(b) {
+    if(UNASSIGNED.has(b)) throw Error('Byte CP1252 sin asignación: '+hex(b));
+    return SPECIAL[b]||String.fromCharCode(b);
+  }
+  function encode(text, encoding='utf-8') {
+    if(encoding==='utf-8') {
+      for(let i=0;i<text.length;i++) { const c=text.charCodeAt(i);
+        if(c>=0xd800&&c<=0xdbff) { const d=text.charCodeAt(++i); if(!(d>=0xdc00&&d<=0xdfff)) throw Error('Unicode con sustituto incompleto'); }
+        else if(c>=0xdc00&&c<=0xdfff) throw Error('Unicode con sustituto incompleto');
+      }
+      return Array.from(new TextEncoder().encode(text));
+    }
+    if(encoding!=='windows-1252') throw Error('Codificación desconocida');
+    const inverse=new Map(); for(let b=0;b<256;b++) if(!UNASSIGNED.has(b)) inverse.set(cpChar(b),b);
+    return Array.from(text,c=>{ if(!inverse.has(c)) throw Error('CP1252 no representa '+JSON.stringify(c)); return inverse.get(c); });
+  }
+  function decode(bytes, encoding='utf-8') {
+    if(encoding==='utf-8') return new TextDecoder('utf-8',{fatal:true,ignoreBOM:true}).decode(new Uint8Array(bytes));
+    if(encoding==='windows-1252') return bytes.map(cpChar).join('');
+    throw Error('Codificación desconocida');
+  }
+  function periodParts(Tus) {
+    if(!Number.isInteger(Tus)||Tus<1||Tus>1000000) throw Error('Período fuera de rango');
+    return [0,1,2,3].map(i=>(i<<5)|((Tus>>>(15-5*i))&31));
+  }
+  class Parts {
+    constructor(q){this.q=q;this.values=new Map();this.invalid=false;}
+    add(q,data) {const i=data>>>5;
+      if(q!==this.q||i>3||(this.values.has(i)&&this.values.get(i)!==(data&31))) {this.invalid=true;return false;}
+      this.values.set(i,data&31);return true;
+    }
+    value() {if(this.invalid||this.values.size!==4)return null;
+      let n=0;for(let i=0;i<4;i++)n=(n<<5)|this.values.get(i);return n>0&&n<=1000000?n:null;
+    }
+  }
+  const VERSION=6;
+  const lanesOf=mask=>[0,1,2].filter(j=>mask&(1<<j));
+  const laneLabel=mask=>lanesOf(mask).map(j=>['luz','sonido','nylon'][j]).join(' + ')||'ninguno';
+  const striped=new Set(['START','LEN_LO','LEN_HI','DATA','END']);
+  function pulseWidth(symbol,T){
+    return (symbol==='S'?0.60:symbol==='1'?0.40:0.20)*T;
+  }
+  function decodePulse(rise,fall,T){
+    if(!Number.isFinite(rise)||!Number.isFinite(fall)||fall<=rise)return null;
+    const ratio=(fall-rise)/T;
+    for(const [symbol,target] of [['0',0.20],['1',0.40],['S',0.60]])
+      if(Math.abs(ratio-target)<=0.05+1e-9)return symbol;
+    return null;
+  }
+  function layout(raw,map){
+    const rows=Array.from({length:6},(_,k)=>String(k%2).repeat(3));
+    for(let k=0;k<54;k+=2){
+      const encoded=M.encode(raw.slice(k,k+2).split('').map(Number));
+      for(let t=0;t<3;t++)rows.push(encoded.slice(t*3,t*3+3).join(''));
+    }
+    return rows;
+  }
+  // RX no recibe la máscara de fallos del banco. Sólo flancos y muestras.
+  class PhysicalReceiver {
+    constructor(T,algorithm='SMBUS'){
+      this.T=T;this.algorithm=algorithm;this.rows=[];this.meta=null;
+      this.result=null;this.error=null;this.lastRise=null;this.lastFall=null;
+      this.raw='';this.blocks=[];
+    }
+    fail(reason){this.error=reason;this.result=null;}
+    ingest({rise,fall,values,extra=false}){
+      const symbol=decodePulse(rise,fall,this.T),previousFall=this.lastFall;
+      const gap=this.lastRise===null?null:rise-this.lastRise;
+      if(Number.isFinite(rise))this.lastRise=rise;
+      if(Number.isFinite(fall))this.lastFall=fall;
+      if(!symbol||extra){this.fail(extra?'CLOCK_EXTRA':'PWM_WIDTH');return;}
+      if(symbol==='S'){
+        if(previousFall!==null&&rise-previousFall<2*this.T-1e-9){this.fail('START_WITHOUT_GUARD');return;}
+        this.rows=[];this.raw='';this.blocks=[];this.meta=null;this.result=null;this.error=null;
+      }else{
+        if(this.error)return;
+        if(!this.rows.length){this.fail('START_MISSING');return;}
+        if(gap===null||Math.abs(gap-this.T)>0.05*this.T+1e-9){this.fail('CLOCK_PERIOD');return;}
+        if(symbol!=='0'){this.fail('PWM_TAIL');return;}
+      }
+      if(this.result){this.fail('EXTRA_SYMBOL');return;}
+      if(!/^[01]{3}$/.test(values)){this.fail('SAMPLE');return;}
+      this.rows.push(values);
+      if(this.rows.length===6){
+        const seen=[0,1,2].reduce((mask,j)=>this.rows.every((row,k)=>Number(row[j])===k%2)?mask|(1<<j):mask,0);
+        this.meta={seen,map:7,report:0};
+        if(!seen){this.fail('MATRIX_RANK');return;}
+      }
+      if(this.rows.length>6&&(this.rows.length-6)%3===0){
+        const y=this.rows.slice(-3).flatMap(row=>[0,1,2].map(j=>this.meta.seen&(1<<j)?Number(row[j]):null));
+        const block=M.decode(y);this.blocks.push({block:this.blocks.length,received:y,...block});
+        if(!block.ok){this.fail('MATRIX_'+block.reason);return;}
+        this.raw+=block.data.join('');
+      }
+      if(this.rows.length===87)this.result={...parse(this.raw,this.algorithm),raw:this.raw,...this.meta};
+    }
+    outcome(){return this.result||{ok:false,reason:this.error||'CLOCK_OR_LENGTH'};}
+  }
+
+  function normalizeFaults(c){
+    const fs=c.outages||[];
+    if(!Array.isArray(fs)||fs.length>32)throw Error('Se admiten hasta 32 interrupciones.');
+    const all=fs.map(f=>({...f}));
+    if(c.scenario==='blocked')all.push({dir:0,mask:4,on:'data'});
+
+    return all.map(f=>{
+      const x={dir:0,mask:0,on:'start',duration:0,level:0,clock:false,...f};
+      if(![0,1,2].includes(x.dir)||!Number.isInteger(x.mask)||x.mask<0||x.mask>7||
+        ![0,1].includes(x.level)||typeof x.clock!=='boolean'||(!x.mask&&!x.clock)||
+        !['start','data','mid'].includes(x.on)||!Number.isFinite(x.duration)||x.duration<0)
+        throw Error('Interrupción inválida. Revisa dirección, medios y duración.');
+      if(x.at!==undefined&&(!Number.isFinite(x.at)||x.at<0||x.on!=='start'))throw Error('Instante de corte inválido.');
+      const starts=x.on==='start'?(x.at||0):Infinity;
+      return {...x,starts,ends:x.duration?starts+x.duration:Infinity};
+    });
+  }
+
+  function defaults(o={}) {
+    const c={a:'A',b:'',encoding:'utf-8',crc:'SMBUS',hz:1,scenario:'clean',seed:23004161,
+      ber:0,clockJitterMs:0,clockRiseMs:0,clockFallMs:0,opticalMs:20,acousticMs:10,mechanicalMs:120,captureMs:200,readyMs:5,deadlineMs:10,
+      sid:1,maxAttempts:4,...o};
+    if(![1,2,3,4].includes(Number(c.hz))) throw Error('Perfiles hipotéticos disponibles: 1, 2, 3, 4 Hz');
+    c.hz=Number(c.hz);
+    c.hzA=Number(c.hzA??c.hz);c.hzB=Number(c.hzB??c.hz);
+    if(![c.hzA,c.hzB].every(x=>[1,2,3,4].includes(x)))throw Error("Perfiles por sentido: 1, 2, 3, 4 Hz");
+    if(!CRCS[c.crc]) throw Error('CRC desconocido');
+    if(!['clean','crc','frame-crc','two-errors','ack','clock','blocked','rate-ready','rate-active','rate-part','prefix','pwm-bit','pwm-width','pwm-start','pwm-tail','clock-skew','clock-period','truncated','ready','reset','stale','wrong-seq','fallback','extra-clock','pwm-bit','pwm-width','pwm-start','pwm-tail','clock-skew','clock-period','truncated','ack-end','sound','switch','rate-reject','version'].includes(c.scenario)) throw Error('Escenario desconocido');
+    for(const name of ['opticalMs','acousticMs','mechanicalMs','captureMs','readyMs','deadlineMs','clockJitterMs','clockRiseMs','clockFallMs']) {
+      c[name]=Number(c[name]); if(!Number.isFinite(c[name])||c[name]<0||c[name]>10000)throw Error('Tiempo inválido: '+name);
+    }
+    c.ber=Number(c.ber);if(!Number.isFinite(c.ber)||c.ber<0||c.ber>1)throw Error('BER entre 0 y 1');
+    if(c.captureMs<175||c.captureMs+10>250||c.readyMs>c.deadlineMs||c.deadlineMs>=c.captureMs)
+      throw Error('Perfil inválido: Captura de 175 a 240 ms a 4 Hz y READY ≤ deadline < captura');
+    if(!Number.isInteger(c.sid)||c.sid<1||c.sid>255)throw Error('SID entre 1 y 255');
+    // No permitir una entrada de configuración que desactive la cota documental.
+    if(!Number.isInteger(c.seed)||c.seed<0||c.seed>0xffffffff)throw Error('Semilla entera de 0 a 4294967295');
+    c.maxAttempts=4;
+    for(const text of [c.a,c.b]) if(encode(text,c.encoding).length>1024)throw Error('Máximo 1024 bytes por mensaje');
+    return c;
+  }
+  class Engine {
+    constructor(options={}) {
+      this.c=defaults(options);this.initialConfig={...this.c};this.time=0;this.queue=[];this.serial=0;this.events=[];
+      this.rng=this.c.seed>>>0||1;this.finished=false;this.frames=0;this.faultUsed=false;
+      this.stats={frames:0,retries:0,crcErrors:0,syncErrors:0,clockErrors:0,duplicates:0,undetected:0,bytes:0};
+      this.lanes=[0,1].map(()=>({busy:false,queue:[],channels:[0,1,2].map(()=>({actual:0,target:0,due:0}))}));
+      this.rx=[0,1].map(()=>({expected:0,last:null,phase:'idle',bytes:[],length:null,lo:null,delivered:0}));
+      this.txMap=[7,7];this.heard=[0,0];this.outages=normalizeFaults(this.c);this.rateTarget=this.c.hzA;this.rateDir=0;this.periods=[1,1];this.pause=null;this.forcedLosses=0;
+      this.deliveries=[];this.links=[];this.period=1;this.rateQ=0;
+    }
+    random(){let x=this.rng;x^=x<<13;x^=x>>>17;x^=x<<5;this.rng=x>>>0;return this.rng/4294967296;}
+    emit(kind,detail={}) {this.events.push({t:+this.time.toFixed(6),kind,...detail});}
+    at(t,fn){this.queue.push({t,fn,i:this.serial++});}
+    later(dt,fn){this.at(this.time+dt,fn);}
+    stop(status,reason){if(this.finished)return;if(status==='RECOVERY_1HZ'){this.period=1;this.periods=[1,1];}this.finished=true;this.status=status;this.reason=reason;this.emit(status,{detail:reason});}
+    wire(f,dir,T,callback,priority=0) {
+      if(this.finished)return;
+      this.lanes[dir].queue.push({f,dir,T,callback,priority,order:this.serial++});this.pump(dir);
+    }
+    pump(dir){const lane=this.lanes[dir];if(lane.busy||!lane.queue.length||this.finished)return;
+      lane.queue.sort((a,b)=>b.priority-a.priority||a.order-b.order);
+      const job=lane.queue.shift();lane.busy=true;this.transmit(job);
+    }
+    traceFault(x){
+      const describe=x.clock?'reloj':laneLabel(x.mask);
+      this.at(x.starts,()=>this.emit('INTERRUPTION',{dir:x.dir===2?undefined:x.dir,detail:'Interrupción de '+describe+' (banco de pruebas).'}));
+      if(Number.isFinite(x.ends))this.at(x.ends,()=>this.emit('RESTORED',{dir:x.dir===2?undefined:x.dir,detail:'Se libera '+describe+'. El protocolo aún debe comprobarlo.'}));
+    }
+    useReport(dir,r){
+      if(!r.report||this.txMap[dir]===r.report)return;
+      const old=this.txMap[dir];this.txMap[dir]=r.report;
+      this.emit('LINE_CHANGE',{dir,old,map:r.report,detail:bits(old,3)+' → '+bits(r.report,3)+'. El par confirmó '+laneLabel(r.report)+'; se aplica desde la próxima trama.'});
+    }
+    transmit({f,dir,T,callback}){
+      const id=++this.frames,start=this.time,lane=this.lanes[dir],c=this.c;
+      if(!this.faultUsed&&dir===1&&f.type==='ACK'&&f.data===TYPES.DATA&&['stale','wrong-seq'].includes(c.scenario)){
+        this.faultUsed=true;this.emit('INJECTION',{id,dir,detail:'ACK anterior o ajeno con CRC válido'});
+        f=frame('ACK',f.data,c.scenario==='wrong-seq'?(f.seq+255)&255:f.seq,c.scenario==='stale'?(f.sid%255)+1:f.sid,f.algorithm);
+      }
+      const map=7;
+      const outgoing=layout(f.bits,map), control='';
+      const receiver=new PhysicalReceiver(T,f.algorithm);
+      const randomOffset=()=>c.clockJitterMs?(this.random()*2-1)*c.clockJitterMs/1000:0;
+      const captureMs=T===0.25?c.captureMs:Math.max(c.captureMs,800*T);
+      const caps=[c.opticalMs,c.acousticMs,c.mechanicalMs].map(v=>v/1000);
+
+      const relevant=f.type==='DATA'&&dir===0;
+      for(const x of this.outages){
+        if(f.type!=='DATA')continue;
+        if(x.starts!==Infinity||x.on==='start')continue;
+        x.starts=start+(x.on==='mid'?8*T:0);x.ends=x.duration?x.starts+x.duration:Infinity;this.traceFault(x);
+      }
+      const isAck=dir===1&&f.type==='ACK'&&f.data===TYPES.DATA;
+      let effect='';
+      if(!this.faultUsed){
+        if(relevant&&['crc','frame-crc','two-errors','clock','extra-clock','sound','switch','prefix','pwm-bit','pwm-width','pwm-start','clock-skew','clock-period','truncated','ready','reset'].includes(c.scenario))effect=c.scenario;
+        if(c.scenario==='ack-end'&&dir===1&&f.type==='ACK'&&f.data===TYPES.END)effect='ack';
+        if(isAck&&['ack','stale','wrong-seq','pwm-tail'].includes(c.scenario))effect=c.scenario;
+        if(c.scenario==='rate-ready'&&f.type==='RATE_CTRL'&&f.data===RATE.READY_RATE||
+           c.scenario==='rate-active'&&f.type==='RATE_CTRL'&&f.data===RATE.ACTIVE_ACK||
+           c.scenario==='rate-part'&&f.type==='PERIOD_PART'&&(f.data>>>5)===1)effect='ack';
+      }
+      if(relevant&&c.scenario==='fallback'&&this.forcedLosses<2){this.forcedLosses++;effect='clock';}
+      if(effect){this.faultUsed=true;this.emit('INJECTION',{dir,id,detail:effect});}
+      if(effect==='reset'){
+        this.emit('PEER_RESET',{dir,detail:'Se perdió el contexto de B. Queda incierta la entrega anterior.'});
+        // Reinicio de sesión coordinado tras el vencimiento del pendiente. Invalidar callbacks de la sesión perdida.
+        this.queue=[];this.links=[];this.pause=null;this.period=1;this.periods=[1,1];this.txMap=[7,7];this.heard=[0,0];
+        this.peerRate=null;this.peerConfig=null;this.reopened=true;
+        this.rx=[0,1].map(()=>({expected:0,last:null,phase:'idle',bytes:[],length:null,lo:null,delivered:0}));
+        for(const l of this.lanes){l.busy=false;l.queue=[];for(const ch of l.channels){ch.target=0;ch.actual=0;ch.due=0;}}
+        this.c={...this.c,sid:this.c.sid%255+1};this.later(178*T+2,()=>this.bootstrap());return;
+      }
+      const cycles=outgoing.length;
+      this.stats.frames++;this.emit('TX',{id,dir,T,...f,symbols:outgoing,map,cycles,prefixCycles:6,clockBits:control});
+      if(effect==='ready'){
+        this.emit('READY_MISSED',{id,dir,detail:'Preparación fuera de plazo. Se inhibe el reloj de esta trama.'});
+        this.later(2*T,()=>{lane.busy=false;callback({ok:false,reason:'READY'},f);this.pump(dir);});return;
+      }
+      const observedClock=(bad,t)=>!bad&&!this.outages.some(x=>x.clock&&(x.dir===2||x.dir===dir)&&t>=x.starts&&t<x.ends);
+      const samples=(tx,t,dt)=>{
+        const active=this.outages.filter(x=>(x.dir===2||x.dir===dir)&&t+dt>=x.starts&&t+dt<x.ends);
+        return lane.channels.map((ch,j)=>{
+          const target=tx[j]==='1'?1:0, prepared=t+c.readyMs/1000;
+          if(ch.due<=prepared)ch.actual=ch.target;
+          if(target!==ch.target){ch.target=target;ch.due=prepared+caps[j];}
+          if(ch.due<=t+dt)ch.actual=ch.target;
+          let v=ch.actual;
+          for(const x of active)if(x.mask&(1<<j))v=x.level;
+          if(c.ber&&this.random()<c.ber)v^=1;
+          return String(v);
+        });
+      };
+      const capture=k=>{
+        const t=start+k*T,dt=captureMs/1000,tx=outgoing[k],rx=samples(tx,t,dt);
+        const physical=map?lanesOf(map):[0,1,2];
+        const positions=[0,1,2].map(()=>k<6?null:2*Math.floor((k-6)/3));
+        let code=k===0?'S':'0';
+        if(['pwm-bit','prefix'].includes(effect)&&k===5)code=code==='0'?'1':'0';
+        if(effect==='pwm-start'&&k===0)code='0';
+        if(effect==='pwm-tail'&&k===19)code='1';
+        let rise=t+c.clockRiseMs/1000+randomOffset();
+        let fall=t+pulseWidth(code,T)+c.clockFallMs/1000+randomOffset();
+        if(effect==='pwm-width'&&k===5)fall=rise+0.30*T;
+        if(effect==='clock-skew'&&k===5)fall+=0.10*T;
+        if(effect==='clock-period'&&k===8){rise+=0.10*T;fall+=0.10*T;}
+        const clk=observedClock(effect==='ack'||(effect==='clock'&&k===8)||(effect==='truncated'&&k>=cycles-3),rise)&&observedClock(false,fall);
+        const extra=effect==='extra-clock'&&k===8;
+        if(!clk){rise=NaN;fall=NaN;}
+        if(effect==='crc'&&k===42)rx[0]=String(1-Number(rx[0]));
+        if(effect==='two-errors'&&k===42){rx[0]=String(1-Number(rx[0]));rx[1]=String(1-Number(rx[1]));}
+        if(effect==='frame-crc'&&k>=39&&k<=41){
+          const delta=M.encode([1,0]).slice((k-39)*3,(k-39)*3+3);
+          delta.forEach((v,j)=>{if(v)rx[j]=String(1-Number(rx[j]));});
+        }
+
+        if(effect==='sound'&&tx[1]==='1'){
+          const hits=rx[1]==='1'?[0.1,0.45,0.8]:[];rx[1]=hits.length?'1':'0';
+          this.emit('ACOUSTIC_WINDOW',{id,dir,k,detail:hits.length+' cruces dan un único bit '+rx[1]});
+        }
+        if(effect==='switch'&&k===8)this.emit('SWITCH_WINDOW',{id,dir,k,detail:'Rebote normalizado a dos muestras finales iguales.'});
+        if(clk&&(rise>this.time||fall>this.time))receiver.fail('EDGE_AFTER_SAMPLE');
+        else receiver.ingest({rise,fall,values:rx.join(''),extra});
+        const decoded=clk?decodePulse(rise,fall,T):null;
+        this.emit('CLOCK_PWM',{id,dir,k,code,decoded,
+          rise:Number.isFinite(rise)?rise:null,fall:Number.isFinite(fall)?fall:null,
+          widthMs:clk?(fall-rise)*1000:null,T,valid:clk&&!extra&&!!decoded&&decoded!=='1'});
+        if(k===5)this.emit('CHANNEL_TEST',{id,dir,seen:receiver.meta?.seen,detail:'Validación de seis pilotos por columna.'});
+        if(k>=8&&(k-8)%3===0&&receiver.blocks.length){
+          const block=receiver.blocks[receiver.blocks.length-1];
+          if(block.block===Math.floor((k-6)/3))this.emit('MATRIX_BLOCK',{id,dir,k,...block});
+        }
+        if(extra)this.emit('EXTRA_EDGE',{id,dir,detail:'Flanco extra dentro del ciclo.'});
+        this.emit('SYMBOL',{id,dir,k,T,tx,rx:rx.join(''),clock:clk&&!extra,positions,readyMs:c.readyMs,captureMs,clockCode:decoded});
+        if(k+1<cycles)this.at(start+(k+1)*T+dt,()=>capture(k+1));
+      };
+      this.at(start+captureMs/1000,()=>capture(0));
+      this.at(start+cycles*T,()=>{
+        const r=receiver.outcome();
+        // La prueba por línea sólo se publica tras validar el control PWM y su calendario.
+        if(receiver.meta&&!receiver.error)this.heard[dir]=receiver.meta.seen;
+        if(!r.ok){
+          if(r.reason==='CRC')this.stats.crcErrors++;
+          else if(/CLOCK|PWM|EDGE|START_|EXTRA_SYMBOL/.test(r.reason))this.stats.clockErrors++;
+          else this.stats.syncErrors++;
+        }
+        if(r.ok&&r.raw!==f.bits){
+          this.stats.undetected++;this.emit('UNDETECTED',{id,dir,detail:'Colisión de CRC observada por el banco de pruebas.'});
+        }
+        this.emit('RX',{id,dir,...r});
+        for(const [j,ch] of lane.channels.entries()){
+          if(ch.due<=this.time)ch.actual=ch.target;
+          if(ch.target){ch.target=0;ch.due=this.time+caps[j];}
+        }
+        callback(r,f);
+      });
+      this.at(start+(cycles+2)*T,()=>{lane.busy=false;this.pump(dir);});
+    }
+
+    response(f,dir,T,cb){this.later(2*T,()=>this.wire(f,dir,T,cb,100));}
+    managementReply(req){
+      const {type,data,seq,sid}=req;
+      const reply=(type,value)=>frame(type,value,seq,sid,type==='ACK'?this.c.crc:'SMBUS');
+      if(type==='HELLO'){
+        if((data&7)!==VERSION||this.c.scenario==='version')return reply('ERROR',1);
+        this.peerConfig=data;return reply('HELLO_ACK',data);
+      }
+      if(type==='COMMIT')return this.peerConfig===data?reply('READY',data):null;
+      if(type==='PING')return this.peerRate?.stage==='active'?reply('ACK',TYPES.PING):null;
+      if(type==='RATE_CTRL'&&data===RATE.QUIESCE){
+        if(this.peerRate?.q!==seq)this.peerRate={q:seq,stage:'quiet',parts:new Parts(seq)};
+        return reply('RATE_CTRL',RATE.QUIESCED);
+      }
+      const st=this.peerRate;
+      if(!st||st.q!==seq)return null;
+      if(type==='PERIOD_PART'){
+        if(!st.parts.add(seq,data))return reply('RATE_CTRL',RATE.REJECT);
+        const us=st.parts.value();if(us===null)return null;
+        if(this.c.scenario==='rate-reject'||![1,2,3,4].some(h=>Math.ceil(1e6/h)===us))
+          return reply('RATE_CTRL',RATE.REJECT);
+        st.stage='prepared';st.period=us/1e6;return reply('RATE_CTRL',RATE.PREPARED);
+      }
+      if(type==='RATE_CTRL'&&data===RATE.COMMIT_RATE&&['prepared','committed'].includes(st.stage)){
+        st.stage='committed';return reply('RATE_CTRL',RATE.READY_RATE);
+      }
+      if(type==='RATE_CTRL'&&data===RATE.PROBE&&['committed','active'].includes(st.stage)){
+        st.stage='active';return reply('RATE_CTRL',RATE.ACTIVE_ACK);
+      }
+      return null;
+    }
+    management(requests,responseType,responseData,T,next,label,partState=null) {
+      let attempts=0,done=false,token=0;
+      const q=this.rateQ,dir=this.rateDir,backT=T===1?1:this.periods[1-dir];
+      const attempt=()=>{
+        if(done||this.finished)return;
+        if(attempts>=4){this.stop('RECOVERY_1HZ',label+': cuatro intentos de gestión agotados; datos detenidos');return;}
+        attempts++;const my=++token;
+        this.emit('MANAGEMENT',{detail:label,attempt:attempts,q,T});
+        let index=0,answer=null;
+        const sendNext=()=>{
+          const req=requests[index++];
+          this.wire(req,dir,T,(r)=>{
+            if(done||this.finished)return;
+            if(r.ok&&r.sid===this.c.sid&&r.ctrl===req.ctrl&&r.data===req.data&&r.seq===req.seq){
+              this.useReport(1-dir,r);answer=this.managementReply(r);if(partState)partState.add(r.seq,r.data);
+            } else if(!partState) {
+              this.later(200,()=>{if(my===token&&!done)attempt();});return;
+            }
+            if(index<requests.length){this.later(2*T,sendNext);return;}
+            // Timeout se cuenta después de la última trama del grupo.
+            this.later(200,()=>{if(my===token&&!done)attempt();});
+            if(partState&&partState.value()!==Math.ceil(1000000/this.rateTarget))return;
+            if(!r.ok)return;
+            if(!answer)return;
+            this.response(answer,1-dir,backT,(rr)=>{
+              if(rr.ok&&rr.sid===this.c.sid&&rr.seq===req.seq&&(rr.type==='ERROR'||rr.type==='RATE_CTRL'&&rr.data===RATE.REJECT)){
+                this.stop('RECOVERY_1HZ',rr.type==='ERROR'?'Versión incompatible.':'El receptor rechazó el perfil de frecuencia.');return;
+              }
+              if(!rr.ok||rr.sid!==this.c.sid||rr.ctrl!==TYPES[responseType]||rr.data!==responseData||rr.seq!==req.seq||done)return;
+              this.useReport(dir,rr);done=true;token++;this.emit('MANAGEMENT_OK',{detail:label,q,attempt:attempts});
+              this.later(2*Math.max(T,1),next);
+            });
+          },50);
+        };
+        sendNext();
+      };attempt();
+    }
+    bootstrap(){const config=(Object.keys(CRCS).indexOf(this.c.crc)<<6)|(this.c.encoding==='windows-1252'?32:0)|VERSION;
+      this.emit('SESSION',{detail:'A coordina SID '+this.c.sid+'; versión 102 matricial, CRC gestión SMBUS, arranque 1 Hz'});
+      this.management([frame('HELLO',config,0,this.c.sid)],'HELLO_ACK',config,1,()=>{
+        this.management([frame('COMMIT',config,0,this.c.sid)],'READY',config,1,()=>{
+          this.connected=true;this.emit('CONNECTED',{detail:'Sesión abierta; SEQ de aplicación independiente por dirección'});
+          if(this.reopened){this.stop('SESSION_LOST','Sesión nueva abierta con SID '+this.c.sid+'. Revisar el mensaje anterior antes de reenviar.');return;}
+          const second=()=>this.c.hzB===1?this.startLinks():this.negotiate(this.c.hzB,()=>this.startLinks(),1);
+          if(this.c.hzA===1)second();else this.negotiate(this.c.hzA,second,0);
+        },'COMMIT → READY');
+      },'HELLO → HELLO_ACK');
+    }
+    negotiate(target=this.c.hzA,resume=()=>this.startLinks(),dir=0){
+      this.rateDir=dir;
+      this.rateTarget=target;if(this.rateQ>=255){this.stop('SESSION_EXHAUSTED','Agotadas las transacciones. Abrir una sesión nueva.');return;}this.rateQ++;this.rateComplete=false;
+      const q=this.rateQ,sid=this.c.sid,candidate=Math.ceil(1000000/this.rateTarget)/1000000;
+      const mg=data=>frame('RATE_CTRL',data,q,sid);
+      this.emit('QUIESCENCE',{dir,detail:'Gestión a 1 Hz. Se conservan SID, pendientes y SEQ. Perfil solicitado: '+target+' Hz (modelo).'});
+      this.later(30000,()=>{if(this.rateQ===q&&!this.rateComplete)this.stop('RECOVERY_1HZ','Watchdog de cambio: 30000 s');});
+      this.management([mg(RATE.QUIESCE)],'RATE_CTRL',RATE.QUIESCED,1,()=>{
+        const parts=new Parts(q);
+        this.management(periodParts(Math.ceil(1000000/this.rateTarget)).map(d=>frame('PERIOD_PART',d,q,sid)),
+          'RATE_CTRL',RATE.PREPARED,1,()=>{
+            this.management([mg(RATE.COMMIT_RATE)],'RATE_CTRL',RATE.READY_RATE,1,()=>{
+              this.management([mg(RATE.PROBE)],'RATE_CTRL',RATE.ACTIVE_ACK,candidate,()=>{
+                this.periods[dir]=candidate;this.period=candidate;this.rateComplete=true;
+                this.emit('RATE_ACTIVE_A',{dir,q,T:candidate,detail:'ACTIVE_ACK válido; Emisor confirma período candidato de esta dirección'});
+                // PING ordinario libera el emisor de B antes de sus mensajes propios.
+                this.management([frame('PING',0,0,sid,this.c.crc)],'ACK',TYPES.PING,candidate,()=>{
+                  this.emit('RATE_ACTIVE_B',{dir,q,T:candidate,detail:'PING ordinario válido observado; Receptor confirma reanudación'});resume();
+                },'PING de reanudación');
+              },'PROBE → ACTIVE_ACK');
+            },'COMMIT_RATE → READY_RATE');
+          },'PERIOD_PART × 4 → PREPARED',parts);
+      },'QUIESCE → QUIESCED');
+    }
+    startLinks(){this.emit('APPLICATION',{periods:[...this.periods],detail:'Mensajes en ambos sentidos; ACK prioritario sin interrumpir tramas'});
+      for(let dir=0;dir<2;dir++){
+        const text=dir?this.c.b:this.c.a;
+        const bytes=encode(text,this.c.encoding);
+        const specs=text.length?[['START',0],['LEN_LO',bytes.length&255],['LEN_HI',bytes.length>>>8],
+          ...bytes.map(b=>['DATA',b]),['END',0]]:[];
+        this.links[dir]={specs,index:0,seq:0,pending:null,done:!specs.length,text};
+      }
+      for(let dir=0;dir<2;dir++)this.next(dir);
+      this.checkDone();
+    }
+    checkPause(){
+      const pause=this.pause;if(!pause||pause.started||!this.links.every((l,d)=>l.done||pause.waiting.has(d)))return;
+      pause.started=true;
+      const dir=pause.dir,target=Math.max(1,Math.round(1/this.periods[dir])-1);
+      this.emit('DOWNSHIFT',{dir,detail:'Dos fallos de la misma trama. Se detienen nuevas emisiones y se negocian '+target+' Hz.'});
+      this.later(2*Math.max(...this.periods),()=>this.negotiate(target,()=>{
+        this.pause=null;for(const waiting of pause.waiting)this.attempt(waiting);
+      },dir));
+    }
+    next(dir){const l=this.links[dir];if(l.index>=l.specs.length){l.done=true;this.checkDone();this.checkPause();return;}
+      const [type,data]=l.specs[l.index];l.pending={f:frame(type,data,l.seq,this.c.sid,this.c.crc),attempt:0,token:0};this.attempt(dir);
+    }
+    attempt(dir){if(this.finished)return;const l=this.links[dir],p=l.pending;if(!p)return;
+      if(p.attempt>=4){this.stop('LINK_FAULT','Cuatro intentos agotados en '+p.f.type+' '+(dir?'B→A':'A→B')+' SEQ='+p.f.seq+'. Entrega pendiente incierta; no se reenvía el mensaje completo.');return;}
+      if(p.attempt===2&&this.periods[dir]<1&&p.slowed!==true){
+        p.slowed=true;
+        if(!this.pause)this.pause={dir,waiting:new Set(),started:false};
+      }
+      if(this.pause){this.pause.waiting.add(dir);this.checkPause();return;}
+      if(p.attempt)this.stats.retries++;
+      p.attempt++;const token=++p.token;
+      this.emit('ATTEMPT',{dir,type:p.f.type,seq:p.f.seq,sid:p.f.sid,attempt:p.attempt});
+      this.wire(p.f,dir,this.periods[dir],(r)=>{
+        if(l.pending!==p||this.finished)return;
+        const tau=178*this.periods[1-dir]+2;
+        this.emit('ACK_TIMER',{dir,seq:p.f.seq,tau,Treturn:this.periods[1-dir],detail:'Desde fin TX; 178 veces el período del retorno + 2 s'});
+        this.later(tau,()=>{if(l.pending===p&&p.token===token){this.emit('TIMEOUT',{dir,seq:p.f.seq});this.attempt(dir);}});
+        if(r.ok)this.accept(dir,r,p);
+        else if(['CRC','SYNC','LINE_MISSING','MODE','MATRIX_RANK','MATRIX_SYNDROME'].includes(r.reason)&&this.connected) {
+          // Identidad del NACK tomada del contexto local, nunca de cabecera corrupta.
+          const nack=frame('NACK',1,this.rx[dir].expected,this.c.sid,this.c.crc);
+          this.emit('NACK_CONTEXT',{dir,seq:nack.seq,detail:'SID y SEQ esperados por el receptor'});
+          this.sendReply(dir,nack,p);
+        }
+      });
+    }
+    accept(dir,r,p){const state=this.rx[dir];
+      if(r.sid!==this.c.sid){this.emit('STALE_SID',{dir,sid:r.sid});return;}
+      const key=f=>[f.ctrl,f.data,f.seq,f.sid].join('/');
+      if(state.last&&r.seq===((state.expected+255)&255)&&key(r)===key(state.last)){
+        this.stats.duplicates++;this.emit('DUPLICATE',{dir,seq:r.seq,type:r.type,detail:'Se repite ACK; sin volver a agregar ni entregar'});
+        this.sendReply(dir,frame('ACK',r.ctrl,r.seq,r.sid,this.c.crc),p);return;
+      }
+      if(r.seq!==state.expected){this.emit('UNEXPECTED_SEQ',{dir,expected:state.expected,received:r.seq});return;}
+      try {
+        if(r.type==='START'){
+          if(state.phase!=='idle')throw Error('START fuera de estado');
+          state.phase='lo';state.bytes=[];state.length=null;
+        } else if(r.type==='LEN_LO'){
+          if(state.phase!=='lo')throw Error('LEN_LO fuera de estado');state.lo=r.data;state.phase='hi';
+        } else if(r.type==='LEN_HI'){
+          if(state.phase!=='hi'||((r.data<<8)|state.lo)>1024)throw Error('Longitud inválida');
+          state.length=(r.data<<8)|state.lo;state.phase='body';
+        } else if(r.type==='DATA'){
+          if(state.phase!=='body'||state.bytes.length>=state.length)throw Error('DATA fuera de longitud');
+          state.bytes.push(r.data);this.stats.bytes++;
+        } else if(r.type==='END'){
+          if(state.phase!=='body'||state.bytes.length!==state.length)throw Error('END o longitud inválidos');
+          const text=decode(state.bytes,this.c.encoding);state.phase='idle';state.delivered++;
+          this.deliveries.push({dir,text,bytes:state.bytes.length,t:this.time});
+          this.emit('DELIVERED',{dir,text,bytes:state.bytes.length,detail:'END y decodificación completos; el ACK aún puede perderse'});
+        } else throw Error('Control no permitido en el flujo');
+      } catch(err){this.emit('SEMANTIC_ERROR',{dir,detail:err.message});
+        this.sendReply(dir,frame('NACK',2,state.expected,this.c.sid,this.c.crc),p);return;}
+      state.last=r;state.expected=(state.expected+1)&255;
+      this.emit('ACCEPTED',{dir,type:r.type,seq:r.seq,data:r.data});
+      this.sendReply(dir,frame('ACK',r.ctrl,r.seq,r.sid,this.c.crc),p);
+    }
+    sendReply(dir,reply,p){this.response(reply,1-dir,this.periods[1-dir],(r)=>{
+      const l=this.links[dir];if(this.finished||l.pending!==p||!r.ok)return;
+      if(r.sid!==p.f.sid||r.seq!==p.f.seq){this.emit('REPLY_IGNORED',{dir,detail:'SID o SEQ de la respuesta no coincide.'});return;}
+      if(r.type==='NACK'||(r.type==='ACK'&&r.data===p.f.ctrl))this.useReport(dir,r);
+      if(r.type==='ACK'&&r.data===p.f.ctrl){
+        p.token++;l.pending=null;l.index++;l.seq=(l.seq+1)&255;
+        this.emit('CONFIRMED',{dir,type:p.f.type,seq:r.seq,attempt:p.attempt});
+        this.later(2*this.periods[1-dir],()=>this.next(dir));
+      } else if(r.type==='NACK'){
+        p.token++;this.emit('NACK',{dir,seq:r.seq});
+        this.later(2*this.periods[1-dir],()=>{if(l.pending===p)this.attempt(dir);});
+      }
+    });}
+    checkDone(){if(this.links.length===2&&this.links.every(x=>x.done))this.stop('COMPLETE','Todos los END confirmados');}
+    run(){for(const x of this.outages)if(Number.isFinite(x.starts))this.traceFault(x);this.bootstrap();let operations=0;
+      while(this.queue.length&&!this.finished){this.queue.sort((a,b)=>a.t-b.t||a.i-b.i);const e=this.queue.shift();this.time=e.t;e.fn();
+        if(++operations>2000000)this.stop('LIMIT','Límite de eventos del modelo');}
+      if(!this.finished)this.stop('LINK_FAULT','Sin progreso');
+      this.events.sort((a,b)=>a.t-b.t);
+      return {config:this.initialConfig,finalPeriods:[...this.periods],finalSid:this.c.sid,status:this.status,reason:this.reason,duration:+this.time.toFixed(6),stats:this.stats,
+        deliveries:this.deliveries,events:this.events,
+        scope:'Modelo discreto; perfiles y retardos hipotéticos. Matriz y recuperación por bloque modeladas; sin reasignación de líneas. Un reinicio invalida la sesión. Validación física pendiente.'};
+    }
+  }
+  function sweep(options={}){
+    return [1,2,3,4].map(hz=>{
+      const r=new Engine({...options,a:'U*',b:'*U',hz,hzA:hz,hzB:hz}).run();
+      const data=r.events.filter(e=>e.kind==='TX'&&e.type==='DATA');
+      const observed=[0,1].map(dir=>r.events.filter(e=>e.kind==='CHANNEL_TEST'&&e.dir===dir).reduce((mask,e)=>mask&(e.seen||0),7));
+      const atRate=data.length>0&&data.every(e=>Math.abs(1/e.T-hz)<0.001);
+      const stable=r.status==='COMPLETE'&&r.stats.retries===0&&atRate&&r.deliveries.length===2&&
+        r.deliveries.every(d=>d.text===(d.dir?'*U':'U*'));
+      return {hz,status:r.status,stable,observed:data.length?observed:[0,0],all:stable&&observed.every(m=>m===7)};
+    });
+  }
+  return {TYPES,NAMES,RATE,CRCS,FIELDS,hex,crc8,frame,parse,encode,decode,periodParts,Parts,defaults,sweep,
+    PhysicalReceiver,pulseWidth,decodePulse,layout,
+    simulate:options=>new Engine(options).run()};
+});

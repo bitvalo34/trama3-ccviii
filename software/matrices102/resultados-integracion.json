@@ -1,0 +1,6370 @@
+{
+  "revision": 102,
+  "date": "2026-11-08",
+  "mathematicalChecks": 10252,
+  "integrationChecks": 2264,
+  "sessionScenarios": 209,
+  "tests": "PASS",
+  "limits": [
+    "No prueba hardware",
+    "Fuera del radio puede haber corrección equivocada; CRC no infalible",
+    "No certifica equivalencia al caso de clase"
+  ],
+  "slowSweep": [
+    {
+      "hz": 1,
+      "status": "COMPLETE",
+      "stable": true,
+      "observed": [
+        7,
+        7
+      ],
+      "all": true
+    },
+    {
+      "hz": 2,
+      "status": "COMPLETE",
+      "stable": true,
+      "observed": [
+        3,
+        3
+      ],
+      "all": false
+    },
+    {
+      "hz": 3,
+      "status": "COMPLETE",
+      "stable": true,
+      "observed": [
+        3,
+        3
+      ],
+      "all": false
+    },
+    {
+      "hz": 4,
+      "status": "COMPLETE",
+      "stable": true,
+      "observed": [
+        3,
+        3
+      ],
+      "all": false
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "Canales 0/0",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 0/1",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 0/2",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 0/3",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 0/4",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 0/5",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 0/6",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 0/7",
+      "status": "RECOVERY_1HZ",
+      "duration": 1148,
+      "stats": {
+        "frames": 8,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 4,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 0
+      },
+      "deliveries": [],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 1/0",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 1/1",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 1/2",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 1/3",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 1/4",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 1/5",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 1/6",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 1/7",
+      "status": "RECOVERY_1HZ",
+      "duration": 1148,
+      "stats": {
+        "frames": 8,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 4,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 0
+      },
+      "deliveries": [],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 2/0",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 2/1",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 2/2",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 2/3",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 2/4",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 2/5",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 2/6",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 2/7",
+      "status": "RECOVERY_1HZ",
+      "duration": 1148,
+      "stats": {
+        "frames": 8,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 4,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 0
+      },
+      "deliveries": [],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 3/0",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 3/1",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 3/2",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 3/3",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 3/4",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 3/5",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 3/6",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 3/7",
+      "status": "RECOVERY_1HZ",
+      "duration": 1148,
+      "stats": {
+        "frames": 8,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 4,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 0
+      },
+      "deliveries": [],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 4/0",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 4/1",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 4/2",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 4/3",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 4/4",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 4/5",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 4/6",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 4/7",
+      "status": "RECOVERY_1HZ",
+      "duration": 1148,
+      "stats": {
+        "frames": 8,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 4,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 0
+      },
+      "deliveries": [],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 5/0",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 5/1",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 5/2",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 5/3",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 5/4",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 5/5",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 5/6",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 5/7",
+      "status": "RECOVERY_1HZ",
+      "duration": 1148,
+      "stats": {
+        "frames": 8,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 4,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 0
+      },
+      "deliveries": [],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 6/0",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 6/1",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 6/2",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 6/3",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 6/4",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 6/5",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 6/6",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 34,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 7
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Sí",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 6/7",
+      "status": "RECOVERY_1HZ",
+      "duration": 1148,
+      "stats": {
+        "frames": 8,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 4,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 0
+      },
+      "deliveries": [],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 7/0",
+      "status": "RECOVERY_1HZ",
+      "duration": 1148,
+      "stats": {
+        "frames": 4,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 4,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 0
+      },
+      "deliveries": [],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 7/1",
+      "status": "RECOVERY_1HZ",
+      "duration": 1148,
+      "stats": {
+        "frames": 4,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 4,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 0
+      },
+      "deliveries": [],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 7/2",
+      "status": "RECOVERY_1HZ",
+      "duration": 1148,
+      "stats": {
+        "frames": 4,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 4,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 0
+      },
+      "deliveries": [],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 7/3",
+      "status": "RECOVERY_1HZ",
+      "duration": 1148,
+      "stats": {
+        "frames": 4,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 4,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 0
+      },
+      "deliveries": [],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 7/4",
+      "status": "RECOVERY_1HZ",
+      "duration": 1148,
+      "stats": {
+        "frames": 4,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 4,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 0
+      },
+      "deliveries": [],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 7/5",
+      "status": "RECOVERY_1HZ",
+      "duration": 1148,
+      "stats": {
+        "frames": 4,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 4,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 0
+      },
+      "deliveries": [],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 7/6",
+      "status": "RECOVERY_1HZ",
+      "duration": 1148,
+      "stats": {
+        "frames": 4,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 4,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 0
+      },
+      "deliveries": [],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Canales 7/7",
+      "status": "RECOVERY_1HZ",
+      "duration": 1148,
+      "stats": {
+        "frames": 4,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 4,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 0
+      },
+      "deliveries": [],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "SMBUS 1/1",
+      "status": "COMPLETE",
+      "duration": 2314,
+      "stats": {
+        "frames": 42,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 2223
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "SMBUS 1/2",
+      "status": "COMPLETE",
+      "duration": 3253.5,
+      "stats": {
+        "frames": 55,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2759
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3162.5
+        }
+      ],
+      "periods": [
+        1,
+        0.5
+      ]
+    },
+    {
+      "name": "SMBUS 1/3",
+      "status": "COMPLETE",
+      "duration": 3181.00029,
+      "stats": {
+        "frames": 55,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2730.000116
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3090.0002900000004
+        }
+      ],
+      "periods": [
+        1,
+        0.333334
+      ]
+    },
+    {
+      "name": "SMBUS 1/4",
+      "status": "COMPLETE",
+      "duration": 3144.75,
+      "stats": {
+        "frames": 55,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2715.5
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3053.75
+        }
+      ],
+      "periods": [
+        1,
+        0.25
+      ]
+    },
+    {
+      "name": "SMBUS 2/1",
+      "status": "COMPLETE",
+      "duration": 3247.5,
+      "stats": {
+        "frames": 55,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2715.5
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3202
+        }
+      ],
+      "periods": [
+        0.5,
+        1
+      ]
+    },
+    {
+      "name": "SMBUS 2/2",
+      "status": "COMPLETE",
+      "duration": 3386,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3073.5
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3340.5
+        }
+      ],
+      "periods": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "SMBUS 2/3",
+      "status": "COMPLETE",
+      "duration": 3313.50029,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3044.500116
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3268.0002900000004
+        }
+      ],
+      "periods": [
+        0.5,
+        0.333334
+      ]
+    },
+    {
+      "name": "SMBUS 2/4",
+      "status": "COMPLETE",
+      "duration": 3277.25,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3030
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3231.75
+        }
+      ],
+      "periods": [
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "name": "SMBUS 3/1",
+      "status": "COMPLETE",
+      "duration": 3173.000298,
+      "stats": {
+        "frames": 55,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2672.0001740000002
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3142.6669039999997
+        }
+      ],
+      "periods": [
+        0.333334,
+        1
+      ]
+    },
+    {
+      "name": "SMBUS 3/2",
+      "status": "COMPLETE",
+      "duration": 3281.83375,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3000.333626
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3251.5003559999996
+        }
+      ],
+      "periods": [
+        0.333334,
+        0.5
+      ]
+    },
+    {
+      "name": "SMBUS 3/3",
+      "status": "COMPLETE",
+      "duration": 2972.001656,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2763.667905999999
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 2941.668261999999
+        }
+      ],
+      "periods": [
+        0.333334,
+        0.333334
+      ]
+    },
+    {
+      "name": "SMBUS 3/4",
+      "status": "COMPLETE",
+      "duration": 2935.751366,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2749.167789999999
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 2905.4179719999984
+        }
+      ],
+      "periods": [
+        0.333334,
+        0.25
+      ]
+    },
+    {
+      "name": "SMBUS 4/1",
+      "status": "COMPLETE",
+      "duration": 3135.75,
+      "stats": {
+        "frames": 55,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2650.25
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3113
+        }
+      ],
+      "periods": [
+        0.25,
+        1
+      ]
+    },
+    {
+      "name": "SMBUS 4/2",
+      "status": "COMPLETE",
+      "duration": 3229.75,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2963.75
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3207
+        }
+      ],
+      "periods": [
+        0.25,
+        0.5
+      ]
+    },
+    {
+      "name": "SMBUS 4/3",
+      "status": "COMPLETE",
+      "duration": 2919.917906,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2727.084279999999
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 2897.167905999999
+        }
+      ],
+      "periods": [
+        0.25,
+        0.333334
+      ]
+    },
+    {
+      "name": "SMBUS 4/4",
+      "status": "COMPLETE",
+      "duration": 2765,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2608.75
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 2742.25
+        }
+      ],
+      "periods": [
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "name": "AUTOSAR 1/1",
+      "status": "COMPLETE",
+      "duration": 2314,
+      "stats": {
+        "frames": 42,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 2223
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "AUTOSAR 1/2",
+      "status": "COMPLETE",
+      "duration": 3253.5,
+      "stats": {
+        "frames": 55,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2759
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3162.5
+        }
+      ],
+      "periods": [
+        1,
+        0.5
+      ]
+    },
+    {
+      "name": "AUTOSAR 1/3",
+      "status": "COMPLETE",
+      "duration": 3181.00029,
+      "stats": {
+        "frames": 55,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2730.000116
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3090.0002900000004
+        }
+      ],
+      "periods": [
+        1,
+        0.333334
+      ]
+    },
+    {
+      "name": "AUTOSAR 1/4",
+      "status": "COMPLETE",
+      "duration": 3144.75,
+      "stats": {
+        "frames": 55,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2715.5
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3053.75
+        }
+      ],
+      "periods": [
+        1,
+        0.25
+      ]
+    },
+    {
+      "name": "AUTOSAR 2/1",
+      "status": "COMPLETE",
+      "duration": 3247.5,
+      "stats": {
+        "frames": 55,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2715.5
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3202
+        }
+      ],
+      "periods": [
+        0.5,
+        1
+      ]
+    },
+    {
+      "name": "AUTOSAR 2/2",
+      "status": "COMPLETE",
+      "duration": 3386,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3073.5
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3340.5
+        }
+      ],
+      "periods": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "AUTOSAR 2/3",
+      "status": "COMPLETE",
+      "duration": 3313.50029,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3044.500116
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3268.0002900000004
+        }
+      ],
+      "periods": [
+        0.5,
+        0.333334
+      ]
+    },
+    {
+      "name": "AUTOSAR 2/4",
+      "status": "COMPLETE",
+      "duration": 3277.25,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3030
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3231.75
+        }
+      ],
+      "periods": [
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "name": "AUTOSAR 3/1",
+      "status": "COMPLETE",
+      "duration": 3173.000298,
+      "stats": {
+        "frames": 55,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2672.0001740000002
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3142.6669039999997
+        }
+      ],
+      "periods": [
+        0.333334,
+        1
+      ]
+    },
+    {
+      "name": "AUTOSAR 3/2",
+      "status": "COMPLETE",
+      "duration": 3281.83375,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3000.333626
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3251.5003559999996
+        }
+      ],
+      "periods": [
+        0.333334,
+        0.5
+      ]
+    },
+    {
+      "name": "AUTOSAR 3/3",
+      "status": "COMPLETE",
+      "duration": 2972.001656,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2763.667905999999
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 2941.668261999999
+        }
+      ],
+      "periods": [
+        0.333334,
+        0.333334
+      ]
+    },
+    {
+      "name": "AUTOSAR 3/4",
+      "status": "COMPLETE",
+      "duration": 2935.751366,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2749.167789999999
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 2905.4179719999984
+        }
+      ],
+      "periods": [
+        0.333334,
+        0.25
+      ]
+    },
+    {
+      "name": "AUTOSAR 4/1",
+      "status": "COMPLETE",
+      "duration": 3135.75,
+      "stats": {
+        "frames": 55,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2650.25
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3113
+        }
+      ],
+      "periods": [
+        0.25,
+        1
+      ]
+    },
+    {
+      "name": "AUTOSAR 4/2",
+      "status": "COMPLETE",
+      "duration": 3229.75,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2963.75
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3207
+        }
+      ],
+      "periods": [
+        0.25,
+        0.5
+      ]
+    },
+    {
+      "name": "AUTOSAR 4/3",
+      "status": "COMPLETE",
+      "duration": 2919.917906,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2727.084279999999
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 2897.167905999999
+        }
+      ],
+      "periods": [
+        0.25,
+        0.333334
+      ]
+    },
+    {
+      "name": "AUTOSAR 4/4",
+      "status": "COMPLETE",
+      "duration": 2765,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2608.75
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 2742.25
+        }
+      ],
+      "periods": [
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "name": "SAE-J1850 1/1",
+      "status": "COMPLETE",
+      "duration": 2314,
+      "stats": {
+        "frames": 42,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 2223
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "SAE-J1850 1/2",
+      "status": "COMPLETE",
+      "duration": 3253.5,
+      "stats": {
+        "frames": 55,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2759
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3162.5
+        }
+      ],
+      "periods": [
+        1,
+        0.5
+      ]
+    },
+    {
+      "name": "SAE-J1850 1/3",
+      "status": "COMPLETE",
+      "duration": 3181.00029,
+      "stats": {
+        "frames": 55,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2730.000116
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3090.0002900000004
+        }
+      ],
+      "periods": [
+        1,
+        0.333334
+      ]
+    },
+    {
+      "name": "SAE-J1850 1/4",
+      "status": "COMPLETE",
+      "duration": 3144.75,
+      "stats": {
+        "frames": 55,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2715.5
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3053.75
+        }
+      ],
+      "periods": [
+        1,
+        0.25
+      ]
+    },
+    {
+      "name": "SAE-J1850 2/1",
+      "status": "COMPLETE",
+      "duration": 3247.5,
+      "stats": {
+        "frames": 55,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2715.5
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3202
+        }
+      ],
+      "periods": [
+        0.5,
+        1
+      ]
+    },
+    {
+      "name": "SAE-J1850 2/2",
+      "status": "COMPLETE",
+      "duration": 3386,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3073.5
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3340.5
+        }
+      ],
+      "periods": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "SAE-J1850 2/3",
+      "status": "COMPLETE",
+      "duration": 3313.50029,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3044.500116
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3268.0002900000004
+        }
+      ],
+      "periods": [
+        0.5,
+        0.333334
+      ]
+    },
+    {
+      "name": "SAE-J1850 2/4",
+      "status": "COMPLETE",
+      "duration": 3277.25,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3030
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3231.75
+        }
+      ],
+      "periods": [
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "name": "SAE-J1850 3/1",
+      "status": "COMPLETE",
+      "duration": 3173.000298,
+      "stats": {
+        "frames": 55,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2672.0001740000002
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3142.6669039999997
+        }
+      ],
+      "periods": [
+        0.333334,
+        1
+      ]
+    },
+    {
+      "name": "SAE-J1850 3/2",
+      "status": "COMPLETE",
+      "duration": 3281.83375,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3000.333626
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3251.5003559999996
+        }
+      ],
+      "periods": [
+        0.333334,
+        0.5
+      ]
+    },
+    {
+      "name": "SAE-J1850 3/3",
+      "status": "COMPLETE",
+      "duration": 2972.001656,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2763.667905999999
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 2941.668261999999
+        }
+      ],
+      "periods": [
+        0.333334,
+        0.333334
+      ]
+    },
+    {
+      "name": "SAE-J1850 3/4",
+      "status": "COMPLETE",
+      "duration": 2935.751366,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2749.167789999999
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 2905.4179719999984
+        }
+      ],
+      "periods": [
+        0.333334,
+        0.25
+      ]
+    },
+    {
+      "name": "SAE-J1850 4/1",
+      "status": "COMPLETE",
+      "duration": 3135.75,
+      "stats": {
+        "frames": 55,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2650.25
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3113
+        }
+      ],
+      "periods": [
+        0.25,
+        1
+      ]
+    },
+    {
+      "name": "SAE-J1850 4/2",
+      "status": "COMPLETE",
+      "duration": 3229.75,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2963.75
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3207
+        }
+      ],
+      "periods": [
+        0.25,
+        0.5
+      ]
+    },
+    {
+      "name": "SAE-J1850 4/3",
+      "status": "COMPLETE",
+      "duration": 2919.917906,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2727.084279999999
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 2897.167905999999
+        }
+      ],
+      "periods": [
+        0.25,
+        0.333334
+      ]
+    },
+    {
+      "name": "SAE-J1850 4/4",
+      "status": "COMPLETE",
+      "duration": 2765,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2608.75
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 2742.25
+        }
+      ],
+      "periods": [
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "name": "MAXIM-DOW 1/1",
+      "status": "COMPLETE",
+      "duration": 2314,
+      "stats": {
+        "frames": 42,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 2223
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "MAXIM-DOW 1/2",
+      "status": "COMPLETE",
+      "duration": 3253.5,
+      "stats": {
+        "frames": 55,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2759
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3162.5
+        }
+      ],
+      "periods": [
+        1,
+        0.5
+      ]
+    },
+    {
+      "name": "MAXIM-DOW 1/3",
+      "status": "COMPLETE",
+      "duration": 3181.00029,
+      "stats": {
+        "frames": 55,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2730.000116
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3090.0002900000004
+        }
+      ],
+      "periods": [
+        1,
+        0.333334
+      ]
+    },
+    {
+      "name": "MAXIM-DOW 1/4",
+      "status": "COMPLETE",
+      "duration": 3144.75,
+      "stats": {
+        "frames": 55,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2715.5
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3053.75
+        }
+      ],
+      "periods": [
+        1,
+        0.25
+      ]
+    },
+    {
+      "name": "MAXIM-DOW 2/1",
+      "status": "COMPLETE",
+      "duration": 3247.5,
+      "stats": {
+        "frames": 55,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2715.5
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3202
+        }
+      ],
+      "periods": [
+        0.5,
+        1
+      ]
+    },
+    {
+      "name": "MAXIM-DOW 2/2",
+      "status": "COMPLETE",
+      "duration": 3386,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3073.5
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3340.5
+        }
+      ],
+      "periods": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "MAXIM-DOW 2/3",
+      "status": "COMPLETE",
+      "duration": 3313.50029,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3044.500116
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3268.0002900000004
+        }
+      ],
+      "periods": [
+        0.5,
+        0.333334
+      ]
+    },
+    {
+      "name": "MAXIM-DOW 2/4",
+      "status": "COMPLETE",
+      "duration": 3277.25,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3030
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3231.75
+        }
+      ],
+      "periods": [
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "name": "MAXIM-DOW 3/1",
+      "status": "COMPLETE",
+      "duration": 3173.000298,
+      "stats": {
+        "frames": 55,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2672.0001740000002
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3142.6669039999997
+        }
+      ],
+      "periods": [
+        0.333334,
+        1
+      ]
+    },
+    {
+      "name": "MAXIM-DOW 3/2",
+      "status": "COMPLETE",
+      "duration": 3281.83375,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3000.333626
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3251.5003559999996
+        }
+      ],
+      "periods": [
+        0.333334,
+        0.5
+      ]
+    },
+    {
+      "name": "MAXIM-DOW 3/3",
+      "status": "COMPLETE",
+      "duration": 2972.001656,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2763.667905999999
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 2941.668261999999
+        }
+      ],
+      "periods": [
+        0.333334,
+        0.333334
+      ]
+    },
+    {
+      "name": "MAXIM-DOW 3/4",
+      "status": "COMPLETE",
+      "duration": 2935.751366,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2749.167789999999
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 2905.4179719999984
+        }
+      ],
+      "periods": [
+        0.333334,
+        0.25
+      ]
+    },
+    {
+      "name": "MAXIM-DOW 4/1",
+      "status": "COMPLETE",
+      "duration": 3135.75,
+      "stats": {
+        "frames": 55,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2650.25
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3113
+        }
+      ],
+      "periods": [
+        0.25,
+        1
+      ]
+    },
+    {
+      "name": "MAXIM-DOW 4/2",
+      "status": "COMPLETE",
+      "duration": 3229.75,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2963.75
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3207
+        }
+      ],
+      "periods": [
+        0.25,
+        0.5
+      ]
+    },
+    {
+      "name": "MAXIM-DOW 4/3",
+      "status": "COMPLETE",
+      "duration": 2919.917906,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2727.084279999999
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 2897.167905999999
+        }
+      ],
+      "periods": [
+        0.25,
+        0.333334
+      ]
+    },
+    {
+      "name": "MAXIM-DOW 4/4",
+      "status": "COMPLETE",
+      "duration": 2765,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 2608.75
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 2742.25
+        }
+      ],
+      "periods": [
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "name": "crc",
+      "status": "COMPLETE",
+      "duration": 3277.25,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3030
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3231.75
+        }
+      ],
+      "periods": [
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "name": "two-errors",
+      "status": "COMPLETE",
+      "duration": 3277.25,
+      "stats": {
+        "frames": 68,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3030
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3231.75
+        }
+      ],
+      "periods": [
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "name": "frame-crc",
+      "status": "COMPLETE",
+      "duration": 3299,
+      "stats": {
+        "frames": 70,
+        "retries": 1,
+        "crcErrors": 1,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3119
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3253.5
+        }
+      ],
+      "periods": [
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "name": "ack",
+      "status": "COMPLETE",
+      "duration": 3300,
+      "stats": {
+        "frames": 70,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 1,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3120
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3254.5
+        }
+      ],
+      "periods": [
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "name": "clock",
+      "status": "COMPLETE",
+      "duration": 3300,
+      "stats": {
+        "frames": 69,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3120
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3254.5
+        }
+      ],
+      "periods": [
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "name": "extra-clock",
+      "status": "COMPLETE",
+      "duration": 3300,
+      "stats": {
+        "frames": 69,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3120
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3254.5
+        }
+      ],
+      "periods": [
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "name": "pwm-bit",
+      "status": "COMPLETE",
+      "duration": 3300,
+      "stats": {
+        "frames": 69,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3120
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3254.5
+        }
+      ],
+      "periods": [
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "name": "pwm-width",
+      "status": "COMPLETE",
+      "duration": 3300,
+      "stats": {
+        "frames": 69,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3120
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3254.5
+        }
+      ],
+      "periods": [
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "name": "pwm-start",
+      "status": "COMPLETE",
+      "duration": 3300,
+      "stats": {
+        "frames": 69,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3120
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3254.5
+        }
+      ],
+      "periods": [
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "name": "pwm-tail",
+      "status": "COMPLETE",
+      "duration": 3300,
+      "stats": {
+        "frames": 70,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 1,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3120
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3254.5
+        }
+      ],
+      "periods": [
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "name": "clock-skew",
+      "status": "COMPLETE",
+      "duration": 3300,
+      "stats": {
+        "frames": 69,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3120
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3254.5
+        }
+      ],
+      "periods": [
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "name": "clock-period",
+      "status": "COMPLETE",
+      "duration": 3300,
+      "stats": {
+        "frames": 69,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3120
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3254.5
+        }
+      ],
+      "periods": [
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "name": "truncated",
+      "status": "COMPLETE",
+      "duration": 3300,
+      "stats": {
+        "frames": 69,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3120
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3254.5
+        }
+      ],
+      "periods": [
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "name": "ready",
+      "status": "COMPLETE",
+      "duration": 3277.25,
+      "stats": {
+        "frames": 69,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3097.25
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3231.75
+        }
+      ],
+      "periods": [
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "name": "stale",
+      "status": "COMPLETE",
+      "duration": 3300,
+      "stats": {
+        "frames": 70,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 1,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3120
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3254.5
+        }
+      ],
+      "periods": [
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "name": "wrong-seq",
+      "status": "COMPLETE",
+      "duration": 3300,
+      "stats": {
+        "frames": 70,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 1,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3120
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3254.5
+        }
+      ],
+      "periods": [
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "name": "ack-end",
+      "status": "COMPLETE",
+      "duration": 3300,
+      "stats": {
+        "frames": 70,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 1,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3030
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3254.5
+        }
+      ],
+      "periods": [
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "name": "rate-ready",
+      "status": "COMPLETE",
+      "duration": 3564.25,
+      "stats": {
+        "frames": 70,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3317
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3518.75
+        }
+      ],
+      "periods": [
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "name": "rate-active",
+      "status": "COMPLETE",
+      "duration": 3520.75,
+      "stats": {
+        "frames": 70,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3273.5
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3475.25
+        }
+      ],
+      "periods": [
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "name": "rate-part",
+      "status": "COMPLETE",
+      "duration": 3831.25,
+      "stats": {
+        "frames": 72,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 3584
+        },
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 3785.75
+        }
+      ],
+      "periods": [
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "name": "fallback",
+      "status": "COMPLETE",
+      "duration": 4924.75,
+      "stats": {
+        "frames": 83,
+        "retries": 2,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 2,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 11
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "Adrián",
+          "bytes": 7,
+          "t": 4768.5
+        },
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 4833.75
+        }
+      ],
+      "periods": [
+        1,
+        0.25
+      ]
+    },
+    {
+      "name": "reset",
+      "status": "SESSION_LOST",
+      "duration": 1426,
+      "stats": {
+        "frames": 14,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 0
+      },
+      "deliveries": [],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "version",
+      "status": "RECOVERY_1HZ",
+      "duration": 176,
+      "stats": {
+        "frames": 2,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 0
+      },
+      "deliveries": [],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "rechazo frecuencia",
+      "status": "RECOVERY_1HZ",
+      "duration": 977,
+      "stats": {
+        "frames": 11,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 0
+      },
+      "deliveries": [],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte 1 0 data",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte temporal 1 0 data",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte 1 0 mid",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte temporal 1 0 mid",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte 1 1 data",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte temporal 1 1 data",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte 1 1 mid",
+      "status": "COMPLETE",
+      "duration": 1958,
+      "stats": {
+        "frames": 22,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 1,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1867
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte temporal 1 1 mid",
+      "status": "COMPLETE",
+      "duration": 1958,
+      "stats": {
+        "frames": 22,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 1,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1867
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte 2 0 data",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte temporal 2 0 data",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte 2 0 mid",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte temporal 2 0 mid",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte 2 1 data",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte temporal 2 1 data",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte 2 1 mid",
+      "status": "COMPLETE",
+      "duration": 1958,
+      "stats": {
+        "frames": 22,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 1,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1867
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte temporal 2 1 mid",
+      "status": "COMPLETE",
+      "duration": 1958,
+      "stats": {
+        "frames": 22,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 1,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1867
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte 3 0 data",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte temporal 3 0 data",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte 3 0 mid",
+      "status": "COMPLETE",
+      "duration": 1958,
+      "stats": {
+        "frames": 22,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 1,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1867
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte temporal 3 0 mid",
+      "status": "COMPLETE",
+      "duration": 1958,
+      "stats": {
+        "frames": 22,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 1,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1867
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte 3 1 data",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte temporal 3 1 data",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte 3 1 mid",
+      "status": "COMPLETE",
+      "duration": 1958,
+      "stats": {
+        "frames": 22,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 1,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1867
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte temporal 3 1 mid",
+      "status": "COMPLETE",
+      "duration": 1958,
+      "stats": {
+        "frames": 22,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 1,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1867
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte 4 0 data",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte temporal 4 0 data",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte 4 0 mid",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte temporal 4 0 mid",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte 4 1 data",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte temporal 4 1 data",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte 4 1 mid",
+      "status": "COMPLETE",
+      "duration": 1958,
+      "stats": {
+        "frames": 22,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 1,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1867
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte temporal 4 1 mid",
+      "status": "COMPLETE",
+      "duration": 1958,
+      "stats": {
+        "frames": 22,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 1,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1867
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte 5 0 data",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte temporal 5 0 data",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte 5 0 mid",
+      "status": "COMPLETE",
+      "duration": 1958,
+      "stats": {
+        "frames": 22,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 1,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1867
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte temporal 5 0 mid",
+      "status": "COMPLETE",
+      "duration": 1958,
+      "stats": {
+        "frames": 22,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 1,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1867
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte 5 1 data",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte temporal 5 1 data",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte 5 1 mid",
+      "status": "COMPLETE",
+      "duration": 1958,
+      "stats": {
+        "frames": 22,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 1,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1867
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte temporal 5 1 mid",
+      "status": "COMPLETE",
+      "duration": 1958,
+      "stats": {
+        "frames": 22,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 1,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1867
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte 6 0 data",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte temporal 6 0 data",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte 6 0 mid",
+      "status": "COMPLETE",
+      "duration": 1958,
+      "stats": {
+        "frames": 22,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 1,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1867
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte temporal 6 0 mid",
+      "status": "COMPLETE",
+      "duration": 1958,
+      "stats": {
+        "frames": 22,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 1,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1867
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte 6 1 data",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte temporal 6 1 data",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte 6 1 mid",
+      "status": "COMPLETE",
+      "duration": 1958,
+      "stats": {
+        "frames": 22,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 1,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1867
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Corte temporal 6 1 mid",
+      "status": "COMPLETE",
+      "duration": 1958,
+      "stats": {
+        "frames": 22,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 1,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1867
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Los tres desde DATA",
+      "status": "LINK_FAULT",
+      "duration": 1602,
+      "stats": {
+        "frames": 18,
+        "retries": 3,
+        "crcErrors": 0,
+        "syncErrors": 4,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 0
+      },
+      "deliveries": [],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Los tres temporalmente",
+      "status": "COMPLETE",
+      "duration": 1958,
+      "stats": {
+        "frames": 22,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 1,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1867
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Reloj perdido",
+      "status": "LINK_FAULT",
+      "duration": 1958,
+      "stats": {
+        "frames": 14,
+        "retries": 3,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 4,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 0
+      },
+      "deliveries": [],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Reloj temporal",
+      "status": "COMPLETE",
+      "duration": 2047,
+      "stats": {
+        "frames": 21,
+        "retries": 1,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 1,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1956
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "CP1252",
+      "status": "COMPLETE",
+      "duration": 1602,
+      "stats": {
+        "frames": 18,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 3
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Ñ €",
+          "bytes": 3,
+          "t": 1511
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Vuelta SEQ",
+      "status": "COMPLETE",
+      "duration": 47348,
+      "stats": {
+        "frames": 532,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 260
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+          "bytes": 260,
+          "t": 47257
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "UTF8",
+      "status": "COMPLETE",
+      "duration": 3204,
+      "stats": {
+        "frames": 50,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 15
+      },
+      "deliveries": [
+        {
+          "dir": 1,
+          "text": "€",
+          "bytes": 3,
+          "t": 1511
+        },
+        {
+          "dir": 0,
+          "text": "¡Hola! 🐈",
+          "bytes": 12,
+          "t": 3113
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Tiempo A",
+      "status": "COMPLETE",
+      "duration": 1246,
+      "stats": {
+        "frames": 14,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 1
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "A",
+          "bytes": 1,
+          "t": 1155
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Tiempo Hola",
+      "status": "COMPLETE",
+      "duration": 1780,
+      "stats": {
+        "frames": 20,
+        "retries": 0,
+        "crcErrors": 0,
+        "syncErrors": 0,
+        "clockErrors": 0,
+        "duplicates": 0,
+        "undetected": 0,
+        "bytes": 4
+      },
+      "deliveries": [
+        {
+          "dir": 0,
+          "text": "Hola",
+          "bytes": 4,
+          "t": 1689
+        }
+      ],
+      "periods": [
+        1,
+        1
+      ]
+    }
+  ]
+}
