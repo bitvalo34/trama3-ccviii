@@ -1,0 +1,126 @@
+{
+  "revision": "T51-P1",
+  "comprobaciones": {
+    "netlist_kicad_igual_manifest": true,
+    "rutas_sin_interseccion_entre_redes": true,
+    "holgura_minima_aislamientos_mm": 0.27,
+    "diametro_modelado_cable_mm": {
+      "22AWG": 1.2,
+      "26AWG": 0.8
+    },
+    "capas_ruteo": 3,
+    "profundidad_cable_mm": 5.8,
+    "estados_EN": [
+      {
+        "mascara": "000",
+        "C0": "GND_LOGIC",
+        "C1": "GND_LOGIC",
+        "C2": "GND_LOGIC",
+        "reloj": "sin cambio"
+      },
+      {
+        "mascara": "001",
+        "C0": "RAW",
+        "C1": "GND_LOGIC",
+        "C2": "GND_LOGIC",
+        "reloj": "sin cambio"
+      },
+      {
+        "mascara": "010",
+        "C0": "GND_LOGIC",
+        "C1": "RAW",
+        "C2": "GND_LOGIC",
+        "reloj": "sin cambio"
+      },
+      {
+        "mascara": "011",
+        "C0": "RAW",
+        "C1": "RAW",
+        "C2": "GND_LOGIC",
+        "reloj": "sin cambio"
+      },
+      {
+        "mascara": "100",
+        "C0": "GND_LOGIC",
+        "C1": "GND_LOGIC",
+        "C2": "RAW",
+        "reloj": "sin cambio"
+      },
+      {
+        "mascara": "101",
+        "C0": "RAW",
+        "C1": "GND_LOGIC",
+        "C2": "RAW",
+        "reloj": "sin cambio"
+      },
+      {
+        "mascara": "110",
+        "C0": "GND_LOGIC",
+        "C1": "RAW",
+        "C2": "RAW",
+        "reloj": "sin cambio"
+      },
+      {
+        "mascara": "111",
+        "C0": "RAW",
+        "C1": "RAW",
+        "C2": "RAW",
+        "reloj": "sin cambio"
+      }
+    ],
+    "servo_doble_inversion": [
+      {
+        "PWM_BBB": 0,
+        "Q3": "off",
+        "Q4": "on",
+        "PWM_5V": 0
+      },
+      {
+        "PWM_BBB": 1,
+        "Q3": "on",
+        "Q4": "off",
+        "PWM_5V": 1
+      }
+    ],
+    "servo_OFF": {
+      "alimentacion": "abierta",
+      "senal": "GND_ACT",
+      "condicion": "DPDT cableado segun contactos comprobados"
+    },
+    "dominio_remoto_sin_GND_en_red": true,
+    "nota_aislamiento": "Comprobacion de redes, no ensayo de aislamiento. PC817 barrera optica; USB compartido puede unir tierras fuera de estas placas.",
+    "resistencias_ambas_placas": {
+      "100k": 8,
+      "4.7k": 10,
+      "47k": 8,
+      "2.2k": 4,
+      "10k": 10,
+      "4.7k DNP": 4,
+      "1k": 12,
+      "330": 2,
+      "270": 2
+    },
+    "cables_metros_ambas_placas": {
+      "26AWG aislado (adicional)": 8.762,
+      "22AWG unifilar": 2.73
+    },
+    "corriente_LED_mA_nominal": 8.79,
+    "corriente_LED_mA_extremos_5V5pct_Vf1p8a2p2_Vce0p1a0p2_R5pct": [
+      6.78,
+      10.69
+    ],
+    "potencia_R_LED_W_max": 0.0358,
+    "CLK_IF_mA_min_diseno": 5.41,
+    "CLK_IF_mA_max_diseno": 9.22,
+    "CLK_lector_mA": 0.66,
+    "limite_driver_buzzer_mA": 20,
+    "MCP_fuente_base_mA_por_driver": 2.5,
+    "RC_final_carrera_ms": 0.47,
+    "PMOS_P_W_1A_R065": 0.065,
+    "PMOS_P_W_2p5A_R065": 0.406,
+    "limites": "Calculos condicionales con tolerancias asumidas; sin SPICE, medidas de sensores, ensayo de fusible, temporizacion ni validacion fisica."
+  },
+  "errores": [],
+  "estado": "PASA COMPROBACIONES DIGITALES/GEOMETRICAS",
+  "T52": "PENDIENTE REVISION INDEPENDIENTE"
+}

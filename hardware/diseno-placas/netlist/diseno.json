@@ -1,0 +1,9167 @@
+{
+  "revision": "T51-P1",
+  "protocol": "102",
+  "status": "PROVISIONAL - NO AUTORIZADO PARA SOLDAR",
+  "date": "2026-11-09",
+  "board": {
+    "width": 90,
+    "height": 150,
+    "thickness": 1.6,
+    "pitch": 2.54,
+    "rows": 56,
+    "columns": 32,
+    "origin": [
+      5,
+      5
+    ],
+    "hole_diameter": 1,
+    "pad_diameter": 1.8,
+    "measurement": "ESTIMADO; confirmar T07"
+  },
+  "components": [
+    {
+      "ref": "J1",
+      "value": "ENTRADA 5V / 2.5A",
+      "kind": "terminal",
+      "pins": [
+        {
+          "number": "1",
+          "name": "+5V_RAW",
+          "net": "+5V_RAW",
+          "col": 2,
+          "row": 2,
+          "x": 10.08,
+          "y": 10.08,
+          "hole": "C3"
+        },
+        {
+          "number": "2",
+          "name": "GND_ACT",
+          "net": "GND_ACT",
+          "col": 4,
+          "row": 2,
+          "x": 15.16,
+          "y": 10.08,
+          "hole": "C5"
+        }
+      ],
+      "box": [
+        7.58,
+        6.08,
+        10.08,
+        8,
+        10
+      ],
+      "zone": "POWER",
+      "notes": "Una fuente; nunca paralelo con USB.",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "J14",
+      "value": "PORTAFUSIBLE EXTERNO",
+      "kind": "terminal",
+      "pins": [
+        {
+          "number": "1",
+          "name": "+5V_RAW",
+          "net": "+5V_RAW",
+          "col": 2,
+          "row": 7,
+          "x": 10.08,
+          "y": 22.78,
+          "hole": "H3"
+        },
+        {
+          "number": "2",
+          "name": "+5V_FUSED",
+          "net": "+5V_FUSED",
+          "col": 4,
+          "row": 7,
+          "x": 15.16,
+          "y": 22.78,
+          "hole": "H5"
+        }
+      ],
+      "box": [
+        7.58,
+        18.78,
+        10.08,
+        8,
+        10
+      ],
+      "zone": "POWER",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "J12",
+      "value": "PMOS G/S/D",
+      "kind": "solderpads",
+      "pins": [
+        {
+          "number": "1",
+          "name": "GATE_POL",
+          "net": "GATE_POL",
+          "col": 9,
+          "row": 2,
+          "x": 27.86,
+          "y": 10.08,
+          "hole": "C10"
+        },
+        {
+          "number": "2",
+          "name": "+5V_ACT",
+          "net": "+5V_ACT",
+          "col": 10,
+          "row": 2,
+          "x": 30.4,
+          "y": 10.08,
+          "hole": "C11"
+        },
+        {
+          "number": "3",
+          "name": "+5V_FUSED",
+          "net": "+5V_FUSED",
+          "col": 11,
+          "row": 2,
+          "x": 32.94,
+          "y": 10.08,
+          "hole": "C12"
+        }
+      ],
+      "box": [
+        26.61,
+        8.83,
+        7.58,
+        2.5,
+        8
+      ],
+      "zone": "POWER",
+      "notes": "IRLML6402 G1/S2/D3 en adaptador elevado 10x10mm; cables soldados, sin Dupont en S/D.",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "R30",
+      "value": "100k",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "GATE_POL",
+          "col": 9,
+          "row": 6,
+          "x": 27.86,
+          "y": 20.24,
+          "hole": "G10"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "GND_ACT",
+          "col": 12,
+          "row": 6,
+          "x": 35.48,
+          "y": 20.24,
+          "hole": "G13"
+        }
+      ],
+      "box": [
+        28.47,
+        18.939999999999998,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "POWER",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "C1",
+      "value": "1000uF/16V",
+      "kind": "electro",
+      "pins": [
+        {
+          "number": "1",
+          "name": "+",
+          "net": "+5V_ACT",
+          "col": 3,
+          "row": 12,
+          "x": 12.62,
+          "y": 35.48,
+          "hole": "M4"
+        },
+        {
+          "number": "2",
+          "name": "-",
+          "net": "GND_ACT",
+          "col": 5,
+          "row": 12,
+          "x": 17.7,
+          "y": 35.48,
+          "hole": "M6"
+        }
+      ],
+      "box": [
+        10.16,
+        30.479999999999997,
+        10,
+        10,
+        20
+      ],
+      "zone": "POWER",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "C2",
+      "value": "100nF",
+      "kind": "cap",
+      "pins": [
+        {
+          "number": "1",
+          "name": "+",
+          "net": "+5V_ACT",
+          "col": 10,
+          "row": 11,
+          "x": 30.4,
+          "y": 32.94,
+          "hole": "L11"
+        },
+        {
+          "number": "2",
+          "name": "-",
+          "net": "GND_ACT",
+          "col": 11,
+          "row": 11,
+          "x": 32.94,
+          "y": 32.94,
+          "hole": "L12"
+        }
+      ],
+      "box": [
+        29.669999999999998,
+        30.939999999999998,
+        4,
+        4,
+        5
+      ],
+      "zone": "POWER",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "NT1",
+      "value": "ESTRELLA 22AWG",
+      "kind": "link",
+      "pins": [
+        {
+          "number": "1",
+          "name": "GND_ACT",
+          "net": "GND_ACT",
+          "col": 10,
+          "row": 15,
+          "x": 30.4,
+          "y": 43.1,
+          "hole": "P11"
+        },
+        {
+          "number": "2",
+          "name": "GND_LOGIC",
+          "net": "GND_LOGIC",
+          "col": 11,
+          "row": 15,
+          "x": 32.94,
+          "y": 43.1,
+          "hole": "P12"
+        }
+      ],
+      "box": [
+        29.15,
+        41.85,
+        5.04,
+        2.5,
+        8
+      ],
+      "zone": "POWER",
+      "notes": "Unir 1-2: unico enlace local de retornos.",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "J11",
+      "value": "USB AUX TEST",
+      "kind": "header",
+      "pins": [
+        {
+          "number": "1",
+          "name": "+5V_RAW",
+          "net": "+5V_RAW",
+          "col": 2,
+          "row": 17,
+          "x": 10.08,
+          "y": 48.18,
+          "hole": "R3"
+        },
+        {
+          "number": "2",
+          "name": "GND_ACT",
+          "net": "GND_ACT",
+          "col": 3,
+          "row": 17,
+          "x": 12.62,
+          "y": 48.18,
+          "hole": "R4"
+        }
+      ],
+      "box": [
+        8.83,
+        46.93,
+        5.04,
+        2.5,
+        8
+      ],
+      "zone": "POWER",
+      "notes": "Alternativa externa; NO servo ni simultaneo J1. Limite provisional 0.5A.",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "J13",
+      "value": "CORTE SERVO DPDT",
+      "kind": "solderpads",
+      "pins": [
+        {
+          "number": "1",
+          "name": "+5V_ACT",
+          "net": "+5V_ACT",
+          "col": 18,
+          "row": 2,
+          "x": 50.72,
+          "y": 10.08,
+          "hole": "C19"
+        },
+        {
+          "number": "2",
+          "name": "+5V_SERVO",
+          "net": "+5V_SERVO",
+          "col": 19,
+          "row": 2,
+          "x": 53.26,
+          "y": 10.08,
+          "hole": "C20"
+        },
+        {
+          "number": "3",
+          "name": "NC",
+          "net": null,
+          "col": 20,
+          "row": 2,
+          "x": 55.8,
+          "y": 10.08,
+          "hole": "C21"
+        },
+        {
+          "number": "4",
+          "name": "PWM_5V",
+          "net": "PWM_5V",
+          "col": 21,
+          "row": 2,
+          "x": 58.34,
+          "y": 10.08,
+          "hole": "C22"
+        },
+        {
+          "number": "5",
+          "name": "SERVO_SIG",
+          "net": "SERVO_SIG",
+          "col": 22,
+          "row": 2,
+          "x": 60.88,
+          "y": 10.08,
+          "hole": "C23"
+        },
+        {
+          "number": "6",
+          "name": "GND_ACT",
+          "net": "GND_ACT",
+          "col": 23,
+          "row": 2,
+          "x": 63.42,
+          "y": 10.08,
+          "hole": "C24"
+        }
+      ],
+      "box": [
+        49.47,
+        8.83,
+        15.2,
+        2.5,
+        8
+      ],
+      "zone": "SERVO",
+      "notes": "DPDT externo >=3A DC/12V: ON 1-2/4-5; OFF 2-3/5-6. Pin3 aislado. Cable directo soldado; no Dupont para potencia.",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "J4",
+      "value": "SG90 GND/+5V/SIG",
+      "kind": "terminal",
+      "pins": [
+        {
+          "number": "1",
+          "name": "GND_ACT",
+          "net": "GND_ACT",
+          "col": 27,
+          "row": 2,
+          "x": 73.58,
+          "y": 10.08,
+          "hole": "C28"
+        },
+        {
+          "number": "2",
+          "name": "+5V_SERVO",
+          "net": "+5V_SERVO",
+          "col": 29,
+          "row": 2,
+          "x": 78.66,
+          "y": 10.08,
+          "hole": "C30"
+        },
+        {
+          "number": "3",
+          "name": "SERVO_SIG",
+          "net": "SERVO_SIG",
+          "col": 31,
+          "row": 2,
+          "x": 83.74,
+          "y": 10.08,
+          "hole": "C32"
+        }
+      ],
+      "box": [
+        71.08,
+        6.08,
+        15.16,
+        8,
+        10
+      ],
+      "zone": "SERVO",
+      "notes": "Arnes a macho 3p/2.54 compatible con hembra servo; no insertar conector servo en bornera.",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "Q3",
+      "value": "2N3904",
+      "kind": "npn",
+      "pins": [
+        {
+          "number": "1",
+          "name": "E",
+          "net": "GND_ACT",
+          "col": 19,
+          "row": 8,
+          "x": 53.26,
+          "y": 25.32,
+          "hole": "I20"
+        },
+        {
+          "number": "2",
+          "name": "B",
+          "net": "PWM_B1",
+          "col": 20,
+          "row": 8,
+          "x": 55.8,
+          "y": 25.32,
+          "hole": "I21"
+        },
+        {
+          "number": "3",
+          "name": "C",
+          "net": "PWM_INV",
+          "col": 21,
+          "row": 8,
+          "x": 58.34,
+          "y": 25.32,
+          "hole": "I22"
+        }
+      ],
+      "box": [
+        52.66,
+        23.32,
+        6.3,
+        4,
+        5
+      ],
+      "zone": "SERVO",
+      "notes": "PAD 1=E,2=B,3=C. Adaptar patas aisladas segun lote; no asumir cara plana.",
+      "status": "Pinout del lote pendiente; TO92 aproximado"
+    },
+    {
+      "ref": "Q4",
+      "value": "2N3904",
+      "kind": "npn",
+      "pins": [
+        {
+          "number": "1",
+          "name": "E",
+          "net": "GND_ACT",
+          "col": 27,
+          "row": 8,
+          "x": 73.58,
+          "y": 25.32,
+          "hole": "I28"
+        },
+        {
+          "number": "2",
+          "name": "B",
+          "net": "PWM_B2",
+          "col": 28,
+          "row": 8,
+          "x": 76.12,
+          "y": 25.32,
+          "hole": "I29"
+        },
+        {
+          "number": "3",
+          "name": "C",
+          "net": "PWM_5V",
+          "col": 29,
+          "row": 8,
+          "x": 78.66,
+          "y": 25.32,
+          "hole": "I30"
+        }
+      ],
+      "box": [
+        72.98,
+        23.32,
+        6.3,
+        4,
+        5
+      ],
+      "zone": "SERVO",
+      "notes": "PAD 1=E,2=B,3=C. Adaptar patas aisladas segun lote; no asumir cara plana.",
+      "status": "Pinout del lote pendiente; TO92 aproximado"
+    },
+    {
+      "ref": "R10",
+      "value": "4.7k",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "PWM_BBB",
+          "col": 16,
+          "row": 5,
+          "x": 45.64,
+          "y": 17.7,
+          "hole": "F17"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "PWM_B1",
+          "col": 19,
+          "row": 5,
+          "x": 53.26,
+          "y": 17.7,
+          "hole": "F20"
+        }
+      ],
+      "box": [
+        46.25,
+        16.4,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "SERVO",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "R11",
+      "value": "47k",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "PWM_B1",
+          "col": 16,
+          "row": 11,
+          "x": 45.64,
+          "y": 32.94,
+          "hole": "L17"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "GND_ACT",
+          "col": 19,
+          "row": 11,
+          "x": 53.26,
+          "y": 32.94,
+          "hole": "L20"
+        }
+      ],
+      "box": [
+        46.25,
+        31.639999999999997,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "SERVO",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "R12",
+      "value": "4.7k",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "+5V_SERVO",
+          "col": 21,
+          "row": 11,
+          "x": 58.34,
+          "y": 32.94,
+          "hole": "L22"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "PWM_INV",
+          "col": 24,
+          "row": 11,
+          "x": 65.96,
+          "y": 32.94,
+          "hole": "L25"
+        }
+      ],
+      "box": [
+        58.95,
+        31.639999999999997,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "SERVO",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "R13",
+      "value": "4.7k",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "PWM_INV",
+          "col": 26,
+          "row": 11,
+          "x": 71.04,
+          "y": 32.94,
+          "hole": "L27"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "PWM_B2",
+          "col": 29,
+          "row": 11,
+          "x": 78.66,
+          "y": 32.94,
+          "hole": "L30"
+        }
+      ],
+      "box": [
+        71.65,
+        31.639999999999997,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "SERVO",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "R14",
+      "value": "47k",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "PWM_B2",
+          "col": 16,
+          "row": 14,
+          "x": 45.64,
+          "y": 40.56,
+          "hole": "O17"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "GND_ACT",
+          "col": 19,
+          "row": 14,
+          "x": 53.26,
+          "y": 40.56,
+          "hole": "O20"
+        }
+      ],
+      "box": [
+        46.25,
+        39.260000000000005,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "SERVO",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "R15",
+      "value": "2.2k",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "+5V_SERVO",
+          "col": 21,
+          "row": 14,
+          "x": 58.34,
+          "y": 40.56,
+          "hole": "O22"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "PWM_5V",
+          "col": 24,
+          "row": 14,
+          "x": 65.96,
+          "y": 40.56,
+          "hole": "O25"
+        }
+      ],
+      "box": [
+        58.95,
+        39.260000000000005,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "SERVO",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "R16",
+      "value": "47k",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "SERVO_SIG",
+          "col": 26,
+          "row": 14,
+          "x": 71.04,
+          "y": 40.56,
+          "hole": "O27"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "GND_ACT",
+          "col": 29,
+          "row": 14,
+          "x": 78.66,
+          "y": 40.56,
+          "hole": "O30"
+        }
+      ],
+      "box": [
+        71.65,
+        39.260000000000005,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "SERVO",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "C3",
+      "value": "100nF",
+      "kind": "cap",
+      "pins": [
+        {
+          "number": "1",
+          "name": "+",
+          "net": "+5V_SERVO",
+          "col": 28,
+          "row": 17,
+          "x": 76.12,
+          "y": 48.18,
+          "hole": "R29"
+        },
+        {
+          "number": "2",
+          "name": "-",
+          "net": "GND_ACT",
+          "col": 29,
+          "row": 17,
+          "x": 78.66,
+          "y": 48.18,
+          "hole": "R30"
+        }
+      ],
+      "box": [
+        75.39,
+        46.18,
+        4,
+        4,
+        5
+      ],
+      "zone": "SERVO",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "U1",
+      "value": "MCP23017 + zocalo DIP28",
+      "kind": "dip28",
+      "pins": [
+        {
+          "number": "1",
+          "name": "GPB0",
+          "net": null,
+          "col": 4,
+          "row": 21,
+          "x": 15.16,
+          "y": 58.34,
+          "hole": "V5"
+        },
+        {
+          "number": "2",
+          "name": "GPB1",
+          "net": null,
+          "col": 4,
+          "row": 22,
+          "x": 15.16,
+          "y": 60.88,
+          "hole": "W5"
+        },
+        {
+          "number": "3",
+          "name": "GPB2",
+          "net": null,
+          "col": 4,
+          "row": 23,
+          "x": 15.16,
+          "y": 63.42,
+          "hole": "X5"
+        },
+        {
+          "number": "4",
+          "name": "GPB3",
+          "net": null,
+          "col": 4,
+          "row": 24,
+          "x": 15.16,
+          "y": 65.96,
+          "hole": "Y5"
+        },
+        {
+          "number": "5",
+          "name": "GPB4",
+          "net": null,
+          "col": 4,
+          "row": 25,
+          "x": 15.16,
+          "y": 68.5,
+          "hole": "Z5"
+        },
+        {
+          "number": "6",
+          "name": "GPB5",
+          "net": null,
+          "col": 4,
+          "row": 26,
+          "x": 15.16,
+          "y": 71.04,
+          "hole": "AA5"
+        },
+        {
+          "number": "7",
+          "name": "GPB6",
+          "net": null,
+          "col": 4,
+          "row": 27,
+          "x": 15.16,
+          "y": 73.58,
+          "hole": "AB5"
+        },
+        {
+          "number": "8",
+          "name": "GPB7",
+          "net": null,
+          "col": 4,
+          "row": 28,
+          "x": 15.16,
+          "y": 76.12,
+          "hole": "AC5"
+        },
+        {
+          "number": "9",
+          "name": "VDD",
+          "net": "+3V3_LOGIC",
+          "col": 4,
+          "row": 29,
+          "x": 15.16,
+          "y": 78.66,
+          "hole": "AD5"
+        },
+        {
+          "number": "10",
+          "name": "VSS",
+          "net": "GND_LOGIC",
+          "col": 4,
+          "row": 30,
+          "x": 15.16,
+          "y": 81.2,
+          "hole": "AE5"
+        },
+        {
+          "number": "11",
+          "name": "NC",
+          "net": null,
+          "col": 4,
+          "row": 31,
+          "x": 15.16,
+          "y": 83.74,
+          "hole": "AF5"
+        },
+        {
+          "number": "12",
+          "name": "SCL",
+          "net": "I2C_SCL",
+          "col": 4,
+          "row": 32,
+          "x": 15.16,
+          "y": 86.28,
+          "hole": "AG5"
+        },
+        {
+          "number": "13",
+          "name": "SDA",
+          "net": "I2C_SDA",
+          "col": 4,
+          "row": 33,
+          "x": 15.16,
+          "y": 88.82,
+          "hole": "AH5"
+        },
+        {
+          "number": "14",
+          "name": "NC",
+          "net": null,
+          "col": 4,
+          "row": 34,
+          "x": 15.16,
+          "y": 91.36,
+          "hole": "AI5"
+        },
+        {
+          "number": "15",
+          "name": "A0",
+          "net": "GND_LOGIC",
+          "col": 7,
+          "row": 34,
+          "x": 22.78,
+          "y": 91.36,
+          "hole": "AI8"
+        },
+        {
+          "number": "16",
+          "name": "A1",
+          "net": "GND_LOGIC",
+          "col": 7,
+          "row": 33,
+          "x": 22.78,
+          "y": 88.82,
+          "hole": "AH8"
+        },
+        {
+          "number": "17",
+          "name": "A2",
+          "net": "GND_LOGIC",
+          "col": 7,
+          "row": 32,
+          "x": 22.78,
+          "y": 86.28,
+          "hole": "AG8"
+        },
+        {
+          "number": "18",
+          "name": "RESET",
+          "net": "MCP_RESET",
+          "col": 7,
+          "row": 31,
+          "x": 22.78,
+          "y": 83.74,
+          "hole": "AF8"
+        },
+        {
+          "number": "19",
+          "name": "INTB",
+          "net": null,
+          "col": 7,
+          "row": 30,
+          "x": 22.78,
+          "y": 81.2,
+          "hole": "AE8"
+        },
+        {
+          "number": "20",
+          "name": "INTA",
+          "net": null,
+          "col": 7,
+          "row": 29,
+          "x": 22.78,
+          "y": 78.66,
+          "hole": "AD8"
+        },
+        {
+          "number": "21",
+          "name": "GPA0",
+          "net": "C0_TX",
+          "col": 7,
+          "row": 28,
+          "x": 22.78,
+          "y": 76.12,
+          "hole": "AC8"
+        },
+        {
+          "number": "22",
+          "name": "GPA1",
+          "net": "C1_TX",
+          "col": 7,
+          "row": 27,
+          "x": 22.78,
+          "y": 73.58,
+          "hole": "AB8"
+        },
+        {
+          "number": "23",
+          "name": "GPA2",
+          "net": null,
+          "col": 7,
+          "row": 26,
+          "x": 22.78,
+          "y": 71.04,
+          "hole": "AA8"
+        },
+        {
+          "number": "24",
+          "name": "GPA3",
+          "net": null,
+          "col": 7,
+          "row": 25,
+          "x": 22.78,
+          "y": 68.5,
+          "hole": "Z8"
+        },
+        {
+          "number": "25",
+          "name": "GPA4",
+          "net": null,
+          "col": 7,
+          "row": 24,
+          "x": 22.78,
+          "y": 65.96,
+          "hole": "Y8"
+        },
+        {
+          "number": "26",
+          "name": "GPA5",
+          "net": null,
+          "col": 7,
+          "row": 23,
+          "x": 22.78,
+          "y": 63.42,
+          "hole": "X8"
+        },
+        {
+          "number": "27",
+          "name": "GPA6",
+          "net": null,
+          "col": 7,
+          "row": 22,
+          "x": 22.78,
+          "y": 60.88,
+          "hole": "W8"
+        },
+        {
+          "number": "28",
+          "name": "GPA7",
+          "net": null,
+          "col": 7,
+          "row": 21,
+          "x": 22.78,
+          "y": 58.34,
+          "hole": "V8"
+        }
+      ],
+      "box": [
+        13.96,
+        56.940000000000005,
+        10.02,
+        35.82,
+        9
+      ],
+      "zone": "CORE",
+      "notes": "Muesca hacia A. Zocalo e IC comparten pads. Direccion 0x20.",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "C4",
+      "value": "100nF",
+      "kind": "cap",
+      "pins": [
+        {
+          "number": "1",
+          "name": "+",
+          "net": "+3V3_LOGIC",
+          "col": 1,
+          "row": 29,
+          "x": 7.54,
+          "y": 78.66,
+          "hole": "AD2"
+        },
+        {
+          "number": "2",
+          "name": "-",
+          "net": "GND_LOGIC",
+          "col": 2,
+          "row": 29,
+          "x": 10.08,
+          "y": 78.66,
+          "hole": "AD3"
+        }
+      ],
+      "box": [
+        6.8100000000000005,
+        76.66,
+        4,
+        4,
+        5
+      ],
+      "zone": "CORE",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "R1",
+      "value": "10k",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "+3V3_LOGIC",
+          "col": 1,
+          "row": 37,
+          "x": 7.54,
+          "y": 98.98,
+          "hole": "AL2"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "MCP_RESET",
+          "col": 4,
+          "row": 37,
+          "x": 15.16,
+          "y": 98.98,
+          "hole": "AL5"
+        }
+      ],
+      "box": [
+        8.15,
+        97.68,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "CORE",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "JP1",
+      "value": "RESET abierto",
+      "kind": "header",
+      "pins": [
+        {
+          "number": "1",
+          "name": "MCP_RESET",
+          "net": "MCP_RESET",
+          "col": 6,
+          "row": 37,
+          "x": 20.24,
+          "y": 98.98,
+          "hole": "AL7"
+        },
+        {
+          "number": "2",
+          "name": "GND_LOGIC",
+          "net": "GND_LOGIC",
+          "col": 7,
+          "row": 37,
+          "x": 22.78,
+          "y": 98.98,
+          "hole": "AL8"
+        }
+      ],
+      "box": [
+        18.99,
+        97.73,
+        5.04,
+        2.5,
+        8
+      ],
+      "zone": "CORE",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "R2",
+      "value": "4.7k DNP",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "+3V3_LOGIC",
+          "col": 1,
+          "row": 40,
+          "x": 7.54,
+          "y": 106.6,
+          "hole": "AO2"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "SCL_PULL",
+          "col": 4,
+          "row": 40,
+          "x": 15.16,
+          "y": 106.6,
+          "hole": "AO5"
+        }
+      ],
+      "box": [
+        8.15,
+        105.3,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "CORE",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "R3",
+      "value": "4.7k DNP",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "+3V3_LOGIC",
+          "col": 6,
+          "row": 40,
+          "x": 20.24,
+          "y": 106.6,
+          "hole": "AO7"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "SDA_PULL",
+          "col": 9,
+          "row": 40,
+          "x": 27.86,
+          "y": 106.6,
+          "hole": "AO10"
+        }
+      ],
+      "box": [
+        20.849999999999998,
+        105.3,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "CORE",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "JP2",
+      "value": "PU SCL abierto",
+      "kind": "header",
+      "pins": [
+        {
+          "number": "1",
+          "name": "SCL_PULL",
+          "net": "SCL_PULL",
+          "col": 1,
+          "row": 43,
+          "x": 7.54,
+          "y": 114.22,
+          "hole": "AR2"
+        },
+        {
+          "number": "2",
+          "name": "I2C_SCL",
+          "net": "I2C_SCL",
+          "col": 2,
+          "row": 43,
+          "x": 10.08,
+          "y": 114.22,
+          "hole": "AR3"
+        }
+      ],
+      "box": [
+        6.29,
+        112.97,
+        5.04,
+        2.5,
+        8
+      ],
+      "zone": "CORE",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "JP3",
+      "value": "PU SDA abierto",
+      "kind": "header",
+      "pins": [
+        {
+          "number": "1",
+          "name": "SDA_PULL",
+          "net": "SDA_PULL",
+          "col": 6,
+          "row": 43,
+          "x": 20.24,
+          "y": 114.22,
+          "hole": "AR7"
+        },
+        {
+          "number": "2",
+          "name": "I2C_SDA",
+          "net": "I2C_SDA",
+          "col": 7,
+          "row": 43,
+          "x": 22.78,
+          "y": 114.22,
+          "hole": "AR8"
+        }
+      ],
+      "box": [
+        18.99,
+        112.97,
+        5.04,
+        2.5,
+        8
+      ],
+      "zone": "CORE",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "J10",
+      "value": "ARNES BBB",
+      "kind": "header",
+      "pins": [
+        {
+          "number": "1",
+          "name": "+3V3_LOGIC",
+          "net": "+3V3_LOGIC",
+          "col": 12,
+          "row": 36,
+          "x": 35.48,
+          "y": 96.44,
+          "hole": "AK13"
+        },
+        {
+          "number": "2",
+          "name": "GND_LOGIC",
+          "net": "GND_LOGIC",
+          "col": 13,
+          "row": 36,
+          "x": 38.02,
+          "y": 96.44,
+          "hole": "AK14"
+        },
+        {
+          "number": "3",
+          "name": "I2C_SCL",
+          "net": "I2C_SCL",
+          "col": 14,
+          "row": 36,
+          "x": 40.56,
+          "y": 96.44,
+          "hole": "AK15"
+        },
+        {
+          "number": "4",
+          "name": "I2C_SDA",
+          "net": "I2C_SDA",
+          "col": 15,
+          "row": 36,
+          "x": 43.1,
+          "y": 96.44,
+          "hole": "AK16"
+        },
+        {
+          "number": "5",
+          "name": "PWM_BBB",
+          "net": "PWM_BBB",
+          "col": 16,
+          "row": 36,
+          "x": 45.64,
+          "y": 96.44,
+          "hole": "AK17"
+        },
+        {
+          "number": "6",
+          "name": "CLK_TX",
+          "net": "CLK_TX",
+          "col": 17,
+          "row": 36,
+          "x": 48.18,
+          "y": 96.44,
+          "hole": "AK18"
+        },
+        {
+          "number": "7",
+          "name": "OPT_BBB",
+          "net": "OPT_BBB",
+          "col": 18,
+          "row": 36,
+          "x": 50.72,
+          "y": 96.44,
+          "hole": "AK19"
+        },
+        {
+          "number": "8",
+          "name": "AUD_BBB",
+          "net": "AUD_BBB",
+          "col": 19,
+          "row": 36,
+          "x": 53.26,
+          "y": 96.44,
+          "hole": "AK20"
+        },
+        {
+          "number": "9",
+          "name": "MECH_BBB",
+          "net": "MECH_BBB",
+          "col": 20,
+          "row": 36,
+          "x": 55.8,
+          "y": 96.44,
+          "hole": "AK21"
+        },
+        {
+          "number": "10",
+          "name": "CLK_BBB",
+          "net": "CLK_BBB",
+          "col": 21,
+          "row": 36,
+          "x": 58.34,
+          "y": 96.44,
+          "hole": "AK22"
+        }
+      ],
+      "box": [
+        34.23,
+        95.19,
+        25.36,
+        2.5,
+        8
+      ],
+      "zone": "CORE",
+      "notes": "Ver arnes-BBB.csv; sin 5V BBB.",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "Q1",
+      "value": "2N2222 lote pendiente",
+      "kind": "npn",
+      "pins": [
+        {
+          "number": "1",
+          "name": "E",
+          "net": "GND_ACT",
+          "col": 13,
+          "row": 22,
+          "x": 38.02,
+          "y": 60.88,
+          "hole": "W14"
+        },
+        {
+          "number": "2",
+          "name": "B",
+          "net": "LED_BASE",
+          "col": 14,
+          "row": 22,
+          "x": 40.56,
+          "y": 60.88,
+          "hole": "W15"
+        },
+        {
+          "number": "3",
+          "name": "C",
+          "net": "LED_K",
+          "col": 15,
+          "row": 22,
+          "x": 43.1,
+          "y": 60.88,
+          "hole": "W16"
+        }
+      ],
+      "box": [
+        37.42,
+        58.88,
+        6.3,
+        4,
+        5
+      ],
+      "zone": "TX",
+      "notes": "PAD 1=E,2=B,3=C. Adaptar patas aisladas segun lote; no asumir cara plana.",
+      "status": "Pinout del lote pendiente; TO92 aproximado"
+    },
+    {
+      "ref": "R4",
+      "value": "1k",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "C0_TX",
+          "col": 11,
+          "row": 19,
+          "x": 32.94,
+          "y": 53.26,
+          "hole": "T12"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "LED_BASE",
+          "col": 14,
+          "row": 19,
+          "x": 40.56,
+          "y": 53.26,
+          "hole": "T15"
+        }
+      ],
+      "box": [
+        33.55,
+        51.96,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "TX",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "R5",
+      "value": "10k",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "LED_BASE",
+          "col": 11,
+          "row": 25,
+          "x": 32.94,
+          "y": 68.5,
+          "hole": "Z12"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "GND_ACT",
+          "col": 14,
+          "row": 25,
+          "x": 40.56,
+          "y": 68.5,
+          "hole": "Z15"
+        }
+      ],
+      "box": [
+        33.55,
+        67.2,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "TX",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "R6",
+      "value": "330",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "+5V_ACT",
+          "col": 17,
+          "row": 19,
+          "x": 48.18,
+          "y": 53.26,
+          "hole": "T18"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "LED_A",
+          "col": 20,
+          "row": 19,
+          "x": 55.8,
+          "y": 53.26,
+          "hole": "T21"
+        }
+      ],
+      "box": [
+        48.79,
+        51.96,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "TX",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "J2",
+      "value": "LED A/K",
+      "kind": "terminal",
+      "pins": [
+        {
+          "number": "1",
+          "name": "LED_A",
+          "net": "LED_A",
+          "col": 19,
+          "row": 23,
+          "x": 53.26,
+          "y": 63.42,
+          "hole": "X20"
+        },
+        {
+          "number": "2",
+          "name": "LED_K",
+          "net": "LED_K",
+          "col": 21,
+          "row": 23,
+          "x": 58.34,
+          "y": 63.42,
+          "hole": "X22"
+        }
+      ],
+      "box": [
+        50.76,
+        59.42,
+        10.08,
+        8,
+        10
+      ],
+      "zone": "TX",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "Q2",
+      "value": "2N2222 lote pendiente",
+      "kind": "npn",
+      "pins": [
+        {
+          "number": "1",
+          "name": "E",
+          "net": "GND_ACT",
+          "col": 13,
+          "row": 30,
+          "x": 38.02,
+          "y": 81.2,
+          "hole": "AE14"
+        },
+        {
+          "number": "2",
+          "name": "B",
+          "net": "BUZZ_BASE",
+          "col": 14,
+          "row": 30,
+          "x": 40.56,
+          "y": 81.2,
+          "hole": "AE15"
+        },
+        {
+          "number": "3",
+          "name": "C",
+          "net": "BUZZ_NEG",
+          "col": 15,
+          "row": 30,
+          "x": 43.1,
+          "y": 81.2,
+          "hole": "AE16"
+        }
+      ],
+      "box": [
+        37.42,
+        79.2,
+        6.3,
+        4,
+        5
+      ],
+      "zone": "TX",
+      "notes": "PAD 1=E,2=B,3=C. Adaptar patas aisladas segun lote; no asumir cara plana.",
+      "status": "Pinout del lote pendiente; TO92 aproximado"
+    },
+    {
+      "ref": "R7",
+      "value": "1k",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "C1_TX",
+          "col": 11,
+          "row": 27,
+          "x": 32.94,
+          "y": 73.58,
+          "hole": "AB12"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "BUZZ_BASE",
+          "col": 14,
+          "row": 27,
+          "x": 40.56,
+          "y": 73.58,
+          "hole": "AB15"
+        }
+      ],
+      "box": [
+        33.55,
+        72.28,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "TX",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "R8",
+      "value": "10k",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "BUZZ_BASE",
+          "col": 11,
+          "row": 33,
+          "x": 32.94,
+          "y": 88.82,
+          "hole": "AH12"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "GND_ACT",
+          "col": 14,
+          "row": 33,
+          "x": 40.56,
+          "y": 88.82,
+          "hole": "AH15"
+        }
+      ],
+      "box": [
+        33.55,
+        87.52,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "TX",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "J3",
+      "value": "BUZZER +/-",
+      "kind": "terminal",
+      "pins": [
+        {
+          "number": "1",
+          "name": "+5V_ACT",
+          "net": "+5V_ACT",
+          "col": 19,
+          "row": 29,
+          "x": 53.26,
+          "y": 78.66,
+          "hole": "AD20"
+        },
+        {
+          "number": "2",
+          "name": "BUZZ_NEG",
+          "net": "BUZZ_NEG",
+          "col": 21,
+          "row": 29,
+          "x": 58.34,
+          "y": 78.66,
+          "hole": "AD22"
+        }
+      ],
+      "box": [
+        50.76,
+        74.66,
+        10.08,
+        8,
+        10
+      ],
+      "zone": "TX",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "D1",
+      "value": "1N5819",
+      "kind": "diode",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "BUZZ_NEG",
+          "col": 18,
+          "row": 33,
+          "x": 50.72,
+          "y": 88.82,
+          "hole": "AH19"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "+5V_ACT",
+          "col": 21,
+          "row": 33,
+          "x": 58.34,
+          "y": 88.82,
+          "hole": "AH22"
+        }
+      ],
+      "box": [
+        51.33,
+        87.52,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "TX",
+      "notes": "Pad1 A, pad2 K/banda +5V; no conectar sobre servo.",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "J5",
+      "value": "LDR 3V3/GND/DO",
+      "kind": "terminal",
+      "pins": [
+        {
+          "number": "1",
+          "name": "+3V3_LOGIC",
+          "net": "+3V3_LOGIC",
+          "col": 27,
+          "row": 21,
+          "x": 73.58,
+          "y": 58.34,
+          "hole": "V28"
+        },
+        {
+          "number": "2",
+          "name": "GND_LOGIC",
+          "net": "GND_LOGIC",
+          "col": 29,
+          "row": 21,
+          "x": 78.66,
+          "y": 58.34,
+          "hole": "V30"
+        },
+        {
+          "number": "3",
+          "name": "OPT_RAW",
+          "net": "OPT_RAW",
+          "col": 31,
+          "row": 21,
+          "x": 83.74,
+          "y": 58.34,
+          "hole": "V32"
+        }
+      ],
+      "box": [
+        71.08,
+        54.34,
+        15.16,
+        8,
+        10
+      ],
+      "zone": "RX",
+      "notes": "Orden placa; adaptar al modulo. AO libre.",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "J6",
+      "value": "AUDIO 3V3/GND/DO",
+      "kind": "terminal",
+      "pins": [
+        {
+          "number": "1",
+          "name": "+3V3_LOGIC",
+          "net": "+3V3_LOGIC",
+          "col": 27,
+          "row": 27,
+          "x": 73.58,
+          "y": 73.58,
+          "hole": "AB28"
+        },
+        {
+          "number": "2",
+          "name": "GND_LOGIC",
+          "net": "GND_LOGIC",
+          "col": 29,
+          "row": 27,
+          "x": 78.66,
+          "y": 73.58,
+          "hole": "AB30"
+        },
+        {
+          "number": "3",
+          "name": "AUD_RAW",
+          "net": "AUD_RAW",
+          "col": 31,
+          "row": 27,
+          "x": 83.74,
+          "y": 73.58,
+          "hole": "AB32"
+        }
+      ],
+      "box": [
+        71.08,
+        69.58,
+        15.16,
+        8,
+        10
+      ],
+      "zone": "RX",
+      "notes": "Arnes individual por serigrafia.",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "J7",
+      "value": "FINAL COM/NO",
+      "kind": "terminal",
+      "pins": [
+        {
+          "number": "1",
+          "name": "GND_LOGIC",
+          "net": "GND_LOGIC",
+          "col": 28,
+          "row": 33,
+          "x": 76.12,
+          "y": 88.82,
+          "hole": "AH29"
+        },
+        {
+          "number": "2",
+          "name": "MECH_RAW",
+          "net": "MECH_RAW",
+          "col": 30,
+          "row": 33,
+          "x": 81.2,
+          "y": 88.82,
+          "hole": "AH31"
+        }
+      ],
+      "box": [
+        73.62,
+        84.82,
+        10.08,
+        8,
+        10
+      ],
+      "zone": "RX",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "R17",
+      "value": "10k",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "+3V3_LOGIC",
+          "col": 25,
+          "row": 24,
+          "x": 68.5,
+          "y": 65.96,
+          "hole": "Y26"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "OPT_RAW",
+          "col": 28,
+          "row": 24,
+          "x": 76.12,
+          "y": 65.96,
+          "hole": "Y29"
+        }
+      ],
+      "box": [
+        69.11,
+        64.66,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "RX",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "R18",
+      "value": "10k",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "+3V3_LOGIC",
+          "col": 25,
+          "row": 30,
+          "x": 68.5,
+          "y": 81.2,
+          "hole": "AE26"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "AUD_RAW",
+          "col": 28,
+          "row": 30,
+          "x": 76.12,
+          "y": 81.2,
+          "hole": "AE29"
+        }
+      ],
+      "box": [
+        69.11,
+        79.9,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "RX",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "R19",
+      "value": "4.7k",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "+3V3_LOGIC",
+          "col": 26,
+          "row": 37,
+          "x": 71.04,
+          "y": 98.98,
+          "hole": "AL27"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "MECH_RAW",
+          "col": 29,
+          "row": 37,
+          "x": 78.66,
+          "y": 98.98,
+          "hole": "AL30"
+        }
+      ],
+      "box": [
+        71.65,
+        97.68,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "RX",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "C5",
+      "value": "100nF",
+      "kind": "cap",
+      "pins": [
+        {
+          "number": "1",
+          "name": "+",
+          "net": "MECH_RAW",
+          "col": 29,
+          "row": 40,
+          "x": 78.66,
+          "y": 106.6,
+          "hole": "AO30"
+        },
+        {
+          "number": "2",
+          "name": "-",
+          "net": "GND_LOGIC",
+          "col": 30,
+          "row": 40,
+          "x": 81.2,
+          "y": 106.6,
+          "hole": "AO31"
+        }
+      ],
+      "box": [
+        77.92999999999999,
+        104.6,
+        4,
+        4,
+        5
+      ],
+      "zone": "RX",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "JP10",
+      "value": "C0:1-2 ON/2-3 OFF",
+      "kind": "header",
+      "pins": [
+        {
+          "number": "1",
+          "name": "OPT_RAW",
+          "net": "OPT_RAW",
+          "col": 2,
+          "row": 46,
+          "x": 10.08,
+          "y": 121.84,
+          "hole": "AU3"
+        },
+        {
+          "number": "2",
+          "name": "C0_SEL",
+          "net": "C0_SEL",
+          "col": 3,
+          "row": 46,
+          "x": 12.62,
+          "y": 121.84,
+          "hole": "AU4"
+        },
+        {
+          "number": "3",
+          "name": "GND_LOGIC",
+          "net": "GND_LOGIC",
+          "col": 4,
+          "row": 46,
+          "x": 15.16,
+          "y": 121.84,
+          "hole": "AU5"
+        }
+      ],
+      "box": [
+        8.83,
+        120.59,
+        7.58,
+        2.5,
+        8
+      ],
+      "zone": "ENABLE",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "R20",
+      "value": "1k",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "C0_SEL",
+          "col": 2,
+          "row": 49,
+          "x": 10.08,
+          "y": 129.46,
+          "hole": "AX3"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "C0_TEST",
+          "col": 5,
+          "row": 49,
+          "x": 17.7,
+          "y": 129.46,
+          "hole": "AX6"
+        }
+      ],
+      "box": [
+        10.69,
+        128.16,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "ENABLE",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "R23",
+      "value": "100k",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "C0_SEL",
+          "col": 6,
+          "row": 46,
+          "x": 20.24,
+          "y": 121.84,
+          "hole": "AU7"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "GND_LOGIC",
+          "col": 9,
+          "row": 46,
+          "x": 27.86,
+          "y": 121.84,
+          "hole": "AU10"
+        }
+      ],
+      "box": [
+        20.849999999999998,
+        120.54,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "ENABLE",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "JP4",
+      "value": "C0 LINK GPIO",
+      "kind": "header",
+      "pins": [
+        {
+          "number": "1",
+          "name": "C0_TEST",
+          "net": "C0_TEST",
+          "col": 7,
+          "row": 49,
+          "x": 22.78,
+          "y": 129.46,
+          "hole": "AX8"
+        },
+        {
+          "number": "2",
+          "name": "OPT_BBB",
+          "net": "OPT_BBB",
+          "col": 8,
+          "row": 49,
+          "x": 25.32,
+          "y": 129.46,
+          "hole": "AX9"
+        }
+      ],
+      "box": [
+        21.53,
+        128.21,
+        5.04,
+        2.5,
+        8
+      ],
+      "zone": "ENABLE",
+      "notes": "Abierto antes de medir DO. EN deshabilita RX remoto->local.",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "JP11",
+      "value": "C1:1-2 ON/2-3 OFF",
+      "kind": "header",
+      "pins": [
+        {
+          "number": "1",
+          "name": "AUD_RAW",
+          "net": "AUD_RAW",
+          "col": 12,
+          "row": 46,
+          "x": 35.48,
+          "y": 121.84,
+          "hole": "AU13"
+        },
+        {
+          "number": "2",
+          "name": "C1_SEL",
+          "net": "C1_SEL",
+          "col": 13,
+          "row": 46,
+          "x": 38.02,
+          "y": 121.84,
+          "hole": "AU14"
+        },
+        {
+          "number": "3",
+          "name": "GND_LOGIC",
+          "net": "GND_LOGIC",
+          "col": 14,
+          "row": 46,
+          "x": 40.56,
+          "y": 121.84,
+          "hole": "AU15"
+        }
+      ],
+      "box": [
+        34.23,
+        120.59,
+        7.58,
+        2.5,
+        8
+      ],
+      "zone": "ENABLE",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "R21",
+      "value": "1k",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "C1_SEL",
+          "col": 12,
+          "row": 49,
+          "x": 35.48,
+          "y": 129.46,
+          "hole": "AX13"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "C1_TEST",
+          "col": 15,
+          "row": 49,
+          "x": 43.1,
+          "y": 129.46,
+          "hole": "AX16"
+        }
+      ],
+      "box": [
+        36.089999999999996,
+        128.16,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "ENABLE",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "R24",
+      "value": "100k",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "C1_SEL",
+          "col": 16,
+          "row": 46,
+          "x": 45.64,
+          "y": 121.84,
+          "hole": "AU17"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "GND_LOGIC",
+          "col": 19,
+          "row": 46,
+          "x": 53.26,
+          "y": 121.84,
+          "hole": "AU20"
+        }
+      ],
+      "box": [
+        46.25,
+        120.54,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "ENABLE",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "JP5",
+      "value": "C1 LINK GPIO",
+      "kind": "header",
+      "pins": [
+        {
+          "number": "1",
+          "name": "C1_TEST",
+          "net": "C1_TEST",
+          "col": 17,
+          "row": 49,
+          "x": 48.18,
+          "y": 129.46,
+          "hole": "AX18"
+        },
+        {
+          "number": "2",
+          "name": "AUD_BBB",
+          "net": "AUD_BBB",
+          "col": 18,
+          "row": 49,
+          "x": 50.72,
+          "y": 129.46,
+          "hole": "AX19"
+        }
+      ],
+      "box": [
+        46.93,
+        128.21,
+        5.04,
+        2.5,
+        8
+      ],
+      "zone": "ENABLE",
+      "notes": "Abierto antes de medir DO. EN deshabilita RX remoto->local.",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "JP12",
+      "value": "C2:1-2 ON/2-3 OFF",
+      "kind": "header",
+      "pins": [
+        {
+          "number": "1",
+          "name": "MECH_RAW",
+          "net": "MECH_RAW",
+          "col": 22,
+          "row": 46,
+          "x": 60.88,
+          "y": 121.84,
+          "hole": "AU23"
+        },
+        {
+          "number": "2",
+          "name": "C2_SEL",
+          "net": "C2_SEL",
+          "col": 23,
+          "row": 46,
+          "x": 63.42,
+          "y": 121.84,
+          "hole": "AU24"
+        },
+        {
+          "number": "3",
+          "name": "GND_LOGIC",
+          "net": "GND_LOGIC",
+          "col": 24,
+          "row": 46,
+          "x": 65.96,
+          "y": 121.84,
+          "hole": "AU25"
+        }
+      ],
+      "box": [
+        59.63,
+        120.59,
+        7.58,
+        2.5,
+        8
+      ],
+      "zone": "ENABLE",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "R22",
+      "value": "1k",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "C2_SEL",
+          "col": 22,
+          "row": 49,
+          "x": 60.88,
+          "y": 129.46,
+          "hole": "AX23"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "C2_TEST",
+          "col": 25,
+          "row": 49,
+          "x": 68.5,
+          "y": 129.46,
+          "hole": "AX26"
+        }
+      ],
+      "box": [
+        61.49,
+        128.16,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "ENABLE",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "R25",
+      "value": "100k",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "C2_SEL",
+          "col": 26,
+          "row": 46,
+          "x": 71.04,
+          "y": 121.84,
+          "hole": "AU27"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "GND_LOGIC",
+          "col": 29,
+          "row": 46,
+          "x": 78.66,
+          "y": 121.84,
+          "hole": "AU30"
+        }
+      ],
+      "box": [
+        71.65,
+        120.54,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "ENABLE",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "JP6",
+      "value": "C2 LINK GPIO",
+      "kind": "header",
+      "pins": [
+        {
+          "number": "1",
+          "name": "C2_TEST",
+          "net": "C2_TEST",
+          "col": 27,
+          "row": 49,
+          "x": 73.58,
+          "y": 129.46,
+          "hole": "AX28"
+        },
+        {
+          "number": "2",
+          "name": "MECH_BBB",
+          "net": "MECH_BBB",
+          "col": 28,
+          "row": 49,
+          "x": 76.12,
+          "y": 129.46,
+          "hole": "AX29"
+        }
+      ],
+      "box": [
+        72.33,
+        128.21,
+        5.04,
+        2.5,
+        8
+      ],
+      "zone": "ENABLE",
+      "notes": "Abierto antes de medir DO. EN deshabilita RX remoto->local.",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "J8",
+      "value": "CLK RX REMOTO +/-",
+      "kind": "terminal",
+      "pins": [
+        {
+          "number": "1",
+          "name": "CLK_REMOTE_A",
+          "net": "CLK_REMOTE_A",
+          "col": 2,
+          "row": 54,
+          "x": 10.08,
+          "y": 142.16,
+          "hole": "BC3"
+        },
+        {
+          "number": "2",
+          "name": "CLK_REMOTE_K",
+          "net": "CLK_REMOTE_K",
+          "col": 4,
+          "row": 54,
+          "x": 15.16,
+          "y": 142.16,
+          "hole": "BC5"
+        }
+      ],
+      "box": [
+        7.58,
+        138.16,
+        10.08,
+        8,
+        10
+      ],
+      "zone": "CLOCK_RX",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "U2",
+      "value": "PC817 DIP4",
+      "kind": "dip4",
+      "pins": [
+        {
+          "number": "1",
+          "name": "A",
+          "net": "CLK_REMOTE_A",
+          "col": 8,
+          "row": 53,
+          "x": 25.32,
+          "y": 139.62,
+          "hole": "BB9"
+        },
+        {
+          "number": "2",
+          "name": "K",
+          "net": "CLK_REMOTE_K",
+          "col": 8,
+          "row": 54,
+          "x": 25.32,
+          "y": 142.16,
+          "hole": "BC9"
+        },
+        {
+          "number": "3",
+          "name": "E",
+          "net": "GND_LOGIC",
+          "col": 11,
+          "row": 54,
+          "x": 32.94,
+          "y": 142.16,
+          "hole": "BC12"
+        },
+        {
+          "number": "4",
+          "name": "C",
+          "net": "CLK_RX_RAW",
+          "col": 11,
+          "row": 53,
+          "x": 32.94,
+          "y": 139.62,
+          "hole": "BB12"
+        }
+      ],
+      "box": [
+        24.22,
+        138.42000000000002,
+        9.82,
+        5,
+        4.5
+      ],
+      "zone": "CLOCK_RX",
+      "notes": "Pin1 arriba izquierda; no unir remoto con GND local.",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "R26",
+      "value": "4.7k",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "+3V3_LOGIC",
+          "col": 12,
+          "row": 52,
+          "x": 35.48,
+          "y": 137.08,
+          "hole": "BA13"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "CLK_RX_RAW",
+          "col": 15,
+          "row": 52,
+          "x": 43.1,
+          "y": 137.08,
+          "hole": "BA16"
+        }
+      ],
+      "box": [
+        36.089999999999996,
+        135.78,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "CLOCK",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "R27",
+      "value": "1k",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "CLK_RX_RAW",
+          "col": 12,
+          "row": 55,
+          "x": 35.48,
+          "y": 144.7,
+          "hole": "BD13"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "CLK_TEST",
+          "col": 15,
+          "row": 55,
+          "x": 43.1,
+          "y": 144.7,
+          "hole": "BD16"
+        }
+      ],
+      "box": [
+        36.089999999999996,
+        143.39999999999998,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "CLOCK",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "JP7",
+      "value": "CLK LINK",
+      "kind": "header",
+      "pins": [
+        {
+          "number": "1",
+          "name": "CLK_TEST",
+          "net": "CLK_TEST",
+          "col": 17,
+          "row": 55,
+          "x": 48.18,
+          "y": 144.7,
+          "hole": "BD18"
+        },
+        {
+          "number": "2",
+          "name": "CLK_BBB",
+          "net": "CLK_BBB",
+          "col": 18,
+          "row": 55,
+          "x": 50.72,
+          "y": 144.7,
+          "hole": "BD19"
+        }
+      ],
+      "box": [
+        46.93,
+        143.45,
+        5.04,
+        2.5,
+        8
+      ],
+      "zone": "CLOCK",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "Q5",
+      "value": "2N3904",
+      "kind": "npn",
+      "pins": [
+        {
+          "number": "1",
+          "name": "E",
+          "net": "GND_LOGIC",
+          "col": 23,
+          "row": 52,
+          "x": 63.42,
+          "y": 137.08,
+          "hole": "BA24"
+        },
+        {
+          "number": "2",
+          "name": "B",
+          "net": "CLK_BASE",
+          "col": 24,
+          "row": 52,
+          "x": 65.96,
+          "y": 137.08,
+          "hole": "BA25"
+        },
+        {
+          "number": "3",
+          "name": "C",
+          "net": "CLK_SINK",
+          "col": 25,
+          "row": 52,
+          "x": 68.5,
+          "y": 137.08,
+          "hole": "BA26"
+        }
+      ],
+      "box": [
+        62.82,
+        135.08,
+        6.3,
+        4,
+        5
+      ],
+      "zone": "CLOCK",
+      "notes": "PAD 1=E,2=B,3=C. Adaptar patas aisladas segun lote; no asumir cara plana.",
+      "status": "Pinout del lote pendiente; TO92 aproximado"
+    },
+    {
+      "ref": "R28",
+      "value": "2.2k",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "CLK_TX",
+          "col": 20,
+          "row": 42,
+          "x": 55.8,
+          "y": 111.68,
+          "hole": "AQ21"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "CLK_BASE",
+          "col": 23,
+          "row": 42,
+          "x": 63.42,
+          "y": 111.68,
+          "hole": "AQ24"
+        }
+      ],
+      "box": [
+        56.41,
+        110.38000000000001,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "CLOCK",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "R29",
+      "value": "47k",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "CLK_BASE",
+          "col": 26,
+          "row": 43,
+          "x": 71.04,
+          "y": 114.22,
+          "hole": "AR27"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "GND_LOGIC",
+          "col": 29,
+          "row": 43,
+          "x": 78.66,
+          "y": 114.22,
+          "hole": "AR30"
+        }
+      ],
+      "box": [
+        71.65,
+        112.92,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "CLOCK",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "R31",
+      "value": "270",
+      "kind": "R",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "+3V3_LOGIC",
+          "col": 21,
+          "row": 55,
+          "x": 58.34,
+          "y": 144.7,
+          "hole": "BD22"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "CLK_SEND_A",
+          "col": 24,
+          "row": 55,
+          "x": 65.96,
+          "y": 144.7,
+          "hole": "BD25"
+        }
+      ],
+      "box": [
+        58.95,
+        143.39999999999998,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "CLOCK",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "J9",
+      "value": "CLK TX +/-",
+      "kind": "terminal",
+      "pins": [
+        {
+          "number": "1",
+          "name": "CLK_SEND_A",
+          "net": "CLK_SEND_A",
+          "col": 28,
+          "row": 54,
+          "x": 76.12,
+          "y": 142.16,
+          "hole": "BC29"
+        },
+        {
+          "number": "2",
+          "name": "CLK_SINK",
+          "net": "CLK_SINK",
+          "col": 30,
+          "row": 54,
+          "x": 81.2,
+          "y": 142.16,
+          "hole": "BC31"
+        }
+      ],
+      "box": [
+        73.62,
+        138.16,
+        10.08,
+        8,
+        10
+      ],
+      "zone": "CLOCK",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "D2",
+      "value": "1N4148",
+      "kind": "diode",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "CLK_REMOTE_K",
+          "col": 2,
+          "row": 51,
+          "x": 10.08,
+          "y": 134.54,
+          "hole": "AZ3"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "CLK_REMOTE_A",
+          "col": 5,
+          "row": 51,
+          "x": 17.7,
+          "y": 134.54,
+          "hole": "AZ6"
+        }
+      ],
+      "box": [
+        10.69,
+        133.23999999999998,
+        6.4,
+        2.6,
+        3
+      ],
+      "zone": "CLOCK_RX",
+      "notes": "Antiparalelo LED: banda hacia U2.1.",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "TP1",
+      "value": "+5V_ACT",
+      "kind": "test",
+      "pins": [
+        {
+          "number": "1",
+          "name": "+5V_ACT",
+          "net": "+5V_ACT",
+          "col": 13,
+          "row": 12,
+          "x": 38.02,
+          "y": 35.48,
+          "hole": "M14"
+        }
+      ],
+      "box": [
+        36.77,
+        34.23,
+        2.5,
+        2.5,
+        8
+      ],
+      "zone": "POWER",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "TP2",
+      "value": "GND_ACT",
+      "kind": "test",
+      "pins": [
+        {
+          "number": "1",
+          "name": "GND_ACT",
+          "net": "GND_ACT",
+          "col": 13,
+          "row": 15,
+          "x": 38.02,
+          "y": 43.1,
+          "hole": "P14"
+        }
+      ],
+      "box": [
+        36.77,
+        41.85,
+        2.5,
+        2.5,
+        8
+      ],
+      "zone": "POWER",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "TP3",
+      "value": "+3V3_LOGIC",
+      "kind": "test",
+      "pins": [
+        {
+          "number": "1",
+          "name": "+3V3_LOGIC",
+          "net": "+3V3_LOGIC",
+          "col": 9,
+          "row": 29,
+          "x": 27.86,
+          "y": 78.66,
+          "hole": "AD10"
+        }
+      ],
+      "box": [
+        26.61,
+        77.41,
+        2.5,
+        2.5,
+        8
+      ],
+      "zone": "CORE",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "TP4",
+      "value": "GND_LOGIC",
+      "kind": "test",
+      "pins": [
+        {
+          "number": "1",
+          "name": "GND_LOGIC",
+          "net": "GND_LOGIC",
+          "col": 9,
+          "row": 32,
+          "x": 27.86,
+          "y": 86.28,
+          "hole": "AG10"
+        }
+      ],
+      "box": [
+        26.61,
+        85.03,
+        2.5,
+        2.5,
+        8
+      ],
+      "zone": "CORE",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "TP5",
+      "value": "OPT_RAW",
+      "kind": "test",
+      "pins": [
+        {
+          "number": "1",
+          "name": "OPT_RAW",
+          "net": "OPT_RAW",
+          "col": 24,
+          "row": 21,
+          "x": 65.96,
+          "y": 58.34,
+          "hole": "V25"
+        }
+      ],
+      "box": [
+        64.71,
+        57.09,
+        2.5,
+        2.5,
+        8
+      ],
+      "zone": "RX",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "TP6",
+      "value": "AUD_RAW",
+      "kind": "test",
+      "pins": [
+        {
+          "number": "1",
+          "name": "AUD_RAW",
+          "net": "AUD_RAW",
+          "col": 24,
+          "row": 27,
+          "x": 65.96,
+          "y": 73.58,
+          "hole": "AB25"
+        }
+      ],
+      "box": [
+        64.71,
+        72.33,
+        2.5,
+        2.5,
+        8
+      ],
+      "zone": "RX",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "TP7",
+      "value": "MECH_RAW",
+      "kind": "test",
+      "pins": [
+        {
+          "number": "1",
+          "name": "MECH_RAW",
+          "net": "MECH_RAW",
+          "col": 24,
+          "row": 33,
+          "x": 65.96,
+          "y": 88.82,
+          "hole": "AH25"
+        }
+      ],
+      "box": [
+        64.71,
+        87.57,
+        2.5,
+        2.5,
+        8
+      ],
+      "zone": "RX",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "TP8",
+      "value": "CLK_RX_RAW",
+      "kind": "test",
+      "pins": [
+        {
+          "number": "1",
+          "name": "CLK_RX_RAW",
+          "net": "CLK_RX_RAW",
+          "col": 17,
+          "row": 52,
+          "x": 48.18,
+          "y": 137.08,
+          "hole": "BA18"
+        }
+      ],
+      "box": [
+        46.93,
+        135.83,
+        2.5,
+        2.5,
+        8
+      ],
+      "zone": "CLOCK",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "TP9",
+      "value": "SERVO_SIG",
+      "kind": "test",
+      "pins": [
+        {
+          "number": "1",
+          "name": "SERVO_SIG",
+          "net": "SERVO_SIG",
+          "col": 24,
+          "row": 17,
+          "x": 65.96,
+          "y": 48.18,
+          "hole": "R25"
+        }
+      ],
+      "box": [
+        64.71,
+        46.93,
+        2.5,
+        2.5,
+        8
+      ],
+      "zone": "SERVO",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    },
+    {
+      "ref": "TP10",
+      "value": "CLK_TX",
+      "kind": "test",
+      "pins": [
+        {
+          "number": "1",
+          "name": "CLK_TX",
+          "net": "CLK_TX",
+          "col": 20,
+          "row": 49,
+          "x": 55.8,
+          "y": 129.46,
+          "hole": "AX21"
+        }
+      ],
+      "box": [
+        54.55,
+        128.21,
+        2.5,
+        2.5,
+        8
+      ],
+      "zone": "CLOCK",
+      "notes": "",
+      "status": "Disponible para diseño; dimensiones estimadas"
+    }
+  ],
+  "external": [
+    {
+      "ref": "F1",
+      "value": "5x20mm 1A; T08 pendiente",
+      "size": [
+        32,
+        12,
+        12
+      ],
+      "pins": {
+        "1": "+5V_RAW",
+        "2": "+5V_FUSED"
+      },
+      "connect": "J14",
+      "status": "Recibido; rapido/lento desconocido",
+      "role": "portafusible con cable"
+    },
+    {
+      "ref": "Q6",
+      "value": "IRLML6402 + adaptador SOT23",
+      "size": [
+        10,
+        10,
+        4
+      ],
+      "pins": {
+        "1": "GATE_POL",
+        "2": "+5V_ACT",
+        "3": "+5V_FUSED"
+      },
+      "connect": "J12",
+      "status": "Adicional no comprado",
+      "role": "G/S/D; D entrada, S salida; elevado"
+    },
+    {
+      "ref": "SW1",
+      "value": "DPDT ON-ON >=3A DC/12V",
+      "size": [
+        13,
+        10,
+        15
+      ],
+      "pins": {
+        "1": "+5V_ACT",
+        "2": "+5V_SERVO",
+        "3": null,
+        "4": "PWM_5V",
+        "5": "SERVO_SIG",
+        "6": "GND_ACT"
+      },
+      "connect": "J13",
+      "status": "Adicional no comprado",
+      "role": "ON 1-2/4-5; OFF 2-3/5-6"
+    },
+    {
+      "ref": "MOD3",
+      "value": "Micro USB breakout",
+      "size": [
+        15,
+        15,
+        5
+      ],
+      "pins": {
+        "VBUS": "+5V_RAW",
+        "GND": "GND_ACT"
+      },
+      "connect": "J11",
+      "status": "Recibido sin medida",
+      "role": "Alternativa test sin servo"
+    },
+    {
+      "ref": "D3",
+      "value": "LED rojo 5mm",
+      "size": [
+        5,
+        5,
+        8
+      ],
+      "pins": {
+        "A": "LED_A",
+        "K": "LED_K"
+      },
+      "connect": "J2",
+      "status": "Recibido",
+      "role": "emisor externo"
+    },
+    {
+      "ref": "BZ1",
+      "value": "Buzzer activo 5V",
+      "size": [
+        12,
+        12,
+        10
+      ],
+      "pins": {
+        "+": "+5V_ACT",
+        "-": "BUZZ_NEG"
+      },
+      "connect": "J3",
+      "status": "Recibido; consumo pendiente",
+      "role": "driver provisional max20mA"
+    },
+    {
+      "ref": "M1",
+      "value": "SG90 180",
+      "size": [
+        23,
+        12.2,
+        29
+      ],
+      "pins": {
+        "GND": "GND_ACT",
+        "VCC": "+5V_SERVO",
+        "SIG": "SERVO_SIG"
+      },
+      "connect": "J4",
+      "status": "Recibido sin medida",
+      "role": "volumen de referencia"
+    },
+    {
+      "ref": "MOD1",
+      "value": "LDR LM393",
+      "size": [
+        32,
+        14,
+        12
+      ],
+      "pins": {
+        "VCC": "+3V3_LOGIC",
+        "GND": "GND_LOGIC",
+        "DO": "OPT_RAW",
+        "AO": null
+      },
+      "connect": "J5",
+      "status": "Recibido sin medida",
+      "role": "orden modulo pendiente"
+    },
+    {
+      "ref": "MOD2",
+      "value": "KY037/HW484",
+      "size": [
+        45,
+        17,
+        16
+      ],
+      "pins": {
+        "VCC": "+3V3_LOGIC",
+        "GND": "GND_LOGIC",
+        "DO": "AUD_RAW",
+        "AO": null
+      },
+      "connect": "J6",
+      "status": "Recibido sin medida",
+      "role": "variantes A/B, no copiar arnes"
+    },
+    {
+      "ref": "SW2",
+      "value": "SPDT rueda",
+      "size": [
+        28,
+        16,
+        15
+      ],
+      "pins": {
+        "COM": "GND_LOGIC",
+        "NO": "MECH_RAW",
+        "NC": null
+      },
+      "connect": "J7",
+      "status": "Recibido sin medida",
+      "role": "NC libre"
+    }
+  ],
+  "wires": [
+    {
+      "id": "W001",
+      "net": "+3V3_LOGIC",
+      "source": "U1.9",
+      "destination": "C4.1",
+      "start": "AD5",
+      "end": "AD2",
+      "path": [
+        [
+          15.16,
+          78.66,
+          -2.4
+        ],
+        [
+          13.89,
+          78.66,
+          -2.4
+        ],
+        [
+          13.89,
+          79.93,
+          -2.4
+        ],
+        [
+          13.89,
+          79.93,
+          -3.9
+        ],
+        [
+          7.54,
+          79.93,
+          -3.9
+        ],
+        [
+          7.54,
+          78.66,
+          -3.9
+        ]
+      ],
+      "cut_mm": 30,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "naranja",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W002",
+      "net": "+3V3_LOGIC",
+      "source": "C4.1",
+      "destination": "TP3.1",
+      "start": "AD2",
+      "end": "AD10",
+      "path": [
+        [
+          7.54,
+          78.66,
+          -2.4
+        ],
+        [
+          8.81,
+          78.66,
+          -2.4
+        ],
+        [
+          8.81,
+          77.39,
+          -2.4
+        ],
+        [
+          11.35,
+          77.39,
+          -2.4
+        ],
+        [
+          11.35,
+          77.39,
+          -3.9
+        ],
+        [
+          24.05,
+          77.39,
+          -3.9
+        ],
+        [
+          24.05,
+          78.66,
+          -3.9
+        ],
+        [
+          27.86,
+          78.66,
+          -3.9
+        ]
+      ],
+      "cut_mm": 43,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "naranja",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W003",
+      "net": "+3V3_LOGIC",
+      "source": "TP3.1",
+      "destination": "J10.1",
+      "start": "AD10",
+      "end": "AK13",
+      "path": [
+        [
+          27.86,
+          78.66,
+          -2.4
+        ],
+        [
+          26.59,
+          78.66,
+          -2.4
+        ],
+        [
+          26.59,
+          86.28,
+          -2.4
+        ],
+        [
+          26.59,
+          86.28,
+          -3.9
+        ],
+        [
+          26.59,
+          95.17,
+          -3.9
+        ],
+        [
+          35.48,
+          95.17,
+          -3.9
+        ],
+        [
+          35.48,
+          96.44,
+          -3.9
+        ]
+      ],
+      "cut_mm": 48,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "naranja",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W004",
+      "net": "+3V3_LOGIC",
+      "source": "J10.1",
+      "destination": "R3.1",
+      "start": "AK13",
+      "end": "AO7",
+      "path": [
+        [
+          35.48,
+          96.44,
+          -2.4
+        ],
+        [
+          35.48,
+          96.44,
+          -3.9
+        ],
+        [
+          22.78,
+          96.44,
+          -3.9
+        ],
+        [
+          22.78,
+          96.44,
+          -2.4
+        ],
+        [
+          21.51,
+          96.44,
+          -2.4
+        ],
+        [
+          21.51,
+          100.25,
+          -2.4
+        ],
+        [
+          20.24,
+          100.25,
+          -2.4
+        ],
+        [
+          20.24,
+          106.6,
+          -2.4
+        ]
+      ],
+      "cut_mm": 46,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "naranja",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W005",
+      "net": "+3V3_LOGIC",
+      "source": "R3.1",
+      "destination": "R2.1",
+      "start": "AO7",
+      "end": "AO2",
+      "path": [
+        [
+          20.24,
+          106.6,
+          -2.4
+        ],
+        [
+          17.7,
+          106.6,
+          -2.4
+        ],
+        [
+          17.7,
+          105.33,
+          -2.4
+        ],
+        [
+          17.7,
+          105.33,
+          -3.9
+        ],
+        [
+          10.08,
+          105.33,
+          -3.9
+        ],
+        [
+          10.08,
+          106.6,
+          -3.9
+        ],
+        [
+          10.08,
+          106.6,
+          -5.4
+        ],
+        [
+          7.54,
+          106.6,
+          -5.4
+        ]
+      ],
+      "cut_mm": 39,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "naranja",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W006",
+      "net": "+3V3_LOGIC",
+      "source": "R2.1",
+      "destination": "R1.1",
+      "start": "AO2",
+      "end": "AL2",
+      "path": [
+        [
+          7.54,
+          106.6,
+          -2.4
+        ],
+        [
+          7.54,
+          98.98,
+          -2.4
+        ]
+      ],
+      "cut_mm": 25,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "naranja",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W007",
+      "net": "+3V3_LOGIC",
+      "source": "R1.1",
+      "destination": "R19.1",
+      "start": "AL2",
+      "end": "AL27",
+      "path": [
+        [
+          7.54,
+          98.98,
+          -2.4
+        ],
+        [
+          10.08,
+          98.98,
+          -2.4
+        ],
+        [
+          10.08,
+          97.71,
+          -2.4
+        ],
+        [
+          10.08,
+          97.71,
+          -3.9
+        ],
+        [
+          24.05,
+          97.71,
+          -3.9
+        ],
+        [
+          24.05,
+          98.98,
+          -3.9
+        ],
+        [
+          71.04,
+          98.98,
+          -3.9
+        ]
+      ],
+      "cut_mm": 86,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "naranja",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W008",
+      "net": "+3V3_LOGIC",
+      "source": "R19.1",
+      "destination": "R18.1",
+      "start": "AL27",
+      "end": "AE26",
+      "path": [
+        [
+          71.04,
+          98.98,
+          -2.4
+        ],
+        [
+          68.5,
+          98.98,
+          -2.4
+        ],
+        [
+          68.5,
+          81.2,
+          -2.4
+        ]
+      ],
+      "cut_mm": 38,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "naranja",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W009",
+      "net": "+3V3_LOGIC",
+      "source": "R18.1",
+      "destination": "J6.1",
+      "start": "AE26",
+      "end": "AB28",
+      "path": [
+        [
+          68.5,
+          81.2,
+          -2.4
+        ],
+        [
+          68.5,
+          81.2,
+          -3.9
+        ],
+        [
+          68.5,
+          73.58,
+          -3.9
+        ],
+        [
+          73.58,
+          73.58,
+          -3.9
+        ]
+      ],
+      "cut_mm": 33,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "naranja",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W010",
+      "net": "+3V3_LOGIC",
+      "source": "J6.1",
+      "destination": "R17.1",
+      "start": "AB28",
+      "end": "Y26",
+      "path": [
+        [
+          73.58,
+          73.58,
+          -2.4
+        ],
+        [
+          68.5,
+          73.58,
+          -2.4
+        ],
+        [
+          68.5,
+          65.96,
+          -2.4
+        ]
+      ],
+      "cut_mm": 30,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "naranja",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W011",
+      "net": "+3V3_LOGIC",
+      "source": "R17.1",
+      "destination": "J5.1",
+      "start": "Y26",
+      "end": "V28",
+      "path": [
+        [
+          68.5,
+          65.96,
+          -2.4
+        ],
+        [
+          68.5,
+          65.96,
+          -3.9
+        ],
+        [
+          68.5,
+          58.34,
+          -3.9
+        ],
+        [
+          73.58,
+          58.34,
+          -3.9
+        ]
+      ],
+      "cut_mm": 33,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "naranja",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W012",
+      "net": "+3V3_LOGIC",
+      "source": "J5.1",
+      "destination": "R31.1",
+      "start": "V28",
+      "end": "BD22",
+      "path": [
+        [
+          73.58,
+          58.34,
+          -2.4
+        ],
+        [
+          67.23,
+          58.34,
+          -2.4
+        ],
+        [
+          67.23,
+          59.61,
+          -2.4
+        ],
+        [
+          60.88,
+          59.61,
+          -2.4
+        ],
+        [
+          60.88,
+          91.36,
+          -2.4
+        ],
+        [
+          59.61,
+          91.36,
+          -2.4
+        ],
+        [
+          59.61,
+          97.71,
+          -2.4
+        ],
+        [
+          58.34,
+          97.71,
+          -2.4
+        ],
+        [
+          58.34,
+          144.7,
+          -2.4
+        ]
+      ],
+      "cut_mm": 119,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "naranja",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W013",
+      "net": "+3V3_LOGIC",
+      "source": "R31.1",
+      "destination": "R26.1",
+      "start": "BD22",
+      "end": "BA13",
+      "path": [
+        [
+          58.34,
+          144.7,
+          -2.4
+        ],
+        [
+          51.99,
+          144.7,
+          -2.4
+        ],
+        [
+          51.99,
+          138.35,
+          -2.4
+        ],
+        [
+          51.99,
+          138.35,
+          -3.9
+        ],
+        [
+          35.48,
+          138.35,
+          -3.9
+        ],
+        [
+          35.48,
+          137.08,
+          -3.9
+        ]
+      ],
+      "cut_mm": 51,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "naranja",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W014",
+      "net": "+5V_ACT",
+      "source": "J12.2",
+      "destination": "J13.1",
+      "start": "C11",
+      "end": "C19",
+      "path": [
+        [
+          30.4,
+          10.08,
+          -2.4
+        ],
+        [
+          30.4,
+          8.81,
+          -2.4
+        ],
+        [
+          31.67,
+          8.81,
+          -2.4
+        ],
+        [
+          31.67,
+          7.54,
+          -2.4
+        ],
+        [
+          34.21,
+          7.54,
+          -2.4
+        ],
+        [
+          34.21,
+          8.81,
+          -2.4
+        ],
+        [
+          50.72,
+          8.81,
+          -2.4
+        ],
+        [
+          50.72,
+          10.08,
+          -2.4
+        ]
+      ],
+      "cut_mm": 43,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "rojo",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W015",
+      "net": "+5V_ACT",
+      "source": "J13.1",
+      "destination": "TP1.1",
+      "start": "C19",
+      "end": "M14",
+      "path": [
+        [
+          50.72,
+          10.08,
+          -2.4
+        ],
+        [
+          38.02,
+          10.08,
+          -2.4
+        ],
+        [
+          38.02,
+          35.48,
+          -2.4
+        ]
+      ],
+      "cut_mm": 55,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "rojo",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W016",
+      "net": "+5V_ACT",
+      "source": "TP1.1",
+      "destination": "C2.1",
+      "start": "M14",
+      "end": "L11",
+      "path": [
+        [
+          38.02,
+          35.48,
+          -2.4
+        ],
+        [
+          38.02,
+          35.48,
+          -3.9
+        ],
+        [
+          30.4,
+          35.48,
+          -3.9
+        ],
+        [
+          30.4,
+          32.94,
+          -3.9
+        ]
+      ],
+      "cut_mm": 30,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "rojo",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W017",
+      "net": "+5V_ACT",
+      "source": "C2.1",
+      "destination": "C1.1",
+      "start": "L11",
+      "end": "M4",
+      "path": [
+        [
+          30.4,
+          32.94,
+          -2.4
+        ],
+        [
+          20.24,
+          32.94,
+          -2.4
+        ],
+        [
+          20.24,
+          32.94,
+          -3.9
+        ],
+        [
+          12.62,
+          32.94,
+          -3.9
+        ],
+        [
+          12.62,
+          35.48,
+          -3.9
+        ]
+      ],
+      "cut_mm": 41,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "rojo",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W018",
+      "net": "+5V_ACT",
+      "source": "C1.1",
+      "destination": "R6.1",
+      "start": "M4",
+      "end": "T18",
+      "path": [
+        [
+          12.62,
+          35.48,
+          -2.4
+        ],
+        [
+          12.62,
+          45.64,
+          -2.4
+        ],
+        [
+          48.18,
+          45.64,
+          -2.4
+        ],
+        [
+          48.18,
+          45.64,
+          -3.9
+        ],
+        [
+          48.18,
+          53.26,
+          -3.9
+        ]
+      ],
+      "cut_mm": 74,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "rojo",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W019",
+      "net": "+5V_ACT",
+      "source": "R6.1",
+      "destination": "J3.1",
+      "start": "T18",
+      "end": "AD20",
+      "path": [
+        [
+          48.18,
+          53.26,
+          -2.4
+        ],
+        [
+          48.18,
+          78.66,
+          -2.4
+        ],
+        [
+          53.26,
+          78.66,
+          -2.4
+        ]
+      ],
+      "cut_mm": 48,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "rojo",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W020",
+      "net": "+5V_ACT",
+      "source": "J3.1",
+      "destination": "D1.2",
+      "start": "AD20",
+      "end": "AH22",
+      "path": [
+        [
+          53.26,
+          78.66,
+          -2.4
+        ],
+        [
+          53.26,
+          88.82,
+          -2.4
+        ],
+        [
+          58.34,
+          88.82,
+          -2.4
+        ]
+      ],
+      "cut_mm": 33,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "rojo",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W021",
+      "net": "+5V_FUSED",
+      "source": "J14.2",
+      "destination": "J12.3",
+      "start": "H5",
+      "end": "C12",
+      "path": [
+        [
+          15.16,
+          22.78,
+          -2.4
+        ],
+        [
+          15.16,
+          22.78,
+          -3.9
+        ],
+        [
+          15.16,
+          12.62,
+          -3.9
+        ],
+        [
+          31.67,
+          12.62,
+          -3.9
+        ],
+        [
+          31.67,
+          11.35,
+          -3.9
+        ],
+        [
+          32.94,
+          11.35,
+          -3.9
+        ],
+        [
+          32.94,
+          10.08,
+          -3.9
+        ]
+      ],
+      "cut_mm": 51,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "rojo",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W022",
+      "net": "+5V_RAW",
+      "source": "J1.1",
+      "destination": "J14.1",
+      "start": "C3",
+      "end": "H3",
+      "path": [
+        [
+          10.08,
+          10.08,
+          -2.4
+        ],
+        [
+          10.08,
+          22.78,
+          -2.4
+        ]
+      ],
+      "cut_mm": 30,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "rojo",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W023",
+      "net": "+5V_RAW",
+      "source": "J14.1",
+      "destination": "J11.1",
+      "start": "H3",
+      "end": "R3",
+      "path": [
+        [
+          10.08,
+          22.78,
+          -2.4
+        ],
+        [
+          10.08,
+          48.18,
+          -2.4
+        ]
+      ],
+      "cut_mm": 43,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "rojo",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W024",
+      "net": "+5V_SERVO",
+      "source": "J13.2",
+      "destination": "J4.2",
+      "start": "C20",
+      "end": "C30",
+      "path": [
+        [
+          53.26,
+          10.08,
+          -2.4
+        ],
+        [
+          53.26,
+          8.81,
+          -2.4
+        ],
+        [
+          60.88,
+          8.81,
+          -2.4
+        ],
+        [
+          60.88,
+          7.54,
+          -2.4
+        ],
+        [
+          74.85,
+          7.54,
+          -2.4
+        ],
+        [
+          74.85,
+          8.81,
+          -2.4
+        ],
+        [
+          78.66,
+          8.81,
+          -2.4
+        ],
+        [
+          78.66,
+          10.08,
+          -2.4
+        ]
+      ],
+      "cut_mm": 48,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "rojo",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W025",
+      "net": "+5V_SERVO",
+      "source": "J4.2",
+      "destination": "C3.1",
+      "start": "C30",
+      "end": "R29",
+      "path": [
+        [
+          78.66,
+          10.08,
+          -2.4
+        ],
+        [
+          77.39,
+          10.08,
+          -2.4
+        ],
+        [
+          77.39,
+          26.59,
+          -2.4
+        ],
+        [
+          76.12,
+          26.59,
+          -2.4
+        ],
+        [
+          76.12,
+          43.1,
+          -2.4
+        ],
+        [
+          76.12,
+          43.1,
+          -3.9
+        ],
+        [
+          76.12,
+          48.18,
+          -3.9
+        ]
+      ],
+      "cut_mm": 61,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "rojo",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W026",
+      "net": "+5V_SERVO",
+      "source": "C3.1",
+      "destination": "R15.1",
+      "start": "R29",
+      "end": "O22",
+      "path": [
+        [
+          76.12,
+          48.18,
+          -2.4
+        ],
+        [
+          76.12,
+          48.18,
+          -3.9
+        ],
+        [
+          67.23,
+          48.18,
+          -3.9
+        ],
+        [
+          67.23,
+          46.91,
+          -3.9
+        ],
+        [
+          58.34,
+          46.91,
+          -3.9
+        ],
+        [
+          58.34,
+          40.56,
+          -3.9
+        ]
+      ],
+      "cut_mm": 46,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "rojo",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W027",
+      "net": "+5V_SERVO",
+      "source": "R15.1",
+      "destination": "R12.1",
+      "start": "O22",
+      "end": "L22",
+      "path": [
+        [
+          58.34,
+          40.56,
+          -2.4
+        ],
+        [
+          58.34,
+          32.94,
+          -2.4
+        ]
+      ],
+      "cut_mm": 25,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "rojo",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W028",
+      "net": "AUD_BBB",
+      "source": "J10.8",
+      "destination": "JP5.2",
+      "start": "AK20",
+      "end": "AX19",
+      "path": [
+        [
+          53.26,
+          96.44,
+          -2.4
+        ],
+        [
+          53.26,
+          120.57,
+          -2.4
+        ],
+        [
+          54.53,
+          120.57,
+          -2.4
+        ],
+        [
+          54.53,
+          123.11,
+          -2.4
+        ],
+        [
+          53.26,
+          123.11,
+          -2.4
+        ],
+        [
+          53.26,
+          129.46,
+          -2.4
+        ],
+        [
+          53.26,
+          129.46,
+          -3.9
+        ],
+        [
+          50.72,
+          129.46,
+          -3.9
+        ]
+      ],
+      "cut_mm": 58,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W029",
+      "net": "AUD_RAW",
+      "source": "J6.3",
+      "destination": "R18.2",
+      "start": "AB32",
+      "end": "AE29",
+      "path": [
+        [
+          83.74,
+          73.58,
+          -2.4
+        ],
+        [
+          79.93,
+          73.58,
+          -2.4
+        ],
+        [
+          79.93,
+          74.85,
+          -2.4
+        ],
+        [
+          78.66,
+          74.85,
+          -2.4
+        ],
+        [
+          78.66,
+          81.2,
+          -2.4
+        ],
+        [
+          78.66,
+          81.2,
+          -3.9
+        ],
+        [
+          76.12,
+          81.2,
+          -3.9
+        ]
+      ],
+      "cut_mm": 36,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W030",
+      "net": "AUD_RAW",
+      "source": "R18.2",
+      "destination": "TP6.1",
+      "start": "AE29",
+      "end": "AB25",
+      "path": [
+        [
+          76.12,
+          81.2,
+          -2.4
+        ],
+        [
+          69.77,
+          81.2,
+          -2.4
+        ],
+        [
+          69.77,
+          79.93,
+          -2.4
+        ],
+        [
+          65.96,
+          79.93,
+          -2.4
+        ],
+        [
+          65.96,
+          73.58,
+          -2.4
+        ]
+      ],
+      "cut_mm": 35,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W031",
+      "net": "AUD_RAW",
+      "source": "TP6.1",
+      "destination": "JP11.1",
+      "start": "AB25",
+      "end": "AU13",
+      "path": [
+        [
+          65.96,
+          73.58,
+          -2.4
+        ],
+        [
+          63.42,
+          73.58,
+          -2.4
+        ],
+        [
+          63.42,
+          81.2,
+          -2.4
+        ],
+        [
+          62.15,
+          81.2,
+          -2.4
+        ],
+        [
+          62.15,
+          92.63,
+          -2.4
+        ],
+        [
+          60.88,
+          92.63,
+          -2.4
+        ],
+        [
+          60.88,
+          98.98,
+          -2.4
+        ],
+        [
+          59.61,
+          98.98,
+          -2.4
+        ],
+        [
+          59.61,
+          120.57,
+          -2.4
+        ],
+        [
+          59.61,
+          120.57,
+          -3.9
+        ],
+        [
+          35.48,
+          120.57,
+          -3.9
+        ],
+        [
+          35.48,
+          121.84,
+          -3.9
+        ]
+      ],
+      "cut_mm": 99,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W032",
+      "net": "BUZZ_BASE",
+      "source": "Q2.2",
+      "destination": "R7.2",
+      "start": "AE15",
+      "end": "AB15",
+      "path": [
+        [
+          40.56,
+          81.2,
+          -2.4
+        ],
+        [
+          40.56,
+          73.58,
+          -2.4
+        ]
+      ],
+      "cut_mm": 25,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W033",
+      "net": "BUZZ_BASE",
+      "source": "R7.2",
+      "destination": "R8.1",
+      "start": "AB15",
+      "end": "AH12",
+      "path": [
+        [
+          40.56,
+          73.58,
+          -2.4
+        ],
+        [
+          39.29,
+          73.58,
+          -2.4
+        ],
+        [
+          39.29,
+          86.28,
+          -2.4
+        ],
+        [
+          39.29,
+          86.28,
+          -3.9
+        ],
+        [
+          32.94,
+          86.28,
+          -3.9
+        ],
+        [
+          32.94,
+          88.82,
+          -3.9
+        ]
+      ],
+      "cut_mm": 43,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W034",
+      "net": "BUZZ_NEG",
+      "source": "Q2.3",
+      "destination": "D1.1",
+      "start": "AE16",
+      "end": "AH19",
+      "path": [
+        [
+          43.1,
+          81.2,
+          -2.4
+        ],
+        [
+          43.1,
+          88.82,
+          -2.4
+        ],
+        [
+          50.72,
+          88.82,
+          -2.4
+        ]
+      ],
+      "cut_mm": 33,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W035",
+      "net": "BUZZ_NEG",
+      "source": "D1.1",
+      "destination": "J3.2",
+      "start": "AH19",
+      "end": "AD22",
+      "path": [
+        [
+          50.72,
+          88.82,
+          -2.4
+        ],
+        [
+          50.72,
+          81.2,
+          -2.4
+        ],
+        [
+          51.99,
+          81.2,
+          -2.4
+        ],
+        [
+          51.99,
+          81.2,
+          -3.9
+        ],
+        [
+          54.53,
+          81.2,
+          -3.9
+        ],
+        [
+          54.53,
+          81.2,
+          -2.4
+        ],
+        [
+          54.53,
+          78.66,
+          -2.4
+        ],
+        [
+          58.34,
+          78.66,
+          -2.4
+        ]
+      ],
+      "cut_mm": 38,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W036",
+      "net": "C0_SEL",
+      "source": "JP10.2",
+      "destination": "R23.1",
+      "start": "AU4",
+      "end": "AU7",
+      "path": [
+        [
+          12.62,
+          121.84,
+          -2.4
+        ],
+        [
+          12.62,
+          121.84,
+          -3.9
+        ],
+        [
+          13.89,
+          121.84,
+          -3.9
+        ],
+        [
+          13.89,
+          120.57,
+          -3.9
+        ],
+        [
+          16.43,
+          120.57,
+          -3.9
+        ],
+        [
+          16.43,
+          121.84,
+          -3.9
+        ],
+        [
+          20.24,
+          121.84,
+          -3.9
+        ]
+      ],
+      "cut_mm": 30,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W037",
+      "net": "C0_SEL",
+      "source": "R23.1",
+      "destination": "R20.1",
+      "start": "AU7",
+      "end": "AX3",
+      "path": [
+        [
+          20.24,
+          121.84,
+          -2.4
+        ],
+        [
+          20.24,
+          123.11,
+          -2.4
+        ],
+        [
+          10.08,
+          123.11,
+          -2.4
+        ],
+        [
+          10.08,
+          129.46,
+          -2.4
+        ]
+      ],
+      "cut_mm": 35,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W038",
+      "net": "C0_TEST",
+      "source": "R20.2",
+      "destination": "JP4.1",
+      "start": "AX6",
+      "end": "AX8",
+      "path": [
+        [
+          17.7,
+          129.46,
+          -2.4
+        ],
+        [
+          22.78,
+          129.46,
+          -2.4
+        ]
+      ],
+      "cut_mm": 22,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W039",
+      "net": "C0_TX",
+      "source": "U1.21",
+      "destination": "R4.1",
+      "start": "AC8",
+      "end": "T12",
+      "path": [
+        [
+          22.78,
+          76.12,
+          -2.4
+        ],
+        [
+          22.78,
+          74.85,
+          -2.4
+        ],
+        [
+          24.05,
+          74.85,
+          -2.4
+        ],
+        [
+          24.05,
+          53.26,
+          -2.4
+        ],
+        [
+          27.86,
+          53.26,
+          -2.4
+        ],
+        [
+          27.86,
+          53.26,
+          -3.9
+        ],
+        [
+          32.94,
+          53.26,
+          -3.9
+        ]
+      ],
+      "cut_mm": 53,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W040",
+      "net": "C1_SEL",
+      "source": "JP11.2",
+      "destination": "R24.1",
+      "start": "AU14",
+      "end": "AU17",
+      "path": [
+        [
+          38.02,
+          121.84,
+          -2.4
+        ],
+        [
+          39.29,
+          121.84,
+          -2.4
+        ],
+        [
+          39.29,
+          121.84,
+          -3.9
+        ],
+        [
+          39.29,
+          123.11,
+          -3.9
+        ],
+        [
+          41.83,
+          123.11,
+          -3.9
+        ],
+        [
+          41.83,
+          121.84,
+          -3.9
+        ],
+        [
+          45.64,
+          121.84,
+          -3.9
+        ]
+      ],
+      "cut_mm": 30,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W041",
+      "net": "C1_SEL",
+      "source": "R24.1",
+      "destination": "R21.1",
+      "start": "AU17",
+      "end": "AX13",
+      "path": [
+        [
+          45.64,
+          121.84,
+          -2.4
+        ],
+        [
+          45.64,
+          123.11,
+          -2.4
+        ],
+        [
+          35.48,
+          123.11,
+          -2.4
+        ],
+        [
+          35.48,
+          129.46,
+          -2.4
+        ]
+      ],
+      "cut_mm": 35,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W042",
+      "net": "C1_TEST",
+      "source": "R21.2",
+      "destination": "JP5.1",
+      "start": "AX16",
+      "end": "AX18",
+      "path": [
+        [
+          43.1,
+          129.46,
+          -2.4
+        ],
+        [
+          48.18,
+          129.46,
+          -2.4
+        ]
+      ],
+      "cut_mm": 22,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W043",
+      "net": "C1_TX",
+      "source": "U1.22",
+      "destination": "R7.1",
+      "start": "AB8",
+      "end": "AB12",
+      "path": [
+        [
+          22.78,
+          73.58,
+          -2.4
+        ],
+        [
+          22.78,
+          73.58,
+          -3.9
+        ],
+        [
+          32.94,
+          73.58,
+          -3.9
+        ]
+      ],
+      "cut_mm": 30,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W044",
+      "net": "C2_SEL",
+      "source": "JP12.2",
+      "destination": "R25.1",
+      "start": "AU24",
+      "end": "AU27",
+      "path": [
+        [
+          63.42,
+          121.84,
+          -2.4
+        ],
+        [
+          63.42,
+          123.11,
+          -2.4
+        ],
+        [
+          63.42,
+          123.11,
+          -3.9
+        ],
+        [
+          67.23,
+          123.11,
+          -3.9
+        ],
+        [
+          67.23,
+          121.84,
+          -3.9
+        ],
+        [
+          71.04,
+          121.84,
+          -3.9
+        ]
+      ],
+      "cut_mm": 30,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W045",
+      "net": "C2_SEL",
+      "source": "R25.1",
+      "destination": "R22.1",
+      "start": "AU27",
+      "end": "AX23",
+      "path": [
+        [
+          71.04,
+          121.84,
+          -2.4
+        ],
+        [
+          67.23,
+          121.84,
+          -2.4
+        ],
+        [
+          67.23,
+          123.11,
+          -2.4
+        ],
+        [
+          65.96,
+          123.11,
+          -2.4
+        ],
+        [
+          65.96,
+          129.46,
+          -2.4
+        ],
+        [
+          65.96,
+          129.46,
+          -3.9
+        ],
+        [
+          60.88,
+          129.46,
+          -3.9
+        ]
+      ],
+      "cut_mm": 38,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W046",
+      "net": "C2_TEST",
+      "source": "R22.2",
+      "destination": "JP6.1",
+      "start": "AX26",
+      "end": "AX28",
+      "path": [
+        [
+          68.5,
+          129.46,
+          -2.4
+        ],
+        [
+          73.58,
+          129.46,
+          -2.4
+        ]
+      ],
+      "cut_mm": 22,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W047",
+      "net": "CLK_BASE",
+      "source": "Q5.2",
+      "destination": "R28.2",
+      "start": "BA25",
+      "end": "AQ24",
+      "path": [
+        [
+          65.96,
+          137.08,
+          -2.4
+        ],
+        [
+          64.69,
+          137.08,
+          -2.4
+        ],
+        [
+          64.69,
+          120.57,
+          -2.4
+        ],
+        [
+          63.42,
+          120.57,
+          -2.4
+        ],
+        [
+          63.42,
+          111.68,
+          -2.4
+        ]
+      ],
+      "cut_mm": 45,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W048",
+      "net": "CLK_BASE",
+      "source": "R28.2",
+      "destination": "R29.1",
+      "start": "AQ24",
+      "end": "AR27",
+      "path": [
+        [
+          63.42,
+          111.68,
+          -2.4
+        ],
+        [
+          64.69,
+          111.68,
+          -2.4
+        ],
+        [
+          64.69,
+          114.22,
+          -2.4
+        ],
+        [
+          71.04,
+          114.22,
+          -2.4
+        ]
+      ],
+      "cut_mm": 27,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W049",
+      "net": "CLK_BBB",
+      "source": "J10.10",
+      "destination": "JP7.2",
+      "start": "AK22",
+      "end": "BD19",
+      "path": [
+        [
+          58.34,
+          96.44,
+          -2.4
+        ],
+        [
+          57.07,
+          96.44,
+          -2.4
+        ],
+        [
+          57.07,
+          95.17,
+          -2.4
+        ],
+        [
+          51.99,
+          95.17,
+          -2.4
+        ],
+        [
+          51.99,
+          130.73,
+          -2.4
+        ],
+        [
+          50.72,
+          130.73,
+          -2.4
+        ],
+        [
+          50.72,
+          144.7,
+          -2.4
+        ]
+      ],
+      "cut_mm": 76,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W050",
+      "net": "CLK_REMOTE_A",
+      "source": "J8.1",
+      "destination": "D2.2",
+      "start": "BC3",
+      "end": "AZ6",
+      "path": [
+        [
+          10.08,
+          142.16,
+          -2.4
+        ],
+        [
+          13.89,
+          142.16,
+          -2.4
+        ],
+        [
+          13.89,
+          142.16,
+          -3.9
+        ],
+        [
+          13.89,
+          134.54,
+          -3.9
+        ],
+        [
+          17.7,
+          134.54,
+          -3.9
+        ]
+      ],
+      "cut_mm": 36,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "violeta",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W051",
+      "net": "CLK_REMOTE_A",
+      "source": "D2.2",
+      "destination": "U2.1",
+      "start": "AZ6",
+      "end": "BB9",
+      "path": [
+        [
+          17.7,
+          134.54,
+          -2.4
+        ],
+        [
+          17.7,
+          139.62,
+          -2.4
+        ],
+        [
+          25.32,
+          139.62,
+          -2.4
+        ]
+      ],
+      "cut_mm": 30,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "violeta",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W052",
+      "net": "CLK_REMOTE_K",
+      "source": "J8.2",
+      "destination": "U2.2",
+      "start": "BC5",
+      "end": "BC9",
+      "path": [
+        [
+          15.16,
+          142.16,
+          -2.4
+        ],
+        [
+          15.16,
+          143.43,
+          -2.4
+        ],
+        [
+          25.32,
+          143.43,
+          -2.4
+        ],
+        [
+          25.32,
+          142.16,
+          -2.4
+        ]
+      ],
+      "cut_mm": 30,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "violeta",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W053",
+      "net": "CLK_REMOTE_K",
+      "source": "U2.2",
+      "destination": "D2.1",
+      "start": "BC9",
+      "end": "AZ3",
+      "path": [
+        [
+          25.32,
+          142.16,
+          -2.4
+        ],
+        [
+          16.43,
+          142.16,
+          -2.4
+        ],
+        [
+          16.43,
+          140.89,
+          -2.4
+        ],
+        [
+          10.08,
+          140.89,
+          -2.4
+        ],
+        [
+          10.08,
+          134.54,
+          -2.4
+        ]
+      ],
+      "cut_mm": 40,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "violeta",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W054",
+      "net": "CLK_RX_RAW",
+      "source": "U2.4",
+      "destination": "R27.1",
+      "start": "BB12",
+      "end": "BD13",
+      "path": [
+        [
+          32.94,
+          139.62,
+          -2.4
+        ],
+        [
+          32.94,
+          139.62,
+          -3.9
+        ],
+        [
+          32.94,
+          140.89,
+          -3.9
+        ],
+        [
+          34.21,
+          140.89,
+          -3.9
+        ],
+        [
+          34.21,
+          144.7,
+          -3.9
+        ],
+        [
+          35.48,
+          144.7,
+          -3.9
+        ]
+      ],
+      "cut_mm": 28,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W055",
+      "net": "CLK_RX_RAW",
+      "source": "R27.1",
+      "destination": "R26.2",
+      "start": "BD13",
+      "end": "BA16",
+      "path": [
+        [
+          35.48,
+          144.7,
+          -2.4
+        ],
+        [
+          35.48,
+          139.62,
+          -2.4
+        ],
+        [
+          43.1,
+          139.62,
+          -2.4
+        ],
+        [
+          43.1,
+          139.62,
+          -5.4
+        ],
+        [
+          43.1,
+          137.08,
+          -5.4
+        ]
+      ],
+      "cut_mm": 39,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W056",
+      "net": "CLK_RX_RAW",
+      "source": "R26.2",
+      "destination": "TP8.1",
+      "start": "BA16",
+      "end": "BA18",
+      "path": [
+        [
+          43.1,
+          137.08,
+          -2.4
+        ],
+        [
+          48.18,
+          137.08,
+          -2.4
+        ]
+      ],
+      "cut_mm": 22,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W057",
+      "net": "CLK_SEND_A",
+      "source": "R31.2",
+      "destination": "J9.1",
+      "start": "BD25",
+      "end": "BC29",
+      "path": [
+        [
+          65.96,
+          144.7,
+          -2.4
+        ],
+        [
+          65.96,
+          142.16,
+          -2.4
+        ],
+        [
+          76.12,
+          142.16,
+          -2.4
+        ]
+      ],
+      "cut_mm": 30,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W058",
+      "net": "CLK_SINK",
+      "source": "Q5.3",
+      "destination": "J9.2",
+      "start": "BA26",
+      "end": "BC31",
+      "path": [
+        [
+          68.5,
+          137.08,
+          -2.4
+        ],
+        [
+          68.5,
+          140.89,
+          -2.4
+        ],
+        [
+          77.39,
+          140.89,
+          -2.4
+        ],
+        [
+          77.39,
+          142.16,
+          -2.4
+        ],
+        [
+          81.2,
+          142.16,
+          -2.4
+        ]
+      ],
+      "cut_mm": 35,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W059",
+      "net": "CLK_TEST",
+      "source": "R27.2",
+      "destination": "JP7.1",
+      "start": "BD16",
+      "end": "BD18",
+      "path": [
+        [
+          43.1,
+          144.7,
+          -2.4
+        ],
+        [
+          48.18,
+          144.7,
+          -2.4
+        ]
+      ],
+      "cut_mm": 22,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W060",
+      "net": "CLK_TX",
+      "source": "J10.6",
+      "destination": "R28.1",
+      "start": "AK18",
+      "end": "AQ21",
+      "path": [
+        [
+          48.18,
+          96.44,
+          -2.4
+        ],
+        [
+          48.18,
+          96.44,
+          -3.9
+        ],
+        [
+          48.18,
+          97.71,
+          -3.9
+        ],
+        [
+          54.53,
+          97.71,
+          -3.9
+        ],
+        [
+          54.53,
+          97.71,
+          -2.4
+        ],
+        [
+          54.53,
+          111.68,
+          -2.4
+        ],
+        [
+          55.8,
+          111.68,
+          -2.4
+        ]
+      ],
+      "cut_mm": 43,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W061",
+      "net": "CLK_TX",
+      "source": "R28.1",
+      "destination": "TP10.1",
+      "start": "AQ21",
+      "end": "AX21",
+      "path": [
+        [
+          55.8,
+          111.68,
+          -2.4
+        ],
+        [
+          55.8,
+          129.46,
+          -2.4
+        ]
+      ],
+      "cut_mm": 35,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W062",
+      "net": "GATE_POL",
+      "source": "J12.1",
+      "destination": "R30.1",
+      "start": "C10",
+      "end": "G10",
+      "path": [
+        [
+          27.86,
+          10.08,
+          -2.4
+        ],
+        [
+          27.86,
+          20.24,
+          -2.4
+        ]
+      ],
+      "cut_mm": 27,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W063",
+      "net": "GND_ACT",
+      "source": "J1.2",
+      "destination": "C1.2",
+      "start": "C5",
+      "end": "M6",
+      "path": [
+        [
+          15.16,
+          10.08,
+          -2.4
+        ],
+        [
+          15.16,
+          20.24,
+          -2.4
+        ],
+        [
+          16.43,
+          20.24,
+          -2.4
+        ],
+        [
+          16.43,
+          21.51,
+          -2.4
+        ],
+        [
+          17.7,
+          21.51,
+          -2.4
+        ],
+        [
+          17.7,
+          35.48,
+          -2.4
+        ]
+      ],
+      "cut_mm": 45,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W064",
+      "net": "GND_ACT",
+      "source": "C1.2",
+      "destination": "C2.2",
+      "start": "M6",
+      "end": "L12",
+      "path": [
+        [
+          17.7,
+          35.48,
+          -2.4
+        ],
+        [
+          31.67,
+          35.48,
+          -2.4
+        ],
+        [
+          31.67,
+          34.21,
+          -2.4
+        ],
+        [
+          32.94,
+          34.21,
+          -2.4
+        ],
+        [
+          32.94,
+          32.94,
+          -2.4
+        ]
+      ],
+      "cut_mm": 35,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W065",
+      "net": "GND_ACT",
+      "source": "C2.2",
+      "destination": "NT1.1",
+      "start": "L12",
+      "end": "P11",
+      "path": [
+        [
+          32.94,
+          32.94,
+          -2.4
+        ],
+        [
+          34.21,
+          32.94,
+          -2.4
+        ],
+        [
+          34.21,
+          35.48,
+          -2.4
+        ],
+        [
+          32.94,
+          35.48,
+          -2.4
+        ],
+        [
+          32.94,
+          36.75,
+          -2.4
+        ],
+        [
+          30.4,
+          36.75,
+          -2.4
+        ],
+        [
+          30.4,
+          43.1,
+          -2.4
+        ]
+      ],
+      "cut_mm": 33,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W066",
+      "net": "GND_ACT",
+      "source": "NT1.1",
+      "destination": "TP2.1",
+      "start": "P11",
+      "end": "P14",
+      "path": [
+        [
+          30.4,
+          43.1,
+          -2.4
+        ],
+        [
+          31.67,
+          43.1,
+          -2.4
+        ],
+        [
+          31.67,
+          41.83,
+          -2.4
+        ],
+        [
+          34.21,
+          41.83,
+          -2.4
+        ],
+        [
+          34.21,
+          41.83,
+          -3.9
+        ],
+        [
+          38.02,
+          41.83,
+          -3.9
+        ],
+        [
+          38.02,
+          43.1,
+          -3.9
+        ]
+      ],
+      "cut_mm": 30,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W067",
+      "net": "GND_ACT",
+      "source": "TP2.1",
+      "destination": "R14.2",
+      "start": "P14",
+      "end": "O20",
+      "path": [
+        [
+          38.02,
+          43.1,
+          -2.4
+        ],
+        [
+          38.02,
+          41.83,
+          -2.4
+        ],
+        [
+          46.91,
+          41.83,
+          -2.4
+        ],
+        [
+          46.91,
+          40.56,
+          -2.4
+        ],
+        [
+          53.26,
+          40.56,
+          -2.4
+        ]
+      ],
+      "cut_mm": 35,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W068",
+      "net": "GND_ACT",
+      "source": "R14.2",
+      "destination": "R11.2",
+      "start": "O20",
+      "end": "L20",
+      "path": [
+        [
+          53.26,
+          40.56,
+          -2.4
+        ],
+        [
+          53.26,
+          32.94,
+          -2.4
+        ]
+      ],
+      "cut_mm": 25,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W069",
+      "net": "GND_ACT",
+      "source": "R11.2",
+      "destination": "Q3.1",
+      "start": "L20",
+      "end": "I20",
+      "path": [
+        [
+          53.26,
+          32.94,
+          -2.4
+        ],
+        [
+          53.26,
+          25.32,
+          -2.4
+        ]
+      ],
+      "cut_mm": 25,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W070",
+      "net": "GND_ACT",
+      "source": "Q3.1",
+      "destination": "Q4.1",
+      "start": "I20",
+      "end": "I28",
+      "path": [
+        [
+          53.26,
+          25.32,
+          -2.4
+        ],
+        [
+          54.53,
+          25.32,
+          -2.4
+        ],
+        [
+          54.53,
+          24.05,
+          -2.4
+        ],
+        [
+          59.61,
+          24.05,
+          -2.4
+        ],
+        [
+          59.61,
+          25.32,
+          -2.4
+        ],
+        [
+          73.58,
+          25.32,
+          -2.4
+        ]
+      ],
+      "cut_mm": 40,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W071",
+      "net": "GND_ACT",
+      "source": "Q4.1",
+      "destination": "J4.1",
+      "start": "I28",
+      "end": "C28",
+      "path": [
+        [
+          73.58,
+          25.32,
+          -2.4
+        ],
+        [
+          73.58,
+          10.08,
+          -2.4
+        ]
+      ],
+      "cut_mm": 33,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W072",
+      "net": "GND_ACT",
+      "source": "J4.1",
+      "destination": "J13.6",
+      "start": "C28",
+      "end": "C24",
+      "path": [
+        [
+          73.58,
+          10.08,
+          -2.4
+        ],
+        [
+          63.42,
+          10.08,
+          -2.4
+        ]
+      ],
+      "cut_mm": 27,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W073",
+      "net": "GND_ACT",
+      "source": "J13.6",
+      "destination": "R30.2",
+      "start": "C24",
+      "end": "G13",
+      "path": [
+        [
+          63.42,
+          10.08,
+          -2.4
+        ],
+        [
+          62.15,
+          10.08,
+          -2.4
+        ],
+        [
+          62.15,
+          11.35,
+          -2.4
+        ],
+        [
+          54.53,
+          11.35,
+          -2.4
+        ],
+        [
+          54.53,
+          12.62,
+          -2.4
+        ],
+        [
+          40.56,
+          12.62,
+          -2.4
+        ],
+        [
+          40.56,
+          20.24,
+          -2.4
+        ],
+        [
+          40.56,
+          20.24,
+          -3.9
+        ],
+        [
+          35.48,
+          20.24,
+          -3.9
+        ]
+      ],
+      "cut_mm": 58,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W074",
+      "net": "GND_ACT",
+      "source": "R30.2",
+      "destination": "Q1.1",
+      "start": "G13",
+      "end": "W14",
+      "path": [
+        [
+          35.48,
+          20.24,
+          -2.4
+        ],
+        [
+          35.48,
+          43.1,
+          -2.4
+        ],
+        [
+          36.75,
+          43.1,
+          -2.4
+        ],
+        [
+          36.75,
+          43.1,
+          -3.9
+        ],
+        [
+          36.75,
+          60.88,
+          -3.9
+        ],
+        [
+          38.02,
+          60.88,
+          -3.9
+        ]
+      ],
+      "cut_mm": 63,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W075",
+      "net": "GND_ACT",
+      "source": "Q1.1",
+      "destination": "R5.2",
+      "start": "W14",
+      "end": "Z15",
+      "path": [
+        [
+          38.02,
+          60.88,
+          -2.4
+        ],
+        [
+          38.02,
+          67.23,
+          -2.4
+        ],
+        [
+          40.56,
+          67.23,
+          -2.4
+        ],
+        [
+          40.56,
+          68.5,
+          -2.4
+        ]
+      ],
+      "cut_mm": 27,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W076",
+      "net": "GND_ACT",
+      "source": "R5.2",
+      "destination": "Q2.1",
+      "start": "Z15",
+      "end": "AE14",
+      "path": [
+        [
+          40.56,
+          68.5,
+          -2.4
+        ],
+        [
+          38.02,
+          68.5,
+          -2.4
+        ],
+        [
+          38.02,
+          81.2,
+          -2.4
+        ]
+      ],
+      "cut_mm": 33,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W077",
+      "net": "GND_ACT",
+      "source": "Q2.1",
+      "destination": "R8.2",
+      "start": "AE14",
+      "end": "AH15",
+      "path": [
+        [
+          38.02,
+          81.2,
+          -2.4
+        ],
+        [
+          38.02,
+          87.55,
+          -2.4
+        ],
+        [
+          40.56,
+          87.55,
+          -2.4
+        ],
+        [
+          40.56,
+          88.82,
+          -2.4
+        ]
+      ],
+      "cut_mm": 27,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W078",
+      "net": "GND_ACT",
+      "source": "R8.2",
+      "destination": "J11.2",
+      "start": "AH15",
+      "end": "R4",
+      "path": [
+        [
+          40.56,
+          88.82,
+          -2.4
+        ],
+        [
+          34.21,
+          88.82,
+          -2.4
+        ],
+        [
+          34.21,
+          87.55,
+          -2.4
+        ],
+        [
+          12.62,
+          87.55,
+          -2.4
+        ],
+        [
+          12.62,
+          48.18,
+          -2.4
+        ]
+      ],
+      "cut_mm": 86,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W079",
+      "net": "GND_ACT",
+      "source": "J11.2",
+      "destination": "C3.2",
+      "start": "R4",
+      "end": "R30",
+      "path": [
+        [
+          12.62,
+          48.18,
+          -2.4
+        ],
+        [
+          64.69,
+          48.18,
+          -2.4
+        ],
+        [
+          64.69,
+          46.91,
+          -2.4
+        ],
+        [
+          74.85,
+          46.91,
+          -2.4
+        ],
+        [
+          74.85,
+          45.64,
+          -2.4
+        ],
+        [
+          77.39,
+          45.64,
+          -2.4
+        ],
+        [
+          77.39,
+          46.91,
+          -2.4
+        ],
+        [
+          78.66,
+          46.91,
+          -2.4
+        ],
+        [
+          78.66,
+          48.18,
+          -2.4
+        ]
+      ],
+      "cut_mm": 88,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W080",
+      "net": "GND_ACT",
+      "source": "C3.2",
+      "destination": "R16.2",
+      "start": "R30",
+      "end": "O30",
+      "path": [
+        [
+          78.66,
+          48.18,
+          -2.4
+        ],
+        [
+          79.93,
+          48.18,
+          -2.4
+        ],
+        [
+          79.93,
+          45.64,
+          -2.4
+        ],
+        [
+          78.66,
+          45.64,
+          -2.4
+        ],
+        [
+          78.66,
+          40.56,
+          -2.4
+        ]
+      ],
+      "cut_mm": 27,
+      "side": "inferior",
+      "wire": "22AWG unifilar",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W081",
+      "net": "GND_LOGIC",
+      "source": "NT1.2",
+      "destination": "TP4.1",
+      "start": "P12",
+      "end": "AG10",
+      "path": [
+        [
+          32.94,
+          43.1,
+          -2.4
+        ],
+        [
+          32.94,
+          44.37,
+          -2.4
+        ],
+        [
+          29.13,
+          44.37,
+          -2.4
+        ],
+        [
+          29.13,
+          44.37,
+          -3.9
+        ],
+        [
+          29.13,
+          49.45,
+          -3.9
+        ],
+        [
+          29.13,
+          49.45,
+          -2.4
+        ],
+        [
+          29.13,
+          79.93,
+          -2.4
+        ],
+        [
+          27.86,
+          79.93,
+          -2.4
+        ],
+        [
+          27.86,
+          86.28,
+          -2.4
+        ]
+      ],
+      "cut_mm": 69,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W082",
+      "net": "GND_LOGIC",
+      "source": "TP4.1",
+      "destination": "U1.17",
+      "start": "AG10",
+      "end": "AG8",
+      "path": [
+        [
+          27.86,
+          86.28,
+          -2.4
+        ],
+        [
+          27.86,
+          86.28,
+          -3.9
+        ],
+        [
+          27.86,
+          85.01,
+          -3.9
+        ],
+        [
+          22.78,
+          85.01,
+          -3.9
+        ],
+        [
+          22.78,
+          86.28,
+          -3.9
+        ]
+      ],
+      "cut_mm": 28,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W083",
+      "net": "GND_LOGIC",
+      "source": "U1.17",
+      "destination": "U1.16",
+      "start": "AG8",
+      "end": "AH8",
+      "path": [
+        [
+          22.78,
+          86.28,
+          -2.4
+        ],
+        [
+          22.78,
+          86.28,
+          -3.9
+        ],
+        [
+          22.78,
+          88.82,
+          -3.9
+        ]
+      ],
+      "cut_mm": 23,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W084",
+      "net": "GND_LOGIC",
+      "source": "U1.16",
+      "destination": "U1.15",
+      "start": "AH8",
+      "end": "AI8",
+      "path": [
+        [
+          22.78,
+          88.82,
+          -2.4
+        ],
+        [
+          22.78,
+          88.82,
+          -3.9
+        ],
+        [
+          22.78,
+          91.36,
+          -3.9
+        ]
+      ],
+      "cut_mm": 23,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W085",
+      "net": "GND_LOGIC",
+      "source": "U1.15",
+      "destination": "JP1.2",
+      "start": "AI8",
+      "end": "AL8",
+      "path": [
+        [
+          22.78,
+          91.36,
+          -2.4
+        ],
+        [
+          22.78,
+          95.17,
+          -2.4
+        ],
+        [
+          21.51,
+          95.17,
+          -2.4
+        ],
+        [
+          21.51,
+          95.17,
+          -3.9
+        ],
+        [
+          21.51,
+          96.44,
+          -3.9
+        ],
+        [
+          21.51,
+          96.44,
+          -5.4
+        ],
+        [
+          21.51,
+          98.98,
+          -5.4
+        ],
+        [
+          22.78,
+          98.98,
+          -5.4
+        ]
+      ],
+      "cut_mm": 33,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W086",
+      "net": "GND_LOGIC",
+      "source": "JP1.2",
+      "destination": "J10.2",
+      "start": "AL8",
+      "end": "AK14",
+      "path": [
+        [
+          22.78,
+          98.98,
+          -2.4
+        ],
+        [
+          22.78,
+          98.98,
+          -5.4
+        ],
+        [
+          22.78,
+          97.71,
+          -5.4
+        ],
+        [
+          36.75,
+          97.71,
+          -5.4
+        ],
+        [
+          36.75,
+          96.44,
+          -5.4
+        ],
+        [
+          38.02,
+          96.44,
+          -5.4
+        ]
+      ],
+      "cut_mm": 41,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W087",
+      "net": "GND_LOGIC",
+      "source": "J10.2",
+      "destination": "JP11.3",
+      "start": "AK14",
+      "end": "AU15",
+      "path": [
+        [
+          38.02,
+          96.44,
+          -2.4
+        ],
+        [
+          39.29,
+          96.44,
+          -2.4
+        ],
+        [
+          39.29,
+          96.44,
+          -3.9
+        ],
+        [
+          39.29,
+          97.71,
+          -3.9
+        ],
+        [
+          39.29,
+          97.71,
+          -5.4
+        ],
+        [
+          39.29,
+          121.84,
+          -5.4
+        ],
+        [
+          40.56,
+          121.84,
+          -5.4
+        ]
+      ],
+      "cut_mm": 51,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W088",
+      "net": "GND_LOGIC",
+      "source": "JP11.3",
+      "destination": "R24.2",
+      "start": "AU15",
+      "end": "AU20",
+      "path": [
+        [
+          40.56,
+          121.84,
+          -2.4
+        ],
+        [
+          44.37,
+          121.84,
+          -2.4
+        ],
+        [
+          44.37,
+          120.57,
+          -2.4
+        ],
+        [
+          46.91,
+          120.57,
+          -2.4
+        ],
+        [
+          46.91,
+          121.84,
+          -2.4
+        ],
+        [
+          50.72,
+          121.84,
+          -2.4
+        ],
+        [
+          50.72,
+          121.84,
+          -3.9
+        ],
+        [
+          53.26,
+          121.84,
+          -3.9
+        ]
+      ],
+      "cut_mm": 36,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W089",
+      "net": "GND_LOGIC",
+      "source": "R24.2",
+      "destination": "JP12.3",
+      "start": "AU20",
+      "end": "AU25",
+      "path": [
+        [
+          53.26,
+          121.84,
+          -2.4
+        ],
+        [
+          53.26,
+          121.84,
+          -3.9
+        ],
+        [
+          59.61,
+          121.84,
+          -3.9
+        ],
+        [
+          59.61,
+          123.11,
+          -3.9
+        ],
+        [
+          62.15,
+          123.11,
+          -3.9
+        ],
+        [
+          62.15,
+          120.57,
+          -3.9
+        ],
+        [
+          64.69,
+          120.57,
+          -3.9
+        ],
+        [
+          64.69,
+          121.84,
+          -3.9
+        ],
+        [
+          65.96,
+          121.84,
+          -3.9
+        ]
+      ],
+      "cut_mm": 38,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W090",
+      "net": "GND_LOGIC",
+      "source": "JP12.3",
+      "destination": "R25.2",
+      "start": "AU25",
+      "end": "AU30",
+      "path": [
+        [
+          65.96,
+          121.84,
+          -2.4
+        ],
+        [
+          65.96,
+          120.57,
+          -2.4
+        ],
+        [
+          72.31,
+          120.57,
+          -2.4
+        ],
+        [
+          72.31,
+          121.84,
+          -2.4
+        ],
+        [
+          78.66,
+          121.84,
+          -2.4
+        ]
+      ],
+      "cut_mm": 33,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W091",
+      "net": "GND_LOGIC",
+      "source": "R25.2",
+      "destination": "R29.2",
+      "start": "AU30",
+      "end": "AR30",
+      "path": [
+        [
+          78.66,
+          121.84,
+          -2.4
+        ],
+        [
+          78.66,
+          114.22,
+          -2.4
+        ]
+      ],
+      "cut_mm": 25,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W092",
+      "net": "GND_LOGIC",
+      "source": "R29.2",
+      "destination": "C5.2",
+      "start": "AR30",
+      "end": "AO31",
+      "path": [
+        [
+          78.66,
+          114.22,
+          -2.4
+        ],
+        [
+          78.66,
+          107.87,
+          -2.4
+        ],
+        [
+          81.2,
+          107.87,
+          -2.4
+        ],
+        [
+          81.2,
+          106.6,
+          -2.4
+        ]
+      ],
+      "cut_mm": 27,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W093",
+      "net": "GND_LOGIC",
+      "source": "C5.2",
+      "destination": "J7.1",
+      "start": "AO31",
+      "end": "AH29",
+      "path": [
+        [
+          81.2,
+          106.6,
+          -2.4
+        ],
+        [
+          79.93,
+          106.6,
+          -2.4
+        ],
+        [
+          79.93,
+          105.33,
+          -2.4
+        ],
+        [
+          76.12,
+          105.33,
+          -2.4
+        ],
+        [
+          76.12,
+          88.82,
+          -2.4
+        ]
+      ],
+      "cut_mm": 40,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W094",
+      "net": "GND_LOGIC",
+      "source": "J7.1",
+      "destination": "J6.2",
+      "start": "AH29",
+      "end": "AB30",
+      "path": [
+        [
+          76.12,
+          88.82,
+          -2.4
+        ],
+        [
+          76.12,
+          82.47,
+          -2.4
+        ],
+        [
+          77.39,
+          82.47,
+          -2.4
+        ],
+        [
+          77.39,
+          73.58,
+          -2.4
+        ],
+        [
+          78.66,
+          73.58,
+          -2.4
+        ]
+      ],
+      "cut_mm": 35,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W095",
+      "net": "GND_LOGIC",
+      "source": "J6.2",
+      "destination": "J5.2",
+      "start": "AB30",
+      "end": "V30",
+      "path": [
+        [
+          78.66,
+          73.58,
+          -2.4
+        ],
+        [
+          78.66,
+          58.34,
+          -2.4
+        ]
+      ],
+      "cut_mm": 33,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W096",
+      "net": "GND_LOGIC",
+      "source": "J5.2",
+      "destination": "U1.10",
+      "start": "V30",
+      "end": "AE5",
+      "path": [
+        [
+          78.66,
+          58.34,
+          -2.4
+        ],
+        [
+          74.85,
+          58.34,
+          -2.4
+        ],
+        [
+          74.85,
+          59.61,
+          -2.4
+        ],
+        [
+          68.5,
+          59.61,
+          -2.4
+        ],
+        [
+          68.5,
+          60.88,
+          -2.4
+        ],
+        [
+          62.15,
+          60.88,
+          -2.4
+        ],
+        [
+          62.15,
+          79.93,
+          -2.4
+        ],
+        [
+          62.15,
+          79.93,
+          -3.9
+        ],
+        [
+          15.16,
+          79.93,
+          -3.9
+        ],
+        [
+          15.16,
+          81.2,
+          -3.9
+        ]
+      ],
+      "cut_mm": 107,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W097",
+      "net": "GND_LOGIC",
+      "source": "U1.10",
+      "destination": "C4.2",
+      "start": "AE5",
+      "end": "AD3",
+      "path": [
+        [
+          15.16,
+          81.2,
+          -2.4
+        ],
+        [
+          13.89,
+          81.2,
+          -2.4
+        ],
+        [
+          13.89,
+          81.2,
+          -3.9
+        ],
+        [
+          11.35,
+          81.2,
+          -3.9
+        ],
+        [
+          11.35,
+          81.2,
+          -2.4
+        ],
+        [
+          11.35,
+          78.66,
+          -2.4
+        ],
+        [
+          10.08,
+          78.66,
+          -2.4
+        ]
+      ],
+      "cut_mm": 28,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W098",
+      "net": "GND_LOGIC",
+      "source": "C4.2",
+      "destination": "JP10.3",
+      "start": "AD3",
+      "end": "AU5",
+      "path": [
+        [
+          10.08,
+          78.66,
+          -2.4
+        ],
+        [
+          10.08,
+          96.44,
+          -2.4
+        ],
+        [
+          10.08,
+          96.44,
+          -3.9
+        ],
+        [
+          12.62,
+          96.44,
+          -3.9
+        ],
+        [
+          12.62,
+          96.44,
+          -2.4
+        ],
+        [
+          12.62,
+          120.57,
+          -2.4
+        ],
+        [
+          13.89,
+          120.57,
+          -2.4
+        ],
+        [
+          13.89,
+          121.84,
+          -2.4
+        ],
+        [
+          15.16,
+          121.84,
+          -2.4
+        ]
+      ],
+      "cut_mm": 69,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W099",
+      "net": "GND_LOGIC",
+      "source": "JP10.3",
+      "destination": "R23.2",
+      "start": "AU5",
+      "end": "AU10",
+      "path": [
+        [
+          15.16,
+          121.84,
+          -2.4
+        ],
+        [
+          18.97,
+          121.84,
+          -2.4
+        ],
+        [
+          18.97,
+          120.57,
+          -2.4
+        ],
+        [
+          21.51,
+          120.57,
+          -2.4
+        ],
+        [
+          21.51,
+          121.84,
+          -2.4
+        ],
+        [
+          24.05,
+          121.84,
+          -2.4
+        ],
+        [
+          24.05,
+          121.84,
+          -3.9
+        ],
+        [
+          27.86,
+          121.84,
+          -3.9
+        ]
+      ],
+      "cut_mm": 36,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W100",
+      "net": "GND_LOGIC",
+      "source": "R23.2",
+      "destination": "U2.3",
+      "start": "AU10",
+      "end": "BC12",
+      "path": [
+        [
+          27.86,
+          121.84,
+          -2.4
+        ],
+        [
+          27.86,
+          132.0,
+          -2.4
+        ],
+        [
+          30.4,
+          132.0,
+          -2.4
+        ],
+        [
+          30.4,
+          142.16,
+          -2.4
+        ],
+        [
+          32.94,
+          142.16,
+          -2.4
+        ]
+      ],
+      "cut_mm": 43,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W101",
+      "net": "GND_LOGIC",
+      "source": "U2.3",
+      "destination": "Q5.1",
+      "start": "BC12",
+      "end": "BA24",
+      "path": [
+        [
+          32.94,
+          142.16,
+          -2.4
+        ],
+        [
+          32.94,
+          140.89,
+          -2.4
+        ],
+        [
+          34.21,
+          140.89,
+          -2.4
+        ],
+        [
+          34.21,
+          138.35,
+          -2.4
+        ],
+        [
+          49.45,
+          138.35,
+          -2.4
+        ],
+        [
+          49.45,
+          137.08,
+          -2.4
+        ],
+        [
+          49.45,
+          137.08,
+          -3.9
+        ],
+        [
+          63.42,
+          137.08,
+          -3.9
+        ]
+      ],
+      "cut_mm": 56,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "negro",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W102",
+      "net": "I2C_SCL",
+      "source": "U1.12",
+      "destination": "JP2.2",
+      "start": "AG5",
+      "end": "AR3",
+      "path": [
+        [
+          15.16,
+          86.28,
+          -2.4
+        ],
+        [
+          13.89,
+          86.28,
+          -2.4
+        ],
+        [
+          13.89,
+          86.28,
+          -3.9
+        ],
+        [
+          10.08,
+          86.28,
+          -3.9
+        ],
+        [
+          10.08,
+          95.17,
+          -3.9
+        ],
+        [
+          8.81,
+          95.17,
+          -3.9
+        ],
+        [
+          8.81,
+          114.22,
+          -3.9
+        ],
+        [
+          10.08,
+          114.22,
+          -3.9
+        ]
+      ],
+      "cut_mm": 56,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W103",
+      "net": "I2C_SCL",
+      "source": "JP2.2",
+      "destination": "J10.3",
+      "start": "AR3",
+      "end": "AK15",
+      "path": [
+        [
+          10.08,
+          114.22,
+          -2.4
+        ],
+        [
+          10.08,
+          100.25,
+          -2.4
+        ],
+        [
+          10.08,
+          100.25,
+          -3.9
+        ],
+        [
+          40.56,
+          100.25,
+          -3.9
+        ],
+        [
+          40.56,
+          100.25,
+          -5.4
+        ],
+        [
+          40.56,
+          96.44,
+          -5.4
+        ]
+      ],
+      "cut_mm": 72,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W104",
+      "net": "I2C_SDA",
+      "source": "U1.13",
+      "destination": "JP3.2",
+      "start": "AH5",
+      "end": "AR8",
+      "path": [
+        [
+          15.16,
+          88.82,
+          -2.4
+        ],
+        [
+          16.43,
+          88.82,
+          -2.4
+        ],
+        [
+          16.43,
+          88.82,
+          -3.9
+        ],
+        [
+          16.43,
+          91.36,
+          -3.9
+        ],
+        [
+          16.43,
+          91.36,
+          -2.4
+        ],
+        [
+          16.43,
+          112.95,
+          -2.4
+        ],
+        [
+          21.51,
+          112.95,
+          -2.4
+        ],
+        [
+          21.51,
+          114.22,
+          -2.4
+        ],
+        [
+          22.78,
+          114.22,
+          -2.4
+        ]
+      ],
+      "cut_mm": 53,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W105",
+      "net": "I2C_SDA",
+      "source": "JP3.2",
+      "destination": "J10.4",
+      "start": "AR8",
+      "end": "AK16",
+      "path": [
+        [
+          22.78,
+          114.22,
+          -2.4
+        ],
+        [
+          22.78,
+          100.25,
+          -2.4
+        ],
+        [
+          24.05,
+          100.25,
+          -2.4
+        ],
+        [
+          24.05,
+          96.44,
+          -2.4
+        ],
+        [
+          34.21,
+          96.44,
+          -2.4
+        ],
+        [
+          34.21,
+          95.17,
+          -2.4
+        ],
+        [
+          41.83,
+          95.17,
+          -2.4
+        ],
+        [
+          41.83,
+          96.44,
+          -2.4
+        ],
+        [
+          43.1,
+          96.44,
+          -2.4
+        ]
+      ],
+      "cut_mm": 58,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W106",
+      "net": "LED_A",
+      "source": "R6.2",
+      "destination": "J2.1",
+      "start": "T21",
+      "end": "X20",
+      "path": [
+        [
+          55.8,
+          53.26,
+          -2.4
+        ],
+        [
+          53.26,
+          53.26,
+          -2.4
+        ],
+        [
+          53.26,
+          63.42,
+          -2.4
+        ]
+      ],
+      "cut_mm": 30,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W107",
+      "net": "LED_BASE",
+      "source": "Q1.2",
+      "destination": "R4.2",
+      "start": "W15",
+      "end": "T15",
+      "path": [
+        [
+          40.56,
+          60.88,
+          -2.4
+        ],
+        [
+          40.56,
+          53.26,
+          -2.4
+        ]
+      ],
+      "cut_mm": 25,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W108",
+      "net": "LED_BASE",
+      "source": "R4.2",
+      "destination": "R5.1",
+      "start": "T15",
+      "end": "Z12",
+      "path": [
+        [
+          40.56,
+          53.26,
+          -2.4
+        ],
+        [
+          34.21,
+          53.26,
+          -2.4
+        ],
+        [
+          34.21,
+          54.53,
+          -2.4
+        ],
+        [
+          32.94,
+          54.53,
+          -2.4
+        ],
+        [
+          32.94,
+          68.5,
+          -2.4
+        ]
+      ],
+      "cut_mm": 40,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W109",
+      "net": "LED_K",
+      "source": "Q1.3",
+      "destination": "J2.2",
+      "start": "W16",
+      "end": "X22",
+      "path": [
+        [
+          43.1,
+          60.88,
+          -2.4
+        ],
+        [
+          43.1,
+          62.15,
+          -2.4
+        ],
+        [
+          46.91,
+          62.15,
+          -2.4
+        ],
+        [
+          46.91,
+          62.15,
+          -3.9
+        ],
+        [
+          54.53,
+          62.15,
+          -3.9
+        ],
+        [
+          54.53,
+          63.42,
+          -3.9
+        ],
+        [
+          58.34,
+          63.42,
+          -3.9
+        ]
+      ],
+      "cut_mm": 38,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W110",
+      "net": "MCP_RESET",
+      "source": "U1.18",
+      "destination": "JP1.1",
+      "start": "AF8",
+      "end": "AL7",
+      "path": [
+        [
+          22.78,
+          83.74,
+          -2.4
+        ],
+        [
+          20.24,
+          83.74,
+          -2.4
+        ],
+        [
+          20.24,
+          86.28,
+          -2.4
+        ],
+        [
+          20.24,
+          86.28,
+          -3.9
+        ],
+        [
+          20.24,
+          91.36,
+          -3.9
+        ],
+        [
+          20.24,
+          91.36,
+          -2.4
+        ],
+        [
+          20.24,
+          98.98,
+          -2.4
+        ]
+      ],
+      "cut_mm": 38,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W111",
+      "net": "MCP_RESET",
+      "source": "JP1.1",
+      "destination": "R1.2",
+      "start": "AL7",
+      "end": "AL5",
+      "path": [
+        [
+          20.24,
+          98.98,
+          -2.4
+        ],
+        [
+          17.7,
+          98.98,
+          -2.4
+        ],
+        [
+          17.7,
+          98.98,
+          -3.9
+        ],
+        [
+          15.16,
+          98.98,
+          -3.9
+        ]
+      ],
+      "cut_mm": 25,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W112",
+      "net": "MECH_BBB",
+      "source": "J10.9",
+      "destination": "JP6.2",
+      "start": "AK21",
+      "end": "AX29",
+      "path": [
+        [
+          55.8,
+          96.44,
+          -2.4
+        ],
+        [
+          55.8,
+          110.41,
+          -2.4
+        ],
+        [
+          57.07,
+          110.41,
+          -2.4
+        ],
+        [
+          57.07,
+          128.19,
+          -2.4
+        ],
+        [
+          57.07,
+          128.19,
+          -3.9
+        ],
+        [
+          74.85,
+          128.19,
+          -3.9
+        ],
+        [
+          74.85,
+          129.46,
+          -3.9
+        ],
+        [
+          76.12,
+          129.46,
+          -3.9
+        ]
+      ],
+      "cut_mm": 74,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W113",
+      "net": "MECH_RAW",
+      "source": "J7.2",
+      "destination": "R19.2",
+      "start": "AH31",
+      "end": "AL30",
+      "path": [
+        [
+          81.2,
+          88.82,
+          -2.4
+        ],
+        [
+          78.66,
+          88.82,
+          -2.4
+        ],
+        [
+          78.66,
+          98.98,
+          -2.4
+        ]
+      ],
+      "cut_mm": 30,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W114",
+      "net": "MECH_RAW",
+      "source": "R19.2",
+      "destination": "C5.1",
+      "start": "AL30",
+      "end": "AO30",
+      "path": [
+        [
+          78.66,
+          98.98,
+          -2.4
+        ],
+        [
+          78.66,
+          104.06,
+          -2.4
+        ],
+        [
+          78.66,
+          104.06,
+          -3.9
+        ],
+        [
+          78.66,
+          106.6,
+          -3.9
+        ]
+      ],
+      "cut_mm": 28,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W115",
+      "net": "MECH_RAW",
+      "source": "C5.1",
+      "destination": "TP7.1",
+      "start": "AO30",
+      "end": "AH25",
+      "path": [
+        [
+          78.66,
+          106.6,
+          -2.4
+        ],
+        [
+          65.96,
+          106.6,
+          -2.4
+        ],
+        [
+          65.96,
+          88.82,
+          -2.4
+        ]
+      ],
+      "cut_mm": 48,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W116",
+      "net": "MECH_RAW",
+      "source": "TP7.1",
+      "destination": "JP12.1",
+      "start": "AH25",
+      "end": "AU23",
+      "path": [
+        [
+          65.96,
+          88.82,
+          -2.4
+        ],
+        [
+          63.42,
+          88.82,
+          -2.4
+        ],
+        [
+          63.42,
+          93.9,
+          -2.4
+        ],
+        [
+          62.15,
+          93.9,
+          -2.4
+        ],
+        [
+          62.15,
+          100.25,
+          -2.4
+        ],
+        [
+          60.88,
+          100.25,
+          -2.4
+        ],
+        [
+          60.88,
+          121.84,
+          -2.4
+        ]
+      ],
+      "cut_mm": 55,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W117",
+      "net": "OPT_BBB",
+      "source": "J10.7",
+      "destination": "JP4.2",
+      "start": "AK19",
+      "end": "AX9",
+      "path": [
+        [
+          50.72,
+          96.44,
+          -2.4
+        ],
+        [
+          49.45,
+          96.44,
+          -2.4
+        ],
+        [
+          49.45,
+          97.71,
+          -2.4
+        ],
+        [
+          25.32,
+          97.71,
+          -2.4
+        ],
+        [
+          25.32,
+          129.46,
+          -2.4
+        ]
+      ],
+      "cut_mm": 76,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W118",
+      "net": "OPT_RAW",
+      "source": "J5.3",
+      "destination": "R17.2",
+      "start": "V32",
+      "end": "Y29",
+      "path": [
+        [
+          83.74,
+          58.34,
+          -2.4
+        ],
+        [
+          79.93,
+          58.34,
+          -2.4
+        ],
+        [
+          79.93,
+          65.96,
+          -2.4
+        ],
+        [
+          79.93,
+          65.96,
+          -3.9
+        ],
+        [
+          76.12,
+          65.96,
+          -3.9
+        ]
+      ],
+      "cut_mm": 36,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W119",
+      "net": "OPT_RAW",
+      "source": "R17.2",
+      "destination": "TP5.1",
+      "start": "Y29",
+      "end": "V25",
+      "path": [
+        [
+          76.12,
+          65.96,
+          -2.4
+        ],
+        [
+          69.77,
+          65.96,
+          -2.4
+        ],
+        [
+          69.77,
+          64.69,
+          -2.4
+        ],
+        [
+          65.96,
+          64.69,
+          -2.4
+        ],
+        [
+          65.96,
+          62.15,
+          -2.4
+        ],
+        [
+          65.96,
+          62.15,
+          -3.9
+        ],
+        [
+          65.96,
+          58.34,
+          -3.9
+        ]
+      ],
+      "cut_mm": 38,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W120",
+      "net": "OPT_RAW",
+      "source": "TP5.1",
+      "destination": "JP10.1",
+      "start": "V25",
+      "end": "AU3",
+      "path": [
+        [
+          65.96,
+          58.34,
+          -2.4
+        ],
+        [
+          59.61,
+          58.34,
+          -2.4
+        ],
+        [
+          59.61,
+          90.09,
+          -2.4
+        ],
+        [
+          11.35,
+          90.09,
+          -2.4
+        ],
+        [
+          11.35,
+          115.49,
+          -2.4
+        ],
+        [
+          10.08,
+          115.49,
+          -2.4
+        ],
+        [
+          10.08,
+          121.84,
+          -2.4
+        ]
+      ],
+      "cut_mm": 137,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W121",
+      "net": "PWM_5V",
+      "source": "J13.4",
+      "destination": "Q4.3",
+      "start": "C22",
+      "end": "I30",
+      "path": [
+        [
+          58.34,
+          10.08,
+          -2.4
+        ],
+        [
+          59.61,
+          10.08,
+          -2.4
+        ],
+        [
+          59.61,
+          10.08,
+          -3.9
+        ],
+        [
+          59.61,
+          24.05,
+          -3.9
+        ],
+        [
+          77.39,
+          24.05,
+          -3.9
+        ],
+        [
+          77.39,
+          25.32,
+          -3.9
+        ],
+        [
+          78.66,
+          25.32,
+          -3.9
+        ]
+      ],
+      "cut_mm": 56,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W122",
+      "net": "PWM_5V",
+      "source": "Q4.3",
+      "destination": "R15.2",
+      "start": "I30",
+      "end": "O25",
+      "path": [
+        [
+          78.66,
+          25.32,
+          -2.4
+        ],
+        [
+          78.66,
+          27.86,
+          -2.4
+        ],
+        [
+          77.39,
+          27.86,
+          -2.4
+        ],
+        [
+          77.39,
+          27.86,
+          -3.9
+        ],
+        [
+          74.85,
+          27.86,
+          -3.9
+        ],
+        [
+          74.85,
+          27.86,
+          -2.4
+        ],
+        [
+          67.23,
+          27.86,
+          -2.4
+        ],
+        [
+          67.23,
+          34.21,
+          -2.4
+        ],
+        [
+          65.96,
+          34.21,
+          -2.4
+        ],
+        [
+          65.96,
+          40.56,
+          -2.4
+        ]
+      ],
+      "cut_mm": 48,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W123",
+      "net": "PWM_B1",
+      "source": "Q3.2",
+      "destination": "R10.2",
+      "start": "I21",
+      "end": "F20",
+      "path": [
+        [
+          55.8,
+          25.32,
+          -2.4
+        ],
+        [
+          55.8,
+          25.32,
+          -3.9
+        ],
+        [
+          54.53,
+          25.32,
+          -3.9
+        ],
+        [
+          54.53,
+          24.05,
+          -3.9
+        ],
+        [
+          53.26,
+          24.05,
+          -3.9
+        ],
+        [
+          53.26,
+          17.7,
+          -3.9
+        ]
+      ],
+      "cut_mm": 30,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W124",
+      "net": "PWM_B1",
+      "source": "R10.2",
+      "destination": "R11.1",
+      "start": "F20",
+      "end": "L17",
+      "path": [
+        [
+          53.26,
+          17.7,
+          -2.4
+        ],
+        [
+          46.91,
+          17.7,
+          -2.4
+        ],
+        [
+          46.91,
+          32.94,
+          -2.4
+        ],
+        [
+          45.64,
+          32.94,
+          -2.4
+        ]
+      ],
+      "cut_mm": 40,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W125",
+      "net": "PWM_B2",
+      "source": "Q4.2",
+      "destination": "R13.2",
+      "start": "I29",
+      "end": "L30",
+      "path": [
+        [
+          76.12,
+          25.32,
+          -2.4
+        ],
+        [
+          76.12,
+          25.32,
+          -3.9
+        ],
+        [
+          76.12,
+          26.59,
+          -3.9
+        ],
+        [
+          78.66,
+          26.59,
+          -3.9
+        ],
+        [
+          78.66,
+          32.94,
+          -3.9
+        ]
+      ],
+      "cut_mm": 30,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W126",
+      "net": "PWM_B2",
+      "source": "R13.2",
+      "destination": "R14.1",
+      "start": "L30",
+      "end": "O17",
+      "path": [
+        [
+          78.66,
+          32.94,
+          -2.4
+        ],
+        [
+          77.39,
+          32.94,
+          -2.4
+        ],
+        [
+          77.39,
+          39.29,
+          -2.4
+        ],
+        [
+          77.39,
+          39.29,
+          -3.9
+        ],
+        [
+          45.64,
+          39.29,
+          -3.9
+        ],
+        [
+          45.64,
+          40.56,
+          -3.9
+        ]
+      ],
+      "cut_mm": 61,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W127",
+      "net": "PWM_BBB",
+      "source": "R10.1",
+      "destination": "J10.5",
+      "start": "F17",
+      "end": "AK17",
+      "path": [
+        [
+          45.64,
+          17.7,
+          -2.4
+        ],
+        [
+          45.64,
+          31.67,
+          -2.4
+        ],
+        [
+          44.37,
+          31.67,
+          -2.4
+        ],
+        [
+          44.37,
+          40.56,
+          -2.4
+        ],
+        [
+          44.37,
+          40.56,
+          -3.9
+        ],
+        [
+          44.37,
+          78.66,
+          -3.9
+        ],
+        [
+          45.64,
+          78.66,
+          -3.9
+        ],
+        [
+          45.64,
+          78.66,
+          -5.4
+        ],
+        [
+          45.64,
+          96.44,
+          -5.4
+        ]
+      ],
+      "cut_mm": 105,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W128",
+      "net": "PWM_INV",
+      "source": "Q3.3",
+      "destination": "R12.2",
+      "start": "I22",
+      "end": "L25",
+      "path": [
+        [
+          58.34,
+          25.32,
+          -2.4
+        ],
+        [
+          58.34,
+          31.67,
+          -2.4
+        ],
+        [
+          59.61,
+          31.67,
+          -2.4
+        ],
+        [
+          59.61,
+          32.94,
+          -2.4
+        ],
+        [
+          65.96,
+          32.94,
+          -2.4
+        ]
+      ],
+      "cut_mm": 33,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W129",
+      "net": "PWM_INV",
+      "source": "R12.2",
+      "destination": "R13.1",
+      "start": "L25",
+      "end": "L27",
+      "path": [
+        [
+          65.96,
+          32.94,
+          -2.4
+        ],
+        [
+          65.96,
+          32.94,
+          -3.9
+        ],
+        [
+          71.04,
+          32.94,
+          -3.9
+        ]
+      ],
+      "cut_mm": 25,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W130",
+      "net": "SCL_PULL",
+      "source": "R2.2",
+      "destination": "JP2.1",
+      "start": "AO5",
+      "end": "AR2",
+      "path": [
+        [
+          15.16,
+          106.6,
+          -2.4
+        ],
+        [
+          13.89,
+          106.6,
+          -2.4
+        ],
+        [
+          13.89,
+          115.49,
+          -2.4
+        ],
+        [
+          13.89,
+          115.49,
+          -3.9
+        ],
+        [
+          7.54,
+          115.49,
+          -3.9
+        ],
+        [
+          7.54,
+          114.22,
+          -3.9
+        ]
+      ],
+      "cut_mm": 38,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W131",
+      "net": "SDA_PULL",
+      "source": "R3.2",
+      "destination": "JP3.1",
+      "start": "AO10",
+      "end": "AR7",
+      "path": [
+        [
+          27.86,
+          106.6,
+          -2.4
+        ],
+        [
+          26.59,
+          106.6,
+          -2.4
+        ],
+        [
+          26.59,
+          112.95,
+          -2.4
+        ],
+        [
+          26.59,
+          112.95,
+          -3.9
+        ],
+        [
+          20.24,
+          112.95,
+          -3.9
+        ],
+        [
+          20.24,
+          114.22,
+          -3.9
+        ]
+      ],
+      "cut_mm": 36,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W132",
+      "net": "SERVO_SIG",
+      "source": "J13.5",
+      "destination": "J4.3",
+      "start": "C23",
+      "end": "C32",
+      "path": [
+        [
+          60.88,
+          10.08,
+          -2.4
+        ],
+        [
+          60.88,
+          10.08,
+          -3.9
+        ],
+        [
+          62.15,
+          10.08,
+          -3.9
+        ],
+        [
+          62.15,
+          8.81,
+          -3.9
+        ],
+        [
+          79.93,
+          8.81,
+          -3.9
+        ],
+        [
+          79.93,
+          10.08,
+          -3.9
+        ],
+        [
+          83.74,
+          10.08,
+          -3.9
+        ]
+      ],
+      "cut_mm": 46,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W133",
+      "net": "SERVO_SIG",
+      "source": "J4.3",
+      "destination": "R16.1",
+      "start": "C32",
+      "end": "O27",
+      "path": [
+        [
+          83.74,
+          10.08,
+          -2.4
+        ],
+        [
+          79.93,
+          10.08,
+          -2.4
+        ],
+        [
+          79.93,
+          41.83,
+          -2.4
+        ],
+        [
+          79.93,
+          41.83,
+          -3.9
+        ],
+        [
+          71.04,
+          41.83,
+          -3.9
+        ],
+        [
+          71.04,
+          40.56,
+          -3.9
+        ]
+      ],
+      "cut_mm": 66,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    },
+    {
+      "id": "W134",
+      "net": "SERVO_SIG",
+      "source": "R16.1",
+      "destination": "TP9.1",
+      "start": "O27",
+      "end": "R25",
+      "path": [
+        [
+          71.04,
+          40.56,
+          -2.4
+        ],
+        [
+          67.23,
+          40.56,
+          -2.4
+        ],
+        [
+          67.23,
+          41.83,
+          -2.4
+        ],
+        [
+          65.96,
+          41.83,
+          -2.4
+        ],
+        [
+          65.96,
+          45.64,
+          -2.4
+        ],
+        [
+          65.96,
+          45.64,
+          -5.4
+        ],
+        [
+          65.96,
+          48.18,
+          -5.4
+        ]
+      ],
+      "cut_mm": 36,
+      "side": "inferior",
+      "wire": "26AWG aislado (adicional)",
+      "color": "azul",
+      "notes": "Cable aislado continuo; doblar segun XYZ (z negativo bajo placa). Reservar 6mm por extremo; pelar solo 2mm. Cruces en capas diferentes."
+    }
+  ],
+  "routing": {
+    "capas_usadas": 3,
+    "paso_xy_mm": 1.27,
+    "paso_z_mm": 1.5,
+    "metodo": "A* 3D con ocupacion de puntos y terminales. Distancias continuas se verifican por separado."
+  }
+}

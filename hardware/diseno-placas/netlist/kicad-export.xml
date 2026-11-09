@@ -1,0 +1,3668 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>\\wsl.localhost\Ubuntu\home\erwin\Capa_Fisica\TRAMA3-CCVIII\hardware\diseno-placas\esquematicos\TRAMA3_T51.kicad_sch</source>
+    <date>2026-11-09T11:10:38</date>
+    <tool>Eeschema 10.0.8</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>TRAMA3 T51 - Indice de circuitos A/B</title>
+        <company/>
+        <rev>P1 - PROVISIONAL</rev>
+        <date/>
+        <source>TRAMA3_T51.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="2" name="/Alimentacion y proteccion/" tstamps="/67ed176c-a331-4ae9-9c0d-c20ad11af088/">
+      <title_block>
+        <title>Alimentacion y proteccion - Nodo A/B</title>
+        <company/>
+        <rev>T51-P1 PROVISIONAL</rev>
+        <date/>
+        <source>01_POWER.kicad_sch</source>
+        <comment number="1" value="Etiquetas globales del mismo nombre son la misma red. No autoriza soldadura."/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="3" name="/MCP23017 e I2C/" tstamps="/7a618f8e-57be-48c1-ac9a-fa9addcc523e/">
+      <title_block>
+        <title>MCP23017 e I2C - Nodo A/B</title>
+        <company/>
+        <rev>T51-P1 PROVISIONAL</rev>
+        <date/>
+        <source>02_CORE.kicad_sch</source>
+        <comment number="1" value="Etiquetas globales del mismo nombre son la misma red. No autoriza soldadura."/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="4" name="/Transmisores luz y sonido/" tstamps="/6b8b6b51-08a7-4a3e-85e7-9cca6cfd222a/">
+      <title_block>
+        <title>Transmisores luz y sonido - Nodo A/B</title>
+        <company/>
+        <rev>T51-P1 PROVISIONAL</rev>
+        <date/>
+        <source>03_TX.kicad_sch</source>
+        <comment number="1" value="Etiquetas globales del mismo nombre son la misma red. No autoriza soldadura."/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="5" name="/Servo y corte de mantenimiento/" tstamps="/0d9e24ba-db52-44da-b081-5c20213146a6/">
+      <title_block>
+        <title>Servo y corte de mantenimiento - Nodo A/B</title>
+        <company/>
+        <rev>T51-P1 PROVISIONAL</rev>
+        <date/>
+        <source>04_SERVO.kicad_sch</source>
+        <comment number="1" value="Etiquetas globales del mismo nombre son la misma red. No autoriza soldadura."/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="6" name="/Receptores y puntos de prueba/" tstamps="/05d71142-7efc-4208-abcf-2bf753479262/">
+      <title_block>
+        <title>Receptores y puntos de prueba - Nodo A/B</title>
+        <company/>
+        <rev>T51-P1 PROVISIONAL</rev>
+        <date/>
+        <source>05_RX.kicad_sch</source>
+        <comment number="1" value="Etiquetas globales del mismo nombre son la misma red. No autoriza soldadura."/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="7" name="/Selectores de fallo y enlaces GPIO/" tstamps="/4369129c-936c-4753-9087-990b51398105/">
+      <title_block>
+        <title>Selectores de fallo y enlaces GPIO - Nodo A/B</title>
+        <company/>
+        <rev>T51-P1 PROVISIONAL</rev>
+        <date/>
+        <source>06_ENABLE.kicad_sch</source>
+        <comment number="1" value="Etiquetas globales del mismo nombre son la misma red. No autoriza soldadura."/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="8" name="/Reloj aislado TX y RX/" tstamps="/bba30028-38df-4b81-9550-9a49c3b627d8/">
+      <title_block>
+        <title>Reloj aislado TX y RX - Nodo A/B</title>
+        <company/>
+        <rev>T51-P1 PROVISIONAL</rev>
+        <date/>
+        <source>07_CLOCK.kicad_sch</source>
+        <comment number="1" value="Etiquetas globales del mismo nombre son la misma red. No autoriza soldadura."/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C1">
+      <value>1000uF/16V</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_C1" description=""/>
+      <property name="Sheetname" value="Alimentacion y proteccion"/>
+      <property name="Sheetfile" value="01_POWER.kicad_sch"/>
+      <sheetpath names="/Alimentacion y proteccion/" tstamps="/67ed176c-a331-4ae9-9c0d-c20ad11af088/"/>
+      <tstamps>857fb41a-6df9-4f21-a8da-e157630002e3</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C2">
+      <value>100nF</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_C2" description=""/>
+      <property name="Sheetname" value="Alimentacion y proteccion"/>
+      <property name="Sheetfile" value="01_POWER.kicad_sch"/>
+      <sheetpath names="/Alimentacion y proteccion/" tstamps="/67ed176c-a331-4ae9-9c0d-c20ad11af088/"/>
+      <tstamps>03449ee6-2340-4890-963e-ffdd61d4e443</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="F1">
+      <value>5x20mm 1A; T08 pendiente</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_F1" description=""/>
+      <property name="Sheetname" value="Alimentacion y proteccion"/>
+      <property name="Sheetfile" value="01_POWER.kicad_sch"/>
+      <sheetpath names="/Alimentacion y proteccion/" tstamps="/67ed176c-a331-4ae9-9c0d-c20ad11af088/"/>
+      <tstamps>06b6fbc7-55f7-4752-8a55-72a97405275c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J1">
+      <value>ENTRADA 5V / 2.5A</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_J1" description=""/>
+      <property name="Sheetname" value="Alimentacion y proteccion"/>
+      <property name="Sheetfile" value="01_POWER.kicad_sch"/>
+      <sheetpath names="/Alimentacion y proteccion/" tstamps="/67ed176c-a331-4ae9-9c0d-c20ad11af088/"/>
+      <tstamps>a4092fce-ff24-4ac2-bb96-b21e8d0306bd</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J11">
+      <value>USB AUX TEST</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_J11" description=""/>
+      <property name="Sheetname" value="Alimentacion y proteccion"/>
+      <property name="Sheetfile" value="01_POWER.kicad_sch"/>
+      <sheetpath names="/Alimentacion y proteccion/" tstamps="/67ed176c-a331-4ae9-9c0d-c20ad11af088/"/>
+      <tstamps>804484ed-c608-46a7-a240-7f6697a46c01</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J12">
+      <value>PMOS G/S/D</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_J12" description=""/>
+      <property name="Sheetname" value="Alimentacion y proteccion"/>
+      <property name="Sheetfile" value="01_POWER.kicad_sch"/>
+      <sheetpath names="/Alimentacion y proteccion/" tstamps="/67ed176c-a331-4ae9-9c0d-c20ad11af088/"/>
+      <tstamps>cc7c6e47-49fd-4950-a0e9-fe4eb009eef5</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J14">
+      <value>PORTAFUSIBLE EXTERNO</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_J14" description=""/>
+      <property name="Sheetname" value="Alimentacion y proteccion"/>
+      <property name="Sheetfile" value="01_POWER.kicad_sch"/>
+      <sheetpath names="/Alimentacion y proteccion/" tstamps="/67ed176c-a331-4ae9-9c0d-c20ad11af088/"/>
+      <tstamps>899fcbe8-1d48-4545-8a02-1856b0c89230</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="MOD3">
+      <value>Micro USB breakout</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_MOD3" description=""/>
+      <property name="Sheetname" value="Alimentacion y proteccion"/>
+      <property name="Sheetfile" value="01_POWER.kicad_sch"/>
+      <sheetpath names="/Alimentacion y proteccion/" tstamps="/67ed176c-a331-4ae9-9c0d-c20ad11af088/"/>
+      <tstamps>af436149-c752-423f-baf2-14f85018bdf8</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="VBUS"/>
+            <pin num="GND"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="NT1">
+      <value>ESTRELLA 22AWG</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_NT1" description=""/>
+      <property name="Sheetname" value="Alimentacion y proteccion"/>
+      <property name="Sheetfile" value="01_POWER.kicad_sch"/>
+      <sheetpath names="/Alimentacion y proteccion/" tstamps="/67ed176c-a331-4ae9-9c0d-c20ad11af088/"/>
+      <tstamps>9a47acb4-1bd6-4798-9290-84fbc00e2175</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="Q6">
+      <value>IRLML6402 + adaptador SOT23</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_Q6" description=""/>
+      <property name="Sheetname" value="Alimentacion y proteccion"/>
+      <property name="Sheetfile" value="01_POWER.kicad_sch"/>
+      <sheetpath names="/Alimentacion y proteccion/" tstamps="/67ed176c-a331-4ae9-9c0d-c20ad11af088/"/>
+      <tstamps>d447a13e-9da3-445e-b8dd-9184361f2123</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R30">
+      <value>100k</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R30" description=""/>
+      <property name="Sheetname" value="Alimentacion y proteccion"/>
+      <property name="Sheetfile" value="01_POWER.kicad_sch"/>
+      <sheetpath names="/Alimentacion y proteccion/" tstamps="/67ed176c-a331-4ae9-9c0d-c20ad11af088/"/>
+      <tstamps>aad3513b-c6e4-4d23-900b-7ff01e1aeba5</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP1">
+      <value>+5V_ACT</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_TP1" description=""/>
+      <property name="Sheetname" value="Alimentacion y proteccion"/>
+      <property name="Sheetfile" value="01_POWER.kicad_sch"/>
+      <sheetpath names="/Alimentacion y proteccion/" tstamps="/67ed176c-a331-4ae9-9c0d-c20ad11af088/"/>
+      <tstamps>8dfff49b-3a8a-4886-bc03-8a5d4921ac8c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP2">
+      <value>GND_ACT</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_TP2" description=""/>
+      <property name="Sheetname" value="Alimentacion y proteccion"/>
+      <property name="Sheetfile" value="01_POWER.kicad_sch"/>
+      <sheetpath names="/Alimentacion y proteccion/" tstamps="/67ed176c-a331-4ae9-9c0d-c20ad11af088/"/>
+      <tstamps>ba996c18-d837-4a66-906e-93d18f5e9421</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C4">
+      <value>100nF</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_C4" description=""/>
+      <property name="Sheetname" value="MCP23017 e I2C"/>
+      <property name="Sheetfile" value="02_CORE.kicad_sch"/>
+      <sheetpath names="/MCP23017 e I2C/" tstamps="/7a618f8e-57be-48c1-ac9a-fa9addcc523e/"/>
+      <tstamps>21403ed9-9081-44a1-a3f8-9825c44eac82</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J10">
+      <value>ARNES BBB</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_J10" description=""/>
+      <property name="Sheetname" value="MCP23017 e I2C"/>
+      <property name="Sheetfile" value="02_CORE.kicad_sch"/>
+      <sheetpath names="/MCP23017 e I2C/" tstamps="/7a618f8e-57be-48c1-ac9a-fa9addcc523e/"/>
+      <tstamps>cec2269a-1542-49cb-9e32-dea555749db9</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="9"/>
+            <pin num="10"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="JP1">
+      <value>RESET abierto</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_JP1" description=""/>
+      <property name="Sheetname" value="MCP23017 e I2C"/>
+      <property name="Sheetfile" value="02_CORE.kicad_sch"/>
+      <sheetpath names="/MCP23017 e I2C/" tstamps="/7a618f8e-57be-48c1-ac9a-fa9addcc523e/"/>
+      <tstamps>4e92a52c-6bc3-426a-9afe-160f27291fc3</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="JP2">
+      <value>PU SCL abierto</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_JP2" description=""/>
+      <property name="Sheetname" value="MCP23017 e I2C"/>
+      <property name="Sheetfile" value="02_CORE.kicad_sch"/>
+      <sheetpath names="/MCP23017 e I2C/" tstamps="/7a618f8e-57be-48c1-ac9a-fa9addcc523e/"/>
+      <tstamps>046d467b-7429-4f6a-a4ea-8302ef201eaf</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="JP3">
+      <value>PU SDA abierto</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_JP3" description=""/>
+      <property name="Sheetname" value="MCP23017 e I2C"/>
+      <property name="Sheetfile" value="02_CORE.kicad_sch"/>
+      <sheetpath names="/MCP23017 e I2C/" tstamps="/7a618f8e-57be-48c1-ac9a-fa9addcc523e/"/>
+      <tstamps>e034b82a-237e-4d7a-84f2-6a1787fb93a3</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R1">
+      <value>10k</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R1" description=""/>
+      <property name="Sheetname" value="MCP23017 e I2C"/>
+      <property name="Sheetfile" value="02_CORE.kicad_sch"/>
+      <sheetpath names="/MCP23017 e I2C/" tstamps="/7a618f8e-57be-48c1-ac9a-fa9addcc523e/"/>
+      <tstamps>c1571d29-646f-491e-9104-a240981a0142</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R2">
+      <value>4.7k DNP</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R2" description=""/>
+      <property name="Sheetname" value="MCP23017 e I2C"/>
+      <property name="Sheetfile" value="02_CORE.kicad_sch"/>
+      <property name="dnp"/>
+      <sheetpath names="/MCP23017 e I2C/" tstamps="/7a618f8e-57be-48c1-ac9a-fa9addcc523e/"/>
+      <tstamps>95554378-7b13-40d8-8819-760863101bd6</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R3">
+      <value>4.7k DNP</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R3" description=""/>
+      <property name="Sheetname" value="MCP23017 e I2C"/>
+      <property name="Sheetfile" value="02_CORE.kicad_sch"/>
+      <property name="dnp"/>
+      <sheetpath names="/MCP23017 e I2C/" tstamps="/7a618f8e-57be-48c1-ac9a-fa9addcc523e/"/>
+      <tstamps>4e889b32-4681-4054-9097-135048f21555</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP3">
+      <value>+3V3_LOGIC</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_TP3" description=""/>
+      <property name="Sheetname" value="MCP23017 e I2C"/>
+      <property name="Sheetfile" value="02_CORE.kicad_sch"/>
+      <sheetpath names="/MCP23017 e I2C/" tstamps="/7a618f8e-57be-48c1-ac9a-fa9addcc523e/"/>
+      <tstamps>74ca404c-4b1b-4871-aa52-3731160fb0c4</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP4">
+      <value>GND_LOGIC</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_TP4" description=""/>
+      <property name="Sheetname" value="MCP23017 e I2C"/>
+      <property name="Sheetfile" value="02_CORE.kicad_sch"/>
+      <sheetpath names="/MCP23017 e I2C/" tstamps="/7a618f8e-57be-48c1-ac9a-fa9addcc523e/"/>
+      <tstamps>62616fa4-1793-413d-a7e8-61c642eab416</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U1">
+      <value>MCP23017 + zocalo DIP28</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_U1" description=""/>
+      <property name="Sheetname" value="MCP23017 e I2C"/>
+      <property name="Sheetfile" value="02_CORE.kicad_sch"/>
+      <sheetpath names="/MCP23017 e I2C/" tstamps="/7a618f8e-57be-48c1-ac9a-fa9addcc523e/"/>
+      <tstamps>0b49f6ae-c5e8-4012-a0c5-a104f73f813f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="9"/>
+            <pin num="10"/>
+            <pin num="11"/>
+            <pin num="12"/>
+            <pin num="13"/>
+            <pin num="14"/>
+            <pin num="15"/>
+            <pin num="16"/>
+            <pin num="17"/>
+            <pin num="18"/>
+            <pin num="19"/>
+            <pin num="20"/>
+            <pin num="21"/>
+            <pin num="22"/>
+            <pin num="23"/>
+            <pin num="24"/>
+            <pin num="25"/>
+            <pin num="26"/>
+            <pin num="27"/>
+            <pin num="28"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="BZ1">
+      <value>Buzzer activo 5V</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_BZ1" description=""/>
+      <property name="Sheetname" value="Transmisores luz y sonido"/>
+      <property name="Sheetfile" value="03_TX.kicad_sch"/>
+      <sheetpath names="/Transmisores luz y sonido/" tstamps="/6b8b6b51-08a7-4a3e-85e7-9cca6cfd222a/"/>
+      <tstamps>4547f42c-08c5-41a4-8568-07b6e34cfd4b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="+"/>
+            <pin num="-"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D1">
+      <value>1N5819</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_D1" description=""/>
+      <property name="Sheetname" value="Transmisores luz y sonido"/>
+      <property name="Sheetfile" value="03_TX.kicad_sch"/>
+      <sheetpath names="/Transmisores luz y sonido/" tstamps="/6b8b6b51-08a7-4a3e-85e7-9cca6cfd222a/"/>
+      <tstamps>1e4614e5-61e1-41ca-b7b7-a5be021cfea6</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D3">
+      <value>LED rojo 5mm</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_D3" description=""/>
+      <property name="Sheetname" value="Transmisores luz y sonido"/>
+      <property name="Sheetfile" value="03_TX.kicad_sch"/>
+      <sheetpath names="/Transmisores luz y sonido/" tstamps="/6b8b6b51-08a7-4a3e-85e7-9cca6cfd222a/"/>
+      <tstamps>ab883e10-0b72-440b-a185-b1af36bce541</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="A"/>
+            <pin num="K"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J2">
+      <value>LED A/K</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_J2" description=""/>
+      <property name="Sheetname" value="Transmisores luz y sonido"/>
+      <property name="Sheetfile" value="03_TX.kicad_sch"/>
+      <sheetpath names="/Transmisores luz y sonido/" tstamps="/6b8b6b51-08a7-4a3e-85e7-9cca6cfd222a/"/>
+      <tstamps>d4af03eb-6573-413c-80b7-5194248923e0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J3">
+      <value>BUZZER +/-</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_J3" description=""/>
+      <property name="Sheetname" value="Transmisores luz y sonido"/>
+      <property name="Sheetfile" value="03_TX.kicad_sch"/>
+      <sheetpath names="/Transmisores luz y sonido/" tstamps="/6b8b6b51-08a7-4a3e-85e7-9cca6cfd222a/"/>
+      <tstamps>0f8c7e34-99b5-4838-a6a9-e8b7ac39b57a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="Q1">
+      <value>2N2222 lote pendiente</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_Q1" description=""/>
+      <property name="Sheetname" value="Transmisores luz y sonido"/>
+      <property name="Sheetfile" value="03_TX.kicad_sch"/>
+      <sheetpath names="/Transmisores luz y sonido/" tstamps="/6b8b6b51-08a7-4a3e-85e7-9cca6cfd222a/"/>
+      <tstamps>101d51c1-438c-414a-a3f8-1b8de01fcfc2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="Q2">
+      <value>2N2222 lote pendiente</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_Q2" description=""/>
+      <property name="Sheetname" value="Transmisores luz y sonido"/>
+      <property name="Sheetfile" value="03_TX.kicad_sch"/>
+      <sheetpath names="/Transmisores luz y sonido/" tstamps="/6b8b6b51-08a7-4a3e-85e7-9cca6cfd222a/"/>
+      <tstamps>a8ad2e3b-f353-4db7-b6a7-a78934f8e9eb</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R4">
+      <value>1k</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R4" description=""/>
+      <property name="Sheetname" value="Transmisores luz y sonido"/>
+      <property name="Sheetfile" value="03_TX.kicad_sch"/>
+      <sheetpath names="/Transmisores luz y sonido/" tstamps="/6b8b6b51-08a7-4a3e-85e7-9cca6cfd222a/"/>
+      <tstamps>4f27d471-60fa-4142-94e0-858c8223a988</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R5">
+      <value>10k</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R5" description=""/>
+      <property name="Sheetname" value="Transmisores luz y sonido"/>
+      <property name="Sheetfile" value="03_TX.kicad_sch"/>
+      <sheetpath names="/Transmisores luz y sonido/" tstamps="/6b8b6b51-08a7-4a3e-85e7-9cca6cfd222a/"/>
+      <tstamps>5b2303dc-7aca-4d66-ad93-16405d1bf0b4</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R6">
+      <value>330</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R6" description=""/>
+      <property name="Sheetname" value="Transmisores luz y sonido"/>
+      <property name="Sheetfile" value="03_TX.kicad_sch"/>
+      <sheetpath names="/Transmisores luz y sonido/" tstamps="/6b8b6b51-08a7-4a3e-85e7-9cca6cfd222a/"/>
+      <tstamps>d19b56ac-765d-46aa-ae5c-3b0d8956e21b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R7">
+      <value>1k</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R7" description=""/>
+      <property name="Sheetname" value="Transmisores luz y sonido"/>
+      <property name="Sheetfile" value="03_TX.kicad_sch"/>
+      <sheetpath names="/Transmisores luz y sonido/" tstamps="/6b8b6b51-08a7-4a3e-85e7-9cca6cfd222a/"/>
+      <tstamps>6e94b62c-b36d-464c-801e-fa3fcba4d328</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R8">
+      <value>10k</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R8" description=""/>
+      <property name="Sheetname" value="Transmisores luz y sonido"/>
+      <property name="Sheetfile" value="03_TX.kicad_sch"/>
+      <sheetpath names="/Transmisores luz y sonido/" tstamps="/6b8b6b51-08a7-4a3e-85e7-9cca6cfd222a/"/>
+      <tstamps>2ebc0a99-c40a-493d-a1ad-1df0a645702d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C3">
+      <value>100nF</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_C3" description=""/>
+      <property name="Sheetname" value="Servo y corte de mantenimiento"/>
+      <property name="Sheetfile" value="04_SERVO.kicad_sch"/>
+      <sheetpath names="/Servo y corte de mantenimiento/" tstamps="/0d9e24ba-db52-44da-b081-5c20213146a6/"/>
+      <tstamps>e2b641fc-9117-4255-97b4-950db871e46e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J4">
+      <value>SG90 GND/+5V/SIG</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_J4" description=""/>
+      <property name="Sheetname" value="Servo y corte de mantenimiento"/>
+      <property name="Sheetfile" value="04_SERVO.kicad_sch"/>
+      <sheetpath names="/Servo y corte de mantenimiento/" tstamps="/0d9e24ba-db52-44da-b081-5c20213146a6/"/>
+      <tstamps>472ba2f5-e8b6-47f8-b5d9-41c05433c044</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J13">
+      <value>CORTE SERVO DPDT</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_J13" description=""/>
+      <property name="Sheetname" value="Servo y corte de mantenimiento"/>
+      <property name="Sheetfile" value="04_SERVO.kicad_sch"/>
+      <sheetpath names="/Servo y corte de mantenimiento/" tstamps="/0d9e24ba-db52-44da-b081-5c20213146a6/"/>
+      <tstamps>9cb1056e-1af0-48ec-b828-10fb56299548</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="M1">
+      <value>SG90 180</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_M1" description=""/>
+      <property name="Sheetname" value="Servo y corte de mantenimiento"/>
+      <property name="Sheetfile" value="04_SERVO.kicad_sch"/>
+      <sheetpath names="/Servo y corte de mantenimiento/" tstamps="/0d9e24ba-db52-44da-b081-5c20213146a6/"/>
+      <tstamps>782b4181-8d8e-476d-b2d4-372ad82d2c8d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="GND"/>
+            <pin num="VCC"/>
+            <pin num="SIG"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="Q3">
+      <value>2N3904</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_Q3" description=""/>
+      <property name="Sheetname" value="Servo y corte de mantenimiento"/>
+      <property name="Sheetfile" value="04_SERVO.kicad_sch"/>
+      <sheetpath names="/Servo y corte de mantenimiento/" tstamps="/0d9e24ba-db52-44da-b081-5c20213146a6/"/>
+      <tstamps>a75568a5-c6cc-41ab-9902-c7b0fe1aa201</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="Q4">
+      <value>2N3904</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_Q4" description=""/>
+      <property name="Sheetname" value="Servo y corte de mantenimiento"/>
+      <property name="Sheetfile" value="04_SERVO.kicad_sch"/>
+      <sheetpath names="/Servo y corte de mantenimiento/" tstamps="/0d9e24ba-db52-44da-b081-5c20213146a6/"/>
+      <tstamps>b8194f59-1140-4bae-bcfc-4bd0e66ace44</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R10">
+      <value>4.7k</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R10" description=""/>
+      <property name="Sheetname" value="Servo y corte de mantenimiento"/>
+      <property name="Sheetfile" value="04_SERVO.kicad_sch"/>
+      <sheetpath names="/Servo y corte de mantenimiento/" tstamps="/0d9e24ba-db52-44da-b081-5c20213146a6/"/>
+      <tstamps>7d88f3b5-10a5-4942-a3e1-1ce42cae31c7</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R11">
+      <value>47k</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R11" description=""/>
+      <property name="Sheetname" value="Servo y corte de mantenimiento"/>
+      <property name="Sheetfile" value="04_SERVO.kicad_sch"/>
+      <sheetpath names="/Servo y corte de mantenimiento/" tstamps="/0d9e24ba-db52-44da-b081-5c20213146a6/"/>
+      <tstamps>e0215646-01bf-4e47-88ff-f5494858af11</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R12">
+      <value>4.7k</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R12" description=""/>
+      <property name="Sheetname" value="Servo y corte de mantenimiento"/>
+      <property name="Sheetfile" value="04_SERVO.kicad_sch"/>
+      <sheetpath names="/Servo y corte de mantenimiento/" tstamps="/0d9e24ba-db52-44da-b081-5c20213146a6/"/>
+      <tstamps>a79e385e-008a-4645-adcb-f60efd181584</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R13">
+      <value>4.7k</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R13" description=""/>
+      <property name="Sheetname" value="Servo y corte de mantenimiento"/>
+      <property name="Sheetfile" value="04_SERVO.kicad_sch"/>
+      <sheetpath names="/Servo y corte de mantenimiento/" tstamps="/0d9e24ba-db52-44da-b081-5c20213146a6/"/>
+      <tstamps>e4f32a65-fd78-4226-a782-f0b0f11e4a91</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R14">
+      <value>47k</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R14" description=""/>
+      <property name="Sheetname" value="Servo y corte de mantenimiento"/>
+      <property name="Sheetfile" value="04_SERVO.kicad_sch"/>
+      <sheetpath names="/Servo y corte de mantenimiento/" tstamps="/0d9e24ba-db52-44da-b081-5c20213146a6/"/>
+      <tstamps>85b57f92-3b51-47e4-9921-27246fa43308</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R15">
+      <value>2.2k</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R15" description=""/>
+      <property name="Sheetname" value="Servo y corte de mantenimiento"/>
+      <property name="Sheetfile" value="04_SERVO.kicad_sch"/>
+      <sheetpath names="/Servo y corte de mantenimiento/" tstamps="/0d9e24ba-db52-44da-b081-5c20213146a6/"/>
+      <tstamps>3cf84ce0-4cd2-4b0e-968f-9e1d38760680</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R16">
+      <value>47k</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R16" description=""/>
+      <property name="Sheetname" value="Servo y corte de mantenimiento"/>
+      <property name="Sheetfile" value="04_SERVO.kicad_sch"/>
+      <sheetpath names="/Servo y corte de mantenimiento/" tstamps="/0d9e24ba-db52-44da-b081-5c20213146a6/"/>
+      <tstamps>cce556a1-d1db-4eef-9236-acdd1aa6aa62</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="SW1">
+      <value>DPDT ON-ON &gt;=3A DC/12V</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_SW1" description=""/>
+      <property name="Sheetname" value="Servo y corte de mantenimiento"/>
+      <property name="Sheetfile" value="04_SERVO.kicad_sch"/>
+      <sheetpath names="/Servo y corte de mantenimiento/" tstamps="/0d9e24ba-db52-44da-b081-5c20213146a6/"/>
+      <tstamps>8c6f4506-4d81-42b1-b486-5953e853fc74</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP9">
+      <value>SERVO_SIG</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_TP9" description=""/>
+      <property name="Sheetname" value="Servo y corte de mantenimiento"/>
+      <property name="Sheetfile" value="04_SERVO.kicad_sch"/>
+      <sheetpath names="/Servo y corte de mantenimiento/" tstamps="/0d9e24ba-db52-44da-b081-5c20213146a6/"/>
+      <tstamps>36c5b923-af45-4e29-a310-2b5ae4d85389</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C5">
+      <value>100nF</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_C5" description=""/>
+      <property name="Sheetname" value="Receptores y puntos de prueba"/>
+      <property name="Sheetfile" value="05_RX.kicad_sch"/>
+      <sheetpath names="/Receptores y puntos de prueba/" tstamps="/05d71142-7efc-4208-abcf-2bf753479262/"/>
+      <tstamps>07ce3a02-e2be-46ff-9908-b06bec59c082</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J5">
+      <value>LDR 3V3/GND/DO</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_J5" description=""/>
+      <property name="Sheetname" value="Receptores y puntos de prueba"/>
+      <property name="Sheetfile" value="05_RX.kicad_sch"/>
+      <sheetpath names="/Receptores y puntos de prueba/" tstamps="/05d71142-7efc-4208-abcf-2bf753479262/"/>
+      <tstamps>3630b2e0-29ec-4e0f-8c8d-62bf0ffd4575</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J6">
+      <value>AUDIO 3V3/GND/DO</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_J6" description=""/>
+      <property name="Sheetname" value="Receptores y puntos de prueba"/>
+      <property name="Sheetfile" value="05_RX.kicad_sch"/>
+      <sheetpath names="/Receptores y puntos de prueba/" tstamps="/05d71142-7efc-4208-abcf-2bf753479262/"/>
+      <tstamps>5bd6cc71-9320-4314-b5eb-67b011a02a12</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J7">
+      <value>FINAL COM/NO</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_J7" description=""/>
+      <property name="Sheetname" value="Receptores y puntos de prueba"/>
+      <property name="Sheetfile" value="05_RX.kicad_sch"/>
+      <sheetpath names="/Receptores y puntos de prueba/" tstamps="/05d71142-7efc-4208-abcf-2bf753479262/"/>
+      <tstamps>445ac816-0be2-4922-8c32-052dfb5da5be</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="MOD1">
+      <value>LDR LM393</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_MOD1" description=""/>
+      <property name="Sheetname" value="Receptores y puntos de prueba"/>
+      <property name="Sheetfile" value="05_RX.kicad_sch"/>
+      <sheetpath names="/Receptores y puntos de prueba/" tstamps="/05d71142-7efc-4208-abcf-2bf753479262/"/>
+      <tstamps>47d6c134-c831-4bfb-950e-acfcd0a06a4c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="VCC"/>
+            <pin num="GND"/>
+            <pin num="DO"/>
+            <pin num="AO"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="MOD2">
+      <value>KY037/HW484</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_MOD2" description=""/>
+      <property name="Sheetname" value="Receptores y puntos de prueba"/>
+      <property name="Sheetfile" value="05_RX.kicad_sch"/>
+      <sheetpath names="/Receptores y puntos de prueba/" tstamps="/05d71142-7efc-4208-abcf-2bf753479262/"/>
+      <tstamps>fab1cf07-aae2-4315-b901-4b92e16ee26c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="VCC"/>
+            <pin num="GND"/>
+            <pin num="DO"/>
+            <pin num="AO"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R17">
+      <value>10k</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R17" description=""/>
+      <property name="Sheetname" value="Receptores y puntos de prueba"/>
+      <property name="Sheetfile" value="05_RX.kicad_sch"/>
+      <sheetpath names="/Receptores y puntos de prueba/" tstamps="/05d71142-7efc-4208-abcf-2bf753479262/"/>
+      <tstamps>be22b684-7faf-486f-8bed-3f665a00d87d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R18">
+      <value>10k</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R18" description=""/>
+      <property name="Sheetname" value="Receptores y puntos de prueba"/>
+      <property name="Sheetfile" value="05_RX.kicad_sch"/>
+      <sheetpath names="/Receptores y puntos de prueba/" tstamps="/05d71142-7efc-4208-abcf-2bf753479262/"/>
+      <tstamps>d6ebc80b-be70-496b-b628-b0d2c2c23499</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R19">
+      <value>4.7k</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R19" description=""/>
+      <property name="Sheetname" value="Receptores y puntos de prueba"/>
+      <property name="Sheetfile" value="05_RX.kicad_sch"/>
+      <sheetpath names="/Receptores y puntos de prueba/" tstamps="/05d71142-7efc-4208-abcf-2bf753479262/"/>
+      <tstamps>debf4b6f-6a7f-4d9e-9758-ac80dfb08d79</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="SW2">
+      <value>SPDT rueda</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_SW2" description=""/>
+      <property name="Sheetname" value="Receptores y puntos de prueba"/>
+      <property name="Sheetfile" value="05_RX.kicad_sch"/>
+      <sheetpath names="/Receptores y puntos de prueba/" tstamps="/05d71142-7efc-4208-abcf-2bf753479262/"/>
+      <tstamps>e4929f1a-7c20-449d-be44-c0bb4228fd10</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="COM"/>
+            <pin num="NO"/>
+            <pin num="NC"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP5">
+      <value>OPT_RAW</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_TP5" description=""/>
+      <property name="Sheetname" value="Receptores y puntos de prueba"/>
+      <property name="Sheetfile" value="05_RX.kicad_sch"/>
+      <sheetpath names="/Receptores y puntos de prueba/" tstamps="/05d71142-7efc-4208-abcf-2bf753479262/"/>
+      <tstamps>1b49d8e9-a722-441a-8801-e748612b1ec9</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP6">
+      <value>AUD_RAW</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_TP6" description=""/>
+      <property name="Sheetname" value="Receptores y puntos de prueba"/>
+      <property name="Sheetfile" value="05_RX.kicad_sch"/>
+      <sheetpath names="/Receptores y puntos de prueba/" tstamps="/05d71142-7efc-4208-abcf-2bf753479262/"/>
+      <tstamps>efbcbd0f-f097-4481-9d3c-836dbca462d4</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP7">
+      <value>MECH_RAW</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_TP7" description=""/>
+      <property name="Sheetname" value="Receptores y puntos de prueba"/>
+      <property name="Sheetfile" value="05_RX.kicad_sch"/>
+      <sheetpath names="/Receptores y puntos de prueba/" tstamps="/05d71142-7efc-4208-abcf-2bf753479262/"/>
+      <tstamps>43669b56-102a-44a3-986a-36b030aee5b5</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="JP4">
+      <value>C0 LINK GPIO</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_JP4" description=""/>
+      <property name="Sheetname" value="Selectores de fallo y enlaces GPIO"/>
+      <property name="Sheetfile" value="06_ENABLE.kicad_sch"/>
+      <sheetpath names="/Selectores de fallo y enlaces GPIO/" tstamps="/4369129c-936c-4753-9087-990b51398105/"/>
+      <tstamps>c6f3f39e-1204-45cd-a44f-75b018d7cbfa</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="JP5">
+      <value>C1 LINK GPIO</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_JP5" description=""/>
+      <property name="Sheetname" value="Selectores de fallo y enlaces GPIO"/>
+      <property name="Sheetfile" value="06_ENABLE.kicad_sch"/>
+      <sheetpath names="/Selectores de fallo y enlaces GPIO/" tstamps="/4369129c-936c-4753-9087-990b51398105/"/>
+      <tstamps>124d1ff6-e30f-4714-9f01-11760638f693</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="JP6">
+      <value>C2 LINK GPIO</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_JP6" description=""/>
+      <property name="Sheetname" value="Selectores de fallo y enlaces GPIO"/>
+      <property name="Sheetfile" value="06_ENABLE.kicad_sch"/>
+      <sheetpath names="/Selectores de fallo y enlaces GPIO/" tstamps="/4369129c-936c-4753-9087-990b51398105/"/>
+      <tstamps>d06befc5-cf9f-4adb-868a-2c36eb7f1d36</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="JP10">
+      <value>C0:1-2 ON/2-3 OFF</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_JP10" description=""/>
+      <property name="Sheetname" value="Selectores de fallo y enlaces GPIO"/>
+      <property name="Sheetfile" value="06_ENABLE.kicad_sch"/>
+      <sheetpath names="/Selectores de fallo y enlaces GPIO/" tstamps="/4369129c-936c-4753-9087-990b51398105/"/>
+      <tstamps>2cf44dc5-fa86-4594-9e6e-3acd58b4cd87</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="JP11">
+      <value>C1:1-2 ON/2-3 OFF</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_JP11" description=""/>
+      <property name="Sheetname" value="Selectores de fallo y enlaces GPIO"/>
+      <property name="Sheetfile" value="06_ENABLE.kicad_sch"/>
+      <sheetpath names="/Selectores de fallo y enlaces GPIO/" tstamps="/4369129c-936c-4753-9087-990b51398105/"/>
+      <tstamps>489a2176-c71a-46bc-82f0-9fe271696a01</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="JP12">
+      <value>C2:1-2 ON/2-3 OFF</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_JP12" description=""/>
+      <property name="Sheetname" value="Selectores de fallo y enlaces GPIO"/>
+      <property name="Sheetfile" value="06_ENABLE.kicad_sch"/>
+      <sheetpath names="/Selectores de fallo y enlaces GPIO/" tstamps="/4369129c-936c-4753-9087-990b51398105/"/>
+      <tstamps>8ea94090-01d3-4da4-b780-bcf3229b8d15</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R20">
+      <value>1k</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R20" description=""/>
+      <property name="Sheetname" value="Selectores de fallo y enlaces GPIO"/>
+      <property name="Sheetfile" value="06_ENABLE.kicad_sch"/>
+      <sheetpath names="/Selectores de fallo y enlaces GPIO/" tstamps="/4369129c-936c-4753-9087-990b51398105/"/>
+      <tstamps>1e331853-7e21-4dff-9307-13a563bf216b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R21">
+      <value>1k</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R21" description=""/>
+      <property name="Sheetname" value="Selectores de fallo y enlaces GPIO"/>
+      <property name="Sheetfile" value="06_ENABLE.kicad_sch"/>
+      <sheetpath names="/Selectores de fallo y enlaces GPIO/" tstamps="/4369129c-936c-4753-9087-990b51398105/"/>
+      <tstamps>928c2ce2-6751-4c6e-8fc1-15c238605781</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R22">
+      <value>1k</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R22" description=""/>
+      <property name="Sheetname" value="Selectores de fallo y enlaces GPIO"/>
+      <property name="Sheetfile" value="06_ENABLE.kicad_sch"/>
+      <sheetpath names="/Selectores de fallo y enlaces GPIO/" tstamps="/4369129c-936c-4753-9087-990b51398105/"/>
+      <tstamps>140d291c-dae3-4081-b8af-74ecdba4cfe9</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R23">
+      <value>100k</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R23" description=""/>
+      <property name="Sheetname" value="Selectores de fallo y enlaces GPIO"/>
+      <property name="Sheetfile" value="06_ENABLE.kicad_sch"/>
+      <sheetpath names="/Selectores de fallo y enlaces GPIO/" tstamps="/4369129c-936c-4753-9087-990b51398105/"/>
+      <tstamps>ba4fc3f0-aa60-425d-8c1e-d7ce94ba0530</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R24">
+      <value>100k</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R24" description=""/>
+      <property name="Sheetname" value="Selectores de fallo y enlaces GPIO"/>
+      <property name="Sheetfile" value="06_ENABLE.kicad_sch"/>
+      <sheetpath names="/Selectores de fallo y enlaces GPIO/" tstamps="/4369129c-936c-4753-9087-990b51398105/"/>
+      <tstamps>07329b3a-261e-4690-a141-8735a3404507</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R25">
+      <value>100k</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R25" description=""/>
+      <property name="Sheetname" value="Selectores de fallo y enlaces GPIO"/>
+      <property name="Sheetfile" value="06_ENABLE.kicad_sch"/>
+      <sheetpath names="/Selectores de fallo y enlaces GPIO/" tstamps="/4369129c-936c-4753-9087-990b51398105/"/>
+      <tstamps>b4bb1124-7cd7-4897-b1a1-284c2340c1ca</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D2">
+      <value>1N4148</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_D2" description=""/>
+      <property name="Sheetname" value="Reloj aislado TX y RX"/>
+      <property name="Sheetfile" value="07_CLOCK.kicad_sch"/>
+      <sheetpath names="/Reloj aislado TX y RX/" tstamps="/bba30028-38df-4b81-9550-9a49c3b627d8/"/>
+      <tstamps>f3987ad8-cd4a-4d12-9951-bd61fc249834</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J8">
+      <value>CLK RX REMOTO +/-</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_J8" description=""/>
+      <property name="Sheetname" value="Reloj aislado TX y RX"/>
+      <property name="Sheetfile" value="07_CLOCK.kicad_sch"/>
+      <sheetpath names="/Reloj aislado TX y RX/" tstamps="/bba30028-38df-4b81-9550-9a49c3b627d8/"/>
+      <tstamps>0024f7e7-ee95-4ab6-9920-14d02cb51e72</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J9">
+      <value>CLK TX +/-</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_J9" description=""/>
+      <property name="Sheetname" value="Reloj aislado TX y RX"/>
+      <property name="Sheetfile" value="07_CLOCK.kicad_sch"/>
+      <sheetpath names="/Reloj aislado TX y RX/" tstamps="/bba30028-38df-4b81-9550-9a49c3b627d8/"/>
+      <tstamps>551dcbc0-4ca2-4912-8b2f-2199cfaf8675</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="JP7">
+      <value>CLK LINK</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_JP7" description=""/>
+      <property name="Sheetname" value="Reloj aislado TX y RX"/>
+      <property name="Sheetfile" value="07_CLOCK.kicad_sch"/>
+      <sheetpath names="/Reloj aislado TX y RX/" tstamps="/bba30028-38df-4b81-9550-9a49c3b627d8/"/>
+      <tstamps>b003cfda-d4bf-4e85-8724-2673a4605e83</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="Q5">
+      <value>2N3904</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_Q5" description=""/>
+      <property name="Sheetname" value="Reloj aislado TX y RX"/>
+      <property name="Sheetfile" value="07_CLOCK.kicad_sch"/>
+      <sheetpath names="/Reloj aislado TX y RX/" tstamps="/bba30028-38df-4b81-9550-9a49c3b627d8/"/>
+      <tstamps>4fb7264d-537e-4363-821d-eb5f6ab8785c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R26">
+      <value>4.7k</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R26" description=""/>
+      <property name="Sheetname" value="Reloj aislado TX y RX"/>
+      <property name="Sheetfile" value="07_CLOCK.kicad_sch"/>
+      <sheetpath names="/Reloj aislado TX y RX/" tstamps="/bba30028-38df-4b81-9550-9a49c3b627d8/"/>
+      <tstamps>a24b0233-1651-4dd7-8c0d-614308fdf141</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R27">
+      <value>1k</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R27" description=""/>
+      <property name="Sheetname" value="Reloj aislado TX y RX"/>
+      <property name="Sheetfile" value="07_CLOCK.kicad_sch"/>
+      <sheetpath names="/Reloj aislado TX y RX/" tstamps="/bba30028-38df-4b81-9550-9a49c3b627d8/"/>
+      <tstamps>ddd3d8e5-f4d2-4610-a409-73cb6d740455</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R28">
+      <value>2.2k</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R28" description=""/>
+      <property name="Sheetname" value="Reloj aislado TX y RX"/>
+      <property name="Sheetfile" value="07_CLOCK.kicad_sch"/>
+      <sheetpath names="/Reloj aislado TX y RX/" tstamps="/bba30028-38df-4b81-9550-9a49c3b627d8/"/>
+      <tstamps>2d4f151c-c048-4fb5-867a-b5dbf3d3cda9</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R29">
+      <value>47k</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R29" description=""/>
+      <property name="Sheetname" value="Reloj aislado TX y RX"/>
+      <property name="Sheetfile" value="07_CLOCK.kicad_sch"/>
+      <sheetpath names="/Reloj aislado TX y RX/" tstamps="/bba30028-38df-4b81-9550-9a49c3b627d8/"/>
+      <tstamps>16144454-134a-40f3-81f0-83ffc9f905d0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R31">
+      <value>270</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_R31" description=""/>
+      <property name="Sheetname" value="Reloj aislado TX y RX"/>
+      <property name="Sheetfile" value="07_CLOCK.kicad_sch"/>
+      <sheetpath names="/Reloj aislado TX y RX/" tstamps="/bba30028-38df-4b81-9550-9a49c3b627d8/"/>
+      <tstamps>a5ab3aa9-46af-49b7-afbd-a5c3adf0f33f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP8">
+      <value>CLK_RX_RAW</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_TP8" description=""/>
+      <property name="Sheetname" value="Reloj aislado TX y RX"/>
+      <property name="Sheetfile" value="07_CLOCK.kicad_sch"/>
+      <sheetpath names="/Reloj aislado TX y RX/" tstamps="/bba30028-38df-4b81-9550-9a49c3b627d8/"/>
+      <tstamps>08aa2bee-3436-4f5f-a452-8918bcca89b2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP10">
+      <value>CLK_TX</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_TP10" description=""/>
+      <property name="Sheetname" value="Reloj aislado TX y RX"/>
+      <property name="Sheetfile" value="07_CLOCK.kicad_sch"/>
+      <sheetpath names="/Reloj aislado TX y RX/" tstamps="/bba30028-38df-4b81-9550-9a49c3b627d8/"/>
+      <tstamps>99100e34-6389-44ad-bb9c-54736b177eef</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U2">
+      <value>PC817 DIP4</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="T51" part="T51_U2" description=""/>
+      <property name="Sheetname" value="Reloj aislado TX y RX"/>
+      <property name="Sheetfile" value="07_CLOCK.kicad_sch"/>
+      <sheetpath names="/Reloj aislado TX y RX/" tstamps="/bba30028-38df-4b81-9550-9a49c3b627d8/"/>
+      <tstamps>b627a7e1-1f4d-485e-874b-6e580da14734</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="T51" part="T51_BZ1">
+      <fields>
+        <field name="Reference">BZ1</field>
+        <field name="Value">Buzzer activo 5V</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="+" name="+" type="passive"/>
+        <pin num="-" name="-" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_C1">
+      <fields>
+        <field name="Reference">C1</field>
+        <field name="Value">1000uF/16V</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="+" type="passive"/>
+        <pin num="2" name="-" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_C2">
+      <fields>
+        <field name="Reference">C2</field>
+        <field name="Value">100nF</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="+" type="passive"/>
+        <pin num="2" name="-" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_C3">
+      <fields>
+        <field name="Reference">C3</field>
+        <field name="Value">100nF</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="+" type="passive"/>
+        <pin num="2" name="-" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_C4">
+      <fields>
+        <field name="Reference">C4</field>
+        <field name="Value">100nF</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="+" type="passive"/>
+        <pin num="2" name="-" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_C5">
+      <fields>
+        <field name="Reference">C5</field>
+        <field name="Value">100nF</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="+" type="passive"/>
+        <pin num="2" name="-" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_D1">
+      <fields>
+        <field name="Reference">D1</field>
+        <field name="Value">1N5819</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_D2">
+      <fields>
+        <field name="Reference">D2</field>
+        <field name="Value">1N4148</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_D3">
+      <fields>
+        <field name="Reference">D3</field>
+        <field name="Value">LED rojo 5mm</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="A" name="A" type="passive"/>
+        <pin num="K" name="K" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_F1">
+      <fields>
+        <field name="Reference">F1</field>
+        <field name="Value">5x20mm 1A; T08 pendiente</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_J1">
+      <fields>
+        <field name="Reference">J1</field>
+        <field name="Value">ENTRADA 5V / 2.5A</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="+5V_RAW" type="passive"/>
+        <pin num="2" name="GND_ACT" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_J10">
+      <fields>
+        <field name="Reference">J10</field>
+        <field name="Value">ARNES BBB</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="+3V3_LOGIC" type="passive"/>
+        <pin num="2" name="GND_LOGIC" type="passive"/>
+        <pin num="3" name="I2C_SCL" type="passive"/>
+        <pin num="4" name="I2C_SDA" type="passive"/>
+        <pin num="5" name="PWM_BBB" type="passive"/>
+        <pin num="6" name="CLK_TX" type="passive"/>
+        <pin num="7" name="OPT_BBB" type="passive"/>
+        <pin num="8" name="AUD_BBB" type="passive"/>
+        <pin num="9" name="MECH_BBB" type="passive"/>
+        <pin num="10" name="CLK_BBB" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_J11">
+      <fields>
+        <field name="Reference">J11</field>
+        <field name="Value">USB AUX TEST</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="+5V_RAW" type="passive"/>
+        <pin num="2" name="GND_ACT" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_J12">
+      <fields>
+        <field name="Reference">J12</field>
+        <field name="Value">PMOS G/S/D</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="GATE_POL" type="passive"/>
+        <pin num="2" name="+5V_ACT" type="passive"/>
+        <pin num="3" name="+5V_FUSED" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_J13">
+      <fields>
+        <field name="Reference">J13</field>
+        <field name="Value">CORTE SERVO DPDT</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="+5V_ACT" type="passive"/>
+        <pin num="2" name="+5V_SERVO" type="passive"/>
+        <pin num="3" name="NC" type="passive"/>
+        <pin num="4" name="PWM_5V" type="passive"/>
+        <pin num="5" name="SERVO_SIG" type="passive"/>
+        <pin num="6" name="GND_ACT" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_J14">
+      <fields>
+        <field name="Reference">J14</field>
+        <field name="Value">PORTAFUSIBLE EXTERNO</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="+5V_RAW" type="passive"/>
+        <pin num="2" name="+5V_FUSED" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_J2">
+      <fields>
+        <field name="Reference">J2</field>
+        <field name="Value">LED A/K</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="LED_A" type="passive"/>
+        <pin num="2" name="LED_K" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_J3">
+      <fields>
+        <field name="Reference">J3</field>
+        <field name="Value">BUZZER +/-</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="+5V_ACT" type="passive"/>
+        <pin num="2" name="BUZZ_NEG" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_J4">
+      <fields>
+        <field name="Reference">J4</field>
+        <field name="Value">SG90 GND/+5V/SIG</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="GND_ACT" type="passive"/>
+        <pin num="2" name="+5V_SERVO" type="passive"/>
+        <pin num="3" name="SERVO_SIG" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_J5">
+      <fields>
+        <field name="Reference">J5</field>
+        <field name="Value">LDR 3V3/GND/DO</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="+3V3_LOGIC" type="passive"/>
+        <pin num="2" name="GND_LOGIC" type="passive"/>
+        <pin num="3" name="OPT_RAW" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_J6">
+      <fields>
+        <field name="Reference">J6</field>
+        <field name="Value">AUDIO 3V3/GND/DO</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="+3V3_LOGIC" type="passive"/>
+        <pin num="2" name="GND_LOGIC" type="passive"/>
+        <pin num="3" name="AUD_RAW" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_J7">
+      <fields>
+        <field name="Reference">J7</field>
+        <field name="Value">FINAL COM/NO</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="GND_LOGIC" type="passive"/>
+        <pin num="2" name="MECH_RAW" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_J8">
+      <fields>
+        <field name="Reference">J8</field>
+        <field name="Value">CLK RX REMOTO +/-</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="CLK_REMOTE_A" type="passive"/>
+        <pin num="2" name="CLK_REMOTE_K" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_J9">
+      <fields>
+        <field name="Reference">J9</field>
+        <field name="Value">CLK TX +/-</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="CLK_SEND_A" type="passive"/>
+        <pin num="2" name="CLK_SINK" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_JP1">
+      <fields>
+        <field name="Reference">JP1</field>
+        <field name="Value">RESET abierto</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="MCP_RESET" type="passive"/>
+        <pin num="2" name="GND_LOGIC" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_JP10">
+      <fields>
+        <field name="Reference">JP10</field>
+        <field name="Value">C0:1-2 ON/2-3 OFF</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="OPT_RAW" type="passive"/>
+        <pin num="2" name="C0_SEL" type="passive"/>
+        <pin num="3" name="GND_LOGIC" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_JP11">
+      <fields>
+        <field name="Reference">JP11</field>
+        <field name="Value">C1:1-2 ON/2-3 OFF</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="AUD_RAW" type="passive"/>
+        <pin num="2" name="C1_SEL" type="passive"/>
+        <pin num="3" name="GND_LOGIC" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_JP12">
+      <fields>
+        <field name="Reference">JP12</field>
+        <field name="Value">C2:1-2 ON/2-3 OFF</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="MECH_RAW" type="passive"/>
+        <pin num="2" name="C2_SEL" type="passive"/>
+        <pin num="3" name="GND_LOGIC" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_JP2">
+      <fields>
+        <field name="Reference">JP2</field>
+        <field name="Value">PU SCL abierto</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="SCL_PULL" type="passive"/>
+        <pin num="2" name="I2C_SCL" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_JP3">
+      <fields>
+        <field name="Reference">JP3</field>
+        <field name="Value">PU SDA abierto</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="SDA_PULL" type="passive"/>
+        <pin num="2" name="I2C_SDA" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_JP4">
+      <fields>
+        <field name="Reference">JP4</field>
+        <field name="Value">C0 LINK GPIO</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="C0_TEST" type="passive"/>
+        <pin num="2" name="OPT_BBB" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_JP5">
+      <fields>
+        <field name="Reference">JP5</field>
+        <field name="Value">C1 LINK GPIO</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="C1_TEST" type="passive"/>
+        <pin num="2" name="AUD_BBB" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_JP6">
+      <fields>
+        <field name="Reference">JP6</field>
+        <field name="Value">C2 LINK GPIO</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="C2_TEST" type="passive"/>
+        <pin num="2" name="MECH_BBB" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_JP7">
+      <fields>
+        <field name="Reference">JP7</field>
+        <field name="Value">CLK LINK</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="CLK_TEST" type="passive"/>
+        <pin num="2" name="CLK_BBB" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_M1">
+      <fields>
+        <field name="Reference">M1</field>
+        <field name="Value">SG90 180</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="GND" name="GND" type="passive"/>
+        <pin num="SIG" name="SIG" type="passive"/>
+        <pin num="VCC" name="VCC" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_MOD1">
+      <fields>
+        <field name="Reference">MOD1</field>
+        <field name="Value">LDR LM393</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="AO" name="AO" type="passive"/>
+        <pin num="DO" name="DO" type="passive"/>
+        <pin num="GND" name="GND" type="passive"/>
+        <pin num="VCC" name="VCC" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_MOD2">
+      <fields>
+        <field name="Reference">MOD2</field>
+        <field name="Value">KY037/HW484</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="AO" name="AO" type="passive"/>
+        <pin num="DO" name="DO" type="passive"/>
+        <pin num="GND" name="GND" type="passive"/>
+        <pin num="VCC" name="VCC" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_MOD3">
+      <fields>
+        <field name="Reference">MOD3</field>
+        <field name="Value">Micro USB breakout</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="GND" name="GND" type="passive"/>
+        <pin num="VBUS" name="VBUS" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_NT1">
+      <fields>
+        <field name="Reference">NT1</field>
+        <field name="Value">ESTRELLA 22AWG</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="GND_ACT" type="passive"/>
+        <pin num="2" name="GND_LOGIC" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_Q1">
+      <fields>
+        <field name="Reference">Q1</field>
+        <field name="Value">2N2222 lote pendiente</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="E" type="passive"/>
+        <pin num="2" name="B" type="passive"/>
+        <pin num="3" name="C" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_Q2">
+      <fields>
+        <field name="Reference">Q2</field>
+        <field name="Value">2N2222 lote pendiente</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="E" type="passive"/>
+        <pin num="2" name="B" type="passive"/>
+        <pin num="3" name="C" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_Q3">
+      <fields>
+        <field name="Reference">Q3</field>
+        <field name="Value">2N3904</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="E" type="passive"/>
+        <pin num="2" name="B" type="passive"/>
+        <pin num="3" name="C" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_Q4">
+      <fields>
+        <field name="Reference">Q4</field>
+        <field name="Value">2N3904</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="E" type="passive"/>
+        <pin num="2" name="B" type="passive"/>
+        <pin num="3" name="C" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_Q5">
+      <fields>
+        <field name="Reference">Q5</field>
+        <field name="Value">2N3904</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="E" type="passive"/>
+        <pin num="2" name="B" type="passive"/>
+        <pin num="3" name="C" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_Q6">
+      <fields>
+        <field name="Reference">Q6</field>
+        <field name="Value">IRLML6402 + adaptador SOT23</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R1">
+      <fields>
+        <field name="Reference">R1</field>
+        <field name="Value">10k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R10">
+      <fields>
+        <field name="Reference">R10</field>
+        <field name="Value">4.7k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R11">
+      <fields>
+        <field name="Reference">R11</field>
+        <field name="Value">47k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R12">
+      <fields>
+        <field name="Reference">R12</field>
+        <field name="Value">4.7k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R13">
+      <fields>
+        <field name="Reference">R13</field>
+        <field name="Value">4.7k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R14">
+      <fields>
+        <field name="Reference">R14</field>
+        <field name="Value">47k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R15">
+      <fields>
+        <field name="Reference">R15</field>
+        <field name="Value">2.2k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R16">
+      <fields>
+        <field name="Reference">R16</field>
+        <field name="Value">47k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R17">
+      <fields>
+        <field name="Reference">R17</field>
+        <field name="Value">10k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R18">
+      <fields>
+        <field name="Reference">R18</field>
+        <field name="Value">10k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R19">
+      <fields>
+        <field name="Reference">R19</field>
+        <field name="Value">4.7k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R2">
+      <fields>
+        <field name="Reference">R2</field>
+        <field name="Value">4.7k DNP</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R20">
+      <fields>
+        <field name="Reference">R20</field>
+        <field name="Value">1k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R21">
+      <fields>
+        <field name="Reference">R21</field>
+        <field name="Value">1k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R22">
+      <fields>
+        <field name="Reference">R22</field>
+        <field name="Value">1k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R23">
+      <fields>
+        <field name="Reference">R23</field>
+        <field name="Value">100k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R24">
+      <fields>
+        <field name="Reference">R24</field>
+        <field name="Value">100k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R25">
+      <fields>
+        <field name="Reference">R25</field>
+        <field name="Value">100k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R26">
+      <fields>
+        <field name="Reference">R26</field>
+        <field name="Value">4.7k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R27">
+      <fields>
+        <field name="Reference">R27</field>
+        <field name="Value">1k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R28">
+      <fields>
+        <field name="Reference">R28</field>
+        <field name="Value">2.2k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R29">
+      <fields>
+        <field name="Reference">R29</field>
+        <field name="Value">47k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R3">
+      <fields>
+        <field name="Reference">R3</field>
+        <field name="Value">4.7k DNP</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R30">
+      <fields>
+        <field name="Reference">R30</field>
+        <field name="Value">100k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R31">
+      <fields>
+        <field name="Reference">R31</field>
+        <field name="Value">270</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R4">
+      <fields>
+        <field name="Reference">R4</field>
+        <field name="Value">1k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R5">
+      <fields>
+        <field name="Reference">R5</field>
+        <field name="Value">10k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R6">
+      <fields>
+        <field name="Reference">R6</field>
+        <field name="Value">330</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R7">
+      <fields>
+        <field name="Reference">R7</field>
+        <field name="Value">1k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_R8">
+      <fields>
+        <field name="Reference">R8</field>
+        <field name="Value">10k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_SW1">
+      <fields>
+        <field name="Reference">SW1</field>
+        <field name="Value">DPDT ON-ON &gt;=3A DC/12V</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+        <pin num="4" name="4" type="passive"/>
+        <pin num="5" name="5" type="passive"/>
+        <pin num="6" name="6" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_SW2">
+      <fields>
+        <field name="Reference">SW2</field>
+        <field name="Value">SPDT rueda</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="COM" name="COM" type="passive"/>
+        <pin num="NC" name="NC" type="passive"/>
+        <pin num="NO" name="NO" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_TP1">
+      <fields>
+        <field name="Reference">TP1</field>
+        <field name="Value">+5V_ACT</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="+5V_ACT" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_TP10">
+      <fields>
+        <field name="Reference">TP10</field>
+        <field name="Value">CLK_TX</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="CLK_TX" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_TP2">
+      <fields>
+        <field name="Reference">TP2</field>
+        <field name="Value">GND_ACT</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="GND_ACT" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_TP3">
+      <fields>
+        <field name="Reference">TP3</field>
+        <field name="Value">+3V3_LOGIC</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="+3V3_LOGIC" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_TP4">
+      <fields>
+        <field name="Reference">TP4</field>
+        <field name="Value">GND_LOGIC</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="GND_LOGIC" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_TP5">
+      <fields>
+        <field name="Reference">TP5</field>
+        <field name="Value">OPT_RAW</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="OPT_RAW" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_TP6">
+      <fields>
+        <field name="Reference">TP6</field>
+        <field name="Value">AUD_RAW</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="AUD_RAW" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_TP7">
+      <fields>
+        <field name="Reference">TP7</field>
+        <field name="Value">MECH_RAW</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="MECH_RAW" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_TP8">
+      <fields>
+        <field name="Reference">TP8</field>
+        <field name="Value">CLK_RX_RAW</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="CLK_RX_RAW" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_TP9">
+      <fields>
+        <field name="Reference">TP9</field>
+        <field name="Value">SERVO_SIG</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="SERVO_SIG" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_U1">
+      <fields>
+        <field name="Reference">U1</field>
+        <field name="Value">MCP23017 + zocalo DIP28</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="GPB0" type="passive"/>
+        <pin num="2" name="GPB1" type="passive"/>
+        <pin num="3" name="GPB2" type="passive"/>
+        <pin num="4" name="GPB3" type="passive"/>
+        <pin num="5" name="GPB4" type="passive"/>
+        <pin num="6" name="GPB5" type="passive"/>
+        <pin num="7" name="GPB6" type="passive"/>
+        <pin num="8" name="GPB7" type="passive"/>
+        <pin num="9" name="VDD" type="passive"/>
+        <pin num="10" name="VSS" type="passive"/>
+        <pin num="11" name="NC" type="passive"/>
+        <pin num="12" name="SCL" type="input"/>
+        <pin num="13" name="SDA" type="bidirectional"/>
+        <pin num="14" name="NC" type="passive"/>
+        <pin num="15" name="A0" type="input"/>
+        <pin num="16" name="A1" type="input"/>
+        <pin num="17" name="A2" type="input"/>
+        <pin num="18" name="RESET" type="input"/>
+        <pin num="19" name="INTB" type="passive"/>
+        <pin num="20" name="INTA" type="passive"/>
+        <pin num="21" name="GPA0" type="tri_state"/>
+        <pin num="22" name="GPA1" type="tri_state"/>
+        <pin num="23" name="GPA2" type="passive"/>
+        <pin num="24" name="GPA3" type="passive"/>
+        <pin num="25" name="GPA4" type="passive"/>
+        <pin num="26" name="GPA5" type="passive"/>
+        <pin num="27" name="GPA6" type="passive"/>
+        <pin num="28" name="GPA7" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="T51" part="T51_U2">
+      <fields>
+        <field name="Reference">U2</field>
+        <field name="Value">PC817 DIP4</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="passive"/>
+        <pin num="2" name="K" type="passive"/>
+        <pin num="3" name="E" type="passive"/>
+        <pin num="4" name="C" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="T51">
+      <uri>${KIPRJMOD}/T51.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+3V3_LOGIC" class="Default">
+      <node ref="C4" pin="1" pinfunction="+_1" pintype="passive"/>
+      <node ref="J10" pin="1" pinfunction="+3V3_LOGIC_1" pintype="passive"/>
+      <node ref="J5" pin="1" pinfunction="+3V3_LOGIC_1" pintype="passive"/>
+      <node ref="J6" pin="1" pinfunction="+3V3_LOGIC_1" pintype="passive"/>
+      <node ref="MOD1" pin="VCC" pinfunction="VCC_VCC" pintype="passive"/>
+      <node ref="MOD2" pin="VCC" pinfunction="VCC_VCC" pintype="passive"/>
+      <node ref="R1" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="R17" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="R18" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="R19" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="R2" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="R26" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="R3" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="R31" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="TP3" pin="1" pinfunction="+3V3_LOGIC_1" pintype="passive"/>
+      <node ref="U1" pin="9" pinfunction="VDD_9" pintype="passive"/>
+    </net>
+    <net code="2" name="+5V_ACT" class="Default">
+      <node ref="BZ1" pin="+" pinfunction="+_+" pintype="passive"/>
+      <node ref="C1" pin="1" pinfunction="+_1" pintype="passive"/>
+      <node ref="C2" pin="1" pinfunction="+_1" pintype="passive"/>
+      <node ref="D1" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="J12" pin="2" pinfunction="+5V_ACT_2" pintype="passive"/>
+      <node ref="J13" pin="1" pinfunction="+5V_ACT_1" pintype="passive"/>
+      <node ref="J3" pin="1" pinfunction="+5V_ACT_1" pintype="passive"/>
+      <node ref="Q6" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R6" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="SW1" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="TP1" pin="1" pinfunction="+5V_ACT_1" pintype="passive"/>
+    </net>
+    <net code="3" name="+5V_FUSED" class="Default">
+      <node ref="F1" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="J12" pin="3" pinfunction="+5V_FUSED_3" pintype="passive"/>
+      <node ref="J14" pin="2" pinfunction="+5V_FUSED_2" pintype="passive"/>
+      <node ref="Q6" pin="3" pinfunction="3_3" pintype="passive"/>
+    </net>
+    <net code="4" name="+5V_RAW" class="Default">
+      <node ref="F1" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="J1" pin="1" pinfunction="+5V_RAW_1" pintype="passive"/>
+      <node ref="J11" pin="1" pinfunction="+5V_RAW_1" pintype="passive"/>
+      <node ref="J14" pin="1" pinfunction="+5V_RAW_1" pintype="passive"/>
+      <node ref="MOD3" pin="VBUS" pinfunction="VBUS_VBUS" pintype="passive"/>
+    </net>
+    <net code="5" name="+5V_SERVO" class="Default">
+      <node ref="C3" pin="1" pinfunction="+_1" pintype="passive"/>
+      <node ref="J13" pin="2" pinfunction="+5V_SERVO_2" pintype="passive"/>
+      <node ref="J4" pin="2" pinfunction="+5V_SERVO_2" pintype="passive"/>
+      <node ref="M1" pin="VCC" pinfunction="VCC_VCC" pintype="passive"/>
+      <node ref="R12" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="R15" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="SW1" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="6" name="AUD_BBB" class="Default">
+      <node ref="J10" pin="8" pinfunction="AUD_BBB_8" pintype="passive"/>
+      <node ref="JP5" pin="2" pinfunction="AUD_BBB_2" pintype="passive"/>
+    </net>
+    <net code="7" name="AUD_RAW" class="Default">
+      <node ref="J6" pin="3" pinfunction="AUD_RAW_3" pintype="passive"/>
+      <node ref="JP11" pin="1" pinfunction="AUD_RAW_1" pintype="passive"/>
+      <node ref="MOD2" pin="DO" pinfunction="DO_DO" pintype="passive"/>
+      <node ref="R18" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="TP6" pin="1" pinfunction="AUD_RAW_1" pintype="passive"/>
+    </net>
+    <net code="8" name="BUZZ_BASE" class="Default">
+      <node ref="Q2" pin="2" pinfunction="B_2" pintype="passive"/>
+      <node ref="R7" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R8" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="9" name="BUZZ_NEG" class="Default">
+      <node ref="BZ1" pin="-" pinfunction="-_-" pintype="passive"/>
+      <node ref="D1" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="J3" pin="2" pinfunction="BUZZ_NEG_2" pintype="passive"/>
+      <node ref="Q2" pin="3" pinfunction="C_3" pintype="passive"/>
+    </net>
+    <net code="10" name="C0_SEL" class="Default">
+      <node ref="JP10" pin="2" pinfunction="C0_SEL_2" pintype="passive"/>
+      <node ref="R20" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="R23" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="11" name="C0_TEST" class="Default">
+      <node ref="JP4" pin="1" pinfunction="C0_TEST_1" pintype="passive"/>
+      <node ref="R20" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="12" name="C0_TX" class="Default">
+      <node ref="R4" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U1" pin="21" pinfunction="GPA0_21" pintype="tri_state"/>
+    </net>
+    <net code="13" name="C1_SEL" class="Default">
+      <node ref="JP11" pin="2" pinfunction="C1_SEL_2" pintype="passive"/>
+      <node ref="R21" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="R24" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="14" name="C1_TEST" class="Default">
+      <node ref="JP5" pin="1" pinfunction="C1_TEST_1" pintype="passive"/>
+      <node ref="R21" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="15" name="C1_TX" class="Default">
+      <node ref="R7" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U1" pin="22" pinfunction="GPA1_22" pintype="tri_state"/>
+    </net>
+    <net code="16" name="C2_SEL" class="Default">
+      <node ref="JP12" pin="2" pinfunction="C2_SEL_2" pintype="passive"/>
+      <node ref="R22" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="R25" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="17" name="C2_TEST" class="Default">
+      <node ref="JP6" pin="1" pinfunction="C2_TEST_1" pintype="passive"/>
+      <node ref="R22" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="18" name="CLK_BASE" class="Default">
+      <node ref="Q5" pin="2" pinfunction="B_2" pintype="passive"/>
+      <node ref="R28" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R29" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="19" name="CLK_BBB" class="Default">
+      <node ref="J10" pin="10" pinfunction="CLK_BBB_10" pintype="passive"/>
+      <node ref="JP7" pin="2" pinfunction="CLK_BBB_2" pintype="passive"/>
+    </net>
+    <net code="20" name="CLK_REMOTE_A" class="Default">
+      <node ref="D2" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="J8" pin="1" pinfunction="CLK_REMOTE_A_1" pintype="passive"/>
+      <node ref="U2" pin="1" pinfunction="A_1" pintype="passive"/>
+    </net>
+    <net code="21" name="CLK_REMOTE_K" class="Default">
+      <node ref="D2" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="J8" pin="2" pinfunction="CLK_REMOTE_K_2" pintype="passive"/>
+      <node ref="U2" pin="2" pinfunction="K_2" pintype="passive"/>
+    </net>
+    <net code="22" name="CLK_RX_RAW" class="Default">
+      <node ref="R26" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R27" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="TP8" pin="1" pinfunction="CLK_RX_RAW_1" pintype="passive"/>
+      <node ref="U2" pin="4" pinfunction="C_4" pintype="passive"/>
+    </net>
+    <net code="23" name="CLK_SEND_A" class="Default">
+      <node ref="J9" pin="1" pinfunction="CLK_SEND_A_1" pintype="passive"/>
+      <node ref="R31" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="24" name="CLK_SINK" class="Default">
+      <node ref="J9" pin="2" pinfunction="CLK_SINK_2" pintype="passive"/>
+      <node ref="Q5" pin="3" pinfunction="C_3" pintype="passive"/>
+    </net>
+    <net code="25" name="CLK_TEST" class="Default">
+      <node ref="JP7" pin="1" pinfunction="CLK_TEST_1" pintype="passive"/>
+      <node ref="R27" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="26" name="CLK_TX" class="Default">
+      <node ref="J10" pin="6" pinfunction="CLK_TX_6" pintype="passive"/>
+      <node ref="R28" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="TP10" pin="1" pinfunction="CLK_TX_1" pintype="passive"/>
+    </net>
+    <net code="27" name="GATE_POL" class="Default">
+      <node ref="J12" pin="1" pinfunction="GATE_POL_1" pintype="passive"/>
+      <node ref="Q6" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="R30" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="28" name="GND_ACT" class="Default">
+      <node ref="C1" pin="2" pinfunction="-_2" pintype="passive"/>
+      <node ref="C2" pin="2" pinfunction="-_2" pintype="passive"/>
+      <node ref="C3" pin="2" pinfunction="-_2" pintype="passive"/>
+      <node ref="J1" pin="2" pinfunction="GND_ACT_2" pintype="passive"/>
+      <node ref="J11" pin="2" pinfunction="GND_ACT_2" pintype="passive"/>
+      <node ref="J13" pin="6" pinfunction="GND_ACT_6" pintype="passive"/>
+      <node ref="J4" pin="1" pinfunction="GND_ACT_1" pintype="passive"/>
+      <node ref="M1" pin="GND" pinfunction="GND_GND" pintype="passive"/>
+      <node ref="MOD3" pin="GND" pinfunction="GND_GND" pintype="passive"/>
+      <node ref="NT1" pin="1" pinfunction="GND_ACT_1" pintype="passive"/>
+      <node ref="Q1" pin="1" pinfunction="E_1" pintype="passive"/>
+      <node ref="Q2" pin="1" pinfunction="E_1" pintype="passive"/>
+      <node ref="Q3" pin="1" pinfunction="E_1" pintype="passive"/>
+      <node ref="Q4" pin="1" pinfunction="E_1" pintype="passive"/>
+      <node ref="R11" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R14" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R16" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R30" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R5" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R8" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="SW1" pin="6" pinfunction="6_6" pintype="passive"/>
+      <node ref="TP2" pin="1" pinfunction="GND_ACT_1" pintype="passive"/>
+    </net>
+    <net code="29" name="GND_LOGIC" class="Default">
+      <node ref="C4" pin="2" pinfunction="-_2" pintype="passive"/>
+      <node ref="C5" pin="2" pinfunction="-_2" pintype="passive"/>
+      <node ref="J10" pin="2" pinfunction="GND_LOGIC_2" pintype="passive"/>
+      <node ref="J5" pin="2" pinfunction="GND_LOGIC_2" pintype="passive"/>
+      <node ref="J6" pin="2" pinfunction="GND_LOGIC_2" pintype="passive"/>
+      <node ref="J7" pin="1" pinfunction="GND_LOGIC_1" pintype="passive"/>
+      <node ref="JP1" pin="2" pinfunction="GND_LOGIC_2" pintype="passive"/>
+      <node ref="JP10" pin="3" pinfunction="GND_LOGIC_3" pintype="passive"/>
+      <node ref="JP11" pin="3" pinfunction="GND_LOGIC_3" pintype="passive"/>
+      <node ref="JP12" pin="3" pinfunction="GND_LOGIC_3" pintype="passive"/>
+      <node ref="MOD1" pin="GND" pinfunction="GND_GND" pintype="passive"/>
+      <node ref="MOD2" pin="GND" pinfunction="GND_GND" pintype="passive"/>
+      <node ref="NT1" pin="2" pinfunction="GND_LOGIC_2" pintype="passive"/>
+      <node ref="Q5" pin="1" pinfunction="E_1" pintype="passive"/>
+      <node ref="R23" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R24" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R25" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R29" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="SW2" pin="COM" pinfunction="COM_COM" pintype="passive"/>
+      <node ref="TP4" pin="1" pinfunction="GND_LOGIC_1" pintype="passive"/>
+      <node ref="U1" pin="10" pinfunction="VSS_10" pintype="passive"/>
+      <node ref="U1" pin="15" pinfunction="A0_15" pintype="input"/>
+      <node ref="U1" pin="16" pinfunction="A1_16" pintype="input"/>
+      <node ref="U1" pin="17" pinfunction="A2_17" pintype="input"/>
+      <node ref="U2" pin="3" pinfunction="E_3" pintype="passive"/>
+    </net>
+    <net code="30" name="I2C_SCL" class="Default">
+      <node ref="J10" pin="3" pinfunction="I2C_SCL_3" pintype="passive"/>
+      <node ref="JP2" pin="2" pinfunction="I2C_SCL_2" pintype="passive"/>
+      <node ref="U1" pin="12" pinfunction="SCL_12" pintype="input"/>
+    </net>
+    <net code="31" name="I2C_SDA" class="Default">
+      <node ref="J10" pin="4" pinfunction="I2C_SDA_4" pintype="passive"/>
+      <node ref="JP3" pin="2" pinfunction="I2C_SDA_2" pintype="passive"/>
+      <node ref="U1" pin="13" pinfunction="SDA_13" pintype="bidirectional"/>
+    </net>
+    <net code="32" name="LED_A" class="Default">
+      <node ref="D3" pin="A" pinfunction="A_A" pintype="passive"/>
+      <node ref="J2" pin="1" pinfunction="LED_A_1" pintype="passive"/>
+      <node ref="R6" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="33" name="LED_BASE" class="Default">
+      <node ref="Q1" pin="2" pinfunction="B_2" pintype="passive"/>
+      <node ref="R4" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R5" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="34" name="LED_K" class="Default">
+      <node ref="D3" pin="K" pinfunction="K_K" pintype="passive"/>
+      <node ref="J2" pin="2" pinfunction="LED_K_2" pintype="passive"/>
+      <node ref="Q1" pin="3" pinfunction="C_3" pintype="passive"/>
+    </net>
+    <net code="35" name="MCP_RESET" class="Default">
+      <node ref="JP1" pin="1" pinfunction="MCP_RESET_1" pintype="passive"/>
+      <node ref="R1" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="U1" pin="18" pinfunction="RESET_18" pintype="input"/>
+    </net>
+    <net code="36" name="MECH_BBB" class="Default">
+      <node ref="J10" pin="9" pinfunction="MECH_BBB_9" pintype="passive"/>
+      <node ref="JP6" pin="2" pinfunction="MECH_BBB_2" pintype="passive"/>
+    </net>
+    <net code="37" name="MECH_RAW" class="Default">
+      <node ref="C5" pin="1" pinfunction="+_1" pintype="passive"/>
+      <node ref="J7" pin="2" pinfunction="MECH_RAW_2" pintype="passive"/>
+      <node ref="JP12" pin="1" pinfunction="MECH_RAW_1" pintype="passive"/>
+      <node ref="R19" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="SW2" pin="NO" pinfunction="NO_NO" pintype="passive"/>
+      <node ref="TP7" pin="1" pinfunction="MECH_RAW_1" pintype="passive"/>
+    </net>
+    <net code="38" name="OPT_BBB" class="Default">
+      <node ref="J10" pin="7" pinfunction="OPT_BBB_7" pintype="passive"/>
+      <node ref="JP4" pin="2" pinfunction="OPT_BBB_2" pintype="passive"/>
+    </net>
+    <net code="39" name="OPT_RAW" class="Default">
+      <node ref="J5" pin="3" pinfunction="OPT_RAW_3" pintype="passive"/>
+      <node ref="JP10" pin="1" pinfunction="OPT_RAW_1" pintype="passive"/>
+      <node ref="MOD1" pin="DO" pinfunction="DO_DO" pintype="passive"/>
+      <node ref="R17" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="TP5" pin="1" pinfunction="OPT_RAW_1" pintype="passive"/>
+    </net>
+    <net code="40" name="PWM_5V" class="Default">
+      <node ref="J13" pin="4" pinfunction="PWM_5V_4" pintype="passive"/>
+      <node ref="Q4" pin="3" pinfunction="C_3" pintype="passive"/>
+      <node ref="R15" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="SW1" pin="4" pinfunction="4_4" pintype="passive"/>
+    </net>
+    <net code="41" name="PWM_B1" class="Default">
+      <node ref="Q3" pin="2" pinfunction="B_2" pintype="passive"/>
+      <node ref="R10" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R11" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="42" name="PWM_B2" class="Default">
+      <node ref="Q4" pin="2" pinfunction="B_2" pintype="passive"/>
+      <node ref="R13" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R14" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="43" name="PWM_BBB" class="Default">
+      <node ref="J10" pin="5" pinfunction="PWM_BBB_5" pintype="passive"/>
+      <node ref="R10" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="44" name="PWM_INV" class="Default">
+      <node ref="Q3" pin="3" pinfunction="C_3" pintype="passive"/>
+      <node ref="R12" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R13" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="45" name="SCL_PULL" class="Default">
+      <node ref="JP2" pin="1" pinfunction="SCL_PULL_1" pintype="passive"/>
+      <node ref="R2" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="46" name="SDA_PULL" class="Default">
+      <node ref="JP3" pin="1" pinfunction="SDA_PULL_1" pintype="passive"/>
+      <node ref="R3" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="47" name="SERVO_SIG" class="Default">
+      <node ref="J13" pin="5" pinfunction="SERVO_SIG_5" pintype="passive"/>
+      <node ref="J4" pin="3" pinfunction="SERVO_SIG_3" pintype="passive"/>
+      <node ref="M1" pin="SIG" pinfunction="SIG_SIG" pintype="passive"/>
+      <node ref="R16" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="SW1" pin="5" pinfunction="5_5" pintype="passive"/>
+      <node ref="TP9" pin="1" pinfunction="SERVO_SIG_1" pintype="passive"/>
+    </net>
+    <net code="48" name="unconnected-(J13-NC-Pad3)" class="Default">
+      <node ref="J13" pin="3" pinfunction="NC_3" pintype="passive+no_connect"/>
+    </net>
+    <net code="49" name="unconnected-(MOD1-PadAO)" class="Default">
+      <node ref="MOD1" pin="AO" pinfunction="AO_AO" pintype="passive+no_connect"/>
+    </net>
+    <net code="50" name="unconnected-(MOD2-PadAO)" class="Default">
+      <node ref="MOD2" pin="AO" pinfunction="AO_AO" pintype="passive+no_connect"/>
+    </net>
+    <net code="51" name="unconnected-(SW1-Pad3)" class="Default">
+      <node ref="SW1" pin="3" pinfunction="3_3" pintype="passive+no_connect"/>
+    </net>
+    <net code="52" name="unconnected-(SW2-PadNC)" class="Default">
+      <node ref="SW2" pin="NC" pinfunction="NC_NC" pintype="passive+no_connect"/>
+    </net>
+    <net code="53" name="unconnected-(U1-GPA2-Pad23)" class="Default">
+      <node ref="U1" pin="23" pinfunction="GPA2_23" pintype="passive+no_connect"/>
+    </net>
+    <net code="54" name="unconnected-(U1-GPA3-Pad24)" class="Default">
+      <node ref="U1" pin="24" pinfunction="GPA3_24" pintype="passive+no_connect"/>
+    </net>
+    <net code="55" name="unconnected-(U1-GPA4-Pad25)" class="Default">
+      <node ref="U1" pin="25" pinfunction="GPA4_25" pintype="passive+no_connect"/>
+    </net>
+    <net code="56" name="unconnected-(U1-GPA5-Pad26)" class="Default">
+      <node ref="U1" pin="26" pinfunction="GPA5_26" pintype="passive+no_connect"/>
+    </net>
+    <net code="57" name="unconnected-(U1-GPA6-Pad27)" class="Default">
+      <node ref="U1" pin="27" pinfunction="GPA6_27" pintype="passive+no_connect"/>
+    </net>
+    <net code="58" name="unconnected-(U1-GPA7-Pad28)" class="Default">
+      <node ref="U1" pin="28" pinfunction="GPA7_28" pintype="passive+no_connect"/>
+    </net>
+    <net code="59" name="unconnected-(U1-GPB0-Pad1)" class="Default">
+      <node ref="U1" pin="1" pinfunction="GPB0_1" pintype="passive+no_connect"/>
+    </net>
+    <net code="60" name="unconnected-(U1-GPB1-Pad2)" class="Default">
+      <node ref="U1" pin="2" pinfunction="GPB1_2" pintype="passive+no_connect"/>
+    </net>
+    <net code="61" name="unconnected-(U1-GPB2-Pad3)" class="Default">
+      <node ref="U1" pin="3" pinfunction="GPB2_3" pintype="passive+no_connect"/>
+    </net>
+    <net code="62" name="unconnected-(U1-GPB3-Pad4)" class="Default">
+      <node ref="U1" pin="4" pinfunction="GPB3_4" pintype="passive+no_connect"/>
+    </net>
+    <net code="63" name="unconnected-(U1-GPB4-Pad5)" class="Default">
+      <node ref="U1" pin="5" pinfunction="GPB4_5" pintype="passive+no_connect"/>
+    </net>
+    <net code="64" name="unconnected-(U1-GPB5-Pad6)" class="Default">
+      <node ref="U1" pin="6" pinfunction="GPB5_6" pintype="passive+no_connect"/>
+    </net>
+    <net code="65" name="unconnected-(U1-GPB6-Pad7)" class="Default">
+      <node ref="U1" pin="7" pinfunction="GPB6_7" pintype="passive+no_connect"/>
+    </net>
+    <net code="66" name="unconnected-(U1-GPB7-Pad8)" class="Default">
+      <node ref="U1" pin="8" pinfunction="GPB7_8" pintype="passive+no_connect"/>
+    </net>
+    <net code="67" name="unconnected-(U1-INTA-Pad20)" class="Default">
+      <node ref="U1" pin="20" pinfunction="INTA_20" pintype="passive+no_connect"/>
+    </net>
+    <net code="68" name="unconnected-(U1-INTB-Pad19)" class="Default">
+      <node ref="U1" pin="19" pinfunction="INTB_19" pintype="passive+no_connect"/>
+    </net>
+    <net code="69" name="unconnected-(U1-NC-Pad11)" class="Default">
+      <node ref="U1" pin="11" pinfunction="NC_11" pintype="passive+no_connect"/>
+    </net>
+    <net code="70" name="unconnected-(U1-NC-Pad14)" class="Default">
+      <node ref="U1" pin="14" pinfunction="NC_14" pintype="passive+no_connect"/>
+    </net>
+  </nets>
+</export>
