@@ -1,0 +1,138 @@
+{
+  "origin": "software_validation",
+  "physical_tests": "NOT_TESTED",
+  "python": "3.11.9",
+  "platform": "win32",
+  "status": "BLOCKED",
+  "checks": [
+    {
+      "test": "python_unittest",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "test_atomic_json (__main__.Tests.test_atomic_json) ... ok\ntest_busy_pru (__main__.Tests.test_busy_pru) ... ok\ntest_changed_firmware_owner_keeps_pins (__main__.Tests.test_changed_firmware_owner_keeps_pins) ... ok\ntest_clean_pulses (__main__.Tests.test_clean_pulses) ... ok\ntest_complete_form_logic (__main__.Tests.test_complete_form_logic) ... ok\ntest_csv_roundtrip (__main__.Tests.test_csv_roundtrip) ... ok\ntest_default_audit (__main__.Tests.test_default_audit) ... ok\ntest_detect_ambiguous (__main__.Tests.test_detect_ambiguous) ... ok\ntest_detect_pwm_renumbered (__main__.Tests.test_detect_pwm_renumbered) ... ok\ntest_empty_acceptance (__main__.Tests.test_empty_acceptance) ... ok\ntest_empty_input_snapshots_fail (__main__.Tests.test_empty_input_snapshots_fail) ... ok\ntest_extra_pulses (__main__.Tests.test_extra_pulses) ... ok\ntest_fake_pass_rejected (__main__.Tests.test_fake_pass_rejected) ... ok\ntest_false_check_stops (__main__.Tests.test_false_check_stops) ... ok\ntest_firmware_cleanup_idempotent (__main__.Tests.test_firmware_cleanup_idempotent) ... ok\ntest_free_pwm (__main__.Tests.test_free_pwm) ... ok\ntest_invalid_arguments (__main__.Tests.test_invalid_arguments) ... ok\ntest_invalid_manifest_type (__main__.Tests.test_invalid_manifest_type) ... ok\ntest_kernel_pwm_claim (__main__.Tests.test_kernel_pwm_claim) ... ok\ntest_malformed_capture_rejected (__main__.Tests.test_malformed_capture_rejected) ... ok\ntest_missing_pulses (__main__.Tests.test_missing_pulses) ... ok\ntest_nan_inf_blank_uncertainty (__main__.Tests.test_nan_inf_blank_uncertainty) ... ok\ntest_no_data_not_zero (__main__.Tests.test_no_data_not_zero) ... ok\ntest_overflow_late_and_timeout (__main__.Tests.test_overflow_late_and_timeout) ... ok\ntest_overvoltage_stops (__main__.Tests.test_overvoltage_stops) ... ok\ntest_ownership_pwm (__main__.Tests.test_ownership_pwm) ... ok\ntest_partial_first_pulse (__main__.Tests.test_partial_first_pulse) ... ok\ntest_partial_pin_mutation_recovery (__main__.Tests.test_partial_pin_mutation_recovery) ... ok\ntest_path_escape_rejected (__main__.Tests.test_path_escape_rejected) ... ok\ntest_preexisting_firmware_not_overwritten (__main__.Tests.test_preexisting_firmware_not_overwritten) ... ok\ntest_pwm_limits (__main__.Tests.test_pwm_limits) ... ok\ntest_py35_syntax (__main__.Tests.test_py35_syntax) ... ok\ntest_redaction (__main__.Tests.test_redaction) ... ok\ntest_remote_renumbered (__main__.Tests.test_remote_renumbered) ... ok\ntest_restore_failure_keeps_journal (__main__.Tests.test_restore_failure_keeps_journal) ... ok\ntest_restore_pwm_pin_and_journal (__main__.Tests.test_restore_pwm_pin_and_journal) ... ok\ntest_simulated_result_rejected (__main__.Tests.test_simulated_result_rejected) ... ok\ntest_simulation_never_physical_pass (__main__.Tests.test_simulation_never_physical_pass) ... ok\ntest_single_snapshot_all_bits (__main__.Tests.test_single_snapshot_all_bits) ... ok\ntest_timeout_keeps_command_evidence (__main__.Tests.test_timeout_keeps_command_evidence) ... ok\ntest_timestamp_reversal (__main__.Tests.test_timestamp_reversal) ... ok\ntest_uncertainty_boundary (__main__.Tests.test_uncertainty_boundary) ... ok\ntest_unknown_point (__main__.Tests.test_unknown_point) ... ok\ntest_wrong_board_and_duplicates (__main__.Tests.test_wrong_board_and_duplicates) ... ok\ntest_wrong_high (__main__.Tests.test_wrong_high) ... ok\ntest_wrong_instrument_method (__main__.Tests.test_wrong_instrument_method) ... ok\n\n----------------------------------------------------------------------\nRan 46 tests in 0.345s\n\nOK\n"
+    },
+    {
+      "test": "netlist_static",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "{\n  \"origin\": \"static_netlist_audit\",\n  \"status\": \"PASS\",\n  \"checks\": [\n    {\n      \"net\": \"+5V_RAW\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net\": \"+5V_FUSED\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net\": \"+5V_ACT\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net\": \"GATE_POL\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net\": \"+3V3_LOGIC\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net\": \"GND_ACT\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net\": \"GND_LOGIC\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net\": \"CLK_REMOTE_A\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net\": \"CLK_REMOTE_K\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net\": \"CLK_RX_RAW\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net\": \"+5V_SERVO\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net\": \"SERVO_SIG\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net\": \"C0_SEL\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net\": \"C1_SEL\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net\": \"C2_SEL\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"+3V3_LOGIC\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"+5V_ACT\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"+5V_FUSED\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"+5V_RAW\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"+5V_SERVO\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"AUD_BBB\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"AUD_RAW\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"BUZZ_BASE\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"BUZZ_NEG\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"C0_SEL\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"C0_TEST\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"C0_TX\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"C1_SEL\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"C1_TEST\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"C1_TX\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"C2_SEL\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"C2_TEST\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"CLK_BASE\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"CLK_BBB\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"CLK_REMOTE_A\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"CLK_REMOTE_K\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"CLK_RX_RAW\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"CLK_SEND_A\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"CLK_SINK\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"CLK_TEST\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"CLK_TX\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"GATE_POL\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"GND_ACT\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"GND_LOGIC\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"I2C_SCL\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"I2C_SDA\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"LED_A\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"LED_BASE\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"LED_K\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"MCP_RESET\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"MECH_BBB\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"MECH_RAW\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"OPT_BBB\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"OPT_RAW\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"PWM_5V\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"PWM_B1\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"PWM_B2\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"PWM_BBB\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"PWM_INV\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"SCL_PULL\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"SDA_PULL\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"net_csv\": \"SERVO_SIG\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"isolation_topology\": \"PASS\"\n    }\n  ],\n  \"schematic_hashes\": {\n    \"01_POWER.kicad_sch\": \"f29e225a2901f124f2e277c381ef3eaa3bc88c8c54e003117f38c76296f8c5ec\",\n    \"02_CORE.kicad_sch\": \"5944f15c940f13d8e2cc300a8f3182162ad1bebfb5cb40af571bf0bd8e8a953a\",\n    \"03_TX.kicad_sch\": \"a09d83a03af673a398142490d37ee74ada39896136ff102ea37bb64d7205ad0e\",\n    \"04_SERVO.kicad_sch\": \"cebb331fe2f96cc292e60855456d3b5d96a9569a27504ec0fa0bb36932d7d12d\",\n    \"05_RX.kicad_sch\": \"08d822834cfbe3318b0d51a3e73fb55d5fe293c3045e70f2a0debe9195ba7534\",\n    \"06_ENABLE.kicad_sch\": \"be52e9c29cced87534af408bc714486dfdb8f63a4e6f49b93d38a2fc8fe1b45b\",\n    \"07_CLOCK.kicad_sch\": \"034e879ee1be22dd4daf6be3823a88441ddc4a018eb03160f9d7d23197c2f6b2\",\n    \"TRAMA3_T51.kicad_sch\": \"e13ffe5971ffdb0df0dafe42d87e4d50d7af0314f55fb7646f989685091897fd\"\n  },\n  \"physical\": \"NOT_TESTED\",\n  \"note\": \"Coincidencia de redes no certifica componentes, polaridad fisica, transitorios ni fusible\"\n}\n"
+    },
+    {
+      "test": "compile_firmware_model",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "test": "run_firmware_model",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "PASS: 15 comprobaciones, 7 escenarios de firmware SIMULADO. Sin evidencia fisica.\n"
+    },
+    {
+      "test": "bash_syntax:ejecutar-bloque.sh",
+      "status": "BLOCKED",
+      "exit_code": 3221225794,
+      "output": "      0 [main] bash (19100) C:\\Program Files\\Git\\bin\\..\\usr\\bin\\bash.exe: *** fatal error - NtCreateDirectoryObject(\\BaseNamedObjects\\msys-2.0S5-1888ae32e00d56aa): 0xC0000022\n"
+    },
+    {
+      "test": "bash_syntax:build.sh",
+      "status": "BLOCKED",
+      "exit_code": 3221225794,
+      "output": "      0 [main] bash (33044) C:\\Program Files\\Git\\bin\\..\\usr\\bin\\bash.exe: *** fatal error - NtCreateDirectoryObject(\\BaseNamedObjects\\msys-2.0S5-1888ae32e00d56aa): 0xC0000022\n"
+    },
+    {
+      "test": "bash_syntax:cleanup.sh",
+      "status": "BLOCKED",
+      "exit_code": 3221225794,
+      "output": "      0 [main] bash (8976) C:\\Program Files\\Git\\bin\\..\\usr\\bin\\bash.exe: *** fatal error - NtCreateDirectoryObject(\\BaseNamedObjects\\msys-2.0S5-1888ae32e00d56aa): 0xC0000022\n"
+    },
+    {
+      "test": "bash_syntax:preflight.sh",
+      "status": "BLOCKED",
+      "exit_code": 3221225794,
+      "output": "      0 [main] bash (13772) C:\\Program Files\\Git\\bin\\..\\usr\\bin\\bash.exe: *** fatal error - NtCreateDirectoryObject(\\BaseNamedObjects\\msys-2.0S5-1888ae32e00d56aa): 0xC0000022\n"
+    },
+    {
+      "test": "bash_syntax:test-inputs.sh",
+      "status": "BLOCKED",
+      "exit_code": 3221225794,
+      "output": "      0 [main] bash (27664) C:\\Program Files\\Git\\bin\\..\\usr\\bin\\bash.exe: *** fatal error - NtCreateDirectoryObject(\\BaseNamedObjects\\msys-2.0S5-1888ae32e00d56aa): 0xC0000022\n"
+    },
+    {
+      "test": "bash_syntax:test-loopback.sh",
+      "status": "BLOCKED",
+      "exit_code": 3221225794,
+      "output": "      0 [main] bash (16072) C:\\Program Files\\Git\\bin\\..\\usr\\bin\\bash.exe: *** fatal error - NtCreateDirectoryObject(\\BaseNamedObjects\\msys-2.0S5-1888ae32e00d56aa): 0xC0000022\n"
+    },
+    {
+      "test": "bash_syntax:test-pru-rx.sh",
+      "status": "BLOCKED",
+      "exit_code": 3221225794,
+      "output": "      0 [main] bash (25308) C:\\Program Files\\Git\\bin\\..\\usr\\bin\\bash.exe: *** fatal error - NtCreateDirectoryObject(\\BaseNamedObjects\\msys-2.0S5-1888ae32e00d56aa): 0xC0000022\n"
+    },
+    {
+      "test": "bash_syntax:test-pru-smoke.sh",
+      "status": "BLOCKED",
+      "exit_code": 3221225794,
+      "output": "      0 [main] bash (27712) C:\\Program Files\\Git\\bin\\..\\usr\\bin\\bash.exe: *** fatal error - NtCreateDirectoryObject(\\BaseNamedObjects\\msys-2.0S5-1888ae32e00d56aa): 0xC0000022\n"
+    },
+    {
+      "test": "bash_syntax:test-pru-tx.sh",
+      "status": "BLOCKED",
+      "exit_code": 3221225794,
+      "output": "      1 [main] bash (35732) C:\\Program Files\\Git\\bin\\..\\usr\\bin\\bash.exe: *** fatal error - NtCreateDirectoryObject(\\BaseNamedObjects\\msys-2.0S5-1888ae32e00d56aa): 0xC0000022\n"
+    },
+    {
+      "test": "bash_syntax:test-pwm-capture.sh",
+      "status": "BLOCKED",
+      "exit_code": 3221225794,
+      "output": "      0 [main] bash (27800) C:\\Program Files\\Git\\bin\\..\\usr\\bin\\bash.exe: *** fatal error - NtCreateDirectoryObject(\\BaseNamedObjects\\msys-2.0S5-1888ae32e00d56aa): 0xC0000022\n"
+    },
+    {
+      "test": "bash_syntax:test-pwm.sh",
+      "status": "BLOCKED",
+      "exit_code": 3221225794,
+      "output": "      0 [main] bash (2992) C:\\Program Files\\Git\\bin\\..\\usr\\bin\\bash.exe: *** fatal error - NtCreateDirectoryObject(\\BaseNamedObjects\\msys-2.0S5-1888ae32e00d56aa): 0xC0000022\n"
+    },
+    {
+      "test": "bash_syntax:inspeccion-sistema.sh",
+      "status": "BLOCKED",
+      "exit_code": 3221225794,
+      "output": "      0 [main] bash (19816) C:\\Program Files\\Git\\bin\\..\\usr\\bin\\bash.exe: *** fatal error - NtCreateDirectoryObject(\\BaseNamedObjects\\msys-2.0S5-1888ae32e00d56aa): 0xC0000022\n"
+    },
+    {
+      "test": "empty_acceptance",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "{\n  \"schema\": 1,\n  \"boards\": {\n    \"BBB-A\": {\n      \"checks\": {\n        \"loopback\": {\n          \"status\": \"NOT_TESTED\",\n          \"reason\": \"Evidencia no seleccionada\"\n        },\n        \"pwm-capture\": {\n          \"status\": \"NOT_TESTED\",\n          \"reason\": \"Evidencia no seleccionada\"\n        },\n        \"t08\": {\n          \"status\": \"NOT_TESTED\",\n          \"reason\": \"Evidencia no seleccionada\"\n        }\n      },\n      \"T06\": \"NOT_TESTED\",\n      \"T08\": \"NOT_TESTED\"\n    },\n    \"BBB-B\": {\n      \"checks\": {\n        \"loopback\": {\n          \"status\": \"NOT_TESTED\",\n          \"reason\": \"Evidencia no seleccionada\"\n        },\n        \"pwm-capture\": {\n          \"status\": \"NOT_TESTED\",\n          \"reason\": \"Evidencia no seleccionada\"\n        },\n        \"t08\": {\n          \"status\": \"NOT_TESTED\",\n          \"reason\": \"Evidencia no seleccionada\"\n        }\n      },\n      \"T06\": \"NOT_TESTED\",\n      \"T08\": \"NOT_TESTED\"\n    }\n  },\n  \"T06\": {\n    \"status\": \"NOT_TESTED\",\n    \"conclusion\": \"Lista para prueba; mediciones incompletas\"\n  },\n  \"T08\": {\n    \"status\": \"NOT_TESTED\",\n    \"conclusion\": \"Lista para prueba; mediciones incompletas\"\n  }\n}\n"
+    },
+    {
+      "test": "empty_never_pass",
+      "status": "PASS"
+    },
+    {
+      "test": "create_csv",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "<validation>\\blank.csv\n"
+    },
+    {
+      "test": "evaluate_blank_csv",
+      "status": "PASS",
+      "exit_code": 3,
+      "output": "NOT_TESTED\n"
+    },
+    {
+      "test": "audit_pc_blocks",
+      "status": "PASS",
+      "exit_code": 4,
+      "output": "Solo lectura: no requiere conexiones.\n<validation>\\audit\\BBB-A\\20261112T155034Z-f03184c4\nBLOCKED\n"
+    },
+    {
+      "test": "local_document_links",
+      "status": "PASS",
+      "broken": []
+    }
+  ]
+}
