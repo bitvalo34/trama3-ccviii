@@ -1,0 +1,12 @@
+{
+  "BBB-A": {
+    "loopback": null,
+    "pwm-capture": null,
+    "t08": null
+  },
+  "BBB-B": {
+    "loopback": null,
+    "pwm-capture": null,
+    "t08": null
+  }
+}
