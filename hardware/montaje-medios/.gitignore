@@ -1,0 +1,7 @@
+fuentes/*-lectura.txt
+evidencias/qa/
+__pycache__/
+*.pyc
+*.FCStd1
+*.FCStd.*
+*.FCBak

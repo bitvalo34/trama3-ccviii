@@ -1,0 +1,71 @@
+﻿etiqueta,nodo_sentido,origen,destino,funcion_red,longitud_reserva_mm,calibre_propuesto,color,terminal,ruta,estado
+A-H01,A,J14.1 (H3),F1.1,+5V_RAW,350,22AWG flexible,rojo,bornera/terminal aislado segun pieza,potenciaY8/X285,RESERVA; medir en seco; P2 por confirmar
+B-H01,B,J14.1 (H3),F1.1,+5V_RAW,350,22AWG flexible,rojo,bornera/terminal aislado segun pieza,potenciaY8/X285,RESERVA; medir en seco; P2 por confirmar
+A-H02,A,J14.2 (H5),F1.2,+5V_ACT,350,22AWG flexible,rojo,bornera/terminal aislado segun pieza,potenciaY8/X285,RESERVA; medir en seco; P2 por confirmar
+B-H02,B,J14.2 (H5),F1.2,+5V_ACT,350,22AWG flexible,rojo,bornera/terminal aislado segun pieza,potenciaY8/X285,RESERVA; medir en seco; P2 por confirmar
+A-H03,A,J13.1 (C19),SW1.1,+5V_ACT,250,22AWG flexible,rojo,bornera/terminal aislado segun pieza,potenciaY8/X285,RESERVA; medir en seco; P2 por confirmar
+B-H03,B,J13.1 (C19),SW1.1,+5V_ACT,250,22AWG flexible,rojo,bornera/terminal aislado segun pieza,potenciaY8/X285,RESERVA; medir en seco; P2 por confirmar
+A-H04,A,J13.2 (C20),SW1.2,+5V_SERVO,250,22AWG flexible,rojo,bornera/terminal aislado segun pieza,potenciaY8/X285,RESERVA; medir en seco; P2 por confirmar
+B-H04,B,J13.2 (C20),SW1.2,+5V_SERVO,250,22AWG flexible,rojo,bornera/terminal aislado segun pieza,potenciaY8/X285,RESERVA; medir en seco; P2 por confirmar
+A-H05,A,J13.4 (C22),SW1.4,PWM_5V,250,26AWG flexible,rojo,bornera/terminal aislado segun pieza,potenciaY8/X285,RESERVA; medir en seco; P2 por confirmar
+B-H05,B,J13.4 (C22),SW1.4,PWM_5V,250,26AWG flexible,rojo,bornera/terminal aislado segun pieza,potenciaY8/X285,RESERVA; medir en seco; P2 por confirmar
+A-H06,A,J13.5 (C23),SW1.5,SERVO_SIG,250,26AWG flexible,azul,bornera/terminal aislado segun pieza,potenciaY8/X285,RESERVA; medir en seco; P2 por confirmar
+B-H06,B,J13.5 (C23),SW1.5,SERVO_SIG,250,26AWG flexible,azul,bornera/terminal aislado segun pieza,potenciaY8/X285,RESERVA; medir en seco; P2 por confirmar
+A-H07,A,J13.6 (C24),SW1.6,GND_ACT,250,22AWG flexible,negro,bornera/terminal aislado segun pieza,potenciaY8/X285,RESERVA; medir en seco; P2 por confirmar
+B-H07,B,J13.6 (C24),SW1.6,GND_ACT,250,22AWG flexible,negro,bornera/terminal aislado segun pieza,potenciaY8/X285,RESERVA; medir en seco; P2 por confirmar
+A-H08,A,J2.1 (X20),D3.A,LED_A,300,26AWG flexible,azul,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+B-H08,B,J2.1 (X20),D3.A,LED_A,300,26AWG flexible,azul,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+A-H09,A,J2.2 (X22),D3.K,LED_K,300,26AWG flexible,azul,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+B-H09,B,J2.2 (X22),D3.K,LED_K,300,26AWG flexible,azul,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+A-H10,A,J3.1 (AD20),BZ1.+,+5V_ACT,300,22AWG flexible,rojo,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+B-H10,B,J3.1 (AD20),BZ1.+,+5V_ACT,300,22AWG flexible,rojo,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+A-H11,A,J3.2 (AD22),BZ1.-,BUZZ_NEG,300,26AWG flexible,azul,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+B-H11,B,J3.2 (AD22),BZ1.-,BUZZ_NEG,300,26AWG flexible,azul,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+A-H12,A,J4.1 (C28),M1.GND,GND_ACT,300,22AWG flexible,negro,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+B-H12,B,J4.1 (C28),M1.GND,GND_ACT,300,22AWG flexible,negro,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+A-H13,A,J4.2 (C30),M1.VCC,+5V_SERVO,300,22AWG flexible,rojo,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+B-H13,B,J4.2 (C30),M1.VCC,+5V_SERVO,300,22AWG flexible,rojo,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+A-H14,A,J4.3 (C32),M1.SIG,SERVO_SIG,300,26AWG flexible,azul,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+B-H14,B,J4.3 (C32),M1.SIG,SERVO_SIG,300,26AWG flexible,azul,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+A-H15,A,J5.1 (V28),MOD1.VCC,+3V3_LOGIC,300,26AWG flexible,naranja,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+B-H15,B,J5.1 (V28),MOD1.VCC,+3V3_LOGIC,300,26AWG flexible,naranja,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+A-H16,A,J5.2 (V30),MOD1.GND,GND_LOGIC,300,26AWG flexible,negro,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+B-H16,B,J5.2 (V30),MOD1.GND,GND_LOGIC,300,26AWG flexible,negro,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+A-H17,A,J5.3 (V32),MOD1.DO,OPT_RAW,300,26AWG flexible,azul,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+B-H17,B,J5.3 (V32),MOD1.DO,OPT_RAW,300,26AWG flexible,azul,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+A-H18,A,J6.1 (AB28),MOD2.VCC,+3V3_LOGIC,300,26AWG flexible,naranja,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+B-H18,B,J6.1 (AB28),MOD2.VCC,+3V3_LOGIC,300,26AWG flexible,naranja,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+A-H19,A,J6.2 (AB30),MOD2.GND,GND_LOGIC,300,26AWG flexible,negro,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+B-H19,B,J6.2 (AB30),MOD2.GND,GND_LOGIC,300,26AWG flexible,negro,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+A-H20,A,J6.3 (AB32),MOD2.DO,AUD_RAW,300,26AWG flexible,azul,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+B-H20,B,J6.3 (AB32),MOD2.DO,AUD_RAW,300,26AWG flexible,azul,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+A-H21,A,J7.1 (AH29),SW2.COM,GND_LOGIC,300,26AWG flexible,negro,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+B-H21,B,J7.1 (AH29),SW2.COM,GND_LOGIC,300,26AWG flexible,negro,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+A-H22,A,J7.2 (AH31),SW2.NO,MECH_RAW,300,26AWG flexible,azul,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+B-H22,B,J7.2 (AH31),SW2.NO,MECH_RAW,300,26AWG flexible,azul,bornera/terminal aislado segun pieza,frontal porY115,RESERVA; medir en seco; P2 por confirmar
+A->B-H23,A->B,J9.A.1,J8.B.1,par opto remoto 1,1100,"26AWG aislado, par trenzado",violeta,bornera/terminal aislado segun pieza,bordesglobalX5AB/X295BA,RESERVA; medir en seco; P2 por confirmar
+A->B-H24,A->B,J9.A.2,J8.B.2,par opto remoto 2,1100,"26AWG aislado, par trenzado",violeta,bornera/terminal aislado segun pieza,bordesglobalX5AB/X295BA,RESERVA; medir en seco; P2 por confirmar
+B->A-H25,B->A,J9.B.1,J8.A.1,par opto remoto 1,1100,"26AWG aislado, par trenzado",violeta,bornera/terminal aislado segun pieza,bordesglobalX5AB/X295BA,RESERVA; medir en seco; P2 por confirmar
+B->A-H26,B->A,J9.B.2,J8.A.2,par opto remoto 2,1100,"26AWG aislado, par trenzado",violeta,bornera/terminal aislado segun pieza,bordesglobalX5AB/X295BA,RESERVA; medir en seco; P2 por confirmar
+A-J10-1,A,J10.1,P9_3,+3V3_LOGIC,300,26AWG flexible,segun guia J10,hembra2.54 desmontable,J10-Y112-X177-BBB,verificar continuidad individual
+A-J10-2,A,J10.2,P9_1,GND_LOGIC,300,26AWG flexible,segun guia J10,hembra2.54 desmontable,J10-Y112-X177-BBB,verificar continuidad individual
+A-J10-3,A,J10.3,P9_19,I2C_SCL,300,26AWG flexible,segun guia J10,hembra2.54 desmontable,J10-Y112-X177-BBB,verificar continuidad individual
+A-J10-4,A,J10.4,P9_20,I2C_SDA,300,26AWG flexible,segun guia J10,hembra2.54 desmontable,J10-Y112-X177-BBB,verificar continuidad individual
+A-J10-5,A,J10.5,P9_14,PWM_BBB,300,26AWG flexible,segun guia J10,hembra2.54 desmontable,J10-Y112-X177-BBB,verificar continuidad individual
+A-J10-6,A,J10.6,P8_11,CLK_TX,300,26AWG flexible,segun guia J10,hembra2.54 desmontable,J10-Y112-X177-BBB,verificar continuidad individual
+A-J10-7,A,J10.7,P9_27,OPT_BBB,300,26AWG flexible,segun guia J10,hembra2.54 desmontable,J10-Y112-X177-BBB,verificar continuidad individual
+A-J10-8,A,J10.8,P8_16,AUD_BBB,300,26AWG flexible,segun guia J10,hembra2.54 desmontable,J10-Y112-X177-BBB,verificar continuidad individual
+A-J10-9,A,J10.9,P9_24,MECH_BBB,300,26AWG flexible,segun guia J10,hembra2.54 desmontable,J10-Y112-X177-BBB,verificar continuidad individual
+A-J10-10,A,J10.10,P8_15,CLK_BBB,300,26AWG flexible,segun guia J10,hembra2.54 desmontable,J10-Y112-X177-BBB,verificar continuidad individual
+A-PWR-IN,A,fuente aislada + y -,J1.1/J1.2,+5V_RAW / NEG_IN,400,22AWG flexible o fuente validada,rojo/negro con etiquetaNEG_IN,conector REAL fuente +bornera,traseroY0,no unir NEG_IN aGND_ACT
+B-J10-1,B,J10.1,P9_3,+3V3_LOGIC,300,26AWG flexible,segun guia J10,hembra2.54 desmontable,J10-Y112-X177-BBB,verificar continuidad individual
+B-J10-2,B,J10.2,P9_1,GND_LOGIC,300,26AWG flexible,segun guia J10,hembra2.54 desmontable,J10-Y112-X177-BBB,verificar continuidad individual
+B-J10-3,B,J10.3,P9_19,I2C_SCL,300,26AWG flexible,segun guia J10,hembra2.54 desmontable,J10-Y112-X177-BBB,verificar continuidad individual
+B-J10-4,B,J10.4,P9_20,I2C_SDA,300,26AWG flexible,segun guia J10,hembra2.54 desmontable,J10-Y112-X177-BBB,verificar continuidad individual
+B-J10-5,B,J10.5,P9_14,PWM_BBB,300,26AWG flexible,segun guia J10,hembra2.54 desmontable,J10-Y112-X177-BBB,verificar continuidad individual
+B-J10-6,B,J10.6,P8_11,CLK_TX,300,26AWG flexible,segun guia J10,hembra2.54 desmontable,J10-Y112-X177-BBB,verificar continuidad individual
+B-J10-7,B,J10.7,P9_27,OPT_BBB,300,26AWG flexible,segun guia J10,hembra2.54 desmontable,J10-Y112-X177-BBB,verificar continuidad individual
+B-J10-8,B,J10.8,P8_16,AUD_BBB,300,26AWG flexible,segun guia J10,hembra2.54 desmontable,J10-Y112-X177-BBB,verificar continuidad individual
+B-J10-9,B,J10.9,P9_24,MECH_BBB,300,26AWG flexible,segun guia J10,hembra2.54 desmontable,J10-Y112-X177-BBB,verificar continuidad individual
+B-J10-10,B,J10.10,P8_15,CLK_BBB,300,26AWG flexible,segun guia J10,hembra2.54 desmontable,J10-Y112-X177-BBB,verificar continuidad individual
+B-PWR-IN,B,fuente aislada + y -,J1.1/J1.2,+5V_RAW / NEG_IN,400,22AWG flexible o fuente validada,rojo/negro con etiquetaNEG_IN,conector REAL fuente +bornera,traseroY0,no unir NEG_IN aGND_ACT

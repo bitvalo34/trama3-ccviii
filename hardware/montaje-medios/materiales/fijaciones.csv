@@ -1,0 +1,6 @@
+﻿componente,cantidad_por_nodo,separador_mm,pieza_mm,largo_candidato_mm,nota,alternativa,Lmin_con_MDF6_arandela1_tuerca2p4_salida1
+PCB,4,12,1.6,25,M3x16 insuficiente,separadorroscado,24.0
+BBB,4,8,1.6,20,M3x20 justo nominal; revisar tolerancia,M3x22/25 o separadorroscado,20.0
+Servo,2,0,5,16,medir base,tornillo disponible,15.4
+SW2,2,0,2,16,medir soporte,M3x16,12.4
+SW287,2,0,2,16,medir soporte,M3x16,12.4

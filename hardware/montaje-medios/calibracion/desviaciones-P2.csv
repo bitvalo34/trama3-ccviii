@@ -1,0 +1,19 @@
+﻿nodo,ref,esperado,observado,correccion,evidencia,revision_Adrian,estado
+A,Q6,IRLZ44N G=5V D=NEG_IN S=GND_ACT,,,,,PENDIENTE
+A,SW1,SW287 contactos comprobados,,,,,PENDIENTE
+A,J11_MOD3_J12,sin conexiones P1,,,,,PENDIENTE
+A,NT1,unica union GND_ACT-LOGIC,,,,,PENDIENTE
+A,J10,10pines segun tabla,,,,,PENDIENTE
+A,J5_J6,3V3 DO individual,,,,,PENDIENTE
+A,J8_J9,opto par sin GND remoto,,,,,PENDIENTE
+A,AletaQ6,sin contacto conductor,,,,,PENDIENTE
+A,Fuente,aislada flotante identificada,,,,,PENDIENTE
+B,Q6,IRLZ44N G=5V D=NEG_IN S=GND_ACT,,,,,PENDIENTE
+B,SW1,SW287 contactos comprobados,,,,,PENDIENTE
+B,J11_MOD3_J12,sin conexiones P1,,,,,PENDIENTE
+B,NT1,unica union GND_ACT-LOGIC,,,,,PENDIENTE
+B,J10,10pines segun tabla,,,,,PENDIENTE
+B,J5_J6,3V3 DO individual,,,,,PENDIENTE
+B,J8_J9,opto par sin GND remoto,,,,,PENDIENTE
+B,AletaQ6,sin contacto conductor,,,,,PENDIENTE
+B,Fuente,aislada flotante identificada,,,,,PENDIENTE
