@@ -1,0 +1,11 @@
+﻿pin_J10,pin_BBB,red,estado
+1,P9_3,+3V3_LOGIC,REFERENCIA P2; continuidad fisica pendiente
+2,P9_1,GND_LOGIC,REFERENCIA P2; continuidad fisica pendiente
+3,P9_19,I2C_SCL,REFERENCIA P2; continuidad fisica pendiente
+4,P9_20,I2C_SDA,REFERENCIA P2; continuidad fisica pendiente
+5,P9_14,PWM_BBB,REFERENCIA P2; continuidad fisica pendiente
+6,P8_11,CLK_TX,REFERENCIA P2; continuidad fisica pendiente
+7,P9_27,OPT_BBB,REFERENCIA P2; continuidad fisica pendiente
+8,P8_16,AUD_BBB,REFERENCIA P2; continuidad fisica pendiente
+9,P9_24,MECH_BBB,REFERENCIA P2; continuidad fisica pendiente
+10,P8_15,CLK_BBB,REFERENCIA P2; continuidad fisica pendiente

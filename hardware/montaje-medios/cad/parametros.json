@@ -1,0 +1,17 @@
+{
+  "revision": "MONTAJE-P0 / T51-P2-LOCAL / protocolo102",
+  "estado": "PROPUESTA PARAMETRICA; NO TALADRAR SIN COTEJO",
+  "mdf_x": 300, "mdf_y": 200, "mdf_t": 6,
+  "gap": 360, "pvc_length": 480, "hose_length": 480,
+  "pvc_od": 34, "pvc_id": 28, "hose_od": 18, "hose_id": 12.7,
+  "optic_z": 40, "audio_z": 32, "nylon_z": 36,
+  "board_x": 15, "board_y": 15, "board_standoff": 12,
+  "bbb_x": 185, "bbb_y": 15, "bbb_standoff": 8,
+  "bbb_length": 86.36, "bbb_width": 53.34,
+  "servo_y": 147, "servo_radius": 8, "servo_delta_deg": 20,
+  "switch_y": 143, "eye_y": 185, "eye_rx_z": 22,
+  "spring_free_length": 25, "spring_radius": 3,
+  "nylon_blank": 750, "support_w": 25, "support_h": 23,
+  "lanes": {"C0_AB":30,"C0_BA":75,"C1_AB":120,"C1_BA":160,"C2_AB":215,"C2_BA":275},
+  "note": "MDF t, diametros, alturas, soportes, resorte y huellas de fijacion son provisionales. Longitudes son propuestas calculadas. No inferir fuerza, k o par del modelo."
+}

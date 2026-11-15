@@ -1,0 +1,177 @@
+{
+  "estado": "PASS_OFFLINE",
+  "alcance": "No valida hardware ni todos los contactos CAD",
+  "colisiones_envolventes": [],
+  "envolventes_comparadas": 16,
+  "comprobaciones": [
+    {
+      "comprobacion": "envolventes principales sin interseccion",
+      "cumple": true
+    },
+    {
+      "comprobacion": "dos bases MDF",
+      "cumple": true
+    },
+    {
+      "comprobacion": "A BBB_PCB",
+      "cumple": true
+    },
+    {
+      "comprobacion": "A Perfboard_150x90",
+      "cumple": true
+    },
+    {
+      "comprobacion": "A SG90_cuerpo",
+      "cumple": true
+    },
+    {
+      "comprobacion": "A SW2_final_carrera",
+      "cumple": true
+    },
+    {
+      "comprobacion": "A SW287_cuerpo",
+      "cumple": true
+    },
+    {
+      "comprobacion": "soldadura-modelo A libre MDF>=3mm",
+      "cumple": true
+    },
+    {
+      "comprobacion": "B BBB_PCB",
+      "cumple": true
+    },
+    {
+      "comprobacion": "B Perfboard_150x90",
+      "cumple": true
+    },
+    {
+      "comprobacion": "B SG90_cuerpo",
+      "cumple": true
+    },
+    {
+      "comprobacion": "B SW2_final_carrera",
+      "cumple": true
+    },
+    {
+      "comprobacion": "B SW287_cuerpo",
+      "cumple": true
+    },
+    {
+      "comprobacion": "soldadura-modelo B libre MDF>=3mm",
+      "cumple": true
+    },
+    {
+      "comprobacion": "PVC dentro de1000mm con kerf3",
+      "cumple": true
+    },
+    {
+      "comprobacion": "manguera dentro de1000mm",
+      "cumple": true
+    },
+    {
+      "comprobacion": "separacion BBB-PCB20mm",
+      "cumple": true
+    },
+    {
+      "comprobacion": "agujeros dentro deMDF",
+      "cumple": true
+    },
+    {
+      "comprobacion": "todos los agujeros identifican estado pendiente/propuesta",
+      "cumple": true
+    },
+    {
+      "comprobacion": "registros vacios NO_PROBADO",
+      "cumple": true
+    },
+    {
+      "comprobacion": "datos sinteticos coinciden sin cerrar tareas",
+      "cumple": true
+    },
+    {
+      "comprobacion": "detecta bit incorrecto",
+      "cumple": true
+    },
+    {
+      "comprobacion": "detecta tick duplicado",
+      "cumple": true
+    },
+    {
+      "comprobacion": "rechaza NaN",
+      "cumple": true
+    },
+    {
+      "comprobacion": "A FCStd",
+      "cumple": true
+    },
+    {
+      "comprobacion": "A step",
+      "cumple": true
+    },
+    {
+      "comprobacion": "A obj",
+      "cumple": true
+    },
+    {
+      "comprobacion": "A mtl",
+      "cumple": true
+    },
+    {
+      "comprobacion": "B FCStd",
+      "cumple": true
+    },
+    {
+      "comprobacion": "B step",
+      "cumple": true
+    },
+    {
+      "comprobacion": "B obj",
+      "cumple": true
+    },
+    {
+      "comprobacion": "B mtl",
+      "cumple": true
+    },
+    {
+      "comprobacion": "Global FCStd",
+      "cumple": true
+    },
+    {
+      "comprobacion": "Global step",
+      "cumple": true
+    },
+    {
+      "comprobacion": "Global obj",
+      "cumple": true
+    },
+    {
+      "comprobacion": "Global mtl",
+      "cumple": true
+    },
+    {
+      "comprobacion": "plantilla A 3paginas A3 y2A4",
+      "cumple": true
+    },
+    {
+      "comprobacion": "A3 real",
+      "cumple": true
+    },
+    {
+      "comprobacion": "A4 real",
+      "cumple": true
+    },
+    {
+      "comprobacion": "plantilla B 3paginas A3 y2A4",
+      "cumple": true
+    },
+    {
+      "comprobacion": "A3 real",
+      "cumple": true
+    },
+    {
+      "comprobacion": "A4 real",
+      "cumple": true
+    }
+  ],
+  "fisico": "NO_PROBADO"
+}

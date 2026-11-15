@@ -1,0 +1,9 @@
+﻿sentido,pulso,T_s,ancho_TX_s,ancho_RX_activo_s,retardo_s,perdidos,extras,concurrente,polaridad,evidencia,estado
+AB,marcador,,,,,,,,,,NO_PROBADO
+AB,ordinario,,,,,,,,,,NO_PROBADO
+AB,guarda,,,,,,,,,,NO_PROBADO
+AB,doble reloj,,,,,,,,,,NO_PROBADO
+BA,marcador,,,,,,,,,,NO_PROBADO
+BA,ordinario,,,,,,,,,,NO_PROBADO
+BA,guarda,,,,,,,,,,NO_PROBADO
+BA,doble reloj,,,,,,,,,,NO_PROBADO

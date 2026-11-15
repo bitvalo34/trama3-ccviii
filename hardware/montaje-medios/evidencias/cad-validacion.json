@@ -1,0 +1,22 @@
+{
+  "estado": "VALIDO_GEOMETRIA_NOMINAL_NO_VALIDACION_FISICA",
+  "objetos": 774,
+  "invalidos": [],
+  "base_mm": [
+    300,
+    200,
+    6
+  ],
+  "gap_mm": 360,
+  "longitud_total_mm": 760,
+  "PVC_uso_mm": 966,
+  "manguera_uso_mm": 960,
+  "carrera_cuerda_mm": 2.7783708426708853,
+  "advertencias": [
+    "Sin mediciones de piezas ni ensayo electrico",
+    "No prueba exhaustiva de colisiones entre todos los solidos",
+    "Conectores/soportes/huellas provisionales; transferir agujeros",
+    "Modelo resorte no implica k ni par",
+    "Lado soldado puede sobresalir mas que modelo: medir"
+  ]
+}

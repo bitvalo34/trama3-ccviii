@@ -1,0 +1,8 @@
+* text=auto eol=lf
+*.FCStd binary
+*.step binary
+*.obj binary
+*.dxf binary
+*.png binary
+*.pdf binary
+fuentes/T51-P2-LOCAL/* binary

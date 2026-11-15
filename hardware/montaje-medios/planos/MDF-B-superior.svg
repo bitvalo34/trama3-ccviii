@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340mm" height="250mm" viewBox="-20 -25 340 250">
+<style>text{font:4px Arial;fill:#162d3e}.warn{fill:#a45c06}.dim{stroke:#6b7e8a;fill:none;stroke-width:.3}</style>
+<text x="0" y="-16">MDF B - plano superior / P0 provisional / mm</text>
+<g transform="translate(0 200) scale(1 -1)"><rect x="0" y="0" width="300" height="200" fill="#f6eee4" stroke="#162d3e" stroke-width=".6"/>
+<rect x="15.0" y="15.0" width="150.0" height="90.0" fill="#9e5e28" fill-opacity=".2" stroke="#9e5e28" stroke-width=".5"/>
+<rect x="185.0" y="15.0" width="86.36000000000001" height="53.34000000000003" fill="#1e2830" fill-opacity=".2" stroke="#1e2830" stroke-width=".5"/>
+<rect x="253.00000000000003" y="138.0" width="33.99999999999997" height="2.0" fill="#16191e" fill-opacity=".2" stroke="#16191e" stroke-width=".5"/>
+<rect x="208.00000000000003" y="138.0" width="34.0" height="2.0" fill="#16191e" fill-opacity=".2" stroke="#16191e" stroke-width=".5"/>
+<rect x="168.00000000000003" y="148.0" width="24.0" height="12.0" fill="#3f4249" fill-opacity=".2" stroke="#3f4249" stroke-width=".5"/>
+<rect x="171.5" y="113.0" width="17.00000000000003" height="45.0" fill="#144cb7" fill-opacity=".2" stroke="#144cb7" stroke-width=".5"/>
+<rect x="128.00000000000003" y="148.0" width="24.0" height="12.0" fill="#3f4249" fill-opacity=".2" stroke="#3f4249" stroke-width=".5"/>
+<rect x="8.0" y="138.0" width="34.0" height="32.0" fill="#16191e" fill-opacity=".2" stroke="#16191e" stroke-width=".5"/>
+<rect x="71.0" y="145.0" width="28.0" height="16.0" fill="#16191e" fill-opacity=".2" stroke="#16191e" stroke-width=".5"/>
+<rect x="235.0" y="86.0" width="30.0" height="25.0" fill="#16191e" fill-opacity=".2" stroke="#16191e" stroke-width=".5"/>
+<rect x="186.0" y="88.0" width="35.0" height="12.0" fill="#16191e" fill-opacity=".2" stroke="#16191e" stroke-width=".5"/>
+<circle cx="19.0" cy="19.0" r="1.6" fill="none" stroke="#a45c06" stroke-width=".3"/>
+<circle cx="161.0" cy="19.0" r="1.6" fill="none" stroke="#a45c06" stroke-width=".3"/>
+<circle cx="19.0" cy="101.0" r="1.6" fill="none" stroke="#a45c06" stroke-width=".3"/>
+<circle cx="161.0" cy="101.0" r="1.6" fill="none" stroke="#a45c06" stroke-width=".3"/>
+<circle cx="189.0" cy="19.0" r="1.6" fill="none" stroke="#a45c06" stroke-width=".3"/>
+<circle cx="267.36" cy="19.0" r="1.6" fill="none" stroke="#a45c06" stroke-width=".3"/>
+<circle cx="189.0" cy="64.34" r="1.6" fill="none" stroke="#a45c06" stroke-width=".3"/>
+<circle cx="267.36" cy="64.34" r="1.6" fill="none" stroke="#a45c06" stroke-width=".3"/>
+<circle cx="252.0" cy="181.0" r="1.6" fill="none" stroke="#a45c06" stroke-width=".3"/>
+<circle cx="288.0" cy="181.0" r="1.6" fill="none" stroke="#a45c06" stroke-width=".3"/>
+<circle cx="207.0" cy="181.0" r="1.6" fill="none" stroke="#a45c06" stroke-width=".3"/>
+<circle cx="243.0" cy="181.0" r="1.6" fill="none" stroke="#a45c06" stroke-width=".3"/>
+<circle cx="168.0" cy="180.0" r="1.6" fill="none" stroke="#a45c06" stroke-width=".3"/>
+<circle cx="192.0" cy="180.0" r="1.6" fill="none" stroke="#a45c06" stroke-width=".3"/>
+<circle cx="128.0" cy="180.0" r="1.6" fill="none" stroke="#a45c06" stroke-width=".3"/>
+<circle cx="152.0" cy="180.0" r="1.6" fill="none" stroke="#a45c06" stroke-width=".3"/>
+<circle cx="12.0" cy="153.0" r="1.6" fill="none" stroke="#a45c06" stroke-width=".3"/>
+<circle cx="38.0" cy="153.0" r="1.6" fill="none" stroke="#a45c06" stroke-width=".3"/>
+<circle cx="33.0" cy="185.0" r="1.0" fill="none" stroke="#a45c06" stroke-width=".3"/>
+<circle cx="85.0" cy="185.0" r="1.0" fill="none" stroke="#a45c06" stroke-width=".3"/>
+<circle cx="85.0" cy="130.0" r="1.0" fill="none" stroke="#a45c06" stroke-width=".3"/>
+<circle cx="77.0" cy="155.0" r="1.6" fill="none" stroke="#a45c06" stroke-width=".3"/>
+<circle cx="93.0" cy="155.0" r="1.6" fill="none" stroke="#a45c06" stroke-width=".3"/>
+<circle cx="241.0" cy="96.0" r="1.6" fill="none" stroke="#a45c06" stroke-width=".3"/>
+<circle cx="259.0" cy="96.0" r="1.6" fill="none" stroke="#a45c06" stroke-width=".3"/>
+<circle cx="182.0" cy="94.0" r="1.6" fill="none" stroke="#a45c06" stroke-width=".3"/>
+<circle cx="225.0" cy="94.0" r="1.6" fill="none" stroke="#a45c06" stroke-width=".3"/>
+</g>
+<text x="17.0" y="140.0">PERFBOARD P2 150 x 90</text>
+<text x="187.0" y="158.32999999999998">BBB 86.36 x 53.34</text>
+<text x="10.0" y="46.0">SERVO TX</text>
+<text x="73.0" y="47.0">SW2 RX</text>
+<text x="237.0" y="101.5">SW287</text>
+<text x="188.0" y="106.0">F1</text>
+<text x="100" y="-5">FRENTE Y=200</text>
+<text x="0" y="209">Origen(0,0), X derecha, Y frente. Ver CSV para coordenadas y estado.</text>
+<text class="warn" x="0" y="217">Agujeros candidatos. Confirmar todas las fijaciones antes de taladrar.</text>
+<path class="dim" d="M0,-8 H300 M0,-10 V-6 M300,-10 V-6"/><text x="135" y="-10">300 mm</text>
+</svg>

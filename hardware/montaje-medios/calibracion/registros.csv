@@ -1,0 +1,9 @@
+﻿procedimiento,medio,sentido,estado,reposo,activacion,liberacion,patron_010101,retardo_subida_ms,retardo_bajada_ms,rebote_ms,falsos_positivos,falsos_negativos,ensayos,Vlow,Vhigh,polaridad,ajuste,evidencia,revision_fw,operador,revisor,fecha
+P01,C0,AB,NO_PROBADO,,,,,,,,,,,,,,,,,,,
+P02,C0,BA,NO_PROBADO,,,,,,,,,,,,,,,,,,,
+P03,C1,AB,NO_PROBADO,,,,,,,,,,,,,,,,,,,
+P04,C1,BA,NO_PROBADO,,,,,,,,,,,,,,,,,,,
+P05,C2,AB,NO_PROBADO,,,,,,,,,,,,,,,,,,,
+P06,C2,BA,NO_PROBADO,,,,,,,,,,,,,,,,,,,
+P07,CLK,AB,NO_PROBADO,,,,,,,,,,,,,,,,,,,
+P08,CLK,BA,NO_PROBADO,,,,,,,,,,,,,,,,,,,

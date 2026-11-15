@@ -1,0 +1,29 @@
+﻿material,disponible,nodo_A,nodo_B,entre_nodos,sobrante,faltante_condicional,funcion,posicion,alternativa_nota
+MDF300x200,2 piezas,1,1,0,0,0,base,ambos nodos,espesor pendiente
+PVC1pulgada,1000mm,0,0,2x480mm,34mm con kerf3,0 si largo real>=966,C0 bidireccional,X30/75,OD/ID y corte por confirmar
+Manguera1/2pulgada,1000mm,0,0,2x480mm,40mm,0 si largo real>=960,C1 bidireccional,X120/160,manga externa no consume conducto
+Abrazaderas1pulgada,4,2,2,0,0,si OD no compatible,PVC,Y181,cincho en cuna firme como alternativa a cotejar
+TuercasM3,24,14,14,0,0,4,28 uniones pasantes,8 placas +6 soportes por nodo,si separadores roscados:12 necesarias y12 sobrantes
+M3x16,mas de24,6,6,0,>=13 si hay25,medir conteo,servo/SW2/SW287,2 por soporte,no bastan para placa+separador pasante
+Tornillos largos placas,no declarados,8,8,0,pendiente,hasta16 condicionales,4 M3x25 PCB +4 M3x20/22/25 BBB por nodo,placas,usar separadores roscados y tornillos independientes si disponibles
+ArandelasM3 metal,25,14,14,0,0,3,bajo MDF en 28 fijaciones,cara inferior MDF,con separadores de otro tipo recalcular
+Arandelas aislantes,no declaradas,8,8,0,pendiente,hasta16 condicionales,proteger PCB,cara superior soportes,cabezas/soportes plasticos compatibles
+Tornillos abrazaderas,disponibles sin conteo,4,4,0,pendiente,segun conteo/paso,dos por abrazadera propuestos,Y181,transferir patron real
+Cinchos,100,12,12,4,72,0,mangueras/tapas/arneses,frontal y corredores,no comprimir ni cubrir sensor
+Nylon0.5mm,disponible sin longitud,0,0,2x750mm,Ldisponible-1500,si L<1500,C2,X215/275,conservar colas y reserva
+Armellas cerradas,24,3,3,0,18,soporte alto si vastago corto,guiaTX/guiaRX/retorno,ver perforaciones,no desenroscar para ganar altura
+Escuadras1pulgada,4,2,2,0,0,si repisa SW287 incompatible,SW2 ySW287,frontal/rear lateral,adaptador rigido reciclado si hace falta
+Resortes,1 caja,1,1,2,conteo-4,si no hay4 adecuados,2 retorno+2 serie,C2,k/F0/longitud por medir
+Espuma,disponible sin medida,2 apoyos+2 mangas,2 apoyos+2 mangas,apoyo medio manguera opcional,pendiente,segun tamaño,aislamiento acustico,C1,no usar espuma blanda para alinear PVC
+Bases servo,2,1,1,0,0,0 si huella encaja,SG90,segun tabla,presentar antes de taladro
+Separadores plasticos,disponibles sin conteo,8,8,0,conteo-16,si conteo<16,PCB/BBB,12/8mm iniciales,tipo roscado o clip cambia tornilleria
+Calces firmes PVC,no declarados,2,2,0,pendiente,4 si no hay sobrantes,altura eje40,bajo abrazaderas,retazos madera/plastico rigido
+Tapas opacas PVC,no declaradas,2,2,0,pendiente,4 si no hay retazos,sellar luz ambiente,bocasC0,carton opaco rigido o plastico reciclado
+Soportes/acoples auxiliares,no declarados,segun piezas reales,segun piezas reales,0,pendiente,condicional,sensores y ancla alta,frontal,retazos y cinchos; no requiere impresora3D
+Pares reloj26AWG,longitud no declarada,0,0,2x1100mm de par,pendiente,si par disponible<2200mm,dos relojes,bordesglobal5/295,no tercerGND
+BBB,2 declaradas,1,1,0,0,0,procesamiento,trasera,conservar existentes
+Perfboard90x150,2 previstas;1 soldada,1,1,0,0,terminar segunda,interfazP2,trasera,no reconstruir primera
+LED/LDR/buzzer/MIC/SG90/SW2,2 de cada declarados,1 de cada,1 de cada,0,0,verificar variantes,tres medios,frontal,pinoutMIC independiente
+SW287/IRLZ44N,P2 previstos;conteo real pendiente,1 de cada,1 de cada,0,pendiente,segun kitP2,mantenimiento/proteccion,SW287 lateral/Q6 placa,no sustitucionP1 directa
+Fuentesactuadores5V2.5A,2 previstas sin identificar,1,1,0,pendiente,si no aisladas/flotantes,alimentacion,fueraMDF,verificar disponibles antes de comprar
+Instrumentacion,multimetro;sin osciloscopio confirmado,0,0,prestamo para pruebas,no aplica,prestamo osciloscopio/captura,amplitud/tiempos,banco,no instalar otra appCAD

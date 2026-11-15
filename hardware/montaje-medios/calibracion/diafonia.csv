@@ -1,0 +1,61 @@
+﻿receptor,sentido,agresor,patron_propio,ventanas,FP,FN,flancos_extra,evidencia,estado
+C0,AB,otro sentido mismo medio,reposo,,,,,,NO_PROBADO
+C0,AB,otro sentido mismo medio,010101,,,,,,NO_PROBADO
+C0,AB,otros medios,reposo,,,,,,NO_PROBADO
+C0,AB,otros medios,010101,,,,,,NO_PROBADO
+C0,AB,servo local,reposo,,,,,,NO_PROBADO
+C0,AB,servo local,010101,,,,,,NO_PROBADO
+C0,AB,ambos servos,reposo,,,,,,NO_PROBADO
+C0,AB,ambos servos,010101,,,,,,NO_PROBADO
+C0,AB,todos,reposo,,,,,,NO_PROBADO
+C0,AB,todos,010101,,,,,,NO_PROBADO
+C0,BA,otro sentido mismo medio,reposo,,,,,,NO_PROBADO
+C0,BA,otro sentido mismo medio,010101,,,,,,NO_PROBADO
+C0,BA,otros medios,reposo,,,,,,NO_PROBADO
+C0,BA,otros medios,010101,,,,,,NO_PROBADO
+C0,BA,servo local,reposo,,,,,,NO_PROBADO
+C0,BA,servo local,010101,,,,,,NO_PROBADO
+C0,BA,ambos servos,reposo,,,,,,NO_PROBADO
+C0,BA,ambos servos,010101,,,,,,NO_PROBADO
+C0,BA,todos,reposo,,,,,,NO_PROBADO
+C0,BA,todos,010101,,,,,,NO_PROBADO
+C1,AB,otro sentido mismo medio,reposo,,,,,,NO_PROBADO
+C1,AB,otro sentido mismo medio,010101,,,,,,NO_PROBADO
+C1,AB,otros medios,reposo,,,,,,NO_PROBADO
+C1,AB,otros medios,010101,,,,,,NO_PROBADO
+C1,AB,servo local,reposo,,,,,,NO_PROBADO
+C1,AB,servo local,010101,,,,,,NO_PROBADO
+C1,AB,ambos servos,reposo,,,,,,NO_PROBADO
+C1,AB,ambos servos,010101,,,,,,NO_PROBADO
+C1,AB,todos,reposo,,,,,,NO_PROBADO
+C1,AB,todos,010101,,,,,,NO_PROBADO
+C1,BA,otro sentido mismo medio,reposo,,,,,,NO_PROBADO
+C1,BA,otro sentido mismo medio,010101,,,,,,NO_PROBADO
+C1,BA,otros medios,reposo,,,,,,NO_PROBADO
+C1,BA,otros medios,010101,,,,,,NO_PROBADO
+C1,BA,servo local,reposo,,,,,,NO_PROBADO
+C1,BA,servo local,010101,,,,,,NO_PROBADO
+C1,BA,ambos servos,reposo,,,,,,NO_PROBADO
+C1,BA,ambos servos,010101,,,,,,NO_PROBADO
+C1,BA,todos,reposo,,,,,,NO_PROBADO
+C1,BA,todos,010101,,,,,,NO_PROBADO
+C2,AB,otro sentido mismo medio,reposo,,,,,,NO_PROBADO
+C2,AB,otro sentido mismo medio,010101,,,,,,NO_PROBADO
+C2,AB,otros medios,reposo,,,,,,NO_PROBADO
+C2,AB,otros medios,010101,,,,,,NO_PROBADO
+C2,AB,servo local,reposo,,,,,,NO_PROBADO
+C2,AB,servo local,010101,,,,,,NO_PROBADO
+C2,AB,ambos servos,reposo,,,,,,NO_PROBADO
+C2,AB,ambos servos,010101,,,,,,NO_PROBADO
+C2,AB,todos,reposo,,,,,,NO_PROBADO
+C2,AB,todos,010101,,,,,,NO_PROBADO
+C2,BA,otro sentido mismo medio,reposo,,,,,,NO_PROBADO
+C2,BA,otro sentido mismo medio,010101,,,,,,NO_PROBADO
+C2,BA,otros medios,reposo,,,,,,NO_PROBADO
+C2,BA,otros medios,010101,,,,,,NO_PROBADO
+C2,BA,servo local,reposo,,,,,,NO_PROBADO
+C2,BA,servo local,010101,,,,,,NO_PROBADO
+C2,BA,ambos servos,reposo,,,,,,NO_PROBADO
+C2,BA,ambos servos,010101,,,,,,NO_PROBADO
+C2,BA,todos,reposo,,,,,,NO_PROBADO
+C2,BA,todos,010101,,,,,,NO_PROBADO
