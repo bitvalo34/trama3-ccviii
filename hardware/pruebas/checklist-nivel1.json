@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "board": "BBB-A",
+  "hardware_revision": "BBB-BARE",
+  "level": 1,
+  "fixture": "none",
+  "operator": "",
+  "checked_at": "",
+  "evidence": "",
+  "interface_disconnected": false,
+  "actuators_disconnected": false,
+  "wiring_done_unpowered": false,
+  "pins_identified": false,
+  "supply_checked": false,
+  "p9_3_V": null,
+  "uncertainty_V": null,
+  "instrument": ""
+}

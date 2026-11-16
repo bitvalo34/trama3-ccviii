@@ -15,13 +15,15 @@ def main():
     p.add_argument("--evidence")
     p.add_argument("--date",help="Fecha real ISO del PC, si reloj BBB desajustado")
     p.add_argument("--notes",default="")
+    p.add_argument("--operator")
+    p.add_argument("--detail",default="")
     a=p.parse_args();path=Path(a.file)
     if not a.point:
         if path.exists():p.error("No sobrescribir formulario existente")
         write_csv(path,template(a.board));print(str(path));return
     if not path.exists():p.error("Crear primero el formulario sin --point")
-    if any(v is None for v in (a.value,a.method,a.instrument,a.evidence)):
-        p.error("Registro exige value, method, instrument y evidence")
+    if any(v is None for v in (a.value,a.method,a.instrument,a.evidence,a.operator,a.date)):
+        p.error("Registro exige value, method, instrument, evidence, operator y date real")
     rows=read_csv(path)
     if any(r["board"]!=a.board for r in rows):p.error("Placa incorrecta")
     for r in rows:
@@ -29,7 +31,7 @@ def main():
             r.update(value=a.value,uncertainty=a.uncertainty or "",method=a.method,
                      instrument=a.instrument,evidence=a.evidence,
                      measured_at=a.date or datetime.datetime.utcnow().isoformat()+"Z",
-                     notes=a.notes)
+                     notes=a.notes,operator=a.operator,detail=a.detail)
     # Conservar lectura previa en copia unica, nunca perder evidencia.
     if any(r["value"] for r in read_csv(path)):
         backup=path.with_name(path.name+"."+datetime.datetime.utcnow().strftime("%Y%m%dT%H%M%S%f")+".bak")

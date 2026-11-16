@@ -1,0 +1,82 @@
+{
+  "schema": 2,
+  "hardware_revision": "P2-LOCAL",
+  "boards": {
+    "BBB-A": {
+      "checks": {
+        "build": {
+          "status": "PASS",
+          "reason": "Registro historico/BBB-A/trama3-resultados/BBB-A/20260806T033442Z-e26bfc56/build.json"
+        },
+        "pru-smoke": {
+          "status": "PASS",
+          "reason": "Registro historico/BBB-A/trama3-resultados/BBB-A/20260806T033839Z-d42e7cbf/pru-smoke.json"
+        },
+        "loopback": {
+          "status": "PASS",
+          "reason": "Registro historico/BBB-A/trama3-resultados/BBB-A/20260806T034704Z-4122eebb/loopback.json"
+        },
+        "pwm-capture-1000": {
+          "status": "PASS",
+          "reason": "Registro historico/BBB-A/trama3-resultados/BBB-A/20260806T034954Z-fede5948/pwm-capture.json"
+        },
+        "pwm-capture-1500": {
+          "status": "PASS",
+          "reason": "Registro historico/BBB-A/trama3-resultados/BBB-A/20260806T034959Z-bfadae09/pwm-capture.json"
+        },
+        "pwm-capture-2000": {
+          "status": "PASS",
+          "reason": "Registro historico/BBB-A/trama3-resultados/BBB-A/20260806T035003Z-ee04d48d/pwm-capture.json"
+        },
+        "t08": {
+          "status": "NOT_TESTED",
+          "reason": "Evidencia no seleccionada"
+        }
+      },
+      "T06": "PASS",
+      "T08": "NOT_TESTED"
+    },
+    "BBB-B": {
+      "checks": {
+        "build": {
+          "status": "PASS",
+          "reason": "Registro historico/BBB-B/trama3-resultados/BBB-B/20251031T143314Z-321371b0/build.json"
+        },
+        "pru-smoke": {
+          "status": "PASS",
+          "reason": "Registro historico/BBB-B/trama3-resultados/BBB-B/20251031T142716Z-821c5789/pru-smoke.json"
+        },
+        "loopback": {
+          "status": "PASS",
+          "reason": "Registro historico/BBB-B/trama3-resultados/BBB-B/20251031T142516Z-cb9a1462/loopback.json"
+        },
+        "pwm-capture-1000": {
+          "status": "PASS",
+          "reason": "Registro historico/BBB-B/trama3-resultados/BBB-B/20251031T142405Z-ea66e1b7/pwm-capture.json"
+        },
+        "pwm-capture-1500": {
+          "status": "PASS",
+          "reason": "Registro historico/BBB-B/trama3-resultados/BBB-B/20251031T142414Z-a8986358/pwm-capture.json"
+        },
+        "pwm-capture-2000": {
+          "status": "PASS",
+          "reason": "Registro historico/BBB-B/trama3-resultados/BBB-B/20251031T142422Z-a0da08c1/pwm-capture.json"
+        },
+        "t08": {
+          "status": "NOT_TESTED",
+          "reason": "Evidencia no seleccionada"
+        }
+      },
+      "T06": "PASS",
+      "T08": "NOT_TESTED"
+    }
+  },
+  "T06": {
+    "status": "PASS",
+    "conclusion": "Revisar evidencia individual; no modifica tracker"
+  },
+  "T08": {
+    "status": "NOT_TESTED",
+    "conclusion": "Revisar evidencia individual; no modifica tracker"
+  }
+}

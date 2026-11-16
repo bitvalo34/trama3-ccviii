@@ -12,6 +12,17 @@ PININFO = {"P8_11": (13, 45), "P8_15": (15, 47), "P8_16": (14, 46),
            "P9_24": (97, 15), "P9_27": (105, 115), "P9_14": (18, 50)}
 SAFE_MODES = ("default", "gpio_input", "gpio_pd", "gpio_pu")
 
+def pwm_channel(chip):
+    """Resolve channel zero on mainline and older TI kernels; never guess."""
+    chip = Path(chip)
+    candidates = [chip / "pwm0"]
+    if re.match(r"^pwmchip[0-9]+$", chip.name):
+        candidates.append(chip / ("pwm-" + chip.name[7:] + ":0"))
+    found = [p for p in candidates if p.is_dir()]
+    if len(found) > 1:
+        raise Blocked("Canal PWM ambiguo: " + str(chip))
+    return found[0] if found else None
+
 class Hardware:
     def __init__(self, root="/", log=None):
         self.root = Path(root)
@@ -19,8 +30,13 @@ class Hardware:
     def p(self, absolute):
         return self.root / absolute.lstrip("/")
     def write(self, path, value):
-        with Path(path).open("w") as f:
-            f.write(str(value))
+        try:
+            with Path(path).open("w") as f:
+                f.write(str(value))
+        except OSError as exc:
+            self.log.append({"write":str(path),"value":str(value),
+                             "exit_code":1,"error":str(exc)})
+            raise
         self.log.append({"write": str(path), "value": str(value), "exit_code": 0})
     def command(self, args):
         return checked(args, self.log)
@@ -35,12 +51,13 @@ class Hardware:
             raise Blocked("No se identifica un unico eHRPWM1/P9_14; no se adivina pwmchip")
         return found[0]
     def pwm_free(self, chip):
-        if list(chip.glob("pwm[0-9]*")):
+        if list(chip.glob("pwm[0-9]*")) or list(chip.glob("pwm-*:*")):
             raise Blocked("eHRPWM1 ya exportado (canales A/B comparten periodo)")
         debug = read(self.p("/sys/kernel/debug/pwm"))
         if not debug:
             raise Blocked("Falta lectura debugfs PWM; no se puede descartar consumidor kernel")
-        blocks = re.split(r"(?m)(?=^\S)", debug)
+        # Python 3.5 rejects split patterns that match an empty string.
+        blocks = re.findall(r"(?ms)^\S.*?(?=^\S|\Z)", debug)
         relevant=[b for b in blocks if "48302200" in b or "48302000" in b]
         if len(relevant)!=1:
             raise Blocked("Identidad PWM no corroborada en debugfs")
@@ -62,10 +79,24 @@ class Hardware:
         cores=self.remoteprocs()
         if any(read(r/"state")!="offline" for r in cores.values()):
             raise Blocked("PRU ocupado; no se detiene firmware ajeno")
-        # IEP tambien puede pertenecer a un driver Ethernet/ptp.
-        if list(self.p("/sys/class/ptp").glob("ptp*")):
-            raise Blocked("Existe reloj PTP; resolver propiedad IEP antes de usarlo")
+        clocks=self.ptp_inventory()
+        self.log.append({"ptp_inventory":clocks})
+        if any(c["ownership"]!="cpsw-independent" for c in clocks):
+            raise Blocked("PTP PRUSS/IEP o desconocido; ver ptp_inventory. No deshabilitar servicios")
         return cores["pru0"]
+    def ptp_inventory(self):
+        clocks=[]
+        for p in sorted(self.p("/sys/class/ptp").glob("ptp*")):
+            device=(p/"device").resolve()
+            path=str(device).lower()
+            name=read(p/"clock_name","") or ""
+            driver=(device/"driver").resolve().name.lower()
+            # Allow only positively identified AM335x CPSW CPTS, outside PRUSS.
+            independent=("4a100000" in path and driver in ("cpsw","ti-cpsw") and
+                         name.lower() in ("cpts timer","ctps timer") and not any(x in path for x in ("pruss","iep","4a300000")))
+            clocks.append({"clock":p.name,"name":name,"device":str(device),"driver":driver,
+                           "ownership":"cpsw-independent" if independent else "unknown-or-iep"})
+        return clocks
     def pin_state(self, pin):
         found = list(self.p("/sys/devices/platform").glob("**/*"+pin+"_pinmux/state"))
         if len(found)!=1:
@@ -120,7 +151,13 @@ class Transaction:
         # export EBUSY no nos concede propiedad. La bandera se activa solo al obtenerlo.
         self.hw.write(chip/"export",0)
         self.data["pwm"]=str(chip); self.save()
-        self.hw.wait_path(chip/"pwm0")
+        limit = time.monotonic() + 2
+        while time.monotonic() < limit:
+            channel = pwm_channel(chip)
+            if channel is not None:
+                return channel
+            time.sleep(.02)
+        raise Blocked("No aparecio canal PWM exportado: " + str(chip))
     def firmware_start(self, remote, source):
         old=read(remote/"firmware")
         if old is None: raise Blocked("No hay selector firmware remoteproc")
@@ -153,11 +190,19 @@ class Transaction:
             try: fn()
             except Exception as exc: errors.append(label+": "+str(exc))
         pwm=self.data["pwm"]
+        ch=None
         if pwm:
-            ch=Path(pwm)/"pwm0"
-            if ch.exists():
-                attempt("PWM duty=0",lambda:self.hw.write(ch/"duty_cycle",0))
-                attempt("PWM disable",lambda:self.hw.write(ch/"enable",0))
+            try: ch=pwm_channel(pwm)
+            except Blocked as exc: errors.append(str(exc))
+            if ch is None:
+                # Recovery after successful unexport but an earlier cleanup error.
+                # Missing path alone is not proof: confirm the chip and debugfs.
+                attempt("verificar PWM ya liberado",lambda:self.hw.pwm_free(Path(pwm)))
+            else:
+                if read(ch/"enable")!="0":
+                    attempt("PWM disable",lambda:self.hw.write(ch/"enable",0))
+                if read(ch/"period") not in (None,"0") and read(ch/"duty_cycle")!="0":
+                    attempt("PWM duty=0",lambda:self.hw.write(ch/"duty_cycle",0))
                 if read(ch/"enable")!="0": errors.append("PWM sigue habilitado")
                 # No afirmar nivel bajo tras disable: kernel no lo garantiza.
         # Desacoplar salida PRU antes de detener; no tocar entrada ni cargas.
@@ -179,9 +224,9 @@ class Transaction:
                 else: attempt("restaurar selector firmware",lambda:self.hw.write(r/"firmware",pru["old"]))
         for rec in reversed(self.data["pins"]):
             attempt("restaurar "+rec["pin"],lambda rec=rec:self.hw.pin_set(rec,rec["old"]))
-        if pwm and (Path(pwm)/"pwm0").exists():
+        if ch is not None and ch.exists():
             attempt("PWM unexport",lambda:self.hw.write(Path(pwm)/"unexport",0))
-            attempt("verificar unexport",lambda:self.hw.wait_path(Path(pwm)/"pwm0",False))
+            attempt("verificar unexport",lambda:self.hw.wait_path(ch,False))
         # Solo borrar firmware propio cuando PRU efectivamente offline.
         fw=self.data["firmware"]
         if fw and Path(fw).exists() and (not pru or read(Path(pru["path"])/"state")=="offline"):

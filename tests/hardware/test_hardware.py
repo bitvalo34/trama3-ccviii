@@ -15,7 +15,7 @@ sys.path[:0]=[str(BASE/"hardware/pruebas"),str(BASE/"hardware/pruebas/t06"),str(
 from common import Blocked,atomic_json,safe_text,execute
 from resources import Hardware,Transaction
 from analyze import analyze
-from mediciones import template,evaluate,write_csv,read_csv,NUMERIC
+from mediciones import template,evaluate,write_csv,read_csv,NUMERIC,CONTACTS
 from evaluar import evaluate as acceptance
 from run import options
 
@@ -53,12 +53,15 @@ def complete_measurements():
     rows=template("BBB-A")
     for r in rows:
         p=r["point"]
-        r.update(instrument="SIMULADO",measured_at="2026-11-12T00:00:00Z",evidence="fixture")
+        r.update(operator="fixture",instrument="TEST METER",measured_at="2026-11-12T00:00:00Z",evidence="fixture")
         if p in NUMERIC:
             lo,hi,_,_=NUMERIC[p]
             r["value"]=str((lo+hi)/2)
             r["uncertainty"]="0.001"
         else:r["value"]="yes"
+        if p in CONTACTS:r["detail"]=json.dumps({"closed":CONTACTS[p],"all_other_pairs_open":True,"terminal_map_evidence":"test-map"})
+        if p=="q6_verificado":r["detail"]=json.dumps({"part":"IRLZ44N","manufacturer":"fixture","package":"TO-220","datasheet":"fixture","pins":{"1":"G","2":"D","3":"S","tab":"D"},"nets":{"G":"+5V_ACT","D":"NEG_IN","S":"GND_ACT"}})
+        if p=="p2_conforme":r["detail"]=json.dumps({"netlist_sha256":"a"*64,"front_photo":"front","back_photo":"back","reviewer":"fixture","board_serial":"test"})
     return rows
 
 class Tests(unittest.TestCase):
@@ -148,6 +151,68 @@ class Tests(unittest.TestCase):
         chip=self.root/"chip";chip.mkdir()
         self.file("sys/kernel/debug/pwm","platform/48302200.pwm, 2 PWM devices\n pwm-0 free\n pwm-1 free\n")
         self.hw.pwm_free(chip)
+    @unittest.skipIf(os.name=="nt", "Windows forbids colon in directory names; run on Linux")
+    def test_pwm_ti_layout_transaction(self):
+        from resources import pwm_channel
+        chip=self.root/"pwmchip4";chip.mkdir()
+        tx=Transaction(self.hw,self.root/"journal.json")
+        original=self.hw.write
+        def ti_write(path,value):
+            path=Path(path)
+            if path.name=="unexport":
+                (chip/"pwm-4:0").rename(chip/"pwm0")
+            original(path,value)
+            if path.name=="export":
+                (chip/"pwm0").rename(chip/"pwm-4:0")
+        self.hw.write=ti_write
+        self.assertEqual(tx.pwm_export(chip),chip/"pwm-4:0")
+        with self.assertRaises(Blocked):self.hw.pwm_free(chip)
+        self.assertTrue(tx.cleanup()["restored"])
+        self.assertIsNone(pwm_channel(chip))
+        self.assertFalse(tx.path.exists())
+    def test_pwm_unknown_channel_retains_journal(self):
+        chip=self.root/"pwmchip4";chip.mkdir()
+        tx=Transaction(self.hw,self.root/"journal.json")
+        tx.data["pwm"]=str(chip);tx.save()
+        self.assertFalse(tx.cleanup()["restored"])
+        self.assertTrue(tx.path.exists())
+        self.assertEqual(self.hw.log,[])
+    @unittest.skipIf(os.name=="nt", "Windows forbids colon in directory names; run on Linux")
+    def test_pwm_ambiguous_channel_retains_journal(self):
+        chip=self.root/"pwmchip4";chip.mkdir()
+        (chip/"pwm0").mkdir();(chip/"pwm-4:0").mkdir()
+        tx=Transaction(self.hw,self.root/"journal.json")
+        tx.data["pwm"]=str(chip);tx.save()
+        self.assertFalse(tx.cleanup()["restored"])
+        self.assertTrue(tx.path.exists())
+        self.assertEqual(self.hw.log,[])
+    def test_pwm_channel_resolver_layouts(self):
+        from resources import pwm_channel
+        for number in (0,4,17):
+            chip=self.root/("pwmchip"+str(number))
+            legacy=chip/("pwm-"+str(number)+":0")
+            modern=chip/"pwm0"
+            for expected in (legacy,modern):
+                with patch.object(Path,"is_dir",lambda p:p==expected):
+                    self.assertEqual(pwm_channel(chip),expected)
+            with patch.object(Path,"is_dir",return_value=True):
+                with self.assertRaises(Blocked):pwm_channel(chip)
+            with patch.object(Path,"is_dir",return_value=False):
+                self.assertIsNone(pwm_channel(chip))
+    def test_pwm_blocks_python35(self):
+        chip=self.root/"chip";chip.mkdir()
+        other="platform/48300200.pwm, 2 PWM devices\n pwm-0 requested enabled\n\n"
+        target="platform/48302200.pwm, 2 PWM devices\n pwm-0 free\n pwm-1 free\n"
+        # Model the unsupported zero-width split on the target Python 3.5.
+        with patch("resources.re.split",side_effect=ValueError("split() requires a non-empty pattern match.")):
+            for debug in (target+other,other+target):
+                self.file("sys/kernel/debug/pwm",debug)
+                self.hw.pwm_free(chip)
+            self.file("sys/kernel/debug/pwm",other+target.replace("pwm-1 free","pwm-1 requested"))
+            with self.assertRaises(Blocked):self.hw.pwm_free(chip)
+            self.file("sys/kernel/debug/pwm",target+target)
+            with self.assertRaises(Blocked):self.hw.pwm_free(chip)
+        self.assertEqual(self.hw.log,[])
     def test_detect_pwm_renumbered(self):
         real_resolve=Path.resolve
         for number in (0,4,17):
@@ -178,6 +243,34 @@ class Tests(unittest.TestCase):
         final=tx.cleanup()
         self.assertTrue(final["restored"]);self.assertEqual(state.read_text(),"default")
         self.assertFalse((chip/"pwm0").exists());self.assertFalse(tx.path.exists())
+    def test_pwm_zero_period_kernel(self):
+        from run import perform
+        chip=self.root/"pwmchip4";chip.mkdir()
+        self.file("sys/kernel/debug/pwm","platform/48302200.pwm, 2 PWM devices\n pwm-0 free\n pwm-1 free\n")
+        state=self.file("pin/state","default")
+        self.hw.pwm=lambda:chip
+        self.hw.pin_check=lambda pin,mode:dict(pin=pin,path=str(state),old="default",mode=mode)
+        write=self.hw.write
+        def strict_write(path,value):
+            p=Path(path)
+            if p.name in ("enable","duty_cycle","polarity") and (p.parent/"period").read_text()=="0":
+                raise OSError(22,"Invalid argument")
+            write(path,value)
+        self.hw.write=strict_write
+        a=options(["pwm","--board","BBB-B","--active","--electrical-checked"])
+        tx=Transaction(self.hw,self.root/"state.json")
+        with patch("run.validate_confirmation"),patch("run.time.sleep"):
+            result=perform(a,self.hw,tx)
+        self.assertEqual(result["pwm"]["config_status"],"PASS")
+        self.assertTrue(tx.cleanup()["restored"])
+        self.assertFalse((chip/"pwm0").exists())
+        # Also recover an interrupted export, before period initialization.
+        tx=Transaction(self.hw,self.root/"state.json");tx.pwm_export(chip)
+        self.assertTrue(tx.cleanup()["restored"])
+        # Retry cleanup against a retained old journal after successful unexport.
+        tx.save()
+        self.assertTrue(tx.cleanup()["restored"])
+        self.assertFalse(tx.path.exists())
     def test_restore_failure_keeps_journal(self):
         state=self.file("pin/state","default");tx=Transaction(self.hw,self.root/"state.json")
         tx.pin({"pin":"P8_11","path":str(state),"old":"default","mode":"pruout"},"pruout")

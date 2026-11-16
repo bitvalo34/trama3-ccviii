@@ -49,7 +49,7 @@ def collect():
     pins=[]
     for pin in ("P8_11","P8_15","P8_16","P9_24","P9_27","P9_14"):
         pins.append(execute(["config-pin","-q",pin]))
-    return {"schema":1,"test":"sistema","identity":info,"origin":"system_report",
+    return {"schema":2,"hardware_revision":"BBB-BARE","level":1,"test":"sistema","identity":info,"origin":"system_report",
             "status":"NOT_TESTED","commands":commands,"temperature":temperature,
             "cpu_usage":cpu,"kernel_log_available":kernel_result["exit_code"]==0,
             "power_reported":power,"physical_voltage":None,

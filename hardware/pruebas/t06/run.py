@@ -10,10 +10,12 @@ import time
 from pathlib import Path
 HERE=Path(__file__).resolve().parent
 sys.path.insert(0,str(HERE.parent))
-from common import default_results, Blocked, read, checked, atomic_json, identity, require_bbb, result_dir
+from common import default_results, Blocked, read, checked, atomic_json, identity, require_bbb, result_dir, execute
 from resources import Hardware, Transaction
 from analyze import analyze
 from toolchain import inspect_tools
+from confirmation import validate_confirmation
+from provenance import source_hashes, binary_hashes
 
 ACTIONS=("preflight","pwm","pru-smoke","pru-tx","pru-rx","loopback","pwm-capture","inputs","cleanup")
 CONNECTIONS={
@@ -34,6 +36,9 @@ def options(argv=None):
     p.add_argument("--active",action="store_true",help="autoriza cambio temporal de hardware")
     p.add_argument("--fixture",choices=("none","loopback","pwm-loopback","inputs"),default="none")
     p.add_argument("--electrical-checked",action="store_true",help="confirma checklist fisico previo")
+    p.add_argument("--operator")
+    p.add_argument("--checklist",help="JSON fisico nivel 1, firmado por operador")
+    p.add_argument("--invert-mask",type=int,choices=range(8),default=0)
     p.add_argument("--period-us",type=int,default=20000)
     p.add_argument("--high-us",type=int,default=1500)
     p.add_argument("--cycles",type=int,default=25)
@@ -75,6 +80,7 @@ def preflight(hw, info):
     for pin in ("P8_11","P8_15","P8_16","P9_24","P9_27","P9_14"):
         try: detected[pin]=read(hw.pin_state(pin))
         except Blocked as exc: problems.append(str(exc))
+    detected["ptp_inventory"]=hw.ptp_inventory()
     detected["dev_mem"]=hw.p("/dev/mem").exists()
     detected["host_built"]=(HERE/"build/trama3-t06-host").is_file()
     detected["firmware_built"]=(HERE/"build/trama3-t06-pru0.out").is_file()
@@ -86,6 +92,7 @@ def preflight(hw, info):
 
 def perform(a,hw,tx):
     action=a.action
+    validate_confirmation(a.checklist,a.board,a.fixture,a.operator)
     expected={"loopback":"loopback","pwm-capture":"pwm-loopback","pru-rx":"pwm-loopback","inputs":"inputs"}.get(action,"none")
     if a.fixture!=expected or not a.electrical_checked:
         raise Blocked("Falta --electrical-checked y/o fixture correcto: "+expected)
@@ -120,9 +127,10 @@ def perform(a,hw,tx):
     config=None
     if use_pwm:
         hw.pwm_free(chip)  # segunda comprobacion antes de adquirir canal
-        tx.pwm_export(chip); ch=chip/"pwm0"
-        hw.write(ch/"enable",0)
-        hw.write(ch/"duty_cycle",0)
+        ch=tx.pwm_export(chip)
+        # TI 4.14 rejects any apply with period=0, including enable=0.
+        if read(ch/"enable")!="0" or read(ch/"duty_cycle")!="0":
+            raise Blocked("Canal PWM recien exportado no esta inactivo/vacio")
         hw.write(ch/"period",20000000)
         hw.write(ch/"polarity","normal")
         hw.write(ch/"duty_cycle",a.high_us*1000)
@@ -136,14 +144,18 @@ def perform(a,hw,tx):
                 "period_ns":20000000,"high_ns":a.high_us*1000,"chip":str(chip),"config_status":"PASS"}
     if action=="pwm":
         time.sleep(a.seconds)
-        return {"status":"NOT_TESTED","pwm":config,"note":"Configuracion verificada; falta observar señal"}
+        return {"status":"NOT_TESTED","pwm":config,"note":"Configuracion verificada; falta observar seÃƒÂ±al"}
     if action=="pru-smoke":
-        return {"status":"PASS","scope":"software_start_only","physical_status":"NOT_TESTED"}
+        return {"status":"PASS","scope":"software_start_only","probe":probe,"physical_status":"NOT_TESTED"}
     mode={"pru-tx":1,"pru-rx":2,"loopback":3,"pwm-capture":2,"inputs":4}[action]
-    rawtext=hw.command([str(HERE/"build/trama3-t06-host"),"run",str(mode),
-                       str(a.period_us),str(a.high_us),str(a.cycles),str(int(a.seconds*1000))])
+    command_result=execute([str(HERE/"build/trama3-t06-host"),"run",str(mode),
+                       str(a.period_us),str(a.high_us),str(a.cycles),str(int(a.seconds*1000))],hw.log,timeout=a.seconds+5)
+    rawtext=command_result["stdout"]
     raw=json.loads(rawtext)
-    analysis=analyze(raw,a.period_us,a.high_us,action,a.cycles)
+    analysis=analyze(raw,a.period_us,a.high_us,action,a.cycles,a.invert_mask)
+    if command_result["exit_code"]!=0:
+        analysis["status"]="FAIL"
+        analysis["errors"].append("Host termino con error")
     if config and analysis["status"]=="PASS":
         config.update({"observed":True,"frequency_checked":True,"pulse_width_checked":True})
     return {"status":analysis["status"],"raw":raw,"analysis":analysis,"pwm":config,
@@ -153,10 +165,11 @@ def main(argv=None):
     a=options(argv); print(CONNECTIONS[a.action])
     dest=result_dir(a.results,a.board)
     log=[]; hw=Hardware(log=log); info=identity()
-    report={"schema":1,"board":a.board,"test":a.action,"identity":info,
+    report={"schema":2,"hardware_revision":"BBB-BARE","operator":a.operator,"checklist":a.checklist,
+            "source_hashes":source_hashes(),"binary_hashes":binary_hashes(),"board":a.board,"test":a.action,"identity":info,
             "origin":"hardware" if a.active else "system_report","active":a.active,
             "status":"NOT_TESTED","commands":log,"electrical_confirmation":a.electrical_checked,
-            "fixture":a.fixture,"parameters":{"period_us":a.period_us,"high_us":a.high_us,"cycles":a.cycles,"seconds":a.seconds}}
+            "fixture":a.fixture,"parameters":{"period_us":a.period_us,"high_us":a.high_us,"cycles":a.cycles,"seconds":a.seconds,"invert_mask":a.invert_mask}}
     tx=None; fd=None
     try:
         if not a.active:
@@ -179,8 +192,9 @@ def main(argv=None):
                     report.update(preflight(hw,info))
                 else:
                     tx=Transaction(hw,journal)
-                    def stop(signum,frame): raise KeyboardInterrupt("Señal "+str(signum))
+                    def stop(signum,frame): raise KeyboardInterrupt("SeÃƒÂ±al "+str(signum))
                     for s in (signal.SIGINT,signal.SIGTERM,signal.SIGHUP): signal.signal(s,stop)
+                    report["confirmation"]=validate_confirmation(a.checklist,a.board,a.fixture,a.operator)
                     report.update(perform(a,hw,tx))
     except (Blocked,OSError,ValueError) as exc:
         report.update({"status":"BLOCKED","error":str(exc)})

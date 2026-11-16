@@ -1,0 +1,116 @@
+{
+  "entrega-t06-t08.zip": {
+    "sha256": "1cef4e9a0a162a280a1617babe52666f5f6fcd429506d7862a16f99c17352f67",
+    "bytes": 368935,
+    "entries": [
+      "entrega-t06-t08/",
+      "entrega-t06-t08/paquete-verificado.json",
+      "entrega-t06-t08/TRAMA3_T06_T08.tar.gz",
+      "entrega-t06-t08/TRAMA3_T06_T08.zip"
+    ],
+    "crc_error": null,
+    "nested": [
+      {
+        "name": "entrega-t06-t08/TRAMA3_T06_T08.tar.gz",
+        "bytes": 115598,
+        "sha256": "ca8dabc2ab80202c4bd7a67f9d1d81c8ee45850e778c61a415a43909a84aa81a"
+      },
+      {
+        "name": "entrega-t06-t08/TRAMA3_T06_T08.zip",
+        "bytes": 258183,
+        "sha256": "e1856de5389dbd05cf3723a5a4eed6577840c79ad63133cf3e3b951decfa726d"
+      }
+    ]
+  },
+  "entrega-t06-t08\\TRAMA3_T06_T08.tar.gz": {
+    "sha256": "ca8dabc2ab80202c4bd7a67f9d1d81c8ee45850e778c61a415a43909a84aa81a",
+    "bytes": 115598,
+    "manifest_valid": true,
+    "different_local": [
+      "hardware/pruebas/t06/build.sh",
+      "hardware/pruebas/t06/toolchain.py"
+    ]
+  },
+  "entrega-t06-t08\\TRAMA3_T06_T08.zip": {
+    "sha256": "e1856de5389dbd05cf3723a5a4eed6577840c79ad63133cf3e3b951decfa726d",
+    "bytes": 258183,
+    "entries": [
+      "LEEME.md",
+      "SHA256SUMS",
+      "docs/protocolo/TRAMA3_Protocolo_Revision_102.md",
+      "hardware/configuracion/T04-resultados.md",
+      "hardware/diseno-placas/diseno-electrico.md",
+      "hardware/diseno-placas/esquematicos/01_POWER.kicad_sch",
+      "hardware/diseno-placas/esquematicos/02_CORE.kicad_sch",
+      "hardware/diseno-placas/esquematicos/03_TX.kicad_sch",
+      "hardware/diseno-placas/esquematicos/04_SERVO.kicad_sch",
+      "hardware/diseno-placas/esquematicos/05_RX.kicad_sch",
+      "hardware/diseno-placas/esquematicos/06_ENABLE.kicad_sch",
+      "hardware/diseno-placas/esquematicos/07_CLOCK.kicad_sch",
+      "hardware/diseno-placas/esquematicos/TRAMA3_T51.kicad_sch",
+      "hardware/diseno-placas/netlist/componentes.csv",
+      "hardware/diseno-placas/netlist/kicad-export.xml",
+      "hardware/diseno-placas/netlist/redes.csv",
+      "hardware/diseno-placas/verificaciones/revision-final.md",
+      "hardware/documentacion/Checklist_T06_T08.md",
+      "hardware/documentacion/Guia_Completa_T06_T08.md",
+      "hardware/documentacion/T08_Auditoria_T51.md",
+      "hardware/documentacion/Validacion_T06_T08.md",
+      "hardware/documentacion/validacion-pc.json",
+      "hardware/pruebas/.gitattributes",
+      "hardware/pruebas/.gitignore",
+      "hardware/pruebas/README.md",
+      "hardware/pruebas/aceptacion-vacia.json",
+      "hardware/pruebas/common.py",
+      "hardware/pruebas/ejecutar/Preparar-Pruebas.ps1",
+      "hardware/pruebas/ejecutar/README.md",
+      "hardware/pruebas/ejecutar/Recopilar-Resultados.ps1",
+      "hardware/pruebas/ejecutar/Transferir-Consola.ps1",
+      "hardware/pruebas/ejecutar/ejecutar-bloque.sh",
+      "hardware/pruebas/empaquetar.py",
+      "hardware/pruebas/evaluar.py",
+      "hardware/pruebas/seleccionar-evidencias.py",
+      "hardware/pruebas/t06/README.md",
+      "hardware/pruebas/t06/analyze.py",
+      "hardware/pruebas/t06/build-report.py",
+      "hardware/pruebas/t06/build.sh",
+      "hardware/pruebas/t06/cleanup.sh",
+      "hardware/pruebas/t06/firmware/AM335x_PRU0.cmd",
+      "hardware/pruebas/t06/firmware/abi.h",
+      "hardware/pruebas/t06/firmware/main.c",
+      "hardware/pruebas/t06/preflight.sh",
+      "hardware/pruebas/t06/resources.py",
+      "hardware/pruebas/t06/run.py",
+      "hardware/pruebas/t06/src/host.c",
+      "hardware/pruebas/t06/test-inputs.sh",
+      "hardware/pruebas/t06/test-loopback.sh",
+      "hardware/pruebas/t06/test-pru-rx.sh",
+      "hardware/pruebas/t06/test-pru-smoke.sh",
+      "hardware/pruebas/t06/test-pru-tx.sh",
+      "hardware/pruebas/t06/test-pwm-capture.sh",
+      "hardware/pruebas/t06/test-pwm.sh",
+      "hardware/pruebas/t06/toolchain.py",
+      "hardware/pruebas/t08/README.md",
+      "hardware/pruebas/t08/evaluar-mediciones.py",
+      "hardware/pruebas/t08/inspeccion-sistema.sh",
+      "hardware/pruebas/t08/inspeccion.py",
+      "hardware/pruebas/t08/mediciones.py",
+      "hardware/pruebas/t08/registrar-mediciones.py",
+      "tests/hardware/.gitignore",
+      "tests/hardware/audit_t51.py",
+      "tests/hardware/model.h",
+      "tests/hardware/test_firmware.c",
+      "tests/hardware/test_hardware.py",
+      "tests/hardware/verify_pc.py",
+      "TRAMA3_T06_T08.tar.gz"
+    ],
+    "crc_error": null,
+    "zip_tar_mismatches": []
+  },
+  "entrega-t06-t08\\TRAMA3_T06_T08_fix_toolchain.tar.gz": {
+    "sha256": "42cfd1f5d70761205cce256ce30a2f6c14901c1a7a19383feedcb140cb7d8c3c",
+    "bytes": 115922,
+    "manifest_valid": true,
+    "different_local": []
+  }
+}

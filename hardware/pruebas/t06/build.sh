@@ -13,9 +13,12 @@ if [ -z "$cc" ]; then
  [ "${#choices[@]}" = 1 ] || { echo "BLOCKED: especificar CLPRU=/ruta/real/bin/clpru"; exit 4; }
  cc=${choices[0]}
 fi
-cc=$(readlink -f -- "$cc")
-root=$(cd -- "$(dirname -- "$cc")/.." && pwd)
-[ -x "$cc" ] && [ -x "$root/bin/lnkpru" ] && [ -f "$root/include/stdint.h" ] || { echo "BLOCKED: toolchain TI incompleto"; exit 4; }
+paths=$(PYTHONPATH=.. python3 toolchain.py "$cc") || exit 4
+mapfile -t layout <<< "$paths"
+cc=${layout[0]}
+root=${layout[1]}
+[ -x "$cc" ] && [ -x "$(dirname -- "$cc")/lnkpru" ] && [ -f "$root/include/stdint.h" ] || { echo "BLOCKED: toolchain TI incompleto"; exit 4; }
+echo "TI compiler: $cc; headers/runtime: $root"
 [ -f "$root/lib/libc.a" ] || { echo "BLOCKED: falta runtime TI libc.a"; exit 4; }
 "$cc" --compiler_revision
 command -v gcc

@@ -2,11 +2,14 @@ param(
  [Parameter(Mandatory=$true)][ValidatePattern('^COM[0-9]+$')][string]$Puerto,
  [Parameter(Mandatory=$true)][ValidateSet('Enviar','Recibir')][string]$Accion,
  [Parameter(Mandatory=$true)][string]$Archivo,
- [ValidateSet('BBB-A','BBB-B')][string]$Placa='BBB-B'
+ [ValidateSet('BBB-A','BBB-B')][string]$Placa='BBB-B',
+ [ValidatePattern('^[a-zA-Z0-9][a-zA-Z0-9_.-]*$')][string]$ArchivoRemoto
 )
 # Transporte de ARCHIVOS, complementa T04-ConsolaUSB.ps1 (diagnostico individual).
 # Primero iniciar sesion Debian en PuTTY y CERRAR PuTTY dejando shell autenticada.
 $ErrorActionPreference='Stop'
+if($ArchivoRemoto -and $Accion -ne 'Recibir'){throw 'ArchivoRemoto solo se usa con Recibir'}
+if($Accion -eq 'Recibir' -and (Test-Path -LiteralPath $Archivo)){throw 'No sobrescribir evidencia existente'}
 $spBBB=[IO.Ports.SerialPort]::new($Puerto,115200,[IO.Ports.Parity]::None,8,[IO.Ports.StopBits]::One)
 $spBBB.Handshake=[IO.Ports.Handshake]::None
 $spBBB.DtrEnable=$true
@@ -58,9 +61,15 @@ try {
   $null=Comando-ArchivoBBB ("tar -xzf "+$dirBBB+"/paquete.tar.gz -C "+$dirBBB+" && cd "+$dirBBB+" && sha256sum -c SHA256SUMS && cd ..")
   Write-Host "Paquete verificado. En Debian: cd ~/$dirBBB"
  } else {
-  $remoteBBB='/tmp/trama3-evidencias-'+$Placa+'.tar.gz'
-  $null=Comando-ArchivoBBB ("test -d trama3-resultados/"+$Placa+" && tar -czf "+$remoteBBB+" -C trama3-resultados "+$Placa)
-  $payloadBBB=Comando-ArchivoBBB ("printf 'DATA_BEGIN\n'; base64 "+$remoteBBB+"; printf 'DATA_END\n'") 300
+  if($ArchivoRemoto){
+   # cd HOME above; restrict to one shell-safe filename, no re-archiving.
+   $remoteBBB=$ArchivoRemoto
+   $null=Comando-ArchivoBBB ("test -f "+$remoteBBB+" && test -r "+$remoteBBB)
+  } else {
+   $remoteBBB='/tmp/trama3-evidencias-'+$Placa+'.tar.gz'
+   $null=Comando-ArchivoBBB ("test -d trama3-resultados/"+$Placa+" && tar -czf "+$remoteBBB+" -C trama3-resultados "+$Placa)
+  }
+  $payloadBBB=Comando-ArchivoBBB ("printf 'DATA_BEGIN\n' && base64 "+$remoteBBB+" && printf 'DATA_END\n'") 300
   $matchBBB=[regex]::Match($payloadBBB,'(?s)DATA_BEGIN\r?\n(.*?)DATA_END')
   if(!$matchBBB.Success){throw 'Respuesta sin delimitadores'}
   $receivedBBB=[Convert]::FromBase64String($matchBBB.Groups[1].Value)
@@ -71,6 +80,8 @@ try {
   if(!$matchHashBBB.Success -or $localHashBBB -ne $matchHashBBB.Groups[1].Value){throw 'Hash de evidencia no coincide'}
   if(Test-Path -LiteralPath $Archivo){throw 'No sobrescribir evidencia existente'}
   [IO.File]::WriteAllBytes([IO.Path]::GetFullPath($Archivo),$receivedBBB)
+  Write-Host ("Archivo recibido y SHA256 verificado: "+$Archivo)
+  Write-Host ("SHA256: "+$localHashBBB)
  }
 } finally {
  if($spBBB.IsOpen){

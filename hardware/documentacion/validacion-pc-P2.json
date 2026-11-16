@@ -1,0 +1,160 @@
+{
+  "origin": "software_validation",
+  "physical_tests": "NOT_TESTED",
+  "python": "3.11.9",
+  "platform": "win32",
+  "status": "BLOCKED",
+  "checks": [
+    {
+      "test": "python_unittest",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "................................................................\n----------------------------------------------------------------------\nRan 64 tests in 0.543s\n\nOK\n"
+    },
+    {
+      "test": "netlist_P2_static",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "{\n  \"origin\": \"static_netlist\",\n  \"hardware_status\": \"NOT_TESTED\",\n  \"checks\": [\n    {\n      \"check\": \"revision P2\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"check\": \"retirado J11\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"check\": \"retirado J12\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"check\": \"retirado MOD3\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"check\": \"Q6 IRLZ44N\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"check\": \"Q6 G/D/S\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"check\": \"SW287\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"check\": \"SW287 terminal3 aislado\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"check\": \"R30\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"check\": \"J1 NEG_IN\",\n      \"status\": \"PASS\"\n    }\n  ]\n}\n"
+    },
+    {
+      "test": "C_native_model",
+      "status": "BLOCKED",
+      "output": "Ejecucion nativa omitida: revision automatica rechazo telemetria externa del entorno"
+    },
+    {
+      "test": "bash_syntax:ejecutar-bloque.sh",
+      "status": "BLOCKED",
+      "exit_code": 3221225794,
+      "output": "      1 [main] bash (2280) C:\\Program Files\\Git\\bin\\..\\usr\\bin\\bash.exe: *** fatal error - NtCreateDirectoryObject(\\BaseNamedObjects\\msys-2.0S5-1888ae32e00d56aa): 0xC0000022\n",
+      "classification_note": "Proceso Windows no inicializado (0xC0000142), sin diagnostico de sintaxis. Se conserva salida original; no se repitio ejecucion."
+    },
+    {
+      "test": "bash_syntax:build.sh",
+      "status": "BLOCKED",
+      "exit_code": 3221225794,
+      "output": "      0 [main] bash (19704) C:\\Program Files\\Git\\bin\\..\\usr\\bin\\bash.exe: *** fatal error - NtCreateDirectoryObject(\\BaseNamedObjects\\msys-2.0S5-1888ae32e00d56aa): 0xC0000022\n",
+      "classification_note": "Proceso Windows no inicializado (0xC0000142), sin diagnostico de sintaxis. Se conserva salida original; no se repitio ejecucion."
+    },
+    {
+      "test": "bash_syntax:cleanup.sh",
+      "status": "BLOCKED",
+      "exit_code": 3221225794,
+      "output": "      0 [main] bash (23172) C:\\Program Files\\Git\\bin\\..\\usr\\bin\\bash.exe: *** fatal error - NtCreateDirectoryObject(\\BaseNamedObjects\\msys-2.0S5-1888ae32e00d56aa): 0xC0000022\n",
+      "classification_note": "Proceso Windows no inicializado (0xC0000142), sin diagnostico de sintaxis. Se conserva salida original; no se repitio ejecucion."
+    },
+    {
+      "test": "bash_syntax:preflight.sh",
+      "status": "BLOCKED",
+      "exit_code": 3221225794,
+      "output": "      0 [main] bash (24344) C:\\Program Files\\Git\\bin\\..\\usr\\bin\\bash.exe: *** fatal error - NtCreateDirectoryObject(\\BaseNamedObjects\\msys-2.0S5-1888ae32e00d56aa): 0xC0000022\n",
+      "classification_note": "Proceso Windows no inicializado (0xC0000142), sin diagnostico de sintaxis. Se conserva salida original; no se repitio ejecucion."
+    },
+    {
+      "test": "bash_syntax:test-inputs.sh",
+      "status": "BLOCKED",
+      "exit_code": 3221225794,
+      "output": "      0 [main] bash (9672) C:\\Program Files\\Git\\bin\\..\\usr\\bin\\bash.exe: *** fatal error - NtCreateDirectoryObject(\\BaseNamedObjects\\msys-2.0S5-1888ae32e00d56aa): 0xC0000022\n",
+      "classification_note": "Proceso Windows no inicializado (0xC0000142), sin diagnostico de sintaxis. Se conserva salida original; no se repitio ejecucion."
+    },
+    {
+      "test": "bash_syntax:test-loopback.sh",
+      "status": "BLOCKED",
+      "exit_code": 3221225794,
+      "output": "",
+      "classification_note": "Proceso Windows no inicializado (0xC0000142), sin diagnostico de sintaxis. Se conserva salida original; no se repitio ejecucion."
+    },
+    {
+      "test": "bash_syntax:test-pru-rx.sh",
+      "status": "BLOCKED",
+      "exit_code": 3221225794,
+      "output": "      1 [main] bash (20156) C:\\Program Files\\Git\\bin\\..\\usr\\bin\\bash.exe: *** fatal error - NtCreateDirectoryObject(\\BaseNamedObjects\\msys-2.0S5-1888ae32e00d56aa): 0xC0000022\n",
+      "classification_note": "Proceso Windows no inicializado (0xC0000142), sin diagnostico de sintaxis. Se conserva salida original; no se repitio ejecucion."
+    },
+    {
+      "test": "bash_syntax:test-pru-smoke.sh",
+      "status": "BLOCKED",
+      "exit_code": 3221225794,
+      "output": "      0 [main] bash (29884) C:\\Program Files\\Git\\bin\\..\\usr\\bin\\bash.exe: *** fatal error - NtCreateDirectoryObject(\\BaseNamedObjects\\msys-2.0S5-1888ae32e00d56aa): 0xC0000022\n",
+      "classification_note": "Proceso Windows no inicializado (0xC0000142), sin diagnostico de sintaxis. Se conserva salida original; no se repitio ejecucion."
+    },
+    {
+      "test": "bash_syntax:test-pru-tx.sh",
+      "status": "BLOCKED",
+      "exit_code": 3221225794,
+      "output": "      0 [main] bash (3276) C:\\Program Files\\Git\\bin\\..\\usr\\bin\\bash.exe: *** fatal error - NtCreateDirectoryObject(\\BaseNamedObjects\\msys-2.0S5-1888ae32e00d56aa): 0xC0000022\n",
+      "classification_note": "Proceso Windows no inicializado (0xC0000142), sin diagnostico de sintaxis. Se conserva salida original; no se repitio ejecucion."
+    },
+    {
+      "test": "bash_syntax:test-pwm-capture.sh",
+      "status": "BLOCKED",
+      "exit_code": 3221225794,
+      "output": "      0 [main] bash (14520) C:\\Program Files\\Git\\bin\\..\\usr\\bin\\bash.exe: *** fatal error - NtCreateDirectoryObject(\\BaseNamedObjects\\msys-2.0S5-1888ae32e00d56aa): 0xC0000022\n",
+      "classification_note": "Proceso Windows no inicializado (0xC0000142), sin diagnostico de sintaxis. Se conserva salida original; no se repitio ejecucion."
+    },
+    {
+      "test": "bash_syntax:test-pwm.sh",
+      "status": "BLOCKED",
+      "exit_code": 3221225794,
+      "output": "      1 [main] bash (15444) C:\\Program Files\\Git\\bin\\..\\usr\\bin\\bash.exe: *** fatal error - NtCreateDirectoryObject(\\BaseNamedObjects\\msys-2.0S5-1888ae32e00d56aa): 0xC0000022\n",
+      "classification_note": "Proceso Windows no inicializado (0xC0000142), sin diagnostico de sintaxis. Se conserva salida original; no se repitio ejecucion."
+    },
+    {
+      "test": "bash_syntax:inspeccion-sistema.sh",
+      "status": "BLOCKED",
+      "exit_code": 3221225794,
+      "output": "      0 [main] bash (32044) C:\\Program Files\\Git\\bin\\..\\usr\\bin\\bash.exe: *** fatal error - NtCreateDirectoryObject(\\BaseNamedObjects\\msys-2.0S5-1888ae32e00d56aa): 0xC0000022\n",
+      "classification_note": "Proceso Windows no inicializado (0xC0000142), sin diagnostico de sintaxis. Se conserva salida original; no se repitio ejecucion."
+    },
+    {
+      "test": "empty_acceptance",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "{\n  \"schema\": 2,\n  \"hardware_revision\": \"P2-LOCAL\",\n  \"boards\": {\n    \"BBB-A\": {\n      \"checks\": {\n        \"build\": {\n          \"status\": \"NOT_TESTED\",\n          \"reason\": \"Evidencia no seleccionada\"\n        },\n        \"pru-smoke\": {\n          \"status\": \"NOT_TESTED\",\n          \"reason\": \"Evidencia no seleccionada\"\n        },\n        \"loopback\": {\n          \"status\": \"NOT_TESTED\",\n          \"reason\": \"Evidencia no seleccionada\"\n        },\n        \"pwm-capture-1000\": {\n          \"status\": \"NOT_TESTED\",\n          \"reason\": \"Evidencia no seleccionada\"\n        },\n        \"pwm-capture-1500\": {\n          \"status\": \"NOT_TESTED\",\n          \"reason\": \"Evidencia no seleccionada\"\n        },\n        \"pwm-capture-2000\": {\n          \"status\": \"NOT_TESTED\",\n          \"reason\": \"Evidencia no seleccionada\"\n        },\n        \"t08\": {\n          \"status\": \"NOT_TESTED\",\n          \"reason\": \"Evidencia no seleccionada\"\n        }\n      },\n      \"T06\": \"NOT_TESTED\",\n      \"T08\": \"NOT_TESTED\"\n    },\n    \"BBB-B\": {\n      \"checks\": {\n        \"build\": {\n          \"status\": \"NOT_TESTED\",\n          \"reason\": \"Evidencia no seleccionada\"\n        },\n        \"pru-smoke\": {\n          \"status\": \"NOT_TESTED\",\n          \"reason\": \"Evidencia no seleccionada\"\n        },\n        \"loopback\": {\n          \"status\": \"NOT_TESTED\",\n          \"reason\": \"Evidencia no seleccionada\"\n        },\n        \"pwm-capture-1000\": {\n          \"status\": \"NOT_TESTED\",\n          \"reason\": \"Evidencia no seleccionada\"\n        },\n        \"pwm-capture-1500\": {\n          \"status\": \"NOT_TESTED\",\n          \"reason\": \"Evidencia no seleccionada\"\n        },\n        \"pwm-capture-2000\": {\n          \"status\": \"NOT_TESTED\",\n          \"reason\": \"Evidencia no seleccionada\"\n        },\n        \"t08\": {\n          \"status\": \"NOT_TESTED\",\n          \"reason\": \"Evidencia no seleccionada\"\n        }\n      },\n      \"T06\": \"NOT_TESTED\",\n      \"T08\": \"NOT_TESTED\"\n    }\n  },\n  \"T06\": {\n    \"status\": \"NOT_TESTED\",\n    \"conclusion\": \"Revisar evidencia individual; no modifica tracker\"\n  },\n  \"T08\": {\n    \"status\": \"NOT_TESTED\",\n    \"conclusion\": \"Revisar evidencia individual; no modifica tracker\"\n  }\n}\n"
+    },
+    {
+      "test": "empty_never_pass",
+      "status": "PASS"
+    },
+    {
+      "test": "create_csv",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "<validation>\\blank.csv\n"
+    },
+    {
+      "test": "evaluate_blank_csv",
+      "status": "PASS",
+      "exit_code": 3,
+      "output": "NOT_TESTED\n"
+    },
+    {
+      "test": "audit_pc_blocks",
+      "status": "PASS",
+      "exit_code": 4,
+      "output": "Solo lectura: no requiere conexiones.\n<validation>\\audit\\BBB-A\\20261115T064304Z-a01da3eb\nBLOCKED\n"
+    },
+    {
+      "test": "local_document_links",
+      "status": "PASS",
+      "broken": []
+    }
+  ],
+  "powershell": [
+    {
+      "file": "Preparar-Pruebas.ps1",
+      "errors": [],
+      "status": "PASS"
+    },
+    {
+      "file": "Recopilar-Resultados.ps1",
+      "errors": [],
+      "status": "PASS"
+    },
+    {
+      "file": "Transferir-Consola.ps1",
+      "errors": [],
+      "status": "PASS"
+    }
+  ]
+}
