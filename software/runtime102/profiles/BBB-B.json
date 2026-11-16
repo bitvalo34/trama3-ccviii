@@ -1,0 +1,8 @@
+{
+  "schema": 1, "board": "BBB-B", "abi": 3, "period_s": 1, "rx_invert": 0,
+  "pins": {"tx":"P8_11","clock":"P8_15","data":["P9_27","P8_16","P9_24"],"pwm":"P9_14"},
+  "expected_os": "Debian 9.5", "serial_hint": "COM3",
+  "i2c_device": "/dev/i2c-2", "mcp_reset_confirmed": false,
+  "hardware_revision": "T51-P2-LOCAL",
+  "calibration": {"board":"BBB-B","status":"PENDING","evidence":null,"checked_at":null,"servo_low_us":null,"servo_high_us":null,"settle_ms":null}
+}
