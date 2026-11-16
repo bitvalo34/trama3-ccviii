@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "consolidated_date": "2026-11-16",
+  "timezone": "America/Guatemala",
+  "board_scope": "Placa denominada A en expediente T53; sin identificador fisico unico registrado",
+  "physical_execution": "Operador Erwin; Codex solo reviso capturas y confirmaciones",
+  "individual_measurement_timestamps": null,
+  "publication": "Transcripciones y resultados; originales no incluidos en GitHub",
+  "base": {
+    "repository": "bitvalo34/trama3-ccviii",
+    "branch": "t55-p2-t06-t08-revision102",
+    "commit": "db1e7b2ed01f0be46cda84fd43e87c8ab0c8ec41",
+    "pull_request": 8
+  },
+  "evidence": [
+    {
+      "id": "E01",
+      "original_filename": "codex-clipboard-1601b554-3395-4bfb-96e8-0c70c72314d9.png",
+      "sha256": "eadc78b90b3d07f7854fe68368831dfaa0c34183dc132bf5d9d6cccb38e63035",
+      "bytes": 36539,
+      "kind": "captura_terminal",
+      "source": "Adjunto de la conversacion del usuario",
+      "published_original": false
+    },
+    {
+      "id": "E02",
+      "original_filename": "codex-clipboard-5cadddc6-f3fe-4644-b678-7db663bee670.png",
+      "sha256": "9dcfadb3305191db908c1854a752c6aba19a8a224c591949562cf3299a2072a4",
+      "bytes": 1498887,
+      "kind": "fotografia",
+      "source": "Adjunto de la conversacion del usuario",
+      "published_original": false
+    },
+    {
+      "id": "E03",
+      "original_filename": "codex-clipboard-d71a7164-2806-4684-acb8-39585b289203.png",
+      "sha256": "93b965200deeca2ddd7681dd0a3c4a448acdac79f8368f3e3f8bc179e2543f5e",
+      "bytes": 31696,
+      "kind": "captura_terminal",
+      "source": "Adjunto de la conversacion del usuario",
+      "published_original": false
+    },
+    {
+      "id": "E04",
+      "original_filename": "codex-clipboard-47a13bc3-cff2-424c-827f-754b53adb300.png",
+      "sha256": "b501f87045a87aa88b22cb966ea68ebed97fcd624e1214eca595102888e2ecd3",
+      "bytes": 33699,
+      "kind": "captura_terminal",
+      "source": "Adjunto de la conversacion del usuario",
+      "published_original": false
+    }
+  ],
+  "measurement_reports": "Las confirmaciones textuales sin captura de instrumento se identifican como REPORTADO_OPERADOR en resultados.csv",
+  "acceptance": {
+    "integral_validation": false,
+    "intermittent_i2c_incident_closed": false,
+    "buzzer_load_tested": false,
+    "second_board_results_included": false
+  }
+}
