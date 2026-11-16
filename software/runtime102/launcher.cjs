@@ -23,7 +23,7 @@ function ready(bridge,timeoutMs){return new Promise((resolve,reject)=>{
 });}
 // One node, one clock, one resource-owning child. Defaults never touch hardware.
 async function launch({profileFile,directory,mode='mock',mockRoot,firmware,host,python='python3',
-  electricalChecked=false,crc='SMBUS',encoding='utf-8',coordinator=false,readyTimeoutMs=3000,mockHostFlags=[]}={}){
+  electricalChecked=false,crc='SMBUS',encoding='utf-8',coordinator=false,readyTimeoutMs=3000,mockHostFlags=[],supervisorFactory=options=>new Supervisor(options)}={}){
   if(!['mock','hardware'].includes(mode))throw Error('MODE');
   const profile=load(profileFile,{hardware:mode==='hardware'});
   if(mode==='hardware'&&(process.platform!=='linux'||!electricalChecked))throw Error('HARDWARE_REQUIRES_LINUX_AND_ELECTRICAL_CHECK');
@@ -58,7 +58,7 @@ async function launch({profileFile,directory,mode='mock',mockRoot,firmware,host,
     if(greeting.abi!==3||greeting.epoch!==epoch)throw Error('BRIDGE_ABI_OR_EPOCH');
     journal.write({...greeting,kind:'BRIDGE_READY'});
     await owner.request('activate');
-    supervisor=new Supervisor({node,coordinator,crc,encoding,bridge,outputs:owner,cleanup,clock,journal});
+    supervisor=supervisorFactory({node,coordinator,crc,encoding,bridge,outputs:owner,cleanup,clock,journal});
     supervisor.start();timer=setInterval(()=>supervisor.pump(),5);
     return {supervisor,profile,mode,directory,stop:()=>supervisor.stop('OPERATOR_STOP')};
   }catch(e){

@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "run_id": "cambiar-por-id-de-ensayo",
+  "origin": "hardware",
+  "A_to_B": [
+    "A"
+  ],
+  "B_to_A": [
+    "B"
+  ]
+}
