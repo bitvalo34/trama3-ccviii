@@ -1,0 +1,10 @@
+'use strict';
+const assert=require('node:assert/strict');const {server}=require('./web.cjs');
+(async()=>{const s=server();await new Promise(r=>s.listen(0,'127.0.0.1',r));
+try{const base='http://127.0.0.1:'+s.address().port;
+ const page=await fetch(base);assert.equal(page.status,200);assert.match(await page.text(),/SIMULACIÓN LOCAL/);
+ const r=await fetch(base+'/simulate',{method:'POST',body:JSON.stringify({a:'Hola',b:'Respuesta',crc:'SMBUS'})});
+ const data=await r.json();assert.equal(data.status,'PASS');assert.deepEqual(data.deliveries,[['Respuesta'],['Hola']]);
+ const bad=await fetch(base+'/simulate',{method:'POST',body:'{}'});assert.equal(bad.status,400);
+ console.log('PASS web HTML, bidirectional simulation, invalid request');
+}finally{await new Promise(r=>s.close(r));}})().catch(e=>{console.error(e);process.exitCode=1;});

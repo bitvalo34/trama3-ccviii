@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TRAMA3 · Chat por nodo</title>
+<style>
+body{font:17px system-ui;background:#101827;color:#eef3fa;max-width:850px;margin:32px auto;padding:20px}a{color:#7dd3fc}textarea,button{font:inherit;padding:12px;border-radius:8px}textarea{width:100%;box-sizing:border-box;min-height:100px}button{background:#7dd3fc;border:0;cursor:pointer;margin-top:12px}li{padding:14px;margin:10px 0;background:#1e293b;border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere}#error{color:#fca5a5}small{display:block;color:#b8c5d8}ul{padding:0;list-style:none}
+</style>
+<h1 id="title">TRAMA3</h1>
+<p>Simulación supervisada · tiempo virtual acelerado · sin conexión a las BBB.</p>
+<nav><a href="/?node=A">Nodo A</a> · <a href="/?node=B">Nodo B</a> · <a id="log">Descargar log del nodo</a></nav>
+<p id="state" aria-live="polite">Conectando…</p>
+<p id="stats"></p>
+<form id="form"><label for="text">Mensaje</label><textarea id="text" maxlength="1024" required></textarea><button>Enviar</button></form>
+<p id="error" role="alert"></p><ul id="messages" aria-live="polite"></ul>
+<details><summary>Diagnóstico de la simulación</summary><pre id="diagnostics" style="white-space:pre-wrap;overflow-wrap:anywhere"></pre></details>
+<script>
+const node=new URLSearchParams(location.search).get('node')||'A',query='?node='+encodeURIComponent(node),el=id=>document.getElementById(id);
+el('title').textContent='TRAMA3 · Nodo '+node;el('log').href='/log'+query;
+const labels={pending:'Pendiente',sending:'Enviando',confirmed:'Confirmado por el receptor',failed:'Fallido: entrega no confirmada',received:'Recibido'};
+async function refresh(){try{const r=await fetch('/state'+query),s=await r.json();if(!r.ok)throw Error(s.error);
+el('state').textContent=s.state+' · CRC '+s.crc+' · '+s.encoding;
+el('stats').textContent='Reintentos: '+s.stats.retries+' · Duplicados detectados: '+s.stats.duplicates+' · Escenario: '+s.fault;
+el('diagnostics').textContent=s.diagnostics.map(e=>JSON.stringify(e)).join('\n')||'Sin incidencias registradas.';
+el('messages').replaceChildren(...s.messages.map(m=>{const li=document.createElement('li'),small=document.createElement('small');li.textContent=m.text;small.textContent=m.direction==='sent'?'Enviado · '+labels[m.status]:labels[m.status];li.append(small);return li;}));
+}catch(e){el('error').textContent=e.message;}}
+el('form').onsubmit=async e=>{e.preventDefault();el('error').textContent='';try{const r=await fetch('/send'+query,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:el('text').value})}),s=await r.json();if(!r.ok)throw Error(s.error);el('text').value='';await refresh();}catch(e){el('error').textContent=e.message;}};
+refresh();setInterval(refresh,500);
+</script></html>
