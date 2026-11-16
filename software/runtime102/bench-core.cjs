@@ -20,7 +20,7 @@ function validatePlan(p){
     p.schema!==1||p.kind!=='BENCH_PLAN'||p.period_ticks!==expected.period_ticks||p.sample_ticks!==expected.sample_ticks)throw Error('ALTERED_PLAN');
   return p;
 }
-function capture(p,events){
+function capture(p,events,{count=N,availableMask=7,compare=true}={}){
   validatePlan(p);
   if(!Array.isArray(events)||events.length>1024)throw Error('CAPTURE_LIMIT');
   const errors=[],samples=[],periods=[],widths=[],offsets=[];
@@ -54,14 +54,14 @@ function capture(p,events){
       samples.push(e.normalized&7);index++;phase='rise';
     }
   }
-  if(events.length!==N*3||samples.length!==N||phase!=='rise')bad('INCOMPLETE_CAPTURE');
-  const mismatches=samples.map((v,i)=>({index:i,expected:p.vectors[i],observed:v}))
-    .filter(x=>x.expected!==x.observed);
+  if(events.length!==count*3||samples.length!==count||phase!=='rise')bad('INCOMPLETE_CAPTURE');
+  const mismatches=compare?samples.map((v,i)=>({index:i,expected:p.vectors[i]&availableMask,observed:v&availableMask}))
+    .filter(x=>x.expected!==x.observed):[];
   if(mismatches.length)bad('VECTOR_MISMATCH');
   const summary=a=>a.length?{min:Math.min(...a),max:Math.max(...a)}:null;
   return {schema:1,scope:'bench-capture-analysis',run_id:p.run_id,status:errors.length?'FAIL':'PASS',
     physical_status:'NOT_TESTED',errors:[...new Set(errors)],samples:samples.length,mismatches,
-    per_channel:[0,1,2].map(c=>({channel:c,errors:samples.filter((v,i)=>((v^p.vectors[i])>>c)&1).length})),
+    per_channel:compare?[0,1,2].filter(c=>availableMask&(1<<c)).map(c=>({channel:c,errors:samples.filter((v,i)=>((v^p.vectors[i])>>c)&1).length})):null,
     period_ticks:summary(periods),width_ticks:summary(widths),sample_offset_ticks:summary(offsets),
     timebase:'IEP nominal 200 MHz; no independent calibration',
     limits:'Revision102 period +/-5%, high pulse +/-0.05T; runtime sample +/-10 us. No independent clock calibration.'};

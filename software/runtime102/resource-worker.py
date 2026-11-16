@@ -4,6 +4,7 @@ import json
 import sys
 from pathlib import Path
 from board_owner import linux_owner, BoardOwner
+from lab_profile import validate_lab
 
 def main():
     parser=argparse.ArgumentParser()
@@ -21,7 +22,8 @@ def main():
         profile=dict(profile);profile['calibration']={'servo_low_us':1000,'servo_high_us':2000}
     elif args.active:
         c=profile.get('calibration',{})
-        if c.get('status')!='MEASURED' or c.get('board')!=profile.get('board') or not c.get('evidence'):
+        if profile.get('experiment')=='optical-acoustic': validate_lab(profile)
+        elif c.get('status')!='MEASURED' or c.get('board')!=profile.get('board') or not c.get('evidence'):
             raise ValueError('CALIBRATION_REQUIRED')
         owner=linux_owner(profile,args.firmware)
     else:raise ValueError('Specify --mock-root or --active')
@@ -33,7 +35,7 @@ def main():
                 data=None
                 if op=='acquire':data=owner.acquire(profile)
                 elif op=='activate':owner.activate_clock()
-                elif op=='prepare':owner.prepare(r['vector'])
+                elif op=='prepare':data=owner.prepare(r['vector'])
                 elif op=='shutdown':owner.shutdown_outputs()
                 elif op=='release':
                     data=owner.release()

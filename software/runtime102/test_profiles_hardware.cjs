@@ -1,7 +1,7 @@
 'use strict';
 const assert=require('node:assert/strict');
 const {validate}=require('./profiles.cjs');
-const p=structuredClone(require('./profiles/BBB-A.json'));
+const p=JSON.parse(JSON.stringify(require('./profiles/BBB-A.json')));
 // Synthetic evidence tests validation only; never written to a usable profile.
 p.calibration={board:'BBB-A',status:'MEASURED',evidence:'TEST FIXTURE',checked_at:'fixture',
   servo_low_us:1000,servo_high_us:2000,settle_ms:100,rx_invert:8,i2c_device:'/dev/i2c-2'};

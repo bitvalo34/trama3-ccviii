@@ -1,3 +1,5 @@
+> Integración vigente C0/C1 y ABI4: [PRIMERAS_TRAMAS_FISICAS.md](PRIMERAS_TRAMAS_FISICAS.md). El contenido inferior documenta la base anterior; sus referencias ABI3/ventana no integrada quedan históricas.
+
 # Lanzador por BBB: preparacion y limites
 
 Implementado el 16 de noviembre de 2026. Probado en PC con procesos reales Node y

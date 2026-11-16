@@ -1,3 +1,5 @@
+> Integración vigente C0/C1 y ABI4: [PRIMERAS_TRAMAS_FISICAS.md](PRIMERAS_TRAMAS_FISICAS.md). El contenido inferior documenta la base anterior; sus referencias ABI3/ventana no integrada quedan históricas.
+
 # Recepcion acustica: modulo candidato y contrato de integracion
 
 El protocolo 102 exige presencia durante una ventana para C1. El service.c de

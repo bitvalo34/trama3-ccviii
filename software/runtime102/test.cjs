@@ -40,7 +40,7 @@ test('uncharacterized rate rejected',()=>{
  assert.equal(n.queue[0].frame.data,P.RATE.REJECT);assert.equal(n.txPeriod,1);
 });
 test('binary event and uint32 validation',()=>{
- const b=Buffer.alloc(28);b.writeUInt32LE(0xffffffff);assert.equal(decodeEvent(b).sequence,0xffffffff);
+ const b=Buffer.alloc(36);b.writeUInt32LE(0xffffffff);assert.equal(decodeEvent(b).sequence,0xffffffff);
  assert.throws(()=>decodeEvent(Buffer.alloc(27)));
 });
 test('sequence gaps/epoch changes stop stream',()=>{

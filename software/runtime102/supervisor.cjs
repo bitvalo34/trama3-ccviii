@@ -25,11 +25,11 @@ class Journal {
 // prepare(vector) -> Promise, shutdown() -> Promise. Resource owner:
 // cleanup() -> Promise. Hardware ownership and loading are deliberately injected.
 class Supervisor {
-  constructor({node,coordinator=false,sid=1,crc='SMBUS',encoding='utf-8',bridge,outputs,cleanup,clock,journal,prepareTimeout=0.015}){
+  constructor({node,coordinator=false,sid=1,crc='SMBUS',encoding='utf-8',bridge,outputs,cleanup,clock,journal,availableMask=7,prepareTimeout=0.015}){
     Object.assign(this,{bridge,outputs,cleanup,clock,journal,prepareTimeout});
     this.state='NEW';this.active=null;this.preparing=false;this.stopPromise=null;
     this.endpoint=new Endpoint({id:node,coordinator,sid,crc,encoding,log:e=>journal.write(e)});
-    this.decoder=new StreamDecoder({crc,onFrame:bits=>{
+    this.decoder=new StreamDecoder({crc,availableMask,onBlock:block=>this.journal.write({kind:'MATRIX_BLOCK',...block,t:this.clock()}),onFrame:bits=>{
       this.endpoint.receive(bits,this.clock());this.decoder.crc=this.endpoint.crc;
     },onFault:reason=>{
       if(this.decoder.faulted)this.stop(reason);
@@ -72,12 +72,13 @@ class Supervisor {
       if(this.preparing||r.index!==a.index||r.vector!==a.vectors[r.index])throw Error('BRIDGE_PREPARE_ORDER');
       this.preparing=true;const began=this.clock();this.prepareDeadline=began+this.prepareTimeout;
       // READY must follow completion of the output operation, not its dispatch.
-      this.preparePromise=Promise.resolve().then(()=>{if(this.state==='RUNNING')return this.outputs.prepare(r.vector);}).then(async()=>{
+      this.preparePromise=Promise.resolve().then(()=>{if(this.state==='RUNNING')return this.outputs.prepare(r.vector);}).then(async readback=>{
         if(this.state!=='RUNNING'){
           // An I/O operation may finish after STOP. Reassert inactive outputs.
           await this.outputs.shutdown();return;
         }
         if(this.clock()-began>this.prepareTimeout)throw Error('OUTPUT_PREPARE_LATE');
+        this.journal.write({kind:'OUTPUT_PREPARED',id:r.id,index:r.index,vector:r.vector,readback,t:this.clock()});
         this.bridge.write('READY '+r.id+' '+r.index+'\n');a.index++;this.preparing=false;
       }).catch(e=>{
         this.preparing=false;
@@ -85,10 +86,10 @@ class Supervisor {
         else {this.errors=this.errors||[];this.errors.push('late output: '+e.message);this.state='CLEANUP_FAILED';}
       });
     }else if(r.kind==='body_done'){
-      if(a.index!==87||a.bodyEnd!==null)throw Error('BRIDGE_BODY_ORDER');
+      if(a.index!==a.vectors.length||a.bodyEnd!==null)throw Error('BRIDGE_BODY_ORDER');
       a.bodyEnd=this.clock();
     }else if(r.kind==='done'){
-      if(a.index!==87||a.bodyEnd===null)throw Error('BRIDGE_DONE_ORDER');
+      if(a.index!==a.vectors.length||a.bodyEnd===null)throw Error('BRIDGE_DONE_ORDER');
       this.endpoint.txDone(a.id,this.clock(),a.bodyEnd);this.active=null;this.pump();
     }else throw Error('BRIDGE_RECORD');
   }
