@@ -1,0 +1,66 @@
+schema,hardware_revision,board,point,value,uncertainty,unit,method,instrument,measured_at,evidence,operator,origin,detail,notes
+2,P2-LOCAL,BBB-B,aislamiento_pc817,,,bool,continuity,,,,,physical,,U2.1/2 y J8 sin union al retorno receptor
+2,P2-LOCAL,BBB-B,aleta_aislada,,,bool,inspection,,,,,physical,,Aleta Q6 NEG_IN sin contacto con GND ni chasis
+2,P2-LOCAL,BBB-B,arranque_apagado,,,bool,oscilloscope,,,,,physical,,Capturas de encendido/apagado sin tension indebida a GPIO
+2,P2-LOCAL,BBB-B,carga_fuente_revisada,,,bool,inspection,,,,,physical,,Carga segura caracterizada; no usar servo bloqueado
+2,P2-LOCAL,BBB-B,conectores_revisados,,,bool,inspection,,,,,physical,,J1/J4/J10/J13 y borneras P2 contrastados
+2,P2-LOCAL,BBB-B,fuentes_identificadas,,,bool,inspection,,,,,physical,,"Modelo, polaridad, capacidad y salida aislada/flotante de adaptadores identificados"
+2,P2-LOCAL,BBB-B,fuentes_separadas,,,bool,inspection,,,,,physical,,Sin fuente comun entre actuadores y BBB
+2,P2-LOCAL,BBB-B,fusible_revisado,,,bool,inspection,,,,,physical,,F1 y cableado coordinados con carga; 1 A provisional no aumentado
+2,P2-LOCAL,BBB-B,limites_lotes,,,bool,inspection,,,,,physical,,"Hojas de lote, carga maxima y limites de componentes revisados"
+2,P2-LOCAL,BBB-B,modulo_acustico_3v3,,,bool,inspection,,,,,physical,,Modulo acustico real identificado y funcional a 3.3 V
+2,P2-LOCAL,BBB-B,modulo_optico_3v3,,,bool,inspection,,,,,physical,,Modulo optico real identificado y funcional a 3.3 V
+2,P2-LOCAL,BBB-B,neg_in_sin_bypass,,,bool,continuity,,,,,physical,,"Sin bypass NEG_IN-GND_ACT por cable, aleta, instrumento o fuente"
+2,P2-LOCAL,BBB-B,p2_conforme,,,bool,inspection,,,,,physical,,"Montaje cotejado con netlist P2, fotos de ambas caras y revision T52/T53/T54"
+2,P2-LOCAL,BBB-B,pinouts_revisados,,,bool,inspection,,,,,physical,,"Pinouts reales U1, U2, transistores y modulos contrastados"
+2,P2-LOCAL,BBB-B,polaridad_correcta,,,bool,inspection,,,,,physical,,Polaridad de entrada y condensadores comprobada
+2,P2-LOCAL,BBB-B,q6_verificado,,,bool,inspection,,,,,physical,,"IRLZ44N, lote/fabricante, encapsulado, G/D/S y aleta verificados"
+2,P2-LOCAL,BBB-B,r30_verificada,,,bool,continuity,,,,,physical,,R30 100 kohm entre +5V_ACT y GND_ACT
+2,P2-LOCAL,BBB-B,retornos_correctos,,,bool,continuity,,,,,physical,,NT1 unica union GND_ACT-GND_LOGIC local
+2,P2-LOCAL,BBB-B,selectores_comprobados,,,bool,continuity,,,,,physical,,EN_C0/1/2 y JP4..7 diferenciados y verificados
+2,P2-LOCAL,BBB-B,servo_desconectado,,,bool,inspection,,,,,physical,,Servo desconectado durante diagnostico T06
+2,P2-LOCAL,BBB-B,sin_anomalias,,,bool,inspection,,,,,physical,,"Sin calentamiento, reinicios, olor, dano o fuente inestable"
+2,P2-LOCAL,BBB-B,sin_corto,,,bool,continuity,,,,,physical,,"Sin corto persistente entre rieles, descargados"
+2,P2-LOCAL,BBB-B,sin_puente_nodos,,,bool,inspection,,,,,physical,,Sin cable GND entre nodos; rutas USB/instrumentos documentadas
+2,P2-LOCAL,BBB-B,sw287_CENTRO,,,bool,continuity,,,,,physical,,Tabla de contactos CENTRO medida
+2,P2-LOCAL,BBB-B,sw287_OFF,,,bool,continuity,,,,,physical,,Tabla de contactos OFF medida y rotulada
+2,P2-LOCAL,BBB-B,sw287_ON,,,bool,continuity,,,,,physical,,Tabla de contactos ON medida y rotulada
+2,P2-LOCAL,BBB-B,J1_ENTRADA,,,V,multimeter,,,,,physical,,
+2,P2-LOCAL,BBB-B,J4_servo_CENTRO,,,V,multimeter,,,,,physical,,
+2,P2-LOCAL,BBB-B,J4_servo_OFF,,,V,multimeter,,,,,physical,,
+2,P2-LOCAL,BBB-B,J4_servo_ON,,,V,multimeter,,,,,physical,,
+2,P2-LOCAL,BBB-B,J5_VDD,,,V,multimeter,,,,,physical,,
+2,P2-LOCAL,BBB-B,J6_VDD,,,V,multimeter,,,,,physical,,
+2,P2-LOCAL,BBB-B,J7_ABIERTO,,,V,multimeter,,,,,physical,,
+2,P2-LOCAL,BBB-B,J7_CERRADO,,,V,multimeter,,,,,physical,,
+2,P2-LOCAL,BBB-B,P8_15_HIGH,,,V,multimeter,,,,,physical,,
+2,P2-LOCAL,BBB-B,P8_15_LOW,,,V,multimeter,,,,,physical,,
+2,P2-LOCAL,BBB-B,P8_15_MIN,,,V,oscilloscope,,,,,physical,,
+2,P2-LOCAL,BBB-B,P8_15_PEAK,,,V,oscilloscope,,,,,physical,,
+2,P2-LOCAL,BBB-B,P8_16_HIGH,,,V,multimeter,,,,,physical,,
+2,P2-LOCAL,BBB-B,P8_16_LOW,,,V,multimeter,,,,,physical,,
+2,P2-LOCAL,BBB-B,P8_16_MIN,,,V,oscilloscope,,,,,physical,,
+2,P2-LOCAL,BBB-B,P8_16_PEAK,,,V,oscilloscope,,,,,physical,,
+2,P2-LOCAL,BBB-B,P9_24_HIGH,,,V,multimeter,,,,,physical,,
+2,P2-LOCAL,BBB-B,P9_24_LOW,,,V,multimeter,,,,,physical,,
+2,P2-LOCAL,BBB-B,P9_24_MIN,,,V,oscilloscope,,,,,physical,,
+2,P2-LOCAL,BBB-B,P9_24_PEAK,,,V,oscilloscope,,,,,physical,,
+2,P2-LOCAL,BBB-B,P9_27_HIGH,,,V,multimeter,,,,,physical,,
+2,P2-LOCAL,BBB-B,P9_27_LOW,,,V,multimeter,,,,,physical,,
+2,P2-LOCAL,BBB-B,P9_27_MIN,,,V,oscilloscope,,,,,physical,,
+2,P2-LOCAL,BBB-B,P9_27_PEAK,,,V,oscilloscope,,,,,physical,,
+2,P2-LOCAL,BBB-B,P9_3,,,V,multimeter,,,,,physical,,
+2,P2-LOCAL,BBB-B,Q6_CAIDA,,,V,multimeter,,,,,physical,,
+2,P2-LOCAL,BBB-B,Q6_VGS,,,V,multimeter,,,,,physical,,
+2,P2-LOCAL,BBB-B,TP1_5V_ACT,,,V,multimeter,,,,,physical,,
+2,P2-LOCAL,BBB-B,TP3_3V3,,,V,multimeter,,,,,physical,,
+2,P2-LOCAL,BBB-B,TP9_servo_CENTRO,,,V,multimeter,,,,,physical,,
+2,P2-LOCAL,BBB-B,TP9_servo_CENTRO_PICO,,,V,oscilloscope,,,,,physical,,
+2,P2-LOCAL,BBB-B,TP9_servo_OFF,,,V,multimeter,,,,,physical,,
+2,P2-LOCAL,BBB-B,U1_VDD,,,V,multimeter,,,,,physical,,
+2,P2-LOCAL,BBB-B,buzzer_mA,,,mA,current_probe,,,,,physical,,
+2,P2-LOCAL,BBB-B,carga_act_A,,,A,current_probe,,,,,physical,,
+2,P2-LOCAL,BBB-B,fuente_act_5v_carga,,,V,multimeter,,,,,physical,,
+2,P2-LOCAL,BBB-B,fuente_act_5v_vacio,,,V,multimeter,,,,,physical,,
+2,P2-LOCAL,BBB-B,fuente_bbb_5v,,,V,multimeter,,,,,physical,,
+2,P2-LOCAL,BBB-B,riel_logico_mA,,,mA,current_probe,,,,,physical,,

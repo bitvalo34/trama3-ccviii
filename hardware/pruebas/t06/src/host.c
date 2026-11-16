@@ -13,6 +13,7 @@
 #include <unistd.h>
 #include <sys/mman.h>
 #include "../firmware/abi.h"
+typedef char mailbox_fits[(sizeof(struct mailbox)==8264 && sizeof(struct mailbox)<=12288)?1:-1];
 static volatile sig_atomic_t interrupted;
 static void sig(int n) { (void)n; interrupted=1; }
 static double seconds(void) {
@@ -33,6 +34,11 @@ int main(int argc,char **argv) {
  if(fd<0) { perror("/dev/mem"); return 4; }
  m=mmap(NULL,12288,PROT_READ|PROT_WRITE,MAP_SHARED,fd,0x4a310000);
  close(fd); if(m==MAP_FAILED) {perror("mmap");return 4;}
+ if(!strcmp(argv[1],"probe")) {
+  deadline=seconds()+1;
+  while((m->magic!=T06_MAGIC || m->abi!=T06_ABI || m->state!=READY) && seconds()<deadline) nap();
+  __sync_synchronize();
+ }
  if(m->magic!=T06_MAGIC || m->abi!=T06_ABI) {fprintf(stderr,"ABI/firmware incompatible\n");rc=4;goto finish;}
  if(!strcmp(argv[1],"probe")) {
   hb=m->heartbeat; deadline=seconds()+1;
@@ -66,7 +72,7 @@ int main(int argc,char **argv) {
   if(m->state!=DONE) rc=5;
   if(m->state!=DONE && m->state!=ERROR && m->state!=STOPPED) {
    m->command=CMD_STOP;__sync_synchronize();nap();
-   fprintf(stderr,"Timeout host; detener remoteproc\n");rc=5;
+   fprintf(stderr,"Timeout host; detener remoteproc\n");rc=5;goto finish;
   }
   printf("{\"state\":%u,\"mode\":%u,\"initial\":%u,\"generated\":%u,\"overflow\":%u,\"late\":%u,\"elapsed_ticks\":%u,\"max_gap_ticks\":%u,\"events\":[",
    m->state,m->mode,m->initial,m->generated,m->overflow,m->late,m->elapsed,m->max_gap);

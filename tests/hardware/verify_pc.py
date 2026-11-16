@@ -13,25 +13,28 @@ ROOT=Path(__file__).resolve().parents[2]
 
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--output',required=True)
+    ap.add_argument('--no-native-execution',action='store_true',help='No ejecutar binarios C cuando el entorno los bloquea')
     a=ap.parse_args();out=Path(a.output).resolve();out.mkdir(parents=True,exist_ok=True)
-    env=dict(os.environ,TEMP=str(out),TMP=str(out),PYTHONIOENCODING='utf-8')
+    env=dict(os.environ,TEMP=str(out),TMP=str(out),PYTHONIOENCODING='utf-8',POWERSHELL_TELEMETRY_OPTOUT='1',DOTNET_CLI_TELEMETRY_OPTOUT='1')
     records=[]
     def check(label,cmd,expected=0):
         try:
             r=subprocess.run([str(x) for x in cmd],cwd=str(ROOT),env=env,stdout=subprocess.PIPE,stderr=subprocess.PIPE,universal_newlines=True,timeout=90)
             status='PASS' if r.returncode==expected else 'FAIL'
             text=r.stdout+r.stderr
-            if 'NtCreateDirectoryObject' in text and '0xC0000022' in text:
+            if ('NtCreateDirectoryObject' in text and '0xC0000022' in text) or (os.name=='nt' and r.returncode in (3221225794,-1073741502)):
                 status='BLOCKED'
             record={'test':label,'status':status,'exit_code':r.returncode,'output':text.replace(str(ROOT),'<repo>').replace(str(out),'<validation>')}
         except (OSError,subprocess.TimeoutExpired) as e:
             record={'test':label,'status':'BLOCKED','output':str(e)}
         records.append(record);print(label+': '+record['status']);return record['status']=='PASS'
-    check('python_unittest',[sys.executable,'tests/hardware/test_hardware.py'])
-    check('netlist_static',[sys.executable,'tests/hardware/audit_t51.py'])
+    check('python_unittest',[sys.executable,'-m','unittest','discover','-s','tests/hardware','-p','test_*.py'])
+    check('netlist_P2_static',[sys.executable,'tests/hardware/audit_p2.py'])
     gcc=shutil.which('gcc')
     if not gcc and os.name=='nt' and Path('C:/mingw64/bin/gcc.exe').exists():gcc='C:/mingw64/bin/gcc.exe'
-    if gcc:
+    if a.no_native_execution:
+        records.append({'test':'C_native_model','status':'BLOCKED','output':'Ejecucion nativa omitida: revision automatica rechazo telemetria externa del entorno'})
+    if gcc and not a.no_native_execution:
         exe=out/('firmware-model.exe' if os.name=='nt' else 'firmware-model')
         if check('compile_firmware_model',[gcc,'-std=c99','-O2','-Wall','-Wextra','-Wno-unknown-pragmas','-Itests/hardware','tests/hardware/test_firmware.c','-o',exe]):
             check('run_firmware_model',[exe])

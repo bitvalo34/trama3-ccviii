@@ -1,5 +1,6 @@
 """Convierte capturas R31/IEP en tiempos. Ningun dato sintetico se acredita."""
-def analyze(raw, period_us, high_us, mode, cycles):
+def analyze(raw, period_us, high_us, mode, cycles, invert_mask=0):
+    if type(invert_mask) is not int or not 0<=invert_mask<=7:raise ValueError("Mascara de polaridad invalida")
     errors=[]
     if not isinstance(raw, dict):
         raise ValueError("Captura debe ser un objeto")
@@ -32,6 +33,9 @@ def analyze(raw, period_us, high_us, mode, cycles):
         last_tick=tick
         snaps.append({"tick":tick,"clock":(value>>15)&1,"C0":(value>>5)&1,
                       "C1":(value>>14)&1,"C2":(value>>16)&1})
+        vector=((value>>5)&1)|(((value>>14)&1)<<1)|(((value>>16)&1)<<2)
+        snaps[-1]["raw_vector"]=vector
+        snaps[-1]["normalized_vector"]=vector ^ invert_mask
         if (value^previous)&(1<<15):
             if value&(1<<15):
                 rising+=1
