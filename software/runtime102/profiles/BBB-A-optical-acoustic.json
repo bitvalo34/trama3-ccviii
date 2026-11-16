@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "board": "BBB-A",
+  "abi": 4,
+  "period_s": 1,
+  "rx_invert": 8,
+  "pins": {
+    "tx": "P8_11",
+    "clock": "P8_15",
+    "data": [
+      "P9_27",
+      "P8_16",
+      "P9_24"
+    ],
+    "pwm": "P9_14"
+  },
+  "expected_os": "Debian 10.3",
+  "serial_hint": "COM5",
+  "i2c_device": "/dev/i2c-2",
+  "mcp_reset_confirmed": false,
+  "hardware_revision": "T51-P2-LOCAL",
+  "calibration": {
+    "board": "BBB-A",
+    "status": "PENDING",
+    "evidence": null,
+    "checked_at": null,
+    "rx_invert": null,
+    "i2c_device": null,
+    "i2c_adapter_evidence": null,
+    "clock_evidence": null,
+    "checks": {
+      "power_3v3": false,
+      "actuator_supply_p2": false,
+      "no_known_short": false,
+      "harness_p2": false,
+      "inputs_3v3": false,
+      "clock_pc817_isolated": false,
+      "servo_power_disconnected": false
+    }
+  },
+  "experiment": "optical-acoustic",
+  "available_mask": 3,
+  "availability_source": "operator-declared C2 deliberately disconnected; not pilot-detected failure",
+  "acoustic": {
+    "start": 40000000,
+    "end": 160000000,
+    "min_active": 0,
+    "max_gap": 20000,
+    "evidence": null
+  }
+}

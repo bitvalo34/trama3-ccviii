@@ -50,14 +50,14 @@ def inventory():
         ('node', ['node', '--version']), ('gcc', ['gcc', '-dumpversion']),
         ('clpru', ['clpru', '--compiler_revision'])]}
     version = tools['node'].get('stdout', '')
-    try: node_ok = int(version.lstrip('v').split('.')[0]) >= 18
+    try: node_ok = int(version.lstrip('v').split('.')[0]) >= 16
     except ValueError: node_ok = False
     return {'origin': 'system_report', 'physical_status': 'NOT_TESTED',
             'status': 'READY_FOR_PC_TESTS' if node_ok else 'BLOCKED',
             'hardware_status': 'NOT_AUTHORIZED_BY_THIS_CHECK',
             'python': sys.version.split()[0], 'os': platform.platform(),
             'machine': platform.machine(), 'tools': tools,
-            'shared_abi_required': 3,
+            'shared_abi_required': 4,
             'dev_mem_present': Path('/dev/mem').exists(),
             'resources': resources() if sys.platform=='linux' else None,
             'note': 'Node version alone does not validate Debian ARM compatibility or P2 calibration.'}

@@ -1,3 +1,5 @@
+> Integración vigente C0/C1 y ABI4: [PRIMERAS_TRAMAS_FISICAS.md](PRIMERAS_TRAMAS_FISICAS.md). El contenido inferior documenta la base anterior; sus referencias ABI3/ventana no integrada quedan históricas.
+
 # Runtime 102: base incremental
 
 Primera sesion con las BBB: [PRIMER_ENLACE.md](PRIMER_ENLACE.md). Incluye

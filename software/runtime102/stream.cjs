@@ -1,15 +1,15 @@
 'use strict';
 const P=require('./protocol.cjs');
 const HZ=200000000n;
-// Decodes the 28-byte ABI event exported by ARM. No Number conversion of an
+// Decodes the 36-byte ABI4 event exported by ARM. No Number conversion of an
 // absolute uint64 timestamp; subtract the origin in BigInt first.
 class StreamDecoder {
-  constructor({period=1,crc='SMBUS',sampleTolerance=0.00001,onFrame=()=>{},onFault=()=>{}}={}){
+  constructor({period=1,crc='SMBUS',availableMask=7,sampleTolerance=0.00001,onFrame=()=>{},onFault=()=>{},onBlock=()=>{}}={}){
     if(period!==1)throw Error('Only 1 Hz enabled in runtime');
     this.period=period;this.crc=crc;this.tolerance=sampleTolerance;
-    this.onFrame=onFrame;this.onFault=onFault;this.epoch=null;this.seq=null;
+    this.onFrame=onFrame;this.onFault=onFault;this.onBlock=onBlock;this.epoch=null;this.seq=null;
     this.origin=null;this.lastTick=null;this.rise=null;this.fall=null;
-    this.receiver=new P.PhysicalReceiver(period,crc);this.faulted=false;
+    this.receiver=new P.PhysicalReceiver(period,crc,availableMask);this.faulted=false;
   }
   fault(reason){this.faulted=true;this.onFault(reason);}
   ingest(e){
@@ -34,14 +34,17 @@ class StreamDecoder {
       // parse. Management is always SMBUS, ACK uses the negotiated application CRC.
       if(this.receiver.raw.length>=22){const c=parseInt(this.receiver.raw.slice(18,22),2);
         this.receiver.algorithm=(c>=8&&c<=11||c===14||c===15)?'SMBUS':this.crc;}
+      const previousError=this.receiver.error;
+      const previousBlocks=this.receiver.blocks.length;
       this.receiver.ingest({rise:this.rise,fall:this.fall,values});
-      if(this.receiver.error){this.onFault(this.receiver.error);}
+      if(this.receiver.blocks.length>previousBlocks)this.onBlock({...this.receiver.blocks[this.receiver.blocks.length-1],sample_t:t});
+      if(this.receiver.error&&this.receiver.error!==previousError){this.onFault(this.receiver.error);}
       if(this.receiver.result){const r=this.receiver.outcome();if(r.ok)this.onFrame(r.raw);else this.onFault(r.reason);}
     }else this.fault('EVENT_FLAGS');
   }
 }
 function decodeEvent(buf){
-  if(buf.length!==28)throw Error('event length');
-  return Object.fromEntries(['sequence','epoch','ticks_lo','ticks_hi','r31','normalized','flags'].map((k,i)=>[k,buf.readUInt32LE(i*4)]));
+  if(buf.length!==36)throw Error('event length');
+  return Object.fromEntries(['sequence','epoch','ticks_lo','ticks_hi','r31','normalized','flags','acoustic_active','acoustic_gap'].map((k,i)=>[k,buf.readUInt32LE(i*4)]));
 }
 module.exports={StreamDecoder,decodeEvent};

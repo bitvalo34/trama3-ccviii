@@ -1,3 +1,5 @@
+> Integración vigente C0/C1 y ABI4: [PRIMERAS_TRAMAS_FISICAS.md](PRIMERAS_TRAMAS_FISICAS.md). El contenido inferior documenta la base anterior; sus referencias ABI3/ventana no integrada quedan históricas.
+
 # Banco finito y evaluador de evidencias — 16/11/2026
 
 Estado: propuesta de codigo en PR separada. No se ha ejecutado el lanzador nuevo

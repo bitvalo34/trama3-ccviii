@@ -114,7 +114,9 @@
   }
   // RX no recibe la máscara de fallos del banco. Sólo flancos y muestras.
   class PhysicalReceiver {
-    constructor(T,algorithm='SMBUS'){
+    constructor(T,algorithm='SMBUS',availableMask=7){
+      if(!Number.isInteger(availableMask)||availableMask<1||availableMask>7)throw Error('AVAILABILITY');
+      this.availableMask=availableMask;
       this.T=T;this.algorithm=algorithm;this.rows=[];this.meta=null;
       this.result=null;this.error=null;this.lastRise=null;this.lastFall=null;
       this.raw='';this.blocks=[];
@@ -139,13 +141,13 @@
       if(!/^[01]{3}$/.test(values)){this.fail('SAMPLE');return;}
       this.rows.push(values);
       if(this.rows.length===6){
-        const seen=[0,1,2].reduce((mask,j)=>this.rows.every((row,k)=>Number(row[j])===k%2)?mask|(1<<j):mask,0);
-        this.meta={seen,map:7,report:0};
+        const seen=[0,1,2].reduce((mask,j)=>(this.availableMask&(1<<j))&&this.rows.every((row,k)=>Number(row[j])===k%2)?mask|(1<<j):mask,0);
+        this.meta={seen,map:7,report:0,availableMask:this.availableMask};
         if(!seen){this.fail('MATRIX_RANK');return;}
       }
       if(this.rows.length>6&&(this.rows.length-6)%3===0){
         const y=this.rows.slice(-3).flatMap(row=>[0,1,2].map(j=>this.meta.seen&(1<<j)?Number(row[j]):null));
-        const block=M.decode(y);this.blocks.push({block:this.blocks.length,received:y,...block});
+        const block=M.decode(y,{diagnostics:true});this.blocks.push({block:this.blocks.length,received:y,...block});
         if(!block.ok){this.fail('MATRIX_'+block.reason);return;}
         this.raw+=block.data.join('');
       }

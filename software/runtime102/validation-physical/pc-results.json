@@ -1,0 +1,32 @@
+{
+  "scope": "PC software validation only",
+  "architecture": "x86_64",
+  "physical_status": "NOT_TESTED",
+  "ARM_build": "NOT_TESTED",
+  "checks": [
+    {
+      "test": "node16",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "node16.txt"
+    },
+    {
+      "test": "node22",
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "node22.txt"
+    },
+    {
+      "test": "TI_PRU_build",
+      "status": "BLOCKED",
+      "exit_code": 4,
+      "log": "ti-build.txt"
+    },
+    {
+      "test": "P2_T06_T08_regressions",
+      "status": "PASS",
+      "log": "p2-results.json"
+    }
+  ],
+  "incremental_block_journal_regression": "PASS Node16/22"
+}

@@ -1,7 +1,7 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
 const {spawn}=require('node:child_process');
-const {load}=require('./profiles.cjs');
+const {load,validateLab}=require('./profiles.cjs');
 const {P2Adapter}=require('./p2-adapter.cjs');
 const {ProcessBridge}=require('./bridge.cjs');
 const {Supervisor,Journal}=require('./supervisor.cjs');
@@ -23,9 +23,10 @@ function ready(bridge,timeoutMs){return new Promise((resolve,reject)=>{
 });}
 // One node, one clock, one resource-owning child. Defaults never touch hardware.
 async function launch({profileFile,directory,mode='mock',mockRoot,firmware,host,python='python3',
-  electricalChecked=false,crc='SMBUS',encoding='utf-8',coordinator=false,readyTimeoutMs=3000,mockHostFlags=[],supervisorFactory=options=>new Supervisor(options)}={}){
+  electricalChecked=false,labDiagnostics=false,crc='SMBUS',encoding='utf-8',coordinator=false,readyTimeoutMs=3000,mockHostFlags=[],supervisorFactory=options=>new Supervisor(options)}={}){
   if(!['mock','hardware'].includes(mode))throw Error('MODE');
   const profile=load(profileFile,{hardware:mode==='hardware'});
+  if(mode==='hardware'&&profile.experiment==='optical-acoustic')validateLab(profile,{frames:!labDiagnostics});
   if(mode==='hardware'&&(process.platform!=='linux'||!electricalChecked))throw Error('HARDWARE_REQUIRES_LINUX_AND_ELECTRICAL_CHECK');
   if(mode==='mock'&&!mockRoot)throw Error('MOCK_ROOT_REQUIRED');
   if(!firmware||!fs.statSync(firmware).isFile())throw Error('FIRMWARE_MISSING');
@@ -44,21 +45,30 @@ async function launch({profileFile,directory,mode='mock',mockRoot,firmware,host,
     cleaned=true;if(errors.length)throw Error(errors.join('; '));
   }
   try{
-    journal.write({kind:'LAUNCH',mode,profile,epoch,firmware_sha256:crypto.createHash('sha256').update(fs.readFileSync(firmware)).digest('hex')});
+    let commit='UNAVAILABLE';
+    try{commit=require('node:child_process').execFileSync('git',['rev-parse','HEAD'],{cwd:__dirname,encoding:'utf8',stdio:['ignore','pipe','ignore']}).trim();}
+    catch(_){try{commit=fs.readFileSync(path.join(__dirname,'SOURCE_COMMIT'),'utf8').trim();}catch(_){}}
+    journal.write({kind:'LAUNCH',mode,profile,epoch,commit,utc_system_unverified:new Date().toISOString(),
+      host_sha256:host?crypto.createHash('sha256').update(fs.readFileSync(host)).digest('hex'):null,
+      profile_sha256:crypto.createHash('sha256').update(fs.readFileSync(profileFile)).digest('hex'),
+      firmware_sha256:crypto.createHash('sha256').update(fs.readFileSync(firmware)).digest('hex')});
     const args=[path.join(__dirname,'resource-worker.py'),'--profile',path.resolve(profileFile),'--firmware',path.resolve(firmware),
       ...(mode==='mock'?['--mock-root',path.resolve(mockRoot)]:['--active'])];
     ownerChild=spawn(python,args,{stdio:['pipe','pipe','pipe'],windowsHide:true});
     owner=new P2Adapter(ownerChild,{timeoutMs:5000});
-    ownerChild.stderr.on('data',()=>{}); // Error replies carry actionable text; keep pipe drained.
+    owner.on('failure',()=>{}); // Requests reject during startup too; avoid an unhandled child failure.
+    ownerChild.stderr.on('data',chunk=>{try{journal.write({kind:'OWNER_DIAGNOSTIC',text:String(chunk)});}catch(_){}});
     const acquired=await owner.request('acquire');journal.write({kind:'RESOURCES_ACQUIRED',...acquired});
     hostChild=mode==='mock'?spawn(process.execPath,[path.join(__dirname,'mock-host.cjs'),String(epoch),...mockHostFlags],{stdio:['pipe','pipe','pipe'],windowsHide:true}):
-      spawn(host,[String(epoch),String(profile.rx_invert)],{stdio:['pipe','pipe','pipe'],windowsHide:true});
+      spawn(host,[String(epoch),String(profile.rx_invert),...(profile.acoustic?
+        ['start','end','min_active','max_gap'].map(k=>String(profile.acoustic[k])):[])],{stdio:['pipe','pipe','pipe'],windowsHide:true});
     const bridge=new ProcessBridge(hostChild);
     const greeting=await ready(bridge,readyTimeoutMs);
-    if(greeting.abi!==3||greeting.epoch!==epoch)throw Error('BRIDGE_ABI_OR_EPOCH');
+    if(greeting.abi!==4||greeting.epoch!==epoch)throw Error('BRIDGE_ABI_OR_EPOCH');
+    bridge.on('diagnostic',text=>{try{journal.write({kind:'HOST_DIAGNOSTIC',text});}catch(_){if(supervisor)void supervisor.stop('JOURNAL_WRITE');}});
     journal.write({...greeting,kind:'BRIDGE_READY'});
     await owner.request('activate');
-    supervisor=supervisorFactory({node,coordinator,crc,encoding,bridge,outputs:owner,cleanup,clock,journal});
+    supervisor=supervisorFactory({node,coordinator,crc,encoding,bridge,outputs:owner,cleanup,clock,journal,availableMask:profile.available_mask||7});
     supervisor.start();timer=setInterval(()=>supervisor.pump(),5);
     return {supervisor,profile,mode,directory,stop:()=>supervisor.stop('OPERATOR_STOP')};
   }catch(e){
@@ -75,7 +85,7 @@ if(require.main===module){
     try{load(profileFile,{hardware:true});}catch(e){blockers.push(e.message);}
     if(profile.mcp_reset_confirmed!==true)blockers.push('MCP_RESET_NOT_CONFIRMED');
     console.log(JSON.stringify({board:profile.board,mode:'read-only-plan',physical_status:'NOT_TESTED',blockers,
-      steps:['lock runtime and T06','inspect PRU/IEP/PWM/I2C/pins','initialize outputs inactive','load firmware ABI3',
+      steps:['lock runtime and T06','inspect PRU/IEP/PWM/I2C/pins','initialize outputs inactive','load firmware ABI4',
         'wait host ready ABI/epoch','connect clock pin','start one supervisor','STOP, disable outputs, stop host, restore resources'],
       note:'Plan does not authorize hardware; toolchain, electrical checks and actual resource inventory still required.'},null,2));
   }else{

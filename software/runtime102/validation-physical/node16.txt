@@ -1,0 +1,218 @@
+{"math":10252,"integration":2264,"sessions":209,"tests":"PASS","slow":[{"hz":1,"status":"COMPLETE","stable":true,"observed":[7,7],"all":true},{"hz":2,"status":"COMPLETE","stable":true,"observed":[3,3],"all":false},{"hz":3,"status":"COMPLETE","stable":true,"observed":[3,3],"all":false},{"hz":4,"status":"COMPLETE","stable":true,"observed":[3,3],"all":false}]}
+(node:16482) ExperimentalWarning: Fetch is an experimental feature. This feature could change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+TEST software/runtime102/test-bench.cjs
+(node:16492) ExperimentalWarning: Fetch is an experimental feature. This feature could change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS bench lifecycle with fake IO; not physical
+TEST software/runtime102/test-phy.cjs
+(node:16499) ExperimentalWarning: Fetch is an experimental feature. This feature could change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS physical-path fixtures: C2 erasure, distance4, single-bit correction, CRCs, polarities, 4 pairs, full frame, independent RX, timeout, ACK guard/return, cleanup and profiles. NOT HARDWARE.
+TEST software/runtime102/test-preparation.cjs
+{
+  "checks": 30,
+  "status": "PASS",
+  "origin": "synthetic",
+  "physical_status": "NOT_TESTED"
+}
+(node:16506) ExperimentalWarning: Fetch is an experimental feature. This feature could change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+TEST software/runtime102/test.cjs
+PASS two independent nodes, simultaneous messages
+PASS negotiated CRC SMBUS
+PASS negotiated CRC AUTOSAR
+PASS negotiated CRC SAE-J1850
+PASS negotiated CRC MAXIM-DOW
+PASS lost DATA ACK: same sequence, no duplicate delivery
+PASS lost END ACK does not redeliver message
+PASS four attempts, no infinite retries
+PASS pilot exclusion mask 1
+PASS pilot exclusion mask 2
+PASS pilot exclusion mask 3
+PASS pilot exclusion mask 4
+PASS pilot exclusion mask 5
+PASS pilot exclusion mask 6
+PASS all channels absent cannot deliver
+PASS wrong SID/sequence ACK cannot advance
+PASS sequence wraps without losing bytes
+PASS peer restart never silently resumes old message
+PASS uncharacterized rate rejected
+PASS binary event and uint32 validation
+PASS sequence gaps/epoch changes stop stream
+PASS late sample is rejected
+PASS CRC -> contextual NACK -> retransmission
+PASS clock failure and no message context do not invent NACK
+{"checks":24,"status":"PASS","physical_status":"NOT_TESTED"}
+(node:16513) ExperimentalWarning: Fetch is an experimental feature. This feature could change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+TEST software/runtime102/test_integration.cjs
+(node:16520) ExperimentalWarning: Fetch is an experimental feature. This feature could change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS profiles, persistent Python P2 worker, supervised exchange, multi-message node chat, UTF8, logs, origin checks
+TEST software/runtime102/test_launcher.cjs
+(node:16529) ExperimentalWarning: Fetch is an experimental feature. This feature could change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS single-node launcher: processes, duplicate lock, bridge exit, startup timeout, rollback, uncalibrated block
+TEST software/runtime102/test_profiles_hardware.cjs
+PASS physical profile rejects direct clock, inconsistent polarity, unverified I2C and P1
+(node:16583) ExperimentalWarning: Fetch is an experimental feature. This feature could change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+TEST software/runtime102/test_supervisor.cjs
+(node:16590) ExperimentalWarning: Fetch is an experimental feature. This feature could change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS supervisor: duplex, CRC negotiation, late/output faults, cleanup, bridge framing, journal
+TEST software/runtime102/test_terminal.cjs
+(node:16597) ExperimentalWarning: Fetch is an experimental feature. This feature could change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS console: real launcher, fragmented commands, disconnected rejection, EOF restore, send delegation, bounded input
+TEST software/runtime102/test_web.cjs
+(node:16613) ExperimentalWarning: Fetch is an experimental feature. This feature could change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS web HTML, bidirectional simulation, invalid request
+(node:16621) ExperimentalWarning: Fetch is an experimental feature. This feature could change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "baseline",
+      "verdict": "PASS",
+      "assertions": {
+        "status": true,
+        "cleanup": true,
+        "exactly_once": true
+      }
+    },
+    {
+      "name": "lost-data-ack",
+      "verdict": "PASS",
+      "assertions": {
+        "status": true,
+        "cleanup": true,
+        "injection_observed": true,
+        "exactly_once": true,
+        "duplicate_detected": true,
+        "retry": true
+      }
+    },
+    {
+      "name": "lost-end-ack",
+      "verdict": "PASS",
+      "assertions": {
+        "status": true,
+        "cleanup": true,
+        "injection_observed": true,
+        "exactly_once": true,
+        "duplicate_detected": true,
+        "retry": true
+      }
+    },
+    {
+      "name": "crc-nack-retry",
+      "verdict": "PASS",
+      "assertions": {
+        "status": true,
+        "cleanup": true,
+        "injection_observed": true,
+        "exactly_once": true,
+        "nack": true,
+        "retry": true
+      }
+    },
+    {
+      "name": "no-A-channel",
+      "verdict": "PASS",
+      "assertions": {
+        "status": true,
+        "cleanup": true,
+        "injection_observed": true,
+        "reason": true,
+        "bounded_attempts": true
+      }
+    },
+    {
+      "name": "bridge-exit",
+      "verdict": "PASS",
+      "assertions": {
+        "status": true,
+        "cleanup": true,
+        "injection_observed": true,
+        "reason": true
+      }
+    },
+    {
+      "name": "capture-gap",
+      "verdict": "PASS",
+      "assertions": {
+        "status": true,
+        "cleanup": true,
+        "injection_observed": true,
+        "reason": true
+      }
+    },
+    {
+      "name": "epoch-change",
+      "verdict": "PASS",
+      "assertions": {
+        "status": true,
+        "cleanup": true,
+        "injection_observed": true,
+        "reason": true
+      }
+    },
+    {
+      "name": "output-error",
+      "verdict": "PASS",
+      "assertions": {
+        "status": true,
+        "cleanup": true,
+        "reason": true
+      }
+    },
+    {
+      "name": "output-late",
+      "verdict": "PASS",
+      "assertions": {
+        "status": true,
+        "cleanup": true,
+        "reason": true
+      }
+    }
+  ]
+}
+........................
+----------------------------------------------------------------------
+Ran 24 tests in 2.438s
+
+OK
+PASS ABI4, 90s RX/wraps, STOP, READY, 87/3 ticks and guard, pulsed acoustic/observe, overflow, poll gap, heartbeat
+PASS physical-path fixtures: C2 erasure, distance4, single-bit correction, CRCs, polarities, 4 pairs, full frame, independent RX, timeout, ACK guard/return, cleanup and profiles. NOT HARDWARE.
+PASS two independent nodes, simultaneous messages
+PASS negotiated CRC SMBUS
+PASS negotiated CRC AUTOSAR
+PASS negotiated CRC SAE-J1850
+PASS negotiated CRC MAXIM-DOW
+PASS lost DATA ACK: same sequence, no duplicate delivery
+PASS lost END ACK does not redeliver message
+PASS four attempts, no infinite retries
+PASS pilot exclusion mask 1
+PASS pilot exclusion mask 2
+PASS pilot exclusion mask 3
+PASS pilot exclusion mask 4
+PASS pilot exclusion mask 5
+PASS pilot exclusion mask 6
+PASS all channels absent cannot deliver
+PASS wrong SID/sequence ACK cannot advance
+PASS sequence wraps without losing bytes
+PASS peer restart never silently resumes old message
+PASS uncharacterized rate rejected
+PASS binary event and uint32 validation
+PASS sequence gaps/epoch changes stop stream
+PASS late sample is rejected
+PASS CRC -> contextual NACK -> retransmission
+PASS clock failure and no message context do not invent NACK
+{"checks":24,"status":"PASS","physical_status":"NOT_TESTED"}
+PASS supervisor: duplex, CRC negotiation, late/output faults, cleanup, bridge framing, journal
+
+Final incremental block-journal regression:
