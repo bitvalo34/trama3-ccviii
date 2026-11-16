@@ -1,5 +1,8 @@
 # Runtime 102: base incremental
 
+Primera sesion con las BBB: [PRIMER_ENLACE.md](PRIMER_ENLACE.md). Incluye
+diagnostico de solo lectura y consola de un nodo conectada al lanzador.
+
 Estado: implementacion de software, sin validacion fisica nueva. No cargar como
 firmware ni conectar P2 usando esta carpeta. T06 conserva sus evidencias; T08 sigue pendiente.
 
