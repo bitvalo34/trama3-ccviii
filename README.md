@@ -41,9 +41,11 @@ Para sonido, la BeagleBone interpretará los pulsos del KY-037 para obtener un s
 
 Por ahora tenemos documentada la arquitectura y las aclaraciones del auxiliar sobre el reloj, los medios y el uso del USB como conexión local. También definimos los cambios para ajustar la frecuencia y responder a interferencias.
 
-El protocolo no está implementado ni validado físicamente en las placas; sí realizamos la inspección básica. Falta la revisión de Adrián para cerrar T01. T02 quedó cerrada el 07/11/2026 como inspección básica con observaciones. T04 completó la selección y restauración de los cinco pines en ambas placas el 08/11/2026, con observaciones. Firmware PRU y pruebas eléctricas corresponden a T06.
+El runtime de la revisión 102 y la ruta experimental C0/C1 con ABI4 pasaron las pruebas de PC. T06 tiene evidencia individual de las dos BBB. Siguen pendientes la compilación del runtime en ARM/TI y la validación del enlace bidireccional con el montaje P2. Falta la revisión de Adrián para cerrar T01. T02 quedó cerrada el 07/11/2026 como inspección básica con observaciones. T04 completó la selección y restauración de los cinco pines en ambas placas el 08/11/2026, con observaciones.
 
 ## Documentación
+
+- [Matriz de entregables 2 al 10](software/runtime102/ENTREGABLES_PREPARACION.md) y [acta de verificación presencial](docs/entrega/PUNTO_15_VERIFICACION.md).
 
 - [Guía completa de T04, comandos y casos de error](hardware/configuracion/T04-preparacion-debian.md).
 - [Asignación y verificación de pines](hardware/configuracion/T04-pinmux-bbb.md).
