@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "run_id": "interferencia-01",
+  "origin": "hardware",
+  "commit": "",
+  "text": "A",
+  "perturbation": {
+    "channels": ["C0", "C1"],
+    "method": "",
+    "reference": "DATA_CLK",
+    "start_s": null,
+    "end_s": null
+  },
+  "evidence": [
+    {"kind": "acta", "path": "acta.pdf", "sha256": ""},
+    {"kind": "video", "path": "captura.mp4", "sha256": ""}
+  ]
+}

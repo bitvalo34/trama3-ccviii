@@ -47,6 +47,16 @@ async function run(){
     assert.ok(d.receiver.blocks.every(b=>b.received.filter(x=>x===null).length===3));
   }
   const p=makePlan({kind:'frame'}),rx=fixture('rx',p);rx.s.start();
+  assert.deepEqual(P.rows(p.frame.bits).slice(39,42),['011','110','101']);
+  const muted=p.vectors.map((vector,k)=>k>=39&&k<=41?vector&4:vector);
+  let badFrame;
+  const perturbation=new StreamDecoder({availableMask:3,onFault:(reason,raw)=>{
+    assert.equal(reason,'CRC');badFrame=P.parse(raw);
+  }});
+  for(const e of events(muted))perturbation.ingest(e);
+  assert.equal(perturbation.receiver.blocks[11].data.join(''),'00');
+  assert.equal(badFrame.data,1);assert.equal(badFrame.crc,p.frame.crc);
+  assert.notEqual(badFrame.calculated,badFrame.crc);
   for(const e of events(p.vectors))rx.s.record(e);
   assert.equal((await rx.s.stopPromise).reason,'PHY_COMPLETE');assert.equal(rx.s.plan,null);
   assert.equal(rx.records.filter(e=>e.kind==='PHY_BLOCK').length,27);

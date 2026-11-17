@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "commit": "",
+  "requirements": {
+    "chat_bidireccional": "PENDIENTE",
+    "control_limpio": "PENDIENTE",
+    "interferencia_fisica": "PENDIENTE",
+    "tres_medios": "PENDIENTE",
+    "compilacion_ti_arm": "PENDIENTE",
+    "documentacion_final": "PENDIENTE",
+    "integracion_revisada": "PENDIENTE"
+  },
+  "control_report": "limpio/reporte.json",
+  "interference_report": "interferencia/reporte.json",
+  "report_inputs": {
+    "control_report": ["limpio/manifest.json", "limpio/A.jsonl", "limpio/B.jsonl"],
+    "interference_report": ["interferencia/manifest.json", "interferencia/A.jsonl", "interferencia/B.jsonl"]
+  },
+  "nominal_report": "nominal.md",
+  "build_record": "compilacion.md",
+  "integration_record": "integracion.md",
+  "files": {
+    "limpio/reporte.json": "",
+    "limpio/manifest.json": "",
+    "limpio/A.jsonl": "",
+    "limpio/B.jsonl": "",
+    "interferencia/reporte.json": "",
+    "interferencia/manifest.json": "",
+    "interferencia/A.jsonl": "",
+    "interferencia/B.jsonl": "",
+    "interferencia/acta.pdf": "",
+    "interferencia/captura.mp4": "",
+    "nominal.md": "",
+    "compilacion.md": "",
+    "integracion.md": ""
+  }
+}

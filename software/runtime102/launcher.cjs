@@ -5,6 +5,7 @@ const {load,validateLab}=require('./profiles.cjs');
 const {P2Adapter}=require('./p2-adapter.cjs');
 const {ProcessBridge}=require('./bridge.cjs');
 const {Supervisor,Journal}=require('./supervisor.cjs');
+const P=require('./protocol.cjs');
 function exited(child){return child.exitCode!==null||child.signalCode!==null;}
 async function terminate(child){
   if(!child||exited(child))return;
@@ -23,8 +24,11 @@ function ready(bridge,timeoutMs){return new Promise((resolve,reject)=>{
 });}
 // One node, one clock, one resource-owning child. Defaults never touch hardware.
 async function launch({profileFile,directory,mode='mock',mockRoot,firmware,host,python='python3',
-  electricalChecked=false,labDiagnostics=false,crc='SMBUS',encoding='utf-8',coordinator=false,readyTimeoutMs=3000,mockHostFlags=[],supervisorFactory=options=>new Supervisor(options)}={}){
+  electricalChecked=false,labDiagnostics=false,crc='SMBUS',encoding='utf-8',coordinator=false,
+  runId=null,onRecord,readyTimeoutMs=3000,mockHostFlags=[],supervisorFactory=options=>new Supervisor(options)}={}){
   if(!['mock','hardware'].includes(mode))throw Error('MODE');
+  if(!Object.prototype.hasOwnProperty.call(P.CRCS,crc)||!['utf-8','windows-1252'].includes(encoding))throw Error('SESSION_CONFIG');
+  if(runId!==null&&!/^[-a-zA-Z0-9_]{1,64}$/.test(runId))throw Error('RUN_ID');
   const profile=load(profileFile,{hardware:mode==='hardware'});
   if(mode==='hardware'&&profile.experiment==='optical-acoustic')validateLab(profile,{frames:!labDiagnostics});
   if(mode==='hardware'&&(process.platform!=='linux'||!electricalChecked))throw Error('HARDWARE_REQUIRES_LINUX_AND_ELECTRICAL_CHECK');
@@ -34,7 +38,7 @@ async function launch({profileFile,directory,mode='mock',mockRoot,firmware,host,
   fs.mkdirSync(directory,{recursive:false});
   const node=profile.board.slice(-1),epoch=crypto.randomInt(1,0xffffffff),begin=process.hrtime.bigint();
   const clock=()=>Number(process.hrtime.bigint()-begin)/1e9;
-  const journal=new Journal(path.join(directory,node+'.jsonl'),{node,origin:mode==='mock'?'simulation':'hardware'});
+  const journal=new Journal(path.join(directory,node+'.jsonl'),{node,origin:mode==='mock'?'simulation':'hardware',runId,onRecord});
   let ownerChild,hostChild,owner,supervisor,timer,cleaned=false;
   async function cleanup(){
     if(cleaned)return;clearInterval(timer);
@@ -48,7 +52,9 @@ async function launch({profileFile,directory,mode='mock',mockRoot,firmware,host,
     let commit='UNAVAILABLE';
     try{commit=require('node:child_process').execFileSync('git',['rev-parse','HEAD'],{cwd:__dirname,encoding:'utf8',stdio:['ignore','pipe','ignore']}).trim();}
     catch(_){try{commit=fs.readFileSync(path.join(__dirname,'SOURCE_COMMIT'),'utf8').trim();}catch(_){}}
-    journal.write({kind:'LAUNCH',mode,profile,epoch,commit,utc_system_unverified:new Date().toISOString(),
+    journal.write({kind:'LAUNCH',mode,profile,epoch,commit,protocol_revision:102,protocol_version:P.VERSION,
+      coordinator,peer:node==='A'?'B':'A',crc,encoding,frequency_hz:1/profile.period_s,available_mask:profile.available_mask??7,
+      hardware_revision:profile.hardware_revision,host_node_version:process.version,
       host_sha256:host?crypto.createHash('sha256').update(fs.readFileSync(host)).digest('hex'):null,
       profile_sha256:crypto.createHash('sha256').update(fs.readFileSync(profileFile)).digest('hex'),
       firmware_sha256:crypto.createHash('sha256').update(fs.readFileSync(firmware)).digest('hex')});

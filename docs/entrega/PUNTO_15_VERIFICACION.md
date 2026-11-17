@@ -39,6 +39,29 @@ En PC, dejar C0 y C1 en cero lógico durante esas tres observaciones, conservand
 
 La campaña C0/C1 puede verificar este mecanismo en alcance parcial. Para acreditar los tres medios del diseño nominal se requiere su propia evidencia de funcionamiento. El [evaluador de entregas](../../software/runtime102/BANCO_MEDIOS.md#evaluacion-posterior-del-chat-real) comprueba entregas, confirmaciones y limpieza. El dictamen del ensayo se obtiene correlacionando los eventos de arriba con el registro de la interferencia física.
 
+### Cronograma de la intervención
+
+Usar el CLK A→B en el receptor, con analizador de lógica u osciloscopio referenciado al lado B, y una cámara que vea el obturador óptico y la atenuación acústica. El pulso de inicio mide `0.60T` normalizado. Contar esos inicios desde el envío de la letra: START, LEN_LO, LEN_HI y DATA son las primeras cuatro tramas de **ida**, siempre que el control previo haya confirmado que no hay reintentos. Si cambia la secuencia, verificar `TX_START DATA` en A y reiniciar el conteo sobre su pulso largo. El navegador solo presenta el registro y el estado.
+
+| Flanco de subida de DATA a 1 Hz | Acción o señal | C0/C1 limpios |
+| --- | --- | --- |
+| 0 s, tick 1 | Pulso largo. Poner el contador de flancos en 1. | Pilotos en ticks 1–6 |
+| 38 s, tick 39 | Conservar su muestra a 38.8 s. Preparar la intervención. | Sin cambio |
+| 39 s, tick 40 | Aplicar después de 38.8 s y antes del inicio de la ventana acústica real del tick 40. | 01 |
+| 40 s, tick 41 | Mantener la intervención durante la ventana acústica y la muestra. | 11 |
+| 41 s, tick 42 | Mantener hasta completar la muestra de 41.8 s. | 10 |
+| 42 s, tick 43 | Retirar antes de la ventana acústica de este tick. Conservar el resto del cuerpo y el CRC. | Sin cambio |
+
+En los perfiles de ejemplo la ventana acústica es `0.20T–0.80T`. Ajustar el margen a la ventana medida, al retardo de los sensores y a la maniobra. Practicar el disparo en una pasada aparte con la misma referencia. Para repetirlo con precisión, usar un contador de flancos externo que sincronice el movimiento del obturador y el atenuador con el cuarto inicio. Guardar el CLK y la ventana de intervención en la misma captura. Mantener el retorno B→A despejado.
+
+| Variante | Acción física | Resultado a registrar |
+| --- | --- | --- |
+| Principal C0/C1 | Obturador opaco en la ida y atenuador en el trayecto del buzzer de ida; comprobar ceros normalizados en B durante ticks 40–42. | En el modelo, `01 → 00` supera la matriz y falla CRC. Medir en las BBB. |
+| Solo luz o solo sonido | Aplicar uno de los dos elementos al mismo bloque. | Puede corregirse, generar síndrome o llegar al CRC. Registrar el resultado observado. |
+| Corte antes de pilotos o pérdida de CLK | Documentar por separado si ocurre durante otro diagnóstico. | Pilotos excluidos, pérdida de reloj, silencio o timeout se conservan con su propio dictamen. |
+
+Para el ensayo guiado conservar un byte `A`, CRC SMBUS y UTF-8, con una sola transmisión de aplicación A→B. Tras cerrar los dos servidores, exportar originales, llenar el manifiesto y ejecutar los comandos de [CHECKLIST_GES.md](CHECKLIST_GES.md). El modo `interference` valida la cadena por orden local y SID/SEQ. El manifiesto exige acta y al menos una fotografía, vídeo o captura de instrumento con huella verificada. El operador confirma la correspondencia del material con el ensayo.
+
 ## 3. Acta por intento
 
 Copiar este bloque para cada control o ensayo, incluidos los fallidos.
