@@ -2,6 +2,8 @@
 
 Proyecto de Comunicación de Computadoras VIII, desarrollado por Erwin y Adrián.
 
+La [lista de preparación y entrega](docs/entrega/CHECKLIST_GES.md) reúne los comandos del chat por nodo, la exportación del LOG, el guion de interferencia y la verificación del ZIP. El [documento técnico](docs/entrega/DOCUMENTACION_TECNICA.pdf) describe la revisión 102 y el montaje P2-LOCAL.
+
 Queremos comunicar dos BeagleBone Black usando luz, sonido y tensión en un hilo de nylon. La idea es enviar mensajes de texto desde un chat y ver cómo llegan al otro equipo a través de los tres medios, incluyendo qué pasa cuando hay interferencias.
 
 ## Revisión vigente del diseño
