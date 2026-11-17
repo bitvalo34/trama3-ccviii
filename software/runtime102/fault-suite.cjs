@@ -29,7 +29,7 @@ async function runSuite(directory){
   for(const s of scenarios){
     const folder=path.join(directory,s.name);fs.mkdirSync(folder);
     const events=[[],[]],journals=['A','B'].map((node,i)=>{
-      const j=new Journal(path.join(folder,node+'.jsonl'),{node});
+      const j=new Journal(path.join(folder,node+'.jsonl'),{node,runId:s.name});
       return {write:e=>{if(e.kind!=='CAPTURE')events[i].push(e);j.write(e);},close:()=>j.close()};
     });
     const r=await simulateSupervised({...s.options,journals});

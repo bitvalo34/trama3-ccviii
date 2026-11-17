@@ -1,27 +1,107 @@
 <!doctype html>
-<html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TRAMA3 · Chat por nodo</title>
+<html lang="es">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TRAMA 3 · Chat por nodo</title>
 <style>
-body{font:17px system-ui;background:#101827;color:#eef3fa;max-width:850px;margin:32px auto;padding:20px}a{color:#7dd3fc}textarea,button{font:inherit;padding:12px;border-radius:8px}textarea{width:100%;box-sizing:border-box;min-height:100px}button{background:#7dd3fc;border:0;cursor:pointer;margin-top:12px}li{padding:14px;margin:10px 0;background:#1e293b;border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere}#error{color:#fca5a5}small{display:block;color:#b8c5d8}ul{padding:0;list-style:none}
+body{font:16px system-ui;max-width:960px;margin:24px auto;padding:0 16px;color:#192332}
+button,select,textarea{font:inherit;padding:6px}textarea{width:100%;box-sizing:border-box;min-height:70px}
+ul{padding-left:0;list-style:none}li{border-bottom:1px solid #ddd;padding:8px 0;white-space:pre-wrap;overflow-wrap:anywhere}
+small{display:block;color:#445}#error{color:#a01818}details,form{margin:16px 0}
+.scroll{overflow:auto}table{width:100%;border-collapse:collapse;font-size:.9rem}td,th{text-align:left;padding:5px;border-bottom:1px solid #ddd}
+[hidden]{display:none}
 </style>
-<h1 id="title">TRAMA3</h1>
-<p>Simulación supervisada · tiempo virtual acelerado · sin conexión a las BBB.</p>
-<nav><a href="/?node=A">Nodo A</a> · <a href="/?node=B">Nodo B</a> · <a id="log">Descargar log del nodo</a></nav>
+<h1 id="title">TRAMA 3</h1>
+<p id="mode"></p>
+<nav><span id="nodes" hidden><a href="/?node=A">Nodo A</a> · <a href="/?node=B">Nodo B</a> · </span><a id="log">Descargar JSONL original</a></nav>
 <p id="state" aria-live="polite">Conectando…</p>
 <p id="stats"></p>
-<form id="form"><label for="text">Mensaje</label><textarea id="text" maxlength="1024" required></textarea><button>Enviar</button></form>
-<p id="error" role="alert"></p><ul id="messages" aria-live="polite"></ul>
-<details><summary>Diagnóstico de la simulación</summary><pre id="diagnostics" style="white-space:pre-wrap;overflow-wrap:anywhere"></pre></details>
+<ul id="messages" aria-live="polite"></ul>
+<form id="form"><label for="text">Mensaje</label><textarea id="text" maxlength="1024" required></textarea><button id="send" disabled>Enviar</button></form>
+<p id="error" role="alert"></p>
+<details id="events">
+  <summary>Registro del protocolo</summary>
+  <label>Tipo <select id="type"><option value="">Cualquiera</option></select></label>
+  <label>Evento <select id="filter"><option value="">Todos</option><option value="ack">ACK/NACK</option><option value="error">Errores</option><option value="retry">Retransmisiones</option></select></label>
+  <button id="reload">Actualizar</button> <button id="older" disabled>Anteriores</button>
+  <p id="log-info" role="status"></p>
+  <div class="scroll"><table><thead><tr><th>Hora UTC</th><th>Sentido</th><th>Evento</th><th>Trama</th><th>CRC recibido / calculado</th><th>Resultado</th><th>Intento</th><th>Estado</th></tr></thead><tbody id="rows"></tbody></table></div>
+</details>
 <script>
-const node=new URLSearchParams(location.search).get('node')||'A',query='?node='+encodeURIComponent(node),el=id=>document.getElementById(id);
-el('title').textContent='TRAMA3 · Nodo '+node;el('log').href='/log'+query;
-const labels={pending:'Pendiente',sending:'Enviando',confirmed:'Confirmado por el receptor',failed:'Fallido: entrega no confirmada',received:'Recibido'};
-async function refresh(){try{const r=await fetch('/state'+query),s=await r.json();if(!r.ok)throw Error(s.error);
-el('state').textContent=s.state+' · CRC '+s.crc+' · '+s.encoding;
-el('stats').textContent='Reintentos: '+s.stats.retries+' · Duplicados detectados: '+s.stats.duplicates+' · Escenario: '+s.fault;
-el('diagnostics').textContent=s.diagnostics.map(e=>JSON.stringify(e)).join('\n')||'Sin incidencias registradas.';
-el('messages').replaceChildren(...s.messages.map(m=>{const li=document.createElement('li'),small=document.createElement('small');li.textContent=m.text;small.textContent=m.direction==='sent'?'Enviado · '+labels[m.status]:labels[m.status];li.append(small);return li;}));
-}catch(e){el('error').textContent=e.message;}}
-el('form').onsubmit=async e=>{e.preventDefault();el('error').textContent='';try{const r=await fetch('/send'+query,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:el('text').value})}),s=await r.json();if(!r.ok)throw Error(s.error);el('text').value='';await refresh();}catch(e){el('error').textContent=e.message;}};
-refresh();setInterval(refresh,500);
-</script></html>
+const query=new URLSearchParams(location.search);
+const el=id=>document.getElementById(id);
+const labels={pending:'Pendiente',sending:'En transmisión',waiting_ack:'Esperando ACK',confirmed:'Confirmado',failed:'Fallido',uncertain:'Entrega incierta',received:'Recibido'};
+const types=['HELLO','HELLO_ACK','COMMIT','READY','START','LEN_LO','LEN_HI','DATA','END','ACK','NACK','RATE_CTRL','PERIOD_PART','PING','ERROR'];
+for(const type of types)el('type').add(new Option(type,type));
+el('log').href='/log?'+query;
+let refreshing=false,posting=false,canSend=false,before=null,eventsRequest=0,messageVersion;
+const button=()=>{el('send').disabled=posting||!canSend;};
+async function json(url,options){
+  const response=await fetch(url,options),data=await response.json();
+  if(!response.ok)throw Error(data.error||response.status);
+  return data;
+}
+async function refresh(){
+  if(refreshing)return;
+  refreshing=true;
+  try{
+    const s=await json('/state?'+query),simulation=s.origin==='simulation';
+    el('title').textContent='TRAMA 3 · Nodo '+s.node;
+    el('mode').textContent=simulation?'SIMULACIÓN — NO TRANSMISIÓN FÍSICA':'HARDWARE · '+s.board+' · '+s.hardware_revision;
+    el('nodes').hidden=!simulation;
+    const media=['C0 luz','C1 sonido','C2 nylon'].filter((_,i)=>s.available_mask&(1<<i));
+    el('state').textContent=s.state+' · CRC-8/'+s.crc+' · '+s.encoding+' · '+media.join(' / ')+' · CLK '+s.frequency_hz+' Hz ('+s.clock+')';
+    const issue=[...s.diagnostics].reverse().find(e=>e.reason||e.error||e.errors?.length);
+    el('stats').textContent='Retransmisiones '+s.stats.retries+' · Duplicados '+s.stats.duplicates+(issue?' · Última incidencia '+(issue.reason||issue.error||issue.errors.join(', ')):'');
+    canSend=s.can_send;
+    const version=JSON.stringify(s.messages);
+    if(version!==messageVersion){
+      messageVersion=version;
+      el('messages').replaceChildren(...s.messages.map(m=>{
+        const li=document.createElement('li'),small=document.createElement('small');
+        li.textContent=m.text;
+        small.textContent=labels[m.status]+(m.error?' · '+m.error:'');
+        li.append(small);return li;
+      }));
+    }
+  }catch(error){canSend=false;el('state').textContent='Servidor no disponible · '+error.message;}
+  finally{refreshing=false;button();}
+}
+el('form').onsubmit=async event=>{
+  event.preventDefault();
+  if(posting||!canSend)return;
+  posting=true;button();el('error').textContent='';
+  try{
+    await json('/send?'+query,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:el('text').value})});
+    el('text').value='';await refresh();
+  }catch(error){el('error').textContent=error.message;}
+  finally{posting=false;button();}
+};
+const hex=value=>value==null?'':value.toString(16).toUpperCase().padStart(2,'0');
+async function showEvents(cursor=null){
+  const version=++eventsRequest;
+  const params=new URLSearchParams(query);
+  params.set('type',el('type').value);params.set('filter',el('filter').value);
+  if(cursor!==null)params.set('before',cursor);
+  try{
+    const result=await json('/events?'+params);
+    if(version!==eventsRequest)return;
+    before=result.before;el('older').disabled=before===null;
+    el('log-info').textContent=result.entries.length?'Registros '+result.entries.at(-1).record+'–'+result.entries[0].record:'Sin eventos para este filtro.';
+    el('rows').replaceChildren(...result.entries.map(e=>{
+      const row=document.createElement('tr');
+      const crc=e.crc==null?'':hex(e.crc)+' / '+(hex(e.crc_calculated)||'—');
+      for(const value of [e.utc_system_unverified?.slice(11,23),{tx:'Salida',rx:'Entrada'}[e.direction],e.kind,e.type,crc,
+        e.result||e.reason||e.trigger,e.attempt,e.confirmation]){
+        const cell=row.insertCell();cell.textContent=value??'';
+      }
+      return row;
+    }));
+  }catch(error){if(version===eventsRequest)el('log-info').textContent=error.message;}
+}
+el('events').ontoggle=()=>{if(el('events').open)showEvents();};
+for(const id of ['type','filter'])el(id).onchange=()=>showEvents();
+el('reload').onclick=()=>showEvents();
+el('older').onclick=()=>showEvents(before);
+refresh();setInterval(refresh,750);
+</script>
+</html>

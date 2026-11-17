@@ -37,9 +37,18 @@ class StreamDecoder {
       const previousError=this.receiver.error;
       const previousBlocks=this.receiver.blocks.length;
       this.receiver.ingest({rise:this.rise,fall:this.fall,values});
-      if(this.receiver.blocks.length>previousBlocks)this.onBlock({...this.receiver.blocks[this.receiver.blocks.length-1],sample_t:t});
+      const tick=this.receiver.rows.length;
+      if(this.receiver.blocks.length>previousBlocks){
+        const block=this.receiver.blocks[this.receiver.blocks.length-1];
+        this.onBlock({...block,tick,available_mask:this.receiver.availableMask,
+          receive_mask:this.receiver.meta.seen,sample_t:t});
+      }
       if(this.receiver.error&&this.receiver.error!==previousError){this.onFault(this.receiver.error);}
-      if(this.receiver.result){const r=this.receiver.outcome();if(r.ok)this.onFrame(r.raw);else this.onFault(r.reason);}
+      if(this.receiver.result){
+        const r=this.receiver.outcome();
+        if(r.ok)this.onFrame(r.raw);
+        else this.onFault(r.reason,r.raw);
+      }
     }else this.fault('EVENT_FLAGS');
   }
 }

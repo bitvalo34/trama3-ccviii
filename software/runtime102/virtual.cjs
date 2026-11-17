@@ -6,7 +6,8 @@ function simulate({a='Hola',b='',drop=()=>false,mask=0,limit=30000,crc='SMBUS',c
   const log=[],nodes=[new Endpoint({id:'A',coordinator:true,crc,log:e=>log.push(e)}),new Endpoint({id:'B',crc,log:e=>log.push(e)})];
   const events=[],free=[0,0],sent=[false,false],sequence=[0,0];let now=0,serial=0,corrupted=false;
   const schedule=(t,fn)=>events.push({t,fn,id:serial++});
-  const rx=nodes.map((node,i)=>new StreamDecoder({crc,onFrame:bits=>node.receive(bits,now),onFault:reason=>node.reject(reason,now)}));
+  const rx=nodes.map(node=>new StreamDecoder({crc,onFrame:bits=>node.receive(bits,now),
+    onFault:(reason,raw)=>raw?node.receive(raw,now):node.reject(reason,now)}));
   const emit=(dir,t,vector,clock,flags)=>{
     const ticks=BigInt(Math.round(t*2e8)),r31=((vector&1)<<5)|(((vector>>1)&1)<<14)|(((vector>>2)&1)<<16)|(clock<<15);
     rx[1-dir].ingest({sequence:sequence[dir]++>>>0,epoch:1,ticks_lo:Number(ticks&0xffffffffn),ticks_hi:Number(ticks>>32n),r31:r31>>>0,normalized:vector|(clock<<3),flags});
