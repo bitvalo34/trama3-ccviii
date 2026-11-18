@@ -39,6 +39,9 @@ El protocolo no está implementado ni validado físicamente en las placas; sí r
 
 ## Documentación
 
+- [Inventario y conciliación T03](hardware/inventario/T03-conciliacion-materiales.md).
+- [Excel de materiales con conciliación](hardware/inventario/CCVIII_Materiales_y_Compras_T03.xlsx).
+
 - [Simulador y pruebas de la revisión 101](software/simulador/README.md).
 - [Decisión sobre reloj y frecuencias por sentido](docs/decisiones/ADR-0003-reloj-modulado-y-direcciones.md).
 
